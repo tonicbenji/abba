@@ -1,12 +1,13 @@
 const fs = require("fs");
-const path = require("path");
 const R = require("ramda");
 const now = require("performance-now");
 const program = require("commander");
 const chalk = require('chalk');
 const dateFormat = require('dateformat');
 const shuffleSeed = require('shuffle-seed');
+
 const settings = require('./gen-config');
+const u = require('./utilities');
 
 // Command line arguments ----------
 
@@ -16,12 +17,6 @@ program
     .option("-l, --log", "Log progress")
     .parse(process.argv);
 
-// Data Sources ----------
-
-// Read file into a string
-const relReadFileSync = fileLoc => fs.readFileSync(path.resolve(__dirname, fileLoc))
-const fileToStr = fileLoc => R.toString(relReadFileSync(fileLoc));
-
 // Defining some of the common paths for data
 const srcLoc = "src/";
 const templateLoc = "templates/";
@@ -30,46 +25,46 @@ const demo =
 const keyLoc = srcLoc + "keywords/";
 
 // Sourcing the main data
-const suburbsStr = fileToStr(`${srcLoc}suburbs/${settings.suburbsFile}.txt`);
+const suburbsStr = u.fileToStr(`${srcLoc}suburbs/${settings.suburbsFile}.txt`);
 const outputLoc = "public/";
-const regionsStr = fileToStr(`${srcLoc}regions/sydney.txt`);
-const nswRegionsStr = fileToStr(`${srcLoc}nswRegions/nswRegions.txt`);
-const tradeStr = fileToStr(`${srcLoc}trades.txt`);
-const industriesStr = fileToStr(`${srcLoc}industries.txt`);
-const locationsCache = relReadFileSync(`${srcLoc}locations/locations-cache.json`);
+const regionsStr = u.fileToStr(`${srcLoc}regions/sydney.txt`);
+const nswRegionsStr = u.fileToStr(`${srcLoc}nswRegions/nswRegions.txt`);
+const tradeStr = u.fileToStr(`${srcLoc}trades.txt`);
+const industriesStr = u.fileToStr(`${srcLoc}industries.txt`);
+const locationsCache = u.readFile(`${srcLoc}locations/locations-cache.json`);
 
 // Sourcing the main templates
-const metaTemplate = fileToStr(`${srcLoc}${templateLoc}components/meta.html`);
-const headerTemplate = fileToStr(
+const metaTemplate = u.fileToStr(`${srcLoc}${templateLoc}components/meta.html`);
+const headerTemplate = u.fileToStr(
     `${srcLoc}${templateLoc}components/header.html`
 );
-const bottomScripts = fileToStr(
+const bottomScripts = u.fileToStr(
     `${srcLoc}${templateLoc}components/bottomScripts.html`
 );
-const suburbsFooterTemplate = fileToStr(
+const suburbsFooterTemplate = u.fileToStr(
     `${srcLoc}${templateLoc}suburb/footer.html`
 );
-const sydneyFooterTemplate = fileToStr(
+const sydneyFooterTemplate = u.fileToStr(
     `${srcLoc}${templateLoc}sydney/footer.html`
 );
-const nswFooterTemplate = fileToStr(`${srcLoc}${templateLoc}nsw/footer.html`);
-const nswRegionFooterTemplate = fileToStr(
+const nswFooterTemplate = u.fileToStr(`${srcLoc}${templateLoc}nsw/footer.html`);
+const nswRegionFooterTemplate = u.fileToStr(
     `${srcLoc}${templateLoc}nswRegion/footer.html`
 );
-const pagesFooterTemplate = fileToStr(
+const pagesFooterTemplate = u.fileToStr(
     `${srcLoc}${templateLoc}pages/footer.html`
 );
-const homeFooterTemplate = fileToStr(`${srcLoc}${templateLoc}home/footer.html`);
-const homeTemplate = fileToStr(`${srcLoc}${templateLoc}pages/home.html`);
-const aboutTemplate = fileToStr(`${srcLoc}${templateLoc}pages/about.html`);
-const contactTemplate = fileToStr(`${srcLoc}${templateLoc}pages/contact.html`);
-const directoryTemplate = fileToStr(
+const homeFooterTemplate = u.fileToStr(`${srcLoc}${templateLoc}home/footer.html`);
+const homeTemplate = u.fileToStr(`${srcLoc}${templateLoc}pages/home.html`);
+const aboutTemplate = u.fileToStr(`${srcLoc}${templateLoc}pages/about.html`);
+const contactTemplate = u.fileToStr(`${srcLoc}${templateLoc}pages/contact.html`);
+const directoryTemplate = u.fileToStr(
     `${srcLoc}${templateLoc}directory/directory.html`
 );
-const websiteSummaryTemplate = fileToStr(
+const websiteSummaryTemplate = u.fileToStr(
     `${srcLoc}${templateLoc}websiteSummary/website-summary.html`
 );
-const contactForm = fileToStr(
+const contactForm = u.fileToStr(
     `${srcLoc}${templateLoc}components/contactForm.html`
 );
 
@@ -203,7 +198,7 @@ const nswRegions = strToArr(nswRegionsStr);
 // Keywords ----------
 
 // Get key file as a string
-const getKeyFile = name => fileToStr(keyLoc + name + ".txt");
+const getKeyFile = name => u.fileToStr(keyLoc + name + ".txt");
 
 // Key file string to array
 const getKeyArr = name => strToArr(getKeyFile(name));
@@ -490,7 +485,7 @@ const noThe = str =>
 
 // Get a template as a string
 const templateGet = (dirName, fileName) =>
-    fileToStr(srcLoc + templateLoc + dirName + "/" + fileName + ".html");
+    u.fileToStr(srcLoc + templateLoc + dirName + "/" + fileName + ".html");
 
 // Footer breadcrumbs ----------
 
@@ -883,7 +878,7 @@ console.log("");
                 var regionPath = tradeIndPath + "sydney/";
 
                 var regionSuburbs = strToArr(
-                    fileToStr(
+                    u.fileToStr(
                         `${srcLoc}regions/${spacesToHyphens(regionNoThe)}.txt`
                     )
                 );
@@ -1082,7 +1077,7 @@ console.log("");
             var areaFilters = output =>
                 areaFiltersMake(
                     {
-                        footer : fileToStr(
+                        footer : u.fileToStr(
                             `${srcLoc}${templateLoc}australia/footer-${trade}.html`
                         ),
                         trade             : trade,

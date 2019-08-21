@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gen": "node ./page-gen/gen",
+    "gen2": "node ./page-gen/gen2",
     "geocoder": "node ./location-gen/geocoder",
     "nearby-cacher": "node ./location-gen/nearby-cacher",
     "nearby": "node ./location-gen/nearby"
