@@ -1,6 +1,7 @@
 // Node Libraries ----------
 
 const fs = require("fs");
+const path = require("path");
 const R = require("ramda");
 const now = require("performance-now");
 const program = require("commander");
@@ -32,7 +33,8 @@ program
 // Data Sources ----------
 
 // Read file into a string
-const fileToStr = fileLoc => R.toString(fs.readFileSync(fileLoc));
+const relReadFileSync = fileLoc => fs.readFileSync(path.resolve(__dirname, fileLoc))
+const fileToStr = fileLoc => R.toString(relReadFileSync(fileLoc));
 
 // Defining some of the common paths for data
 const srcLoc = "src/";
@@ -43,12 +45,12 @@ const keyLoc = srcLoc + "keywords/";
 
 // Sourcing the main data
 const suburbsStr = fileToStr(`${srcLoc}suburbs/${settings.suburbsFile}.txt`);
-const outputLoc = "output/";
+const outputLoc = "public/";
 const regionsStr = fileToStr(`${srcLoc}regions/sydney.txt`);
 const nswRegionsStr = fileToStr(`${srcLoc}nswRegions/nswRegions.txt`);
 const tradeStr = fileToStr(`${srcLoc}trades.txt`);
 const industriesStr = fileToStr(`${srcLoc}industries.txt`);
-const locationsCache = fs.readFileSync(`${demo}locations-cache.json`);
+const locationsCache = relReadFileSync(`${srcLoc}locations/locations-cache.json`);
 
 // Sourcing the main templates
 const metaTemplate = fileToStr(`${srcLoc}${templateLoc}components/meta.html`);

@@ -1,0 +1,17 @@
+# Nested git repo
+public/
+
+# Mac OSX Files
+.DS_Store
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Node and NPM
+node_modules
+npm-debug.log
