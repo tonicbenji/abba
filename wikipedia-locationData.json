@@ -1,0 +1,2502 @@
+[
+    {
+        "nme": "Annandale",
+        "lat": -33.8814,
+        "lng": 151.1707
+    },
+    {
+        "nme": "Abbotsford",
+        "lat": -33.85215,
+        "lng": 151.12726
+    },
+    {
+        "nme": "Belimbla Park",
+        "lat": -34.0856753,
+        "lng": 150.5385422
+    },
+    {
+        "nme": "Bangor",
+        "lat": -34.01908,
+        "lng": 151.02735
+    },
+    {
+        "nme": "Alfords Point",
+        "lat": -33.9848,
+        "lng": 151.02142
+    },
+    {
+        "nme": "Bilgola Plateau",
+        "lat": -33.6429152,
+        "lng": 151.3137307
+    },
+    {
+        "nme": "Alexandria",
+        "lat": -33.90166,
+        "lng": 151.20007
+    },
+    {
+        "nme": "Ashbury",
+        "lat": -33.8997098,
+        "lng": 151.1199309
+    },
+    {
+        "nme": "Balgowlah",
+        "lat": -33.79645,
+        "lng": 151.25854
+    },
+    {
+        "nme": "Ashfield",
+        "lat": -33.8889,
+        "lng": 151.1249
+    },
+    {
+        "nme": "Baulkham Hills",
+        "lat": -33.76288,
+        "lng": 150.99212
+    },
+    {
+        "nme": "Bardia",
+        "lat": -33.9777828,
+        "lng": 150.8623896
+    },
+    {
+        "nme": "Beecroft",
+        "lat": -33.7518,
+        "lng": 151.0633
+    },
+    {
+        "nme": "Annangrove",
+        "lat": -33.65255,
+        "lng": 150.94096
+    },
+    {
+        "nme": "Bexley",
+        "lat": -33.9568,
+        "lng": 151.12621
+    },
+    {
+        "nme": "Balmain East",
+        "lat": -33.85811,
+        "lng": 151.19017
+    },
+    {
+        "nme": "Belfield",
+        "lat": -33.905,
+        "lng": 151.084
+    },
+    {
+        "nme": "Arncliffe",
+        "lat": -33.9363231,
+        "lng": 151.1432325
+    },
+    {
+        "nme": "Bass Hill",
+        "lat": -33.90092,
+        "lng": 150.9949
+    },
+    {
+        "nme": "Balgowlah Heights",
+        "lat": -33.8072234,
+        "lng": 151.2641654
+    },
+    {
+        "nme": "Bellevue Hill",
+        "lat": -33.88101,
+        "lng": 151.25253
+    },
+    {
+        "nme": "Beverley Park",
+        "lat": -33.97897,
+        "lng": 151.1285
+    },
+    {
+        "nme": "Appin",
+        "lat": -34.2,
+        "lng": 150.783333
+    },
+    {
+        "nme": "Avalon",
+        "lat": -33.6302836,
+        "lng": 151.3297698
+    },
+    {
+        "nme": "Bilgola",
+        "lat": -33.6444858,
+        "lng": 151.3275826
+    },
+    {
+        "nme": "Bickley Vale",
+        "lat": -34.08,
+        "lng": 150.665
+    },
+    {
+        "nme": "Bayview",
+        "lat": -33.658,
+        "lng": 151.288
+    },
+    {
+        "nme": "Belrose",
+        "lat": -33.73,
+        "lng": 151.22
+    },
+    {
+        "nme": "Beverly Hills",
+        "lat": -33.9513,
+        "lng": 151.07938
+    },
+    {
+        "nme": "Banksmeadow",
+        "lat": -33.95731,
+        "lng": 151.20699
+    },
+    {
+        "nme": "Beaconsfield",
+        "lat": -33.91096,
+        "lng": 151.19995
+    },
+    {
+        "nme": "Allawah",
+        "lat": -33.9749,
+        "lng": 151.1167
+    },
+    {
+        "nme": "Beaumont Hills",
+        "lat": -33.7,
+        "lng": 150.941
+    },
+    {
+        "nme": "Bardwell Park",
+        "lat": -33.93539,
+        "lng": 151.12541
+    },
+    {
+        "nme": "Ben Buckler",
+        "lat": -33.8932424,
+        "lng": 151.2837794
+    },
+    {
+        "nme": "Beacon Hill",
+        "lat": -33.7522,
+        "lng": 151.256
+    },
+    {
+        "nme": "Banksia",
+        "lat": -33.94776,
+        "lng": 151.14806
+    },
+    {
+        "nme": "Airds",
+        "lat": -34.0916,
+        "lng": 150.8249
+    },
+    {
+        "nme": "Bingara Gorge",
+        "lat": -34.2236462,
+        "lng": 150.6870173
+    },
+    {
+        "nme": "Bargo",
+        "lat": -34.3,
+        "lng": 150.583333
+    },
+    {
+        "nme": "Bella Vista",
+        "lat": -33.742,
+        "lng": 150.955
+    },
+    {
+        "nme": "Barden Ridge",
+        "lat": -34.032,
+        "lng": 151.01
+    },
+    {
+        "nme": "Bankstown",
+        "lat": -33.91817,
+        "lng": 151.03497
+    },
+    {
+        "nme": "Barangaroo",
+        "lat": -33.8637941,
+        "lng": 151.2022304
+    },
+    {
+        "nme": "Belmore",
+        "lat": -33.91752,
+        "lng": 151.08782
+    },
+    {
+        "nme": "Balmain",
+        "lat": -33.85895,
+        "lng": 151.17906
+    },
+    {
+        "nme": "Artarmon",
+        "lat": -33.80894,
+        "lng": 151.18292
+    },
+    {
+        "nme": "Allambie Heights",
+        "lat": -33.7624,
+        "lng": 151.25
+    },
+    {
+        "nme": "Bardwell Valley",
+        "lat": -33.937,
+        "lng": 151.133
+    },
+    {
+        "nme": "Ambarvale",
+        "lat": -34.08333,
+        "lng": 150.80067
+    },
+    {
+        "nme": "Burragorang",
+        "lat": -34.107213,
+        "lng": 150.3790612
+    },
+    {
+        "nme": "Blairmount",
+        "lat": -34.04881,
+        "lng": 150.78734
+    },
+    {
+        "nme": "Breakfast Point",
+        "lat": -33.844,
+        "lng": 151.1129
+    },
+    {
+        "nme": "Birchgrove",
+        "lat": -33.85275,
+        "lng": 151.18024
+    },
+    {
+        "nme": "Birrong",
+        "lat": -33.893,
+        "lng": 151.023
+    },
+    {
+        "nme": "Bondi Junction",
+        "lat": -33.89145,
+        "lng": 151.2497
+    },
+    {
+        "nme": "Burwood",
+        "lat": -33.8772,
+        "lng": 151.1049
+    },
+    {
+        "nme": "Centennial Park",
+        "lat": -33.90108,
+        "lng": 151.23036
+    },
+    {
+        "nme": "Castlecrag",
+        "lat": -33.80137,
+        "lng": 151.22007
+    },
+    {
+        "nme": "Botany",
+        "lat": -33.94513,
+        "lng": 151.19934
+    },
+    {
+        "nme": "Canterbury",
+        "lat": -33.9126,
+        "lng": 151.118
+    },
+    {
+        "nme": "Bradbury",
+        "lat": -34.08734,
+        "lng": 150.81626
+    },
+    {
+        "nme": "Canterbury-Bankstown",
+        "lat": -33.9126,
+        "lng": 151.118
+    },
+    {
+        "nme": "Brookvale",
+        "lat": -33.7653,
+        "lng": 151.27041
+    },
+    {
+        "nme": "Bronte",
+        "lat": -33.90532,
+        "lng": 151.26069
+    },
+    {
+        "nme": "Carlingford",
+        "lat": -33.777,
+        "lng": 151.048
+    },
+    {
+        "nme": "Camden",
+        "lat": -34.054444,
+        "lng": 150.695833
+    },
+    {
+        "nme": "Chatswood",
+        "lat": -33.80077,
+        "lng": 151.1796
+    },
+    {
+        "nme": "Castle Cove",
+        "lat": -33.78464,
+        "lng": 151.20642
+    },
+    {
+        "nme": "Campsie",
+        "lat": -33.91461,
+        "lng": 151.10183
+    },
+    {
+        "nme": "Burwood Heights",
+        "lat": -33.8902,
+        "lng": 151.1052
+    },
+    {
+        "nme": "Carlton",
+        "lat": -33.9685296,
+        "lng": 151.1246063
+    },
+    {
+        "nme": "Bundeena",
+        "lat": -34.08341619999999,
+        "lng": 151.1515469
+    },
+    {
+        "nme": "Buxton",
+        "lat": -34.2565758,
+        "lng": 150.5334838
+    },
+    {
+        "nme": "Cammeray",
+        "lat": -33.82306,
+        "lng": 151.21963
+    },
+    {
+        "nme": "Bonnet Bay",
+        "lat": -34.01025,
+        "lng": 151.05238
+    },
+    {
+        "nme": "Burraneer",
+        "lat": -34.06996,
+        "lng": 151.13664
+    },
+    {
+        "nme": "Brownlow Hill",
+        "lat": -34.0348,
+        "lng": 150.657
+    },
+    {
+        "nme": "Campbelltown",
+        "lat": -34.065,
+        "lng": 150.814167
+    },
+    {
+        "nme": "Bondi",
+        "lat": -33.89195,
+        "lng": 151.26099
+    },
+    {
+        "nme": "Box Hill",
+        "lat": -33.65,
+        "lng": 150.88
+    },
+    {
+        "nme": "Blakehurst",
+        "lat": -33.98983,
+        "lng": 151.10965
+    },
+    {
+        "nme": "Cabarita",
+        "lat": -28.3436238,
+        "lng": 153.5732341
+    },
+    {
+        "nme": "Carss Park",
+        "lat": -33.98718,
+        "lng": 151.11889
+    },
+    {
+        "nme": "Caringbah",
+        "lat": -34.0452,
+        "lng": 151.1218
+    },
+    {
+        "nme": "Brighton-Le-Sands",
+        "lat": -33.9608078,
+        "lng": 151.1563262
+    },
+    {
+        "nme": "Cawdor",
+        "lat": -34.083333,
+        "lng": 150.683333
+    },
+    {
+        "nme": "Chatswood West",
+        "lat": -33.7966739,
+        "lng": 151.1621677
+    },
+    {
+        "nme": "Blair Athol",
+        "lat": -34.063,
+        "lng": 150.8
+    },
+    {
+        "nme": "Camden Park",
+        "lat": -34.0964511,
+        "lng": 150.6999032
+    },
+    {
+        "nme": "Catherine Field",
+        "lat": -33.9833,
+        "lng": 150.76
+    },
+    {
+        "nme": "Bondi Beach",
+        "lat": -33.8914755,
+        "lng": 151.2766845
+    },
+    {
+        "nme": "Caringbah South",
+        "lat": -34.0529294,
+        "lng": 151.1199309
+    },
+    {
+        "nme": "Bow Bowing",
+        "lat": -34.01853,
+        "lng": 150.83816
+    },
+    {
+        "nme": "Cattai",
+        "lat": -33.5561,
+        "lng": 150.91205
+    },
+    {
+        "nme": "Canada Bay",
+        "lat": -33.8671,
+        "lng": 151.1139
+    },
+    {
+        "nme": "Bringelly",
+        "lat": -33.92178,
+        "lng": 150.73234
+    },
+    {
+        "nme": "Charing Cross",
+        "lat": -33.9003556,
+        "lng": 151.2533228
+    },
+    {
+        "nme": "Castle Hill",
+        "lat": -33.72925,
+        "lng": 151.00402
+    },
+    {
+        "nme": "Camperdown",
+        "lat": -33.89013,
+        "lng": 151.17988
+    },
+    {
+        "nme": "Couridjah",
+        "lat": -34.233333,
+        "lng": 150.55
+    },
+    {
+        "nme": "Clareville",
+        "lat": -33.6362228,
+        "lng": 151.3100857
+    },
+    {
+        "nme": "Clontarf",
+        "lat": -33.80834,
+        "lng": 151.25342
+    },
+    {
+        "nme": "Davidson",
+        "lat": -33.73801,
+        "lng": 151.19297
+    },
+    {
+        "nme": "Concord",
+        "lat": -33.85985,
+        "lng": 151.10191
+    },
+    {
+        "nme": "Chiswick",
+        "lat": -33.85192,
+        "lng": 151.13605
+    },
+    {
+        "nme": "Chippendale",
+        "lat": -33.8863,
+        "lng": 151.1999
+    },
+    {
+        "nme": "Coogee",
+        "lat": -33.919,
+        "lng": 151.2555
+    },
+    {
+        "nme": "Cobbitty",
+        "lat": -34.016667,
+        "lng": 150.683333
+    },
+    {
+        "nme": "Cremorne",
+        "lat": -33.82886939999999,
+        "lng": 151.2255485
+    },
+    {
+        "nme": "Clovelly",
+        "lat": -33.9121,
+        "lng": 151.2629
+    },
+    {
+        "nme": "Cromer",
+        "lat": -33.74142,
+        "lng": 151.28227
+    },
+    {
+        "nme": "Collaroy Plateau",
+        "lat": -33.7293326,
+        "lng": 151.290404
+    },
+    {
+        "nme": "Collaroy",
+        "lat": -33.73,
+        "lng": 151.3
+    },
+    {
+        "nme": "Cronulla",
+        "lat": -34.05744,
+        "lng": 151.15219
+    },
+    {
+        "nme": "Chester Hill",
+        "lat": -33.87838,
+        "lng": 151.00443
+    },
+    {
+        "nme": "Darling Point",
+        "lat": -33.87021,
+        "lng": 151.23746
+    },
+    {
+        "nme": "Chifley",
+        "lat": -33.969,
+        "lng": 151.24
+    },
+    {
+        "nme": "Como",
+        "lat": -34.0045,
+        "lng": 151.06379
+    },
+    {
+        "nme": "Concord West",
+        "lat": -33.84416,
+        "lng": 151.09021
+    },
+    {
+        "nme": "Clovelly West",
+        "lat": -33.9113339,
+        "lng": 151.2548783
+    },
+    {
+        "nme": "Daceyville",
+        "lat": -33.92793,
+        "lng": 151.22349
+    },
+    {
+        "nme": "Cheltenham",
+        "lat": -33.75839,
+        "lng": 151.07569
+    },
+    {
+        "nme": "Darlington",
+        "lat": -33.890334,
+        "lng": 151.19661
+    },
+    {
+        "nme": "Church Point",
+        "lat": -33.6544,
+        "lng": 151.2791
+    },
+    {
+        "nme": "Darlinghurst",
+        "lat": -33.8780176,
+        "lng": 151.2204441
+    },
+    {
+        "nme": "Croydon Park",
+        "lat": -33.89679,
+        "lng": 151.10951
+    },
+    {
+        "nme": "Denham Court",
+        "lat": -33.99668,
+        "lng": 150.83973
+    },
+    {
+        "nme": "Curl Curl",
+        "lat": -33.77213,
+        "lng": 151.28992
+    },
+    {
+        "nme": "Currans Hill",
+        "lat": -34.04084,
+        "lng": 150.76853
+    },
+    {
+        "nme": "Cherrybrook",
+        "lat": -33.7251,
+        "lng": 151.04931
+    },
+    {
+        "nme": "Condell Park",
+        "lat": -33.92498,
+        "lng": 151.00769
+    },
+    {
+        "nme": "Denistone East",
+        "lat": -33.79885,
+        "lng": 151.09948
+    },
+    {
+        "nme": "Dolls Point",
+        "lat": -33.99386,
+        "lng": 151.14301
+    },
+    {
+        "nme": "Cremorne Point",
+        "lat": -33.84076,
+        "lng": 151.22789
+    },
+    {
+        "nme": "Connells Point",
+        "lat": -33.98246,
+        "lng": 151.10016
+    },
+    {
+        "nme": "Coasters Retreat",
+        "lat": -33.605,
+        "lng": 151.299
+    },
+    {
+        "nme": "Cottage Point",
+        "lat": -33.62090999999999,
+        "lng": 151.20225
+    },
+    {
+        "nme": "Dee Why",
+        "lat": -33.7544,
+        "lng": 151.2854
+    },
+    {
+        "nme": "Crows Nest",
+        "lat": -33.82613,
+        "lng": 151.20505
+    },
+    {
+        "nme": "Dolans Bay",
+        "lat": -34.06259,
+        "lng": 151.12641
+    },
+    {
+        "nme": "Chullora",
+        "lat": -33.8908,
+        "lng": 151.0475
+    },
+    {
+        "nme": "Double Bay",
+        "lat": -33.8775,
+        "lng": 151.2412
+    },
+    {
+        "nme": "Dawes Point",
+        "lat": -33.856,
+        "lng": 151.207
+    },
+    {
+        "nme": "Clemton Park",
+        "lat": -33.9258275,
+        "lng": 151.104641
+    },
+    {
+        "nme": "Denistone West",
+        "lat": -33.8007216,
+        "lng": 151.0777054
+    },
+    {
+        "nme": "Denistone",
+        "lat": -33.80085,
+        "lng": 151.08648
+    },
+    {
+        "nme": "Diamond Bay",
+        "lat": -31.7011076,
+        "lng": 152.7702689
+    },
+    {
+        "nme": "Croydon",
+        "lat": -33.87904,
+        "lng": 151.11553
+    },
+    {
+        "nme": "Claymore",
+        "lat": -34.0444,
+        "lng": 150.8096
+    },
+    {
+        "nme": "Dural",
+        "lat": -33.682,
+        "lng": 151.029
+    },
+    {
+        "nme": "Dover Heights",
+        "lat": -33.87185,
+        "lng": 151.27837
+    },
+    {
+        "nme": "East Ryde",
+        "lat": -33.81,
+        "lng": 151.135
+    },
+    {
+        "nme": "Elderslie",
+        "lat": -34.05462,
+        "lng": 150.7125
+    },
+    {
+        "nme": "Forestville",
+        "lat": -33.7613,
+        "lng": 151.2113
+    },
+    {
+        "nme": "Drummoyne",
+        "lat": -33.85352,
+        "lng": 151.15402
+    },
+    {
+        "nme": "Gilead",
+        "lat": -34.1410068,
+        "lng": 150.7923904
+    },
+    {
+        "nme": "Elanora Heights",
+        "lat": -33.70102,
+        "lng": 151.2789
+    },
+    {
+        "nme": "Eastlakes",
+        "lat": -33.925,
+        "lng": 151.213333
+    },
+    {
+        "nme": "Glenorie",
+        "lat": -33.60224,
+        "lng": 151.00247
+    },
+    {
+        "nme": "Five Dock",
+        "lat": -33.86512,
+        "lng": 151.12856
+    },
+    {
+        "nme": "Elvina Bay",
+        "lat": -33.639515,
+        "lng": 151.277825
+    },
+    {
+        "nme": "Duffys Forest",
+        "lat": -33.67525,
+        "lng": 151.19789
+    },
+    {
+        "nme": "Douglas Park",
+        "lat": -34.1884377,
+        "lng": 150.7124937
+    },
+    {
+        "nme": "Dulwich Hill",
+        "lat": -33.908333,
+        "lng": 151.141667
+    },
+    {
+        "nme": "Forest Lodge",
+        "lat": -33.88396,
+        "lng": 151.1815
+    },
+    {
+        "nme": "Engadine",
+        "lat": -34.065722,
+        "lng": 151.012664
+    },
+    {
+        "nme": "Glebe",
+        "lat": -33.87978,
+        "lng": 151.18541
+    },
+    {
+        "nme": "Eastgardens",
+        "lat": -33.946,
+        "lng": 151.225
+    },
+    {
+        "nme": "Freshwater",
+        "lat": -33.7749,
+        "lng": 151.28783
+    },
+    {
+        "nme": "Enmore",
+        "lat": -33.90067,
+        "lng": 151.16768
+    },
+    {
+        "nme": "Erskineville",
+        "lat": -33.90476,
+        "lng": 151.18479
+    },
+    {
+        "nme": "Edgecliff",
+        "lat": -33.8799875,
+        "lng": 151.2357452
+    },
+    {
+        "nme": "Eastwood",
+        "lat": -33.790362,
+        "lng": 151.081731
+    },
+    {
+        "nme": "East Killara",
+        "lat": -33.75592,
+        "lng": 151.17973
+    },
+    {
+        "nme": "Glenfield",
+        "lat": -33.965,
+        "lng": 150.893
+    },
+    {
+        "nme": "Glenhaven",
+        "lat": -33.70547,
+        "lng": 151.00334
+    },
+    {
+        "nme": "Earlwood",
+        "lat": -33.92018,
+        "lng": 151.12682
+    },
+    {
+        "nme": "Glenmore",
+        "lat": -34.0736696,
+        "lng": 150.5994815
+    },
+    {
+        "nme": "Eschol Park",
+        "lat": -34.0304,
+        "lng": 150.80942
+    },
+    {
+        "nme": "Eveleigh",
+        "lat": -33.895,
+        "lng": 151.191
+    },
+    {
+        "nme": "East Lindfield",
+        "lat": -33.77274,
+        "lng": 151.18726
+    },
+    {
+        "nme": "Ermington",
+        "lat": -33.81145000000001,
+        "lng": 151.06178
+    },
+    {
+        "nme": "Englorie Park",
+        "lat": -34.0806577,
+        "lng": 150.7948026
+    },
+    {
+        "nme": "Enfield",
+        "lat": -33.89059,
+        "lng": 151.09246
+    },
+    {
+        "nme": "Ellis Lane",
+        "lat": -34.034,
+        "lng": 150.675
+    },
+    {
+        "nme": "Fairlight",
+        "lat": -33.796,
+        "lng": 151.277
+    },
+    {
+        "nme": "Georges Hall",
+        "lat": -33.91217,
+        "lng": 150.98557
+    },
+    {
+        "nme": "Dundas",
+        "lat": -33.80404,
+        "lng": 151.0351
+    },
+    {
+        "nme": "Eagle Vale",
+        "lat": -34.03686,
+        "lng": 150.81144
+    },
+    {
+        "nme": "Galston",
+        "lat": -33.65,
+        "lng": 151.043
+    },
+    {
+        "nme": "Gladesville",
+        "lat": -33.8296098,
+        "lng": 151.125756
+    },
+    {
+        "nme": "Epping",
+        "lat": -33.7746,
+        "lng": 151.0788
+    },
+    {
+        "nme": "East Hills",
+        "lat": -33.96396,
+        "lng": 150.98974
+    },
+    {
+        "nme": "Frenchs Forest",
+        "lat": -33.749,
+        "lng": 151.2331
+    },
+    {
+        "nme": "Glen Alpine",
+        "lat": -34.09,
+        "lng": 150.785
+    },
+    {
+        "nme": "Dundas Valley",
+        "lat": -33.79312,
+        "lng": 151.05999
+    },
+    {
+        "nme": "Gledswood Hills",
+        "lat": -34.011667,
+        "lng": 150.780278
+    },
+    {
+        "nme": "East Willoughby",
+        "lat": -33.799,
+        "lng": 151.206
+    },
+    {
+        "nme": "Elizabeth Bay",
+        "lat": -33.87143,
+        "lng": 151.22841
+    },
+    {
+        "nme": "Gordon",
+        "lat": -33.75732,
+        "lng": 151.14916
+    },
+    {
+        "nme": "Kogarah Bay",
+        "lat": -33.98338,
+        "lng": 151.12166
+    },
+    {
+        "nme": "Haymarket",
+        "lat": -33.88092,
+        "lng": 151.20294
+    },
+    {
+        "nme": "Gregory Hills",
+        "lat": -34.0307506,
+        "lng": 150.7766392
+    },
+    {
+        "nme": "Gymea Bay",
+        "lat": -34.0496,
+        "lng": 151.0864
+    },
+    {
+        "nme": "Gymea",
+        "lat": -34.0333,
+        "lng": 151.08556
+    },
+    {
+        "nme": "Grasmere",
+        "lat": -34.057,
+        "lng": 150.667
+    },
+    {
+        "nme": "Kellyville",
+        "lat": -33.71053,
+        "lng": 150.95114
+    },
+    {
+        "nme": "Haberfield",
+        "lat": -33.8833,
+        "lng": 151.1416
+    },
+    {
+        "nme": "Killara",
+        "lat": -33.76864,
+        "lng": 151.16347
+    },
+    {
+        "nme": "Kareela",
+        "lat": -34.01503,
+        "lng": 151.08046
+    },
+    {
+        "nme": "Greenacre",
+        "lat": -33.9092,
+        "lng": 151.0534
+    },
+    {
+        "nme": "Hurstville Grove",
+        "lat": -33.97972,
+        "lng": 151.09298
+    },
+    {
+        "nme": "Huntleys Point",
+        "lat": -33.839,
+        "lng": 151.147
+    },
+    {
+        "nme": "Hornsby",
+        "lat": -33.70489999999999,
+        "lng": 151.09901
+    },
+    {
+        "nme": "Hillsdale",
+        "lat": -33.95493,
+        "lng": 151.22875
+    },
+    {
+        "nme": "Kurnell",
+        "lat": -34.01159,
+        "lng": 151.20686
+    },
+    {
+        "nme": "Hurstville",
+        "lat": -33.966667,
+        "lng": 151.1
+    },
+    {
+        "nme": "Homebush",
+        "lat": -33.86405999999999,
+        "lng": 151.08234
+    },
+    {
+        "nme": "Kingsford",
+        "lat": -33.92457,
+        "lng": 151.22765
+    },
+    {
+        "nme": "Greenwich",
+        "lat": -33.83302,
+        "lng": 151.18362
+    },
+    {
+        "nme": "Kentlyn",
+        "lat": -34.05193,
+        "lng": 150.87797
+    },
+    {
+        "nme": "Kangaroo Point",
+        "lat": -34.002,
+        "lng": 151.096
+    },
+    {
+        "nme": "Ingleside",
+        "lat": -33.6823,
+        "lng": 151.26315
+    },
+    {
+        "nme": "Harrington Park",
+        "lat": -34.02769,
+        "lng": 150.73081
+    },
+    {
+        "nme": "Lakesland",
+        "lat": -34.166667,
+        "lng": 150.533333
+    },
+    {
+        "nme": "Illawong",
+        "lat": -34.00057,
+        "lng": 151.03587
+    },
+    {
+        "nme": "Hurlstone Park",
+        "lat": -33.91058,
+        "lng": 151.12919
+    },
+    {
+        "nme": "Ingleburn",
+        "lat": -34.0043204,
+        "lng": 150.8630244
+    },
+    {
+        "nme": "Kearns",
+        "lat": -34.02373,
+        "lng": 150.80628
+    },
+    {
+        "nme": "Kirrawee",
+        "lat": -34.034722,
+        "lng": 151.071111
+    },
+    {
+        "nme": "Grays Point",
+        "lat": -34.05508,
+        "lng": 151.07492
+    },
+    {
+        "nme": "Kyeemagh",
+        "lat": -33.94829,
+        "lng": 151.15711
+    },
+    {
+        "nme": "Jannali",
+        "lat": -34.01695,
+        "lng": 151.06522
+    },
+    {
+        "nme": "Lakemba",
+        "lat": -33.9199504,
+        "lng": 151.0791612
+    },
+    {
+        "nme": "Hunters Hill",
+        "lat": -33.8337,
+        "lng": 151.14366
+    },
+    {
+        "nme": "Kingsgrove",
+        "lat": -33.9391,
+        "lng": 151.10138
+    },
+    {
+        "nme": "Kensington",
+        "lat": -33.90888899999999,
+        "lng": 151.223333
+    },
+    {
+        "nme": "Homebush West",
+        "lat": -33.8638063,
+        "lng": 151.0664624
+    },
+    {
+        "nme": "Kogarah",
+        "lat": -33.9674,
+        "lng": 151.13648
+    },
+    {
+        "nme": "Kirribilli",
+        "lat": -33.8491363,
+        "lng": 151.2175297
+    },
+    {
+        "nme": "Kings Langley",
+        "lat": -33.7497644,
+        "lng": 150.933643
+    },
+    {
+        "nme": "Kyle Bay",
+        "lat": -33.9911107,
+        "lng": 151.1002727
+    },
+    {
+        "nme": "Kenthurst",
+        "lat": -33.6693,
+        "lng": 151.00158
+    },
+    {
+        "nme": "Great Mackerel Beach",
+        "lat": -33.59166700000001,
+        "lng": 151.300833
+    },
+    {
+        "nme": "Kirkham",
+        "lat": -34.039,
+        "lng": 150.709
+    },
+    {
+        "nme": "La Perouse",
+        "lat": -33.9888,
+        "lng": 151.232
+    },
+    {
+        "nme": "Heathcote",
+        "lat": -34.08506,
+        "lng": 151.00808
+    },
+    {
+        "nme": "Killarney Heights",
+        "lat": -33.7742,
+        "lng": 151.2155
+    },
+    {
+        "nme": "Kings Cross",
+        "lat": -33.8742783,
+        "lng": 151.2229958
+    },
+    {
+        "nme": "Lilli Pilli",
+        "lat": -34.068333,
+        "lng": 151.115833
+    },
+    {
+        "nme": "Macquarie Fields",
+        "lat": -33.99434,
+        "lng": 150.88757
+    },
+    {
+        "nme": "Leppington",
+        "lat": -33.965,
+        "lng": 150.801
+    },
+    {
+        "nme": "Lower Portland",
+        "lat": -33.442,
+        "lng": 150.879
+    },
+    {
+        "nme": "Maldon",
+        "lat": -34.198611,
+        "lng": 150.634722
+    },
+    {
+        "nme": "Marrickville",
+        "lat": -33.9051,
+        "lng": 151.1551
+    },
+    {
+        "nme": "Leichhardt",
+        "lat": -33.8847,
+        "lng": 151.1573
+    },
+    {
+        "nme": "Lindfield",
+        "lat": -33.77674,
+        "lng": 151.17119
+    },
+    {
+        "nme": "Melrose Park",
+        "lat": -33.8145781,
+        "lng": 151.0718821
+    },
+    {
+        "nme": "Lucas Heights",
+        "lat": -34.049,
+        "lng": 150.975
+    },
+    {
+        "nme": "Lilyfield",
+        "lat": -33.87303,
+        "lng": 151.16601
+    },
+    {
+        "nme": "Maraylya",
+        "lat": -33.59775,
+        "lng": 150.91609
+    },
+    {
+        "nme": "Lane Cove North",
+        "lat": -33.807,
+        "lng": 151.164
+    },
+    {
+        "nme": "Maianbar",
+        "lat": -34.0764794,
+        "lng": 151.1272123
+    },
+    {
+        "nme": "Maroubra",
+        "lat": -33.9495,
+        "lng": 151.2437
+    },
+    {
+        "nme": "Lewisham",
+        "lat": -33.8949,
+        "lng": 151.144415
+    },
+    {
+        "nme": "Long Point",
+        "lat": -34.012,
+        "lng": 150.897
+    },
+    {
+        "nme": "Lane Cove West",
+        "lat": -33.812,
+        "lng": 151.15
+    },
+    {
+        "nme": "Middle Cove",
+        "lat": -33.7938,
+        "lng": 151.2086
+    },
+    {
+        "nme": "Leumeah",
+        "lat": -34.05546,
+        "lng": 150.83328
+    },
+    {
+        "nme": "Liberty Grove",
+        "lat": -33.841667,
+        "lng": 151.083611
+    },
+    {
+        "nme": "Lavender Bay",
+        "lat": -33.8435728,
+        "lng": 151.2069658
+    },
+    {
+        "nme": "Milperra",
+        "lat": -33.9370971,
+        "lng": 150.9825635
+    },
+    {
+        "nme": "Manly",
+        "lat": -33.8060158,
+        "lng": 151.2947775
+    },
+    {
+        "nme": "Lugarno",
+        "lat": -33.98469,
+        "lng": 151.04352
+    },
+    {
+        "nme": "Macquarie Links",
+        "lat": -33.982,
+        "lng": 150.874
+    },
+    {
+        "nme": "Loftus",
+        "lat": -34.0465,
+        "lng": 151.0471
+    },
+    {
+        "nme": "Malabar",
+        "lat": -33.9656,
+        "lng": 151.2487
+    },
+    {
+        "nme": "Longueville",
+        "lat": -33.83309,
+        "lng": 151.16494
+    },
+    {
+        "nme": "Leets Vale",
+        "lat": -33.432,
+        "lng": 150.951
+    },
+    {
+        "nme": "Little Bay",
+        "lat": -33.98054,
+        "lng": 151.24301
+    },
+    {
+        "nme": "Millers Point",
+        "lat": -33.86085,
+        "lng": 151.20281
+    },
+    {
+        "nme": "Milsons Point",
+        "lat": -33.84765,
+        "lng": 151.21201
+    },
+    {
+        "nme": "Matraville",
+        "lat": -33.9613,
+        "lng": 151.2315
+    },
+    {
+        "nme": "Menangle Park",
+        "lat": -34.102939,
+        "lng": 150.742442
+    },
+    {
+        "nme": "Minto Heights",
+        "lat": -34.031,
+        "lng": 150.8743
+    },
+    {
+        "nme": "Lane Cove",
+        "lat": -33.8148708,
+        "lng": 151.1664351
+    },
+    {
+        "nme": "Linley Point",
+        "lat": -33.8274222,
+        "lng": 151.1497868
+    },
+    {
+        "nme": "Lansdowne",
+        "lat": -31.783056,
+        "lng": 152.534444
+    },
+    {
+        "nme": "Mascot",
+        "lat": -33.9291,
+        "lng": 151.18793
+    },
+    {
+        "nme": "Macarthur",
+        "lat": -34.074829,
+        "lng": 150.797835
+    },
+    {
+        "nme": "Middle Dural",
+        "lat": -33.6408817,
+        "lng": 151.0180269
+    },
+    {
+        "nme": "Manly Vale",
+        "lat": -33.783,
+        "lng": 151.2622
+    },
+    {
+        "nme": "Menai",
+        "lat": -34.0118,
+        "lng": 151.0089
+    },
+    {
+        "nme": "Minto",
+        "lat": -34.02646,
+        "lng": 150.8507
+    },
+    {
+        "nme": "McMahons Point",
+        "lat": -33.84524,
+        "lng": 151.20433
+    },
+    {
+        "nme": "Maroota",
+        "lat": -33.5241,
+        "lng": 150.9485
+    },
+    {
+        "nme": "Meadowbank",
+        "lat": -33.81692,
+        "lng": 151.08333
+    },
+    {
+        "nme": "Lovett Bay",
+        "lat": -33.6296855,
+        "lng": 151.2816573
+    },
+    {
+        "nme": "Menangle",
+        "lat": -34.127258,
+        "lng": 150.738731
+    },
+    {
+        "nme": "Miranda",
+        "lat": -34.03562,
+        "lng": 151.10276
+    },
+    {
+        "nme": "Mortlake",
+        "lat": -33.8405772,
+        "lng": 151.1060971
+    },
+    {
+        "nme": "Nangarin",
+        "lat": -34.4508319,
+        "lng": 150.4496868
+    },
+    {
+        "nme": "Narellan",
+        "lat": -34.04511,
+        "lng": 150.73706
+    },
+    {
+        "nme": "Narrabeen North",
+        "lat": -33.7065,
+        "lng": 151.2884
+    },
+    {
+        "nme": "Narwee",
+        "lat": -33.94762,
+        "lng": 151.07093
+    },
+    {
+        "nme": "Naremburn",
+        "lat": -33.81925,
+        "lng": 151.19971
+    },
+    {
+        "nme": "North Epping",
+        "lat": -33.7623,
+        "lng": 151.101
+    },
+    {
+        "nme": "North Ryde",
+        "lat": -33.79242,
+        "lng": 151.11954
+    },
+    {
+        "nme": "Narraweena",
+        "lat": -33.748611,
+        "lng": 151.267778
+    },
+    {
+        "nme": "Narellan Vale",
+        "lat": -34.0504,
+        "lng": 150.7483
+    },
+    {
+        "nme": "Mosman",
+        "lat": -33.829075,
+        "lng": 151.24409
+    },
+    {
+        "nme": "Oatlands",
+        "lat": -33.794,
+        "lng": 151.032
+    },
+    {
+        "nme": "Mount Annan",
+        "lat": -34.065,
+        "lng": 150.76
+    },
+    {
+        "nme": "Monterey",
+        "lat": -33.9738,
+        "lng": 151.1479
+    },
+    {
+        "nme": "Newport",
+        "lat": -33.6564,
+        "lng": 151.3137
+    },
+    {
+        "nme": "Mona Vale",
+        "lat": -33.67596,
+        "lng": 151.30653
+    },
+    {
+        "nme": "North Wahroonga",
+        "lat": -33.701,
+        "lng": 151.126
+    },
+    {
+        "nme": "Mowbray Park",
+        "lat": -34.1529944,
+        "lng": 150.5530492
+    },
+    {
+        "nme": "Oxford Falls",
+        "lat": -33.7352,
+        "lng": 151.2469
+    },
+    {
+        "nme": "Northwood",
+        "lat": -33.82813000000001,
+        "lng": 151.17619
+    },
+    {
+        "nme": "Nelson",
+        "lat": -33.6457,
+        "lng": 150.922
+    },
+    {
+        "nme": "Padstow Heights",
+        "lat": -33.973,
+        "lng": 151.035
+    },
+    {
+        "nme": "North Strathfield",
+        "lat": -33.8604,
+        "lng": 151.08856
+    },
+    {
+        "nme": "Moore Park",
+        "lat": -33.89655,
+        "lng": 151.21998
+    },
+    {
+        "nme": "Oyster Bay",
+        "lat": -34.00754,
+        "lng": 151.07514
+    },
+    {
+        "nme": "Newtown",
+        "lat": -33.897,
+        "lng": 151.1793
+    },
+    {
+        "nme": "North Balgowlah",
+        "lat": -33.785604,
+        "lng": 151.2495903
+    },
+    {
+        "nme": "North Curl Curl",
+        "lat": -33.7645,
+        "lng": 151.2973
+    },
+    {
+        "nme": "Oran Park",
+        "lat": -34.003,
+        "lng": 150.743
+    },
+    {
+        "nme": "Oatley",
+        "lat": -33.98118,
+        "lng": 151.07479
+    },
+    {
+        "nme": "North Willoughby",
+        "lat": -33.795,
+        "lng": 151.204
+    },
+    {
+        "nme": "Mortdale",
+        "lat": -33.96932,
+        "lng": 151.06969
+    },
+    {
+        "nme": "North Rocks",
+        "lat": -33.77607,
+        "lng": 151.01984
+    },
+    {
+        "nme": "North Sydney",
+        "lat": -33.83965,
+        "lng": 151.20541
+    },
+    {
+        "nme": "Mount Lewis",
+        "lat": -33.915,
+        "lng": 151.051
+    },
+    {
+        "nme": "North Manly",
+        "lat": -33.7754,
+        "lng": 151.2689
+    },
+    {
+        "nme": "North Bondi",
+        "lat": -33.8879,
+        "lng": 151.2808
+    },
+    {
+        "nme": "North Kellyville",
+        "lat": -33.71053,
+        "lng": 150.95114
+    },
+    {
+        "nme": "Neutral Bay",
+        "lat": -33.83450000000001,
+        "lng": 151.2184
+    },
+    {
+        "nme": "Northbridge",
+        "lat": -33.81325,
+        "lng": 151.21717
+    },
+    {
+        "nme": "Oakdale",
+        "lat": -34.081667,
+        "lng": 150.501111
+    },
+    {
+        "nme": "Mount Hunter",
+        "lat": -34.066667,
+        "lng": 150.633333
+    },
+    {
+        "nme": "Paddington",
+        "lat": -33.88477,
+        "lng": 151.22621
+    },
+    {
+        "nme": "Orangeville",
+        "lat": -34.0263733,
+        "lng": 150.5936766
+    },
+    {
+        "nme": "North Turramurra",
+        "lat": -33.704927,
+        "lng": 151.1490162
+    },
+    {
+        "nme": "Morning Bay",
+        "lat": -33.627,
+        "lng": 151.287
+    },
+    {
+        "nme": "Narrabeen",
+        "lat": -33.7231,
+        "lng": 151.2952
+    },
+    {
+        "nme": "Norwest",
+        "lat": -33.742,
+        "lng": 150.955
+    },
+    {
+        "nme": "Nattai",
+        "lat": -34.06393,
+        "lng": 150.467473
+    },
+    {
+        "nme": "Roseville Chase",
+        "lat": -33.7755896,
+        "lng": 151.2000449
+    },
+    {
+        "nme": "Rhodes",
+        "lat": -33.82821,
+        "lng": 151.08569
+    },
+    {
+        "nme": "Panania",
+        "lat": -33.95793,
+        "lng": 151.002
+    },
+    {
+        "nme": "Pheasants Nest",
+        "lat": -34.25597,
+        "lng": 150.6356
+    },
+    {
+        "nme": "Point Piper",
+        "lat": -33.87045,
+        "lng": 151.25097
+    },
+    {
+        "nme": "Port Hacking",
+        "lat": -34.069,
+        "lng": 151.1227
+    },
+    {
+        "nme": "Peakhurst",
+        "lat": -33.9654,
+        "lng": 151.0502
+    },
+    {
+        "nme": "Queenscliff",
+        "lat": -33.7825,
+        "lng": 151.284722
+    },
+    {
+        "nme": "Padstow",
+        "lat": -33.95592,
+        "lng": 151.03247
+    },
+    {
+        "nme": "Picton",
+        "lat": -34.183333,
+        "lng": 150.6
+    },
+    {
+        "nme": "Petersham",
+        "lat": -33.8961,
+        "lng": 151.1543
+    },
+    {
+        "nme": "Revesby",
+        "lat": -33.95001,
+        "lng": 151.01016
+    },
+    {
+        "nme": "Pyrmont",
+        "lat": -33.8737167,
+        "lng": 151.1956918
+    },
+    {
+        "nme": "Phillip Bay",
+        "lat": -33.9781348,
+        "lng": 151.2321019
+    },
+    {
+        "nme": "Pymble",
+        "lat": -33.7455788,
+        "lng": 151.1374068
+    },
+    {
+        "nme": "Randwick",
+        "lat": -33.91643,
+        "lng": 151.23653
+    },
+    {
+        "nme": "Redfern",
+        "lat": -33.89333999999999,
+        "lng": 151.20461
+    },
+    {
+        "nme": "Palm Beach",
+        "lat": -33.601111,
+        "lng": 151.321667
+    },
+    {
+        "nme": "Rozelle",
+        "lat": -33.86488,
+        "lng": 151.16735
+    },
+    {
+        "nme": "Rouse Hill",
+        "lat": -33.68162,
+        "lng": 150.91552
+    },
+    {
+        "nme": "Riverview",
+        "lat": -33.82466,
+        "lng": 151.1622
+    },
+    {
+        "nme": "Rossmore",
+        "lat": -33.9224,
+        "lng": 150.76964
+    },
+    {
+        "nme": "Potts Hill",
+        "lat": -33.89,
+        "lng": 151.03
+    },
+    {
+        "nme": "Revesby Heights",
+        "lat": -33.96806,
+        "lng": 151.01773
+    },
+    {
+        "nme": "Punchbowl",
+        "lat": -33.933333,
+        "lng": 151.05
+    },
+    {
+        "nme": "Potts Point",
+        "lat": -33.86795,
+        "lng": 151.22411
+    },
+    {
+        "nme": "Putney",
+        "lat": -33.827,
+        "lng": 151.106
+    },
+    {
+        "nme": "Russell Lea",
+        "lat": -33.859471,
+        "lng": 151.14244
+    },
+    {
+        "nme": "Picnic Point",
+        "lat": -33.96929,
+        "lng": 151.00624
+    },
+    {
+        "nme": "Riverwood",
+        "lat": -33.95,
+        "lng": 151.05
+    },
+    {
+        "nme": "Ramsgate Beach",
+        "lat": -33.982,
+        "lng": 151.148
+    },
+    {
+        "nme": "Queens Park",
+        "lat": -33.901,
+        "lng": 151.248
+    },
+    {
+        "nme": "Port Botany",
+        "lat": -33.976,
+        "lng": 151.218
+    },
+    {
+        "nme": "Ramsgate",
+        "lat": -33.98194,
+        "lng": 151.14007
+    },
+    {
+        "nme": "Pennant Hills",
+        "lat": -33.7394846,
+        "lng": 151.0733379
+    },
+    {
+        "nme": "Rockdale",
+        "lat": -33.95329,
+        "lng": 151.13996
+    },
+    {
+        "nme": "Ruse",
+        "lat": -34.071,
+        "lng": 150.8423
+    },
+    {
+        "nme": "Raby",
+        "lat": -34.0209207,
+        "lng": 150.8173282
+    },
+    {
+        "nme": "Roselands",
+        "lat": -33.93166,
+        "lng": 151.08514
+    },
+    {
+        "nme": "Rodd Point",
+        "lat": -33.86607,
+        "lng": 151.14366
+    },
+    {
+        "nme": "Penshurst",
+        "lat": -33.9633344,
+        "lng": 151.0865878
+    },
+    {
+        "nme": "Rose Bay",
+        "lat": -33.8754209,
+        "lng": 151.265623
+    },
+    {
+        "nme": "Rosebery",
+        "lat": -33.92369,
+        "lng": 151.20528
+    },
+    {
+        "nme": "Roseville",
+        "lat": -33.78903,
+        "lng": 151.17119
+    },
+    {
+        "nme": "Rushcutters Bay",
+        "lat": -33.8742991,
+        "lng": 151.2284588
+    },
+    {
+        "nme": "Regents Park",
+        "lat": -33.88572,
+        "lng": 151.02833
+    },
+    {
+        "nme": "Pagewood",
+        "lat": -33.9421,
+        "lng": 151.22287
+    },
+    {
+        "nme": "Razorback",
+        "lat": -34.1462868,
+        "lng": 150.6633499
+    },
+    {
+        "nme": "Rose Bay North",
+        "lat": -33.8754209,
+        "lng": 151.265623
+    },
+    {
+        "nme": "Rosemeadow",
+        "lat": -34.107,
+        "lng": 150.793
+    },
+    {
+        "nme": "Sackville North",
+        "lat": -33.481667,
+        "lng": 150.884722
+    },
+    {
+        "nme": "Sandringham",
+        "lat": -33.99861080000001,
+        "lng": 151.1395914
+    },
+    {
+        "nme": "St Ives",
+        "lat": -33.72136,
+        "lng": 151.16844
+    },
+    {
+        "nme": "Ryde",
+        "lat": -33.815278,
+        "lng": 151.101111
+    },
+    {
+        "nme": "Silverdale",
+        "lat": -33.9056974,
+        "lng": 150.6144729
+    },
+    {
+        "nme": "Tennyson Point",
+        "lat": -33.832435,
+        "lng": 151.116938
+    },
+    {
+        "nme": "Smeaton Grange",
+        "lat": -34.035,
+        "lng": 150.757
+    },
+    {
+        "nme": "Terrey Hills",
+        "lat": -33.683,
+        "lng": 151.223
+    },
+    {
+        "nme": "St Ives Chase",
+        "lat": -33.711,
+        "lng": 151.1595
+    },
+    {
+        "nme": "Tamarama",
+        "lat": -33.898,
+        "lng": 151.268
+    },
+    {
+        "nme": "Sylvania",
+        "lat": -34.01253,
+        "lng": 151.10604
+    },
+    {
+        "nme": "Strathfield",
+        "lat": -33.88081,
+        "lng": 151.08308
+    },
+    {
+        "nme": "Sydenham",
+        "lat": -33.9158055,
+        "lng": 151.1679944
+    },
+    {
+        "nme": "South Turramurra",
+        "lat": -33.7546,
+        "lng": 151.113
+    },
+    {
+        "nme": "The Rocks",
+        "lat": -33.85985,
+        "lng": 151.20901
+    },
+    {
+        "nme": "Seaforth",
+        "lat": -33.796,
+        "lng": 151.238
+    },
+    {
+        "nme": "South Maroota",
+        "lat": -33.5241,
+        "lng": 150.9485
+    },
+    {
+        "nme": "The Oaks",
+        "lat": -34.0768,
+        "lng": 150.571
+    },
+    {
+        "nme": "South Hurstville",
+        "lat": -33.98,
+        "lng": 151.1035
+    },
+    {
+        "nme": "Sans Souci",
+        "lat": -33.98898,
+        "lng": 151.1393
+    },
+    {
+        "nme": "Spring Farm",
+        "lat": -34.072,
+        "lng": 150.718
+    },
+    {
+        "nme": "St Peters",
+        "lat": -33.90951,
+        "lng": 151.17723
+    },
+    {
+        "nme": "Surry Hills",
+        "lat": -33.886111,
+        "lng": 151.211111
+    },
+    {
+        "nme": "South Coogee",
+        "lat": -33.933,
+        "lng": 151.259
+    },
+    {
+        "nme": "Sandy Point",
+        "lat": -33.976,
+        "lng": 150.9926
+    },
+    {
+        "nme": "St Andrews",
+        "lat": -34.0246,
+        "lng": 150.8306
+    },
+    {
+        "nme": "Summer Hill",
+        "lat": -33.8915,
+        "lng": 151.1382
+    },
+    {
+        "nme": "Sefton",
+        "lat": -33.88836,
+        "lng": 151.00713
+    },
+    {
+        "nme": "Sydney CBD",
+        "lat": -33.8688197,
+        "lng": 151.2092955
+    },
+    {
+        "nme": "The Eastern Suburbs",
+        "lat": -33.9508492,
+        "lng": 151.2102442
+    },
+    {
+        "nme": "St Helens Park",
+        "lat": -34.1105,
+        "lng": 150.8079
+    },
+    {
+        "nme": "The Northern Suburbs",
+        "lat": -33.7953419,
+        "lng": 151.1530324
+    },
+    {
+        "nme": "The Inner West",
+        "lat": -33.8584827,
+        "lng": 151.1286686
+    },
+    {
+        "nme": "The Northern Beaches",
+        "lat": -33.6891976,
+        "lng": 151.2685382
+    },
+    {
+        "nme": "Strawberry Hills",
+        "lat": -33.8882671,
+        "lng": 151.2078465
+    },
+    {
+        "nme": "Tahmoor",
+        "lat": -34.2288439,
+        "lng": 150.5907563
+    },
+    {
+        "nme": "Strathfield South",
+        "lat": -33.8929126,
+        "lng": 151.0733379
+    },
+    {
+        "nme": "Stanmore",
+        "lat": -33.8942,
+        "lng": 151.1644
+    },
+    {
+        "nme": "Taren Point",
+        "lat": -34.01909,
+        "lng": 151.12028
+    },
+    {
+        "nme": "Tempe",
+        "lat": -33.92524,
+        "lng": 151.1584
+    },
+    {
+        "nme": "The North Shore",
+        "lat": -33.671476,
+        "lng": 151.1985879
+    },
+    {
+        "nme": "The Central Business District",
+        "lat": -33.876162,
+        "lng": 151.2058031
+    },
+    {
+        "nme": "Sutherland",
+        "lat": -34.03314,
+        "lng": 151.0583
+    },
+    {
+        "nme": "St Pauls",
+        "lat": -33.9203899,
+        "lng": 151.2438854
+    },
+    {
+        "nme": "St Leonards",
+        "lat": -33.8227402,
+        "lng": 151.1942171
+    },
+    {
+        "nme": "The Forest District",
+        "lat": -33.749,
+        "lng": 151.2331
+    },
+    {
+        "nme": "Scotland Island",
+        "lat": -33.6395909,
+        "lng": 151.290404
+    },
+    {
+        "nme": "Sylvania Waters",
+        "lat": -34.02318,
+        "lng": 151.11156
+    },
+    {
+        "nme": "Sydney Airport",
+        "lat": -33.9399228,
+        "lng": 151.1752764
+    },
+    {
+        "nme": "The Hills District",
+        "lat": -33.7277133,
+        "lng": 150.9772841
+    },
+    {
+        "nme": "West Ryde",
+        "lat": -33.80818,
+        "lng": 151.08352
+    },
+    {
+        "nme": "Turrella",
+        "lat": -33.93297,
+        "lng": 151.14079
+    },
+    {
+        "nme": "Thirlmere",
+        "lat": -34.2051876,
+        "lng": 150.5535117
+    },
+    {
+        "nme": "Villawood",
+        "lat": -33.88610000000001,
+        "lng": 150.9788
+    },
+    {
+        "nme": "Turramurra",
+        "lat": -33.7338,
+        "lng": 151.1301
+    },
+    {
+        "nme": "Wahroonga",
+        "lat": -33.7183,
+        "lng": 151.1187
+    },
+    {
+        "nme": "Yerranderie",
+        "lat": -34.118991,
+        "lng": 150.2190999
+    },
+    {
+        "nme": "Wilton",
+        "lat": -34.233333,
+        "lng": 150.7
+    },
+    {
+        "nme": "Yarrawarrah",
+        "lat": -34.0552,
+        "lng": 151.0321
+    },
+    {
+        "nme": "Varroville",
+        "lat": -34.00758,
+        "lng": 150.8151
+    },
+    {
+        "nme": "Woolloomooloo",
+        "lat": -33.8704,
+        "lng": 151.2223
+    },
+    {
+        "nme": "Westleigh",
+        "lat": -33.72299,
+        "lng": 151.07064
+    },
+    {
+        "nme": "Whale Beach",
+        "lat": -33.6131448,
+        "lng": 151.3304989
+    },
+    {
+        "nme": "Woodbine",
+        "lat": -34.0462495,
+        "lng": 150.8216884
+    },
+    {
+        "nme": "Woronora",
+        "lat": -34.02772,
+        "lng": 151.04152
+    },
+    {
+        "nme": "Waitara",
+        "lat": -33.7083472,
+        "lng": 151.1068252
+    },
+    {
+        "nme": "Wisemans Ferry",
+        "lat": -33.381944,
+        "lng": 150.985
+    },
+    {
+        "nme": "Waverton",
+        "lat": -33.84016,
+        "lng": 151.19543
+    },
+    {
+        "nme": "Waverley",
+        "lat": -33.899693,
+        "lng": 151.2554202
+    },
+    {
+        "nme": "Waterloo",
+        "lat": -33.9004,
+        "lng": 151.20664
+    },
+    {
+        "nme": "Wolli Creek",
+        "lat": -33.9299813,
+        "lng": 151.1534281
+    },
+    {
+        "nme": "Vaucluse",
+        "lat": -33.85582,
+        "lng": 151.2712
+    },
+    {
+        "nme": "Warrawee",
+        "lat": -33.725,
+        "lng": 151.12338
+    },
+    {
+        "nme": "Warragamba",
+        "lat": -33.891667,
+        "lng": 150.603333
+    },
+    {
+        "nme": "Wareemba",
+        "lat": -33.8574937,
+        "lng": 151.1323094
+    },
+    {
+        "nme": "Woolwich",
+        "lat": -33.8417,
+        "lng": 151.16968
+    },
+    {
+        "nme": "Yagoona",
+        "lat": -33.9078,
+        "lng": 151.0251
+    },
+    {
+        "nme": "Winston Hills",
+        "lat": -33.77747,
+        "lng": 150.97788
+    },
+    {
+        "nme": "Watsons Bay",
+        "lat": -33.8398183,
+        "lng": 151.2816573
+    },
+    {
+        "nme": "Ultimo",
+        "lat": -33.88223,
+        "lng": 151.19696
+    },
+    {
+        "nme": "Wheeler Heights",
+        "lat": -33.7315,
+        "lng": 151.28016
+    },
+    {
+        "nme": "Werombi",
+        "lat": -33.9818,
+        "lng": 150.58459
+    },
+    {
+        "nme": "The Sutherland Shire",
+        "lat": -34.0640771,
+        "lng": 151.0937206
+    },
+    {
+        "nme": "West Pymble",
+        "lat": -33.765,
+        "lng": 151.12606
+    },
+    {
+        "nme": "Willoughby",
+        "lat": -33.8071059,
+        "lng": 151.1993737
+    },
+    {
+        "nme": "Woollahra",
+        "lat": -33.8865002,
+        "lng": 151.2437606
+    },
+    {
+        "nme": "Yanderra",
+        "lat": -34.316667,
+        "lng": 150.566667
+    },
+    {
+        "nme": "Undercliffe",
+        "lat": -33.92018,
+        "lng": 151.12682
+    },
+    {
+        "nme": "Waterfall",
+        "lat": -34.1424139,
+        "lng": 150.9918338
+    },
+    {
+        "nme": "Wedderburn",
+        "lat": -34.12612,
+        "lng": 150.81789
+    },
+    {
+        "nme": "Zetland",
+        "lat": -33.908,
+        "lng": 151.2105
+    },
+    {
+        "nme": "Wiley Park",
+        "lat": -33.92594,
+        "lng": 151.06347
+    },
+    {
+        "nme": "The St George Region",
+        "lat": -33.96390900000001,
+        "lng": 151.100046
+    },
+    {
+        "nme": "Wollstonecraft",
+        "lat": -33.83356,
+        "lng": 151.19128
+    },
+    {
+        "nme": "Woolooware",
+        "lat": -34.04788,
+        "lng": 151.14113
+    },
+    {
+        "nme": "Yowie Bay",
+        "lat": -34.04977,
+        "lng": 151.10334
+    },
+    {
+        "nme": "Theresa Park",
+        "lat": -33.99118070000001,
+        "lng": 150.6343154
+    },
+    {
+        "nme": "Warriewood",
+        "lat": -33.69404,
+        "lng": 151.30093
+    },
+    {
+        "nme": "West Pennant Hills",
+        "lat": -33.74504,
+        "lng": 151.04697
+    },
+    {
+        "nme": "Woronora Heights",
+        "lat": -34.030434,
+        "lng": 151.030555
+    }
+]

@@ -1,0 +1,4 @@
+    <sitemap>
+       <loc>{{domain}}{{industry}}.xml</loc>
+       <lastmod>{{lastmod}}</lastmod>
+    </sitemap>

@@ -1,0 +1,3 @@
+{{Trade}} Business
+Find businesses to {{Trade}}
+Find business {{Trade}}er

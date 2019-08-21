@@ -1,0 +1,483 @@
+Abbotsford
+Airds
+Alexandria
+Alfords Point
+Allambie Heights
+Allawah
+Ambarvale
+Annandale
+Annangrove
+Appin
+Arncliffe
+Artarmon
+Ashbury
+Ashfield
+Avalon
+Balgowlah
+Balgowlah Heights
+Balmain
+Balmain East
+Bangor
+Banksia
+Banksmeadow
+Bankstown
+Barangaroo
+Barden Ridge
+Bardia
+Bardwell Park
+Bardwell Valley
+Bargo
+Bass Hill
+Baulkham Hills
+Bayview
+Beacon Hill
+Beaconsfield
+Beaumont Hills
+Beecroft
+Belfield
+Belimbla Park
+Bella Vista
+Bellevue Hill
+Belmore
+Belrose
+Beverley Park
+Beverly Hills
+Bexley
+Bickley Vale
+Bilgola
+Bilgola Plateau
+Bingara Gorge
+Birchgrove
+Birrong
+Blair Athol
+Blairmount
+Blakehurst
+Bondi
+Bondi Beach
+Bondi Junction
+Bondi North
+Bonnet Bay
+Botany
+Botany Bay
+Bow Bowing
+Box Hill
+Bradbury
+Breakfast Point
+Brighton-Le-Sands
+Bringelly
+Bronte
+Brookvale
+Brownlow Hill
+Bundeena
+Burragorang
+Burraneer
+Burwood
+Burwood Heights
+Buxton
+Cabarita
+Camden
+Camden Park
+Camden South
+Cammeray
+Campbelltown
+Camperdown
+Campsie
+Canada Bay
+Canterbury
+Caringbah
+Caringbah South
+Carlingford
+Carlton
+Carss Park
+Castle Cove
+Castle Hill
+Castlecrag
+Catherine Field
+Cattai
+Cawdor
+Centennial Park
+Chatswood
+Chatswood West
+Cheltenham
+Cherrybrook
+Chester Hill
+Chifley
+Chippendale
+Chiswick
+Chullora
+Church Point
+Clareville
+Claymore
+Clemton Park
+Clontarf
+Clovelly
+Coasters Retreat
+Cobbitty
+Collaroy
+Collaroy Plateau
+Como
+Concord
+Concord West
+Condell Park
+Connells Point
+Coogee
+Coogee Beach
+Cottage Point
+Couridjah
+Cremorne
+Cremorne Point
+Cromer
+Cronulla
+Crows Nest
+Croydon
+Croydon Park
+Curl Curl
+Currans Hill
+Daceyville
+Darling Point
+Darlinghurst
+Darlington
+Davidson
+Dawes Point
+Dee Why
+Denham Court
+Denistone
+Denistone East
+Denistone West
+Dolans Bay
+Dolls Point
+Double Bay
+Douglas Park
+Dover Heights
+Drummoyne
+Duffys Forest
+Dulwich Hill
+Dundas
+Dundas Valley
+Dural
+Eagle Vale
+Earlwood
+East Hills
+East Killara
+East Lindfield
+East Ryde
+East Willoughby
+Eastgardens
+Eastlakes
+Eastwood
+Edgecliff
+Elanora Heights
+Elderslie
+Elizabeth Bay
+Ellis Lane
+Elvina Bay
+Enfield
+Engadine
+Englorie Park
+Enmore
+Epping
+Ermington
+Erskineville
+Eschol Park
+Eveleigh
+Fairlight
+Five Dock
+Forest Lodge
+Forestville
+Frenchs Forest
+Freshwater
+Galston
+Georges Hall
+Gilead
+Gladesville
+Glebe
+Gledswood Hills
+Glen Alpine
+Glenfield
+Glenhaven
+Glenmore
+Glenorie
+Gordon
+Grasmere
+Grays Point
+Great Mackerel Beach
+Greenacre
+Greenwich
+Gregory Hills
+Gymea
+Gymea Bay
+Haberfield
+Harrington Park
+Haymarket
+Heathcote
+Hillsdale
+Homebush
+Homebush West
+Hornsby
+Hunters Hill
+Huntleys Point
+Hurlstone Park
+Hurstville
+Hurstville Grove
+Illawong
+Ingleburn
+Ingleside
+Jannali
+Kangaroo Point
+Kareela
+Kearns
+Kellyville
+Kensington
+Kenthurst
+Kentlyn
+Killara
+Killarney Heights
+Kings Langley
+Kingsford
+Kingsgrove
+Kirkham
+Kirrawee
+Kirribilli
+Kogarah
+Kogarah Bay
+Kurnell
+Kyeemagh
+Kyle Bay
+La Perouse
+Lakemba
+Lakesland
+Lane Cove
+Lane Cove North
+Lane Cove West
+Lansdowne
+Lavender Bay
+Leets Vale
+Leichhardt
+Leightonfield
+Leppington
+Leumeah
+Lewisham
+Liberty Grove
+Lilli Pilli
+Lilyfield
+Lindfield
+Linley Point
+Little Bay
+Loftus
+Long Point
+Longueville
+Lovett Bay
+Lower Portland
+Lucas Heights
+Lugarno
+Macquarie Fields
+Macquarie Links
+Maianbar
+Malabar
+Maldon
+Manly
+Manly Vale
+Maraylya
+Maroota
+Maroubra
+Marrickville
+Mascot
+Matraville
+McMahons Point
+Meadowbank
+Melrose Park
+Menai
+Menangle
+Menangle Park
+Middle Cove
+Middle Dural
+Millers Point
+Milperra
+Milsons Point
+Minto
+Minto Heights
+Miranda
+Mona Vale
+Monterey
+Moore Park
+Morning Bay
+Mortdale
+Mortlake
+Mosman
+Mount Annan
+Mount Hunter
+Mount Lewis
+Mowbray Park
+Nangarin
+Narellan
+Narellan Vale
+Naremburn
+Narrabeen
+Narrabeen North
+Narraweena
+Narwee
+Nattai
+Nelson
+Neutral Bay
+Newport
+Newtown
+North Balgowlah
+North Curl Curl
+North Epping
+North Kellyville
+North Manly
+North Rocks
+North Ryde
+North Strathfield
+North Sydney
+North Turramurra
+North Wahroonga
+North Willoughby
+Northbridge
+Northwood
+Norwest
+Oakdale
+Oatlands
+Oatley
+Oran Park
+Orangeville
+Oxford Falls
+Oyster Bay
+Paddington
+Padstow
+Padstow Heights
+Pagewood
+Palm Beach
+Panania
+Peakhurst
+Pennant Hills
+Penshurst
+Petersham
+Pheasants Nest
+Phillip Bay
+Picnic Point
+Picton
+Point Piper
+Port Botany
+Port Hacking
+Potts Hill
+Potts Point
+Punchbowl
+Putney
+Pymble
+Pyrmont
+Queens Park
+Queenscliff
+Raby
+Ramsgate
+Ramsgate Beach
+Randwick
+Razorback
+Redfern
+Regents Park
+Revesby
+Revesby Heights
+Rhodes
+Riverview
+Riverwood
+Rockdale
+Rodd Point
+Rose Bay
+Rosebery
+Roselands
+Rosemeadow
+Roseville
+Roseville Chase
+Rossmore
+Rouse Hill
+Rozelle
+Ruse
+Rushcutters Bay
+Russell Lea
+Ryde
+Sackville North
+Sandringham
+Sandy Point
+Sans Souci
+Scotland Island
+Seaforth
+Sefton
+Silverdale
+Smeaton Grange
+South Coogee
+South Hurstville
+South Maroota
+South Turramurra
+Spring Farm
+St Andrews
+St Helens Park
+St Ives
+St Ives Chase
+St Leonards
+St Peters
+Stanmore
+Strathfield
+Strathfield South
+Summer Hill
+Surry Hills
+Sutherland
+Sydenham
+Sydney Airport
+Sydney CBD
+Sylvania
+Sylvania Waters
+Tahmoor
+Tamarama
+Taren Point
+Tempe
+Tennyson Point
+Terrey Hills
+The Oaks
+The Rocks
+Theresa Park
+Thirlmere
+Turramurra
+Turrella
+Ultimo
+Varroville
+Vaucluse
+Villawood
+Wahroonga
+Waitara
+Wareemba
+Warragamba
+Warrawee
+Warriewood
+Waterfall
+Waterloo
+Watsons Bay
+Waverley
+Waverton
+Wedderburn
+Werombi
+West Pennant Hills
+West Pymble
+West Ryde
+Westleigh
+Whale Beach
+Wheeler Heights
+Wiley Park
+Willoughby
+Wilton
+Winston Hills
+Wisemans Ferry
+Wolli Creek
+Wollstonecraft
+Woodbine
+Woollahra
+Woolloomooloo
+Woolooware
+Woolwich
+Woronora
+Woronora Heights
+Yagoona
+Yanderra
+Yarrawarrah
+Yerranderie
+Yowie Bay
+Zetland
