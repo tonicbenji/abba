@@ -8,19 +8,9 @@ const program = require("commander");
 const chalk = require('chalk');
 const dateFormat = require('dateformat');
 const shuffleSeed = require('shuffle-seed');
+const settings = require('./gen-config');
 
 // Personal Settings ----------
-
-// Change these manually to change the settings of this generator
-const settings = {
-    useDemos    : false,
-    useBaseUrl  : true,
-    rootUrl     : "",
-    domain      : "https://abbachildcaresales.com.au/",
-    suburbsFile : "wikipedia-suburbs",
-    genSuburbs  : true,
-    logFiles    : true
-};
 
 // Command line arguments ----------
 
