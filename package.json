@@ -1,0 +1,21 @@
+{
+  "name": "abba",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen": "node ./page-gen/gen",
+    "geocoder": "node ./location-gen/geocoder",
+    "nearby-cacher": "node ./location-gen/nearby-cacher",
+    "nearby": "node ./location-gen/nearby"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonicbenji/abba.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonicbenji/abba/issues"
+  }
+}
