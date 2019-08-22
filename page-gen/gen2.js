@@ -18,7 +18,10 @@ const U = require("./utilities");
 // The maps output only side effects. They don't build up values due to performance considerations.
 // Map structure:
 // 1. Map pageTypes
-// 1.1. Map pages
+// 1.1 Map buy/sell
+// 1.1.1 Map NSW
+// 1.1.2 Map NSW regions
+// 1.1.3 Map suburbs
 // (And some maps occur twice - over buy then sell)
 
 // TODO: make the subset feature use list truncation based on a fraction instead of the global counter method
@@ -112,9 +115,13 @@ const replaceTokens = (data, template) => {
 
 const gen = pageTypes => {
     pageTypes.map(pageType => {
+        U.headerLog(pageType);
         switch (pageType) {
             case "state":
                 genState(pageType);
+                break;
+            case "stateRegions":
+                genStateRegions(pageType);
                 break;
             case "suburbs":
                 genSuburbs(pageType);
@@ -153,6 +160,8 @@ const genState = (pageType) => {
             U.genLog(state);
         })
 }
+
+const genStateRegions = (pageType) => {}
 
 const genSuburbs = (pageType) => {
     const data = U.removeAllEmpty(U.fileToList(dataPaths.suburbs.data));

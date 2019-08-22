@@ -44,6 +44,8 @@ const theToLower = s => s.replace(/the/i, "the")
 
 const noThe = s => s.replace(/the/i, "")
 
+const wrapInLinebreaks = s => `\n${s}\n`
+
 // Data Manipulation
 
 const removeAllEmpty = ss => R.reject(R.isEmpty, ss);
@@ -53,6 +55,10 @@ const removeAllEmpty = ss => R.reject(R.isEmpty, ss);
 const error = s => console.log(chalk.red(s));
 
 const genLog = s => console.log(chalk.yellow(`${PAGE_COUNT++}. `) + chalk.blue(s));
+
+const headerLogDelim = chalk.yellow('='.repeat(5));
+
+const headerLog = s => console.log(wrapInLinebreaks(`${headerLogDelim} ${s} ${headerLogDelim}`));
 
 module.exports = {
     pathToList,
@@ -69,5 +75,6 @@ module.exports = {
     snakeCase,
     filenameCase,
     theToLower,
-    noThe
+    noThe,
+    headerLog
 };
