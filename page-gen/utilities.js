@@ -21,6 +21,8 @@ const fileToStr = p => readFile(p).toString();
 
 const fileToList = p => fileToStr(p).split("\n");
 
+const prettyPath = l => l.join("/");
+
 // Regex
 
 const replaceToken = (a, b) => R.replace(new RegExp("{{" + a + "}}", "g"), b);
@@ -54,11 +56,13 @@ const removeAllEmpty = ss => R.reject(R.isEmpty, ss);
 
 const error = s => console.log(chalk.red(s));
 
-const genLog = (buySell, name) => console.log(chalk.yellow(`${PAGE_COUNT++}. `) + `${chalk.blue(buySell)} ${name}`);
+const genLog = (buySell, name, path) => console.log(chalk.yellow(`${PAGE_COUNT++}. `) + `${chalk.blue(buySell)} ${name} ${chalk.gray(path)}`);
 
 const headerLogDelim = chalk.yellow('='.repeat(5));
 
-const headerLog = s => console.log(wrapInLinebreaks(`${headerLogDelim} ${chalk.magenta(s)} ${headerLogDelim}`));
+const headerLog = s => console.log(wrapInLinebreaks(`${headerLogDelim} ${chalk.magenta(s.toUpperCase())} ${headerLogDelim}`));
+
+const performanceLog = time => console.log(wrapInLinebreaks(chalk.grey(`Completed in ${chalk.yellow(time)} seconds.`)))
 
 module.exports = {
     pathToList,
@@ -76,5 +80,7 @@ module.exports = {
     filenameCase,
     theToLower,
     noThe,
-    headerLog
+    headerLog,
+    prettyPath,
+    performanceLog
 };

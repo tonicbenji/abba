@@ -18,17 +18,17 @@ const U = require("./utilities");
 // The maps output only side effects. They don't build up values due to performance considerations.
 // Map structure:
 // 1. Map pageTypes
-// 1.1. Map buy/sell
-// 1.1.1. Country
-// 1.1.2. State
-// 1.1.3. Map state regions
-// 1.1.4. City page
-// 1.1.5. Map suburbs
+// 1.1. Home
+// 1.2. Country
+// 1.3. State
+// 1.4. Map state regions
+// 1.5. City page
+// 1.6. Map suburbs
 // (And some maps occur twice - over buy then sell)
 
 // TODO: make the subset feature use list truncation based on a fraction instead of the global counter method
 
-// Paths to data, as well as some data provided directly ----------
+// Paths to data (as well as some brief data provided directly) ----------
 
 const dataPaths = {
     buySell: {
@@ -79,6 +79,7 @@ const dataPaths = {
 // all nsw => state
 // all australia => country
 // all name => its respective token
+// all sydney => city
 
 const generalContext = ({ name, pageType }) => {
     return {
@@ -113,11 +114,18 @@ const industryContext = ({ industry }) => {
     };
 };
 
+const homeContext = ({ home }) => {
+    return {
+        homeTitle: home
+    };
+}
+
 const countryContext = ({ country }) => {
     return {
         country: country.toLowerCase(),
         Country: U.titleCase(country),
-        COUNTRY: country.toUpperCase()
+        COUNTRY: country.toUpperCase(),
+        filename: "index.html"
     };
 };
 
@@ -131,6 +139,15 @@ const stateContext = ({ state }) => {
 
 const stateRegionContext = ({ stateRegion }) =>
     stateContext({ state: stateRegion });
+
+const cityContext = ({ city }) => {
+    return {
+        city: city.toLowerCase(),
+        City: U.titleCase(city),
+        CITY: city.toUpperCase(),
+        filename: "index.js"
+    };
+};
 
 const suburbContext = ({ suburb }) => {
     return {
@@ -153,7 +170,7 @@ const replaceTokens = (data, template) => {
 const gen = pageTypes => {
     pageTypes.map(pageType => {
         const { data, template } = dataPaths[pageType];
-        U.headerLog(U.titleCase(pageType));
+        U.headerLog(pageType);
         switch (pageType) {
             case "home":
                 genHome(data, template, pageType);
@@ -189,20 +206,22 @@ const genHome = (data, template, pageType) => {
             stateContext({ state: data })
         ]);
 
-        const templateFile = U.fileToStr(template + context.buySellFilename);
+        const templateFile = U.fileToStr(template);
 
         const output = replaceTokens(context, templateFile);
 
-        const outputPath = U.relPathList([
+        const path = [
             settings.outputLocation,
-            `${context.buySell}-${context.industry}`,
-            "index.js"
-        ]);
+            context.filename
+        ]
+
+        const outputPath = U.relPathList(path);
+        const prettyPath = U.prettyPath(path);
 
         // Outputs
         fs.writeFileSync(outputPath, output);
 
-        U.genLog(buySell, data);
+        U.genLog(buySell, data, prettyPath);
     });
 };
 
@@ -212,24 +231,26 @@ const genCountry = (data, template, pageType) => {
             generalContext({ name: data, pageType }),
             buySellContext({ buySell }),
             industryContext({ industry: dataPaths.industry.data }),
-            countryContext({ country: dataPaths.country.data }),
-            stateContext({ state: data })
+            countryContext({ country: dataPaths.country.data })
         ]);
 
         const templateFile = U.fileToStr(template + context.buySellFilename);
 
         const output = replaceTokens(context, templateFile);
 
-        const outputPath = U.relPathList([
+        const path = [
             settings.outputLocation,
             `${context.buySell}-${context.industry}`,
-            "index.js"
-        ]);
+            context.filename
+        ]
+
+        const outputPath = U.relPathList(path);
+        const prettyPath = U.prettyPath(path);
 
         // Outputs
         fs.writeFileSync(outputPath, output);
 
-        U.genLog(buySell, data);
+        U.genLog(buySell, data, prettyPath);
     });
 };
 
@@ -247,16 +268,19 @@ const genState = (data, template, pageType) => {
 
         const output = replaceTokens(context, templateFile);
 
-        const outputPath = U.relPathList([
+        const path = [
             settings.outputLocation,
             `${context.buySell}-${context.industry}`,
             context.filename
-        ]);
+        ]
+
+        const outputPath = U.relPathList(path);
+        const prettyPath = U.prettyPath(path);
 
         // Outputs
         fs.writeFileSync(outputPath, output);
 
-        U.genLog(buySell, data);
+        U.genLog(buySell, data, prettyPath);
     });
 };
 
@@ -278,16 +302,19 @@ const genStateRegions = (data, template, pageType) => {
 
             const output = replaceTokens(context, templateFile);
 
-            const outputPath = U.relPathList([
+            const path = [
                 settings.outputLocation,
                 `${context.buySell}-${context.industry}`,
                 context.filename
-            ]);
+            ]
+
+            const outputPath = U.relPathList(path);
+            const prettyPath = U.prettyPath(path);
 
             // Outputs
             fs.writeFileSync(outputPath, output);
 
-            U.genLog(buySell, stateRegion);
+            U.genLog(buySell, stateRegion, prettyPath);
         });
     });
 };
@@ -299,24 +326,28 @@ const genCity = (data, template, pageType) => {
             buySellContext({ buySell }),
             industryContext({ industry: dataPaths.industry.data }),
             countryContext({ country: dataPaths.country.data }),
-            stateContext({ state: data })
+            stateContext({ state: data }),
+            cityContext({ city: data }),
         ]);
 
         const templateFile = U.fileToStr(template + context.buySellFilename);
 
         const output = replaceTokens(context, templateFile);
 
-        const outputPath = U.relPathList([
+        const path = [
             settings.outputLocation,
             `${context.buySell}-${context.industry}`,
             data,
             "index.js"
-        ]);
+        ]
+
+        const outputPath = U.relPathList(path);
+        const prettyPath = U.prettyPath(path);
 
         // Outputs
         fs.writeFileSync(outputPath, output);
 
-        U.genLog(buySell, data);
+        U.genLog(buySell, data, prettyPath);
     });
 };
 
@@ -339,18 +370,31 @@ const genSuburbs = (data, template, pageType) => {
 
             const output = replaceTokens(context, templateFile);
 
-            const outputPath = U.relPathList([
+            const path = [
                 settings.outputLocation,
                 `${context.buySell}-${context.industry}`,
                 context.filename
-            ]);
+            ]
+
+            const outputPath = U.relPathList(path);
+            const prettyPath = U.prettyPath(path);
 
             // Outputs
             fs.writeFileSync(outputPath, output);
 
-            U.genLog(buySell, suburb);
+            U.genLog(buySell, suburb, prettyPath);
         })
     );
 };
 
+// Run ----------
+
+const performanceTimerStart = now();
+
 gen(settings.pageTypes);
+
+const performanceTimerEnd = now();
+
+const performanceTimerDuration = ((performanceTimerStart - performanceTimerEnd) / 1000).toFixed(3);
+
+U.performanceLog(performanceTimerDuration);
