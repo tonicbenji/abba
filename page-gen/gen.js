@@ -1346,6 +1346,8 @@ console.log("");
         directoryList += "</ul>\n";
 
         sitemapStream.write(sitemapItem("contact-us.html"));
+
+        SUBSET_COUNT = 0;
     }
 
     // Directory ----------
