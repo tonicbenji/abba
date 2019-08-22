@@ -14,7 +14,8 @@ const U = require("./utilities");
 // Guide ----------
 
 // This website generator maps over lists of data to generate pages using different templates and data. It uses the Ramda library to process data.
-// The generator first maps over a list of page types. For each page type, it calls a function that will generate the pages for that type of page. This second function will map over its own data, merging it with general data. It may also call even more specific map functions if it needs to, in order to generate pages that depend on data from their parent.
+// The generator maps over a list of page types. For each page type, it calls a function that will map over the pages within that type. Hence there are two essential levels of mapping, but more levels can be added. If you need a page to use data from a parent page, then you will need to nest map functions. See the cityRegion => suburb generator for an example of this.
+// However, the main way that data is passed to pages is by merging a series of object maker functions. These object makers accept data that they use to add context to their data. Then the merging causes object makers later in the sequence to be able to override the data of object makers higher up.
 // The maps output only side effects. They don't build up values due to performance considerations.
 // Map structure:
 // 1. Map pageTypes
@@ -67,6 +68,10 @@ const dataPaths = {
         data: "Sydney",
         template: "src/templates/sydney/"
     },
+    cityRegions: {
+        data: "src/regions/sydney.txt",
+        template: "src/templates/sydney/"
+    },
     suburbs: {
         data: "src/suburbs/demo-suburbs.txt",
         template: "src/templates/suburb/"
@@ -83,6 +88,7 @@ const dataPaths = {
 // all name => its respective token
 // all sydney => city
 // title (new for home, about)
+// all region => city region
 
 const generalContext = ({ name, pageType }) => {
     return {
@@ -162,6 +168,15 @@ const cityContext = ({ city }) => {
     };
 };
 
+const cityRegionContext = ({ cityRegion }) => {
+    return {
+        cityRegion: cityRegion.toLowerCase(),
+        CityRegion: U.titleCase(cityRegion),
+        CITYREGION: cityRegion.toUpperCase(),
+        filename: `${U.filenameCase(cityRegion)}.html`
+    };
+};
+
 const suburbContext = ({ suburb }) => {
     return {
         suburb: suburb.toLowerCase(),
@@ -205,6 +220,9 @@ const gen = pageTypes => {
                 break;
             case "city":
                 genCity(data, template, pageType);
+                break;
+            case "cityRegions":
+                genCityRegions(data, template, pageType);
                 break;
             case "suburbs":
                 genSuburbs(data, template, pageType);
@@ -394,7 +412,7 @@ const genCity = (data, template, pageType) => {
             buySellContext({ buySell }),
             industryContext({ industry: dataPaths.industry.data }),
             countryContext({ country: dataPaths.country.data }),
-            stateContext({ state: data }),
+            stateContext({ state: dataPaths.state.data }),
             cityContext({ city: data }),
         ]);
 
@@ -417,6 +435,42 @@ const genCity = (data, template, pageType) => {
 
         U.genLog(buySell, data, prettyPath);
     });
+};
+
+const genCityRegions = (data, template, pageType) => {
+    const cityRegions = U.removeAllEmpty(U.fileToList(data));
+    cityRegions.map(cityRegion => {
+        dataPaths.buySell.data.map(buySell => {
+            const context = R.mergeAll([
+                generalContext({ name: data, pageType }),
+                buySellContext({ buySell }),
+                industryContext({ industry: dataPaths.industry.data }),
+                countryContext({ country: dataPaths.country.data }),
+                stateContext({ state: dataPaths.state.data }),
+                cityContext({ city: dataPaths.city.data }),
+                cityRegionContext({ cityRegion: data })
+            ]);
+
+            const templateFile = U.fileToStr(template + context.buySellFilename);
+
+            const output = replaceTokens(context, templateFile);
+
+            const path = [
+                settings.outputLocation,
+                `${context.buySell}-${context.industry}`,
+                data,
+                "index.js"
+            ]
+
+            const outputPath = U.relPathList(path);
+            const prettyPath = U.prettyPath(path);
+
+            // Outputs
+            fs.writeFileSync(outputPath, output);
+
+            U.genLog(buySell, data, prettyPath);
+        });
+    })
 };
 
 const genSuburbs = (data, template, pageType) => {
