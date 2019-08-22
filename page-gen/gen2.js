@@ -14,6 +14,12 @@ const U = require("./utilities");
 
 // This website generator maps over lists of data to generate pages using different templates and data. It uses the Ramda library to process data.
 // The generator first maps over a list of page types. For each page type, it calls a function that will generate the pages for that type of page. This second function will map over its own data, merging it with general data. It may also call even more specific map functions if it needs to, in order to generate pages that depend on data from their parent.
+// The maps output only side effects. They don't build up values due to performance considerations.
+// Map structure:
+// 1. Map pageTypes
+// 1.1. Map pages
+
+// TODO: make the subset feature use list truncation based on a fraction instead of the global counter method
 
 // Paths
 

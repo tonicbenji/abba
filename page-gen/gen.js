@@ -526,6 +526,17 @@ footerBreadcrumbsMake = arr =>
         arrToStr
     )(arr);
 
+// Subset SEO Strategy
+
+let SUBSET_COUNT = 0;
+
+const isInSubset = () => {
+    if (SUBSET_COUNT === 10) { SUBSET_COUNT = 0 }
+    return settings.subset > SUBSET_COUNT / 10;
+}
+
+const subsetLog = () => console.log(isInSubset(SUBSET_COUNT));
+
 // Output ----------
 
 // Loop structure:
@@ -711,7 +722,7 @@ console.log("");
                     )}-childcare/nsw.html">NSW</a></span>`;
 
                 var schema = schemaMaker(
-                    schemaHomeAusNswNswRegion(tradeIndPath, nswRegionFilename)
+                    schemaHomeAusNswNswRegion(tradeIndPath, nswRegions[c])
                 );
 
                 var areaFilters = output =>
@@ -1045,16 +1056,19 @@ console.log("");
                             suburbOutputFilters
                         )(suburbsTemplate);
 
-                        fs.writeFileSync(nameLoc, suburbOutputFile);
+                        if (isInSubset()) {
+                            fs.writeFileSync(nameLoc, suburbOutputFile);
+                            logPage(n, `${trade} ${suburbFilename}`);
+                            n++;
+                            sitemapStream.write(sitemapItem(sitemapNameLoc));
+                            directoryList += `${consoleIndent}<li><a href="/${R.toLower(
+                                suburbPath + spacesToHyphens(suburbFilename)
+                            )}">${Trade} a ${Industry} Business in <strong>${Suburb},<br />${RegionNoThe}</strong></a></li>\n`;
+                        } else {
+                            console.log(`${chalk.red("NOT IN SUBSET:")} ${trade} ${suburbFilename}`);
+                        }
 
-                        logPage(n, `${trade} ${suburbFilename}`);
-                        n++;
-
-                        sitemapStream.write(sitemapItem(sitemapNameLoc));
-
-                        directoryList += `${consoleIndent}<li><a href="/${R.toLower(
-                            suburbPath + spacesToHyphens(suburbFilename)
-                        )}">${Trade} a ${Industry} Business in <strong>${Suburb},<br />${RegionNoThe}</strong></a></li>\n`;
+                        SUBSET_COUNT++;
                     }
                 } else {
                     cl(chalk.magenta("(Generating suburbs is turned off)"));
