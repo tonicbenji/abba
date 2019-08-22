@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{Trade}} Childcare abbotsford &#8211; abba</title>
+        <title>{{Trade}} your Childcare Business in Sydney &#8211; Abba</title>
         {{meta}}
     </head>
-    <body class="page-template-default page page-id-6041 page-child parent-pageid-6045 gdlr-core-body financity-body financity-body-front financity-full  financity-with-sticky-navigation gdlr-core-link-to-lightbox" {{id}}>
+    <body class="page-template-default page page-id-6045 page-parent page-child parent-pageid-5942 gdlr-core-body financity-body financity-body-front financity-full  financity-with-sticky-navigation gdlr-core-link-to-lightbox" {{id}}>
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDKFPHL"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -40,6 +40,7 @@
         </div>
         <div class="financity-body-outer-wrapper ">
             <div class="financity-body-wrapper clearfix  financity-with-transparent-navigation financity-with-frame">
+
                 <div class="financity-header-background-transparent" >
                     {{header}}
                 </div>
@@ -55,7 +56,7 @@
                                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr"  >
                                                 <div class="gdlr-core-title-item-title-wrap "  >
                                                     {{formSubmittedMobile}}
-                                                    <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 68px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;color: #ffffff ;"  >Selling Your Childcare Business in Abbotsford, {{RegionNoThe}}<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3>
+                                                    <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 68px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;color: #ffffff ;"  >Selling Your Childcare Business in {{NameThe}}<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -67,12 +68,12 @@
                                 <div class="gdlr-core-pbf-wrapper-content gdlr-core-js "   >
                                     <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container" >
                                         <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first" >
-                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 0px 0px 40px 30px;"   >
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 0px 30px 40px 30px;"   >
                                                 <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   >
                                                     <div class="gdlr-core-pbf-element" >
                                                         <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"  >
                                                             <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;text-transform: none ;"  >
-                                                                <p>When selling a childcare business in Abbotsford, you want to get the optimum return, whilst also navigating around the fairly complex legal regulations. Furthermore, many childcare business owners want to make sure that the new owner is going to continue their legacy of providing high quality childcare.</p>
+                                                                <p>Selling a childcare business in Sydney can overwhelming. This is due to two factors. First there is Sydney’s childcare oversupply, and second is the fact that it is a highly regulated industry. With this in mind, how can you sell your childcare business in Sydney for the maximum price?</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -84,7 +85,7 @@
                                                 <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   >
                                                     <div class="gdlr-core-pbf-element" >
                                                         <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align"  >
-                                                            <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" style="border-width: 0px;"  ><img src="/wp-content/uploads/2018/10/selling-childcare-sydney-e1540876744687.jpg" alt="" width="900" height="599" /></div>
+                                                            <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" style="border-width: 0px;"  ><img src="/wp-content/uploads/2018/10/{{heroImg}}" alt="" width="900" height="600" /></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -103,14 +104,18 @@
                                             <div class="gdlr-core-pbf-element" >
                                                 <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"  >
                                                     <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;text-transform: none ;"  >
-                                                        <h3>Challenges of Selling A Childcare Business in Abbotsford</h3>
-                                                        <p>When selling a childcare business in abbotsford, or any suburb of {{Region}}, you will face legal and regulatory challenges. First and foremost, you must be aware of the zoning of your own business’s land, and the surrounding street and area. If the zoning of your land has changed since the time that you acquired the business, then this will affect whether, or in what way you can sell your childcare business to a new owner. Furthermore, if your surroundings are zoned to allow high density buildings, then this will affect whether the future demand for childcare in this area will be lower (with high density industrial) or higher (with high density residential). But these are just a few examples of the many possible implications of your Local Council’s regulations. There are also State and Federal regulations, but these are better addressed by someone with experience in selling businesses in {{Region}}.</p>
+                                                        <h3>Sydney Childcare Regulations</h3>
+                                                        <p>The Sydney childcare sector is extremely regulated which affects the profitability of your business (and hence the sale price). In 2018 the Federal Government’s Childcare Rebate was replaced with a Childcare Subsidy which increased payments to families, and led to an increase in the demand for childcare services.</p>
+                                                        <p>Such regulations will have a positive effect on the sale of your business, however there are other regulations which can be detrimental. For instance, each local government area will have its own planning regulations. Is your land still zoned to allow a childcare development? Is your area zoned to allow high density buildings or industry? Factors like these will affect the sale of your childcare business and you made need to consider selling your land to a non-childcare business.</p>
+                                                        <h3>{{NameThe}}’s Childcare Oversupply –<br />How To Beat It</h3>
+                                                        <p>As you are probably well aware, Sydney does have an oversupply of childcare businesses. This oversupply is worse in some areas than others. As a rule of thumb, densely populated areas have a lesser oversupply because they have more families wanting childcare versus less land on which to provide it.</p>
                                                         <p><img class="alignleft wp-image-6063 size-full" src="/wp-content/uploads/2018/10/{{contentImg}}" alt="" width="400" height="267" /></p>
-                                                        <p>Furthermore, there is the market for childcare businesses in abbotsford that will need to be fully understood in order to optimise the outcome of your sale. The current state of the childcare business market in abbotsford is neither superb nor dismal &#8211; it varies from one street to the next. Where your childcare business is located in relation to other childcare businesses is one of the largest factors that relate to this.</p>
-                                                        <p>As a childcare business owner, you will have a deep understanding of your business position and local area, but you can’t be expected to have a deep understanding of your entire market, market history, regulations, and laws at all levels of government, as well as the negotiation and settlement process. To optimise the outcome of your childcare business sale, we recommend using a professional broker.</p>
-                                                        <h3>The Benefits Of Working with ABBA Group</h3>
+                                                        <p>What do these supply dynamics mean when selling your Sydney childcare business?</p>
+                                                        <p>When selling your childcare business in an oversupplied area, it will be harder to get a good price for your business. But, that doesn’t necessarily mean that you won’t get a good price. There are several ways to approach this situation, one being selling to a competitor. Another is to use future projected growth figures to make a strong case for the sale of your business at a good price.</p>
+                                                        <p>There are also complexities to the market and to the legal-regulatory aspects of the sale that can make it challenging. An experienced business broker like a professional from ABBA Group will help you navigate these complexities. For more information, contact us using the form below. We are ready to talk to you about your childcare business sale free of charge.</p>
+                                                        <h3>About Abba Group</h3>
                                                         <p>Our people are among the most experienced and respected business brokers in the industry. It’s no wonder we’re Australia’s fastest growing brokerage.</p>
-                                                        <p>When you choose to work with ABBA, whether you’re in the negotiation phase, the settlement process, or any other stage in the selling process, we will work hard to optimise your outcomes. Working with us will offer you the following benefits:</p>
+                                                        <p>When you choose to work with ABBA, we will work hard to achieve the best outcome for your sale in the following ways:</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -182,7 +187,7 @@
                                     </div>
                                 </div>
                                 <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" data-skin="Purple Service" >
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js "  >
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " >
                                         <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js " style="max-width: 950px ;"   >
                                             <div class="gdlr-core-pbf-element" >
                                                 <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"  >

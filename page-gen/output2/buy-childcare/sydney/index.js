@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Buying a Childcare Business in Sydney &#8211; Abba</title>
+        {{meta}}
+    </head>
+    <body class="page-template-default page page-id-6095 page-parent page-child parent-pageid-6087 gdlr-core-body financity-body financity-body-front financity-full  financity-with-sticky-navigation gdlr-core-link-to-lightbox" {{id}}>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDKFPHL"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div class="financity-mobile-header-wrap" >
+            <div class="financity-mobile-header financity-header-background financity-style-slide" id="financity-mobile-header" >
+                <div class="financity-mobile-header-container financity-container" >
+                    <div class="financity-logo  financity-item-pdlr">
+                        <div class="financity-logo-inner"><a href="/index.html" ><img src="/wp-content/uploads/2018/10/sydney-business-broker-logo-abba4.png" alt="" width="220" height="78" /></a></div>
+                    </div>
+                    <div class="financity-mobile-menu-right" >
+                        <div class="financity-overlay-menu financity-mobile-menu" id="financity-mobile-menu" >
+                            <!-- <a class="financity&#45;overlay&#45;menu&#45;icon financity&#45;mobile&#45;menu&#45;button financity&#45;mobile&#45;button&#45;hamburger"="index.html#" ><span></span></a> -->
+                            <div class="financity-overlay-menu-content financity-navigation-font" >
+                                <div class="financity-overlay-menu-close" ></div>
+                                <div class="financity-overlay-menu-row" >
+                                    <div class="financity-overlay-menu-cell" >
+                                        <ul id="menu-main-menu-2" class="menu">
+                                        {{mobileBreadcrumbs}}
+                                            <!-- <li class="menu&#45;item menu&#45;item&#45;type&#45;post_type menu&#45;item&#45;object&#45;page menu&#45;item&#45;home menu&#45;item&#45;5746"><a="index.html">Home</a></li> -->
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5929"><a="/about-us.html">About Us</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5820"><a href="/contact-us.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="financity-body-outer-wrapper ">
+            <div class="financity-body-wrapper clearfix  financity-with-transparent-navigation financity-with-frame">
+                <div class="financity-header-background-transparent" >
+                    {{header}}
+                </div>
+                <div class="financity-page-wrapper" id="financity-page-wrapper" >
+                    <div class="gdlr-core-page-builder-body">
+                        <div class="gdlr-core-pbf-wrapper " style="padding: 360px 0px 140px 0px;"  id="gdlr-core-wrapper-1" >
+                            <div class="gdlr-core-pbf-background-wrap"  >
+                                <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(/wp-content/uploads/2018/10/childcare-business-brokers.jpg) ;background-size: cover ;background-position: center ;"  data-parallax-speed="0.2"  ></div>
+                            </div>
+                            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js "   >
+                                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container" >
+                                    <div class="gdlr-core-pbf-element" >
+                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr"  >
+                                            <div class="gdlr-core-title-item-title-wrap "  >
+                                                {{formSubmittedMobile}}
+                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 68px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;color: #ffffff ;"  >Buying a Childcare Business in Sydney<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gdlr-core-pbf-wrapper " >
+                            <div class="gdlr-core-pbf-background-wrap" style="background-color: #f0f0f0 ;"  ></div>
+                            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js "   >
+                                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container" >
+                                    <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first" >
+                                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 0px 30px 40px 30px;"   >
+                                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   >
+                                                <div class="gdlr-core-pbf-element" >
+                                                    <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"  >
+                                                        <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;text-transform: none ;"  >
+                                                            <p>The childcare industry is officially booming in Sydney. The demand for existing childcare centres is high, and competition is quite fierce. There are several reasons for this that we will point to, however the main one is that childcare is a lucrative and relatively low risk business in Sydney.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gdlr-core-pbf-column gdlr-core-column-30" >
+                                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="margin: -170px 0px 0px 0px;padding: 0px 0px 0px 0px;"   >
+                                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   >
+                                                <div class="gdlr-core-pbf-element" >
+                                                    <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align"  >
+                                                        <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" style="border-width: 0px;"  ><img src="/wp-content/uploads/2018/10/{{heroImg}}" alt="" width="900" height="600" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gdlr-core-pbf-wrapper  content" style="margin: 0px auto 0px auto;padding: 60px 0px 60px 0px;max-width: 950px ;" >
+                            <div class="gdlr-core-pbf-background-wrap"  ></div>
+                            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js "   >
+                                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container" >
+                                    <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" data-skin="Purple Service" >
+                                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 0px 0px 0px 0px;"   >
+                                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js " style="max-width: 950px ;"   >
+                                                <div class="gdlr-core-pbf-element" >
+                                                    <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"  >
+                                                        <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;text-transform: none ;"  >
+                                                            <h3>What’s driving the soaring demand for childcare centres in Sydney?</h3>
+                                                            <p>The root cause for the high demand for childcare centres is the demand for childcare itself, which has been consistently rising throughout the course of modern history. The reasons are increased household income plus female participation in the workforce. The childcare market is extremely stable because even if a stock market crash occurs, most mothers will still need childcare because they will be trying to work even harder. Therefore, not only is childcare a lucrative business, it is also relatively low risk.</p>
+                                                            <p>But the factor that is driving the demand for childcare businesses in Sydney in particular is the monumental state of property prices. This high barrier to entry blocks new childcare centres from most suburbs, because after paying this high upfront cost, they then have to compete with existing childcare centres. Alternatively, the high property cost is worthwhile if it pays for an existing, profitable childcare business. This factor will make it more expensive to start a childcare business, but it decreases competition and decreases risk by a large amount in the long run.</p>
+                                                            <h3><img class="alignright wp-image-6063 size-full" src="/wp-content/uploads/2018/10/{{contentImg}}" alt="" width="400" height="267" />How the childcare business market varies across Sydney</h3>
+                                                            <p>We were talking at a general Sydney-wide level up until now, but the reality of the childcare market is that it differs from suburb to suburb, street to street. There is large geographical variation. Generally speaking, you will find greater demand and lower supply for childcare in densely populated areas. This is because there are more families demanding childcare, and less land on which to provide it.</p>
+                                                            <h3>Building vs Buying vs Franchises</h3>
+                                                            <p>Finally and ultimately, it comes down to which way you decide to start up your childcare business. You will have your own needs and preferences that are very important for the entire future of your childcare centre (not just the purchase). Therefore, you may consider building a new centre despite the high costs and exceedingly long wait times for approval. Or, you may decide to buy an existing childcare business, in which you have the choice of buying an independent childcare centre, or a franchise. With an independent centre you have more freedom and potentially higher profit margins, whereas with a franchise you have more guidance and potentially lower risk.</p>
+                                                            <h3>Learn more about the childcare business market in Sydney</h3>
+                                                            <p>For the latest information and insights on the Sydney childcare business market, you should talk to a professional, experienced broker from ABBA Group. Our brokers have vast experience and knowledge in childcare mergers and acquisitions. A conversation with someone from ABBA could be invaluable to the future of your business and we can provide a free, no-obligation consultation.</p>
+                                                            <p>At this pivotal stage in the future of your business, ABBA Group can optimise the process in the following ways:</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gdlr-core-pbf-column gdlr-core-column-15 gdlr-core-column-first" >
+                                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js "   >
+                                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   >
+                                                <div class="gdlr-core-pbf-element" >
+                                                    <div class="gdlr-core-column-service-item gdlr-core-item-pdb  gdlr-core-center-align gdlr-core-no-caption gdlr-core-item-pdlr icon-grid-item"  >
+                                                        <div class="gdlr-core-column-service-media gdlr-core-media-icon " style="margin-bottom: 30px;"  ><i class="fa fa-handshake-o"  ></i></div>
+                                                        <div class="gdlr-core-column-service-content-wrapper" >
+                                                            <div class="gdlr-core-column-service-content" style="font-size: 16px ;text-transform: none ;"  >
+                                                                <p>You will have professional negotiators at your side</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gdlr-core-pbf-column gdlr-core-column-15" >
+                                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js "   >
+                                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   >
+                                                <div class="gdlr-core-pbf-element" >
+                                                    <div class="gdlr-core-column-service-item gdlr-core-item-pdb  gdlr-core-center-align gdlr-core-no-caption gdlr-core-item-pdlr icon-grid-item"  >
+                                                        <div class="gdlr-core-column-service-media gdlr-core-media-icon " style="margin-bottom: 30px;"  ><i class="fa fa-connectdevelop"  ></i></div>
+                                                        <div class="gdlr-core-column-service-content-wrapper" >
+                                                            <div class="gdlr-core-column-service-content" style="font-size: 16px ;text-transform: none ;"  >
+                                                                <p>We will leverage our vast connections to find you the best sellers and the best deals</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gdlr-core-pbf-column gdlr-core-column-15" >
+                                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js "   >
+                                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   >
+                                                <div class="gdlr-core-pbf-element" >
+                                                    <div class="gdlr-core-column-service-item gdlr-core-item-pdb  gdlr-core-center-align gdlr-core-no-caption gdlr-core-item-pdlr icon-grid-item"  >
+                                                        <div class="gdlr-core-column-service-media gdlr-core-media-icon " style="margin-bottom: 30px;"  ><i class="fa fa-legal"  ></i></div>
+                                                        <div class="gdlr-core-column-service-content-wrapper" >
+                                                            <div class="gdlr-core-column-service-content" style="font-size: 16px ;text-transform: none ;"  >
+                                                                <p>We are experts at navigating the entire selling process &#8211; legal and financial</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gdlr-core-pbf-column gdlr-core-column-15" >
+                                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js "   >
+                                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   >
+                                                <div class="gdlr-core-pbf-element" >
+                                                    <div class="gdlr-core-column-service-item gdlr-core-item-pdb  gdlr-core-center-align gdlr-core-no-caption gdlr-core-item-pdlr icon-grid-item"  >
+                                                        <div class="gdlr-core-column-service-media gdlr-core-media-icon " style="margin-bottom: 30px;"  ><i class="fa fa-clock-o"  ></i></div>
+                                                        <div class="gdlr-core-column-service-content-wrapper" >
+                                                            <div class="gdlr-core-column-service-content" style="font-size: 16px ;text-transform: none ;"  >
+                                                                <p>You will save large quantities of time and effort</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" data-skin="Purple Service" >
+                                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " >
+                                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js " style="max-width: 950px ;"   >
+                                                <div class="gdlr-core-pbf-element" >
+                                                    <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"  >
+                                                        <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;text-transform: none ;"  >
+                                                            <h3>Free Confidential Consultation</h3>
+                                                            <p>A conversation with a business brokering expert from the ABBA Group can be invaluable and may help you find the right childcare business for the right price. Our brokers have vast experience in the childcare sector and are ready to share their expertise and insights with you. To request your free consultation, please contact us below:</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{contactForm}}
+                    </div>
+                </div>
+                {{footer}}
+            </div>
+        </div>
+        <style>@media only screen and (max-width: 999px){#gdlr-core-wrapper-1.gdlr-core-pbf-wrapper {padding-top: 90px !important;} }</style>
+        {{bottomScripts}}
+    </body>
+</html>

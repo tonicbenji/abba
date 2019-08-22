@@ -54,11 +54,11 @@ const removeAllEmpty = ss => R.reject(R.isEmpty, ss);
 
 const error = s => console.log(chalk.red(s));
 
-const genLog = s => console.log(chalk.yellow(`${PAGE_COUNT++}. `) + chalk.blue(s));
+const genLog = (buySell, name) => console.log(chalk.yellow(`${PAGE_COUNT++}. `) + `${chalk.blue(buySell)} ${name}`);
 
 const headerLogDelim = chalk.yellow('='.repeat(5));
 
-const headerLog = s => console.log(wrapInLinebreaks(`${headerLogDelim} ${s} ${headerLogDelim}`));
+const headerLog = s => console.log(wrapInLinebreaks(`${headerLogDelim} ${chalk.magenta(s)} ${headerLogDelim}`));
 
 module.exports = {
     pathToList,
