@@ -86,23 +86,3 @@ const genSuburbs = (template, data) =>
     });
 
 gen(settings.pageTypes);
-
-// const gen = ({ dataP, templateP }) => {
-//     const template = U.fileToStr(templateP);
-//     const data = U.fileToList(dataP);
-//     data.map(x => {
-//         const pageType = templateP[2];
-//         const exchange = templateP[3].replace(".html", "")
-//         const replaces = {
-//             "pageType": pageType,
-//             "exchange": exchange,
-//             "Name": x
-//         }
-//         const page = R.pipe(
-//             U.replace("pageType", pageType),
-//             U.replace("exchange", exchange),
-//             U.replace("Name", x)
-//         )(template)
-//         fs.writeFileSync("test-output.html", page);
-//     });
-// };
