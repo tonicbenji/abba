@@ -40,6 +40,10 @@ const filenameCase = s => R.pipe(
     snakeCase
 )(s);
 
+const theToLower = s => s.replace(/the/i, "the")
+
+const noThe = s => s.replace(/the/i, "")
+
 // Data Manipulation
 
 const removeAllEmpty = ss => R.reject(R.isEmpty, ss);
@@ -63,5 +67,7 @@ module.exports = {
     removeAllEmpty,
     relPathList,
     snakeCase,
-    filenameCase
+    filenameCase,
+    theToLower,
+    noThe
 };

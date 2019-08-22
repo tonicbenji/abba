@@ -26,9 +26,19 @@ const U = require("./utilities");
 // Paths to data, as well as some data provided directly ----------
 
 const dataPaths = {
-    country: "Australia",
-    industry: "childcare",
-    buySell: ["Buy", "Sell"],
+    buySell: {
+        data: ["Buy", "Sell"]
+    },
+    industry: {
+        data: "childcare"
+    },
+    country: {
+        data: "Australia"
+    },
+    state: {
+        data: "NSW",
+        template: "src/templates/nsw/"
+    },
     suburbs: {
         data: "src/suburbs/demo-suburbs.txt",
         template: "demo-template.html"
@@ -37,11 +47,24 @@ const dataPaths = {
 
 // Context Tokens ----------
 
+const generalContext = ({ name }) => {
+    return {
+        name: name.toLowerCase(),
+        Name: U.titleCase(name),
+        NAME: name.toUpperCase(),
+        nameNoThe: U.noThe(name.toLowerCase()),
+        NameNoThe: U.noThe(U.titleCase(name)),
+        NAMENOTHE: U.noThe(name.toUpperCase()),
+        filename: `${U.filenameCase(name)}.html`
+    }
+}
+
 const buySellContext = ({ buySell }) => {
     return {
         buySell: buySell.toLowerCase(),
         BuySell: U.titleCase(buySell),
-        BUYSELL: buySell.toUpperCase()
+        BUYSELL: buySell.toUpperCase(),
+        buySellFilename: `${U.filenameCase(buySell)}.html`
     };
 };
 
@@ -49,16 +72,31 @@ const industryContext = ({ industry }) => {
     return {
         industry: industry.toLowerCase(),
         Industry: U.titleCase(industry),
-        INDUSTRY: industry.toUpperCase()
+        INDUSTRY: industry.toUpperCase(),
     };
 };
+
+const countryContext = ({ country }) => {
+    return {
+        country: country.toLowerCase(),
+        Country: U.titleCase(country),
+        COUNTRY: country.toUpperCase(),
+    }
+}
+
+const stateContext = ({ state }) => {
+    return {
+        state: state.toLowerCase(),
+        State: U.titleCase(state),
+        STATE: state.toUpperCase(),
+    }
+}
 
 const suburbContext = ({ suburb }) => {
     return {
         suburb: suburb.toLowerCase(),
         Suburb: U.titleCase(suburb),
         SUBURB: suburb.toUpperCase(),
-        filename: `${U.filenameCase(suburb)}.html`
     };
 };
 
@@ -72,27 +110,62 @@ const replaceTokens = (data, template) => {
 
 // Generators ----------
 
-const gen = pageTypes =>
+const gen = pageTypes => {
     pageTypes.map(pageType => {
-        const { template, data } = dataPaths[pageType];
-        const template_ = U.fileToStr(template);
-        const data_ = U.removeAllEmpty(U.fileToList(data));
         switch (pageType) {
+            case "state":
+                genState(pageType);
+                break;
             case "suburbs":
-                genSuburbs(template_, data_);
+                genSuburbs(pageType);
                 break;
             default:
                 U.error("No valid pageTypes specified in config");
         }
     });
+}
 
-const genSuburbs = (template, data) =>
-    data.map(suburb =>
-        dataPaths.buySell.map(buySell => {
-            // Build token replace object
+const genState = (pageType) => {
+        dataPaths.buySell.data.map(buySell => {
+            const state = dataPaths.state.data;
+
             const context = R.mergeAll([
+                generalContext({ name: state }),
                 buySellContext({ buySell }),
-                industryContext({ industry: dataPaths.industry }),
+                industryContext({ industry: dataPaths.industry.data }),
+                countryContext({ country: dataPaths.country.data }),
+                stateContext({ state })
+            ]);
+
+            const template = U.fileToStr(dataPaths.state.template + context.buySellFilename)
+
+            const output = replaceTokens(context, template);
+
+            const outputPath = U.relPathList([
+                settings.outputLocation,
+                `${context.buySell}-${context.industry}`,
+                context.filename
+            ]);
+
+            // Outputs
+            fs.writeFileSync(outputPath, output);
+
+            U.genLog(state);
+        })
+}
+
+const genSuburbs = (pageType) => {
+    const data = U.removeAllEmpty(U.fileToList(dataPaths.suburbs.data));
+    const template = U.fileToStr(dataPaths.suburbs.template);
+    data.map(suburb =>
+        dataPaths.buySell.data.map(buySell => {
+
+            const context = R.mergeAll([
+                generalContext({ name: suburb }),
+                buySellContext({ buySell }),
+                industryContext({ industry: dataPaths.industry.data }),
+                countryContext({ country: dataPaths.country.data }),
+                stateContext({ state: dataPaths.state.data }),
                 suburbContext({ suburb })
             ]);
 
@@ -110,5 +183,6 @@ const genSuburbs = (template, data) =>
             U.genLog(suburb);
         })
     );
+}
 
 gen(settings.pageTypes);
