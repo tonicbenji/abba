@@ -19,11 +19,13 @@ const U = require("./utilities");
 // Map structure:
 // 1. Map pageTypes
 // 1.1. Home
-// 1.2. Country
-// 1.3. State
-// 1.4. Map state regions
-// 1.5. City page
-// 1.6. Map suburbs
+// 1.2. About
+// 1.3. Contact
+// 1.4. Country
+// 1.5. State
+// 1.6. Map state regions
+// 1.7. City page
+// 1.8. Map suburbs
 // (And some maps occur twice - over buy then sell)
 
 // TODO: make the subset feature use list truncation based on a fraction instead of the global counter method
@@ -80,6 +82,7 @@ const dataPaths = {
 // all australia => country
 // all name => its respective token
 // all sydney => city
+// title (new for home, about)
 
 const generalContext = ({ name, pageType }) => {
     return {
@@ -116,9 +119,19 @@ const industryContext = ({ industry }) => {
 
 const homeContext = ({ home }) => {
     return {
-        homeTitle: home
+        title: home,
+        filename: "index.html"
     };
 }
+
+const aboutContext = ({ about }) => {
+    return {
+        title: about,
+        filename: `${U.filenameCase(about)}.html`
+    };
+}
+
+const contactContext = ({ contact }) => aboutContext({ about: contact })
 
 const countryContext = ({ country }) => {
     return {
@@ -175,6 +188,12 @@ const gen = pageTypes => {
             case "home":
                 genHome(data, template, pageType);
                 break;
+            case "about":
+                genAbout(data, template, pageType);
+                break;
+            case "contact":
+                genContact(data, template, pageType);
+                break;
             case "country":
                 genCountry(data, template, pageType);
                 break;
@@ -197,13 +216,11 @@ const gen = pageTypes => {
 };
 
 const genHome = (data, template, pageType) => {
-    dataPaths.buySell.data.map(buySell => {
         const context = R.mergeAll([
             generalContext({ name: data, pageType }),
-            buySellContext({ buySell }),
             industryContext({ industry: dataPaths.industry.data }),
             countryContext({ country: dataPaths.country.data }),
-            stateContext({ state: data })
+            homeContext({ home: data })
         ]);
 
         const templateFile = U.fileToStr(template);
@@ -221,8 +238,59 @@ const genHome = (data, template, pageType) => {
         // Outputs
         fs.writeFileSync(outputPath, output);
 
-        U.genLog(buySell, data, prettyPath);
-    });
+        U.genLog("Single", data, prettyPath);
+};
+
+const genAbout = (data, template, pageType) => {
+        const context = R.mergeAll([
+            generalContext({ name: data, pageType }),
+            industryContext({ industry: dataPaths.industry.data }),
+            countryContext({ country: dataPaths.country.data }),
+            aboutContext({ about: data })
+        ]);
+
+        const templateFile = U.fileToStr(template);
+
+        const output = replaceTokens(context, templateFile);
+
+        const path = [
+            settings.outputLocation,
+            context.filename
+        ]
+
+        const outputPath = U.relPathList(path);
+        const prettyPath = U.prettyPath(path);
+
+        // Outputs
+        fs.writeFileSync(outputPath, output);
+
+        U.genLog("Single", data, prettyPath);
+};
+
+const genContact = (data, template, pageType) => {
+        const context = R.mergeAll([
+            generalContext({ name: data, pageType }),
+            industryContext({ industry: dataPaths.industry.data }),
+            countryContext({ country: dataPaths.country.data }),
+            contactContext({ contact: data })
+        ]);
+
+        const templateFile = U.fileToStr(template);
+
+        const output = replaceTokens(context, templateFile);
+
+        const path = [
+            settings.outputLocation,
+            context.filename
+        ]
+
+        const outputPath = U.relPathList(path);
+        const prettyPath = U.prettyPath(path);
+
+        // Outputs
+        fs.writeFileSync(outputPath, output);
+
+        U.genLog("Single", data, prettyPath);
 };
 
 const genCountry = (data, template, pageType) => {
