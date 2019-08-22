@@ -10,7 +10,7 @@ module.exports = {
     subset: 0.02,
 
     // Gen2 ----------
-    pageTypes: ["country", "state", "stateRegions", "city", "suburbs"],
+    pageTypes: ["home", "country", "state", "stateRegions", "city", "suburbs"],
     businessName: "ABBA",
     outputLocation: "output2"
 };
