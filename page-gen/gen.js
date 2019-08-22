@@ -537,6 +537,21 @@ const isInSubset = () => {
 
 const subsetLog = () => console.log(isInSubset(SUBSET_COUNT));
 
+// Creating the footer lists that work with the subset SEO strategy
+
+const filterSubsetProjection = l => {
+    l.map(x => {
+        return isInSubset(x);
+        SUBSET_COUNT++;
+    })
+    SUBSET_COUNT = 0;
+}
+
+const subsetFooter = {
+    suburbs: filterSubsetProjection(suburbs)
+    regions: filterSubsetProjection(regions)
+}
+
 // Output ----------
 
 // Loop structure:
