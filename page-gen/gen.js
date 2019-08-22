@@ -531,8 +531,8 @@ footerBreadcrumbsMake = arr =>
 let SUBSET_COUNT = 0;
 
 const isInSubset = () => {
-    if (SUBSET_COUNT === 10) { SUBSET_COUNT = 0 }
-    return settings.subset > SUBSET_COUNT / 10;
+    if (SUBSET_COUNT === 100) { SUBSET_COUNT = 0 }
+    return settings.subset > SUBSET_COUNT / 100;
 }
 
 const subsetLog = () => console.log(isInSubset(SUBSET_COUNT));

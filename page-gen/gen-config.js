@@ -7,7 +7,7 @@ module.exports = {
     suburbsFile: "wikipedia-suburbs",
     genSuburbs: true,
     logFiles: true,
-    subset: 0.2,
+    subset: 0.02,
 
     // Gen2 ----------
     pageTypes: ["suburbs"]
