@@ -1009,19 +1009,17 @@ console.log("");
                             var Suburb = toTitleCase(regionSuburbs[d]);
                             const suburbFilename = filenameMake(suburb);
 
-                            // const nearbySuburbs = ""
-
-                            const nearbySuburbs = addUl(
+                            const nearbySuburbs = settings.subset === 1 ? addUl(
                                 "",
                                 arrToLinks(
                                     suburbPath,
                                     getNearbyArr(suburb, locationsCache)
                                 )
-                            );
+                            ) : "";
 
-                            const nearbySuburbsHeading = `<div class="regionFooterHeading">${Trade}ing a ${toTitleCase(
+                            const nearbySuburbsHeading = settings.subset === 1 ? `<div class="regionFooterHeading">${Trade}ing a ${toTitleCase(
                                 industry
-                            )} Business in Nearby Suburbs:</div>`;
+                            )} Business in Nearby Suburbs:</div>` : "";
 
                             const nameLoc = outputLoc + suburbPath + suburbFilename;
                             const sitemapNameLoc = suburbPath + suburbFilename;
