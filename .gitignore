@@ -1,6 +1,6 @@
 # Output folders
 public/
-output/
+page-gen/output/
 
 # Mac OSX Files
 .DS_Store
