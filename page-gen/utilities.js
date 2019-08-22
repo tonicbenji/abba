@@ -13,6 +13,8 @@ const pathToList = p => p.split("/");
 
 const relPath = p => path.join(__dirname, ...pathToList(p));
 
+const relPathList = l => path.join(__dirname, ...l);
+
 const readFile = p => fs.readFileSync(relPath(p));
 
 const fileToStr = p => readFile(p).toString();
@@ -30,6 +32,13 @@ const titleCase = str => {
         return $1.toUpperCase();
     });
 };
+
+const snakeCase = s => s.replace(/\s/g, "-")
+
+const filenameCase = s => R.pipe(
+    R.toLower,
+    snakeCase
+)(s);
 
 // Data Manipulation
 
@@ -51,5 +60,8 @@ module.exports = {
     error,
     titleCase,
     genLog,
-    removeAllEmpty
+    removeAllEmpty,
+    relPathList,
+    snakeCase,
+    filenameCase
 };

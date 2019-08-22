@@ -3,10 +3,10 @@ const path = require("path");
 const R = require("ramda");
 const now = require("performance-now");
 const program = require("commander");
-const chalk = require('chalk');
-const dateFormat = require('dateformat');
-const shuffleSeed = require('shuffle-seed');
-const settings = require('./gen-config');
+const chalk = require("chalk");
+const dateFormat = require("dateformat");
+const shuffleSeed = require("shuffle-seed");
+const settings = require("./gen-config");
 
 // Command line arguments ----------
 
@@ -19,7 +19,8 @@ program
 // Data Sources ----------
 
 // Read file into a string
-const relReadFileSync = fileLoc => fs.readFileSync(path.resolve(__dirname, fileLoc))
+const relReadFileSync = fileLoc =>
+    fs.readFileSync(path.resolve(__dirname, fileLoc));
 const fileToStr = fileLoc => R.toString(relReadFileSync(fileLoc));
 
 // Defining some of the common paths for data
@@ -36,7 +37,9 @@ const regionsStr = fileToStr(`${srcLoc}regions/sydney.txt`);
 const nswRegionsStr = fileToStr(`${srcLoc}nswRegions/nswRegions.txt`);
 const tradeStr = fileToStr(`${srcLoc}trades.txt`);
 const industriesStr = fileToStr(`${srcLoc}industries.txt`);
-const locationsCache = relReadFileSync(`${srcLoc}locations/locations-cache.json`);
+const locationsCache = relReadFileSync(
+    `${srcLoc}locations/locations-cache.json`
+);
 
 // Sourcing the main templates
 const metaTemplate = fileToStr(`${srcLoc}${templateLoc}components/meta.html`);
@@ -77,22 +80,22 @@ const contactForm = fileToStr(
 const consoleIndent = "    ";
 const tagline = "Business Sales, Acquisitions and Mergers";
 const description =
-    "<meta name=\"description\" content=\"The Abba Group are Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity\">";
+    '<meta name="description" content="The Abba Group are Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity">';
 const businessName = "Abba Group";
 const formSubmittedMobile =
-    "<div id=\"formSubmittedMobile\">✓&nbsp;&nbsp; Thank you, we will be in touch shortly</div>";
+    '<div id="formSubmittedMobile">✓&nbsp;&nbsp; Thank you, we will be in touch shortly</div>';
 
 // Defining some of the home menu data
 const homeMenuBuy =
-    "<li  class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home financity-normal-menu\"><a href=\"/buy-childcare/index.html\">Buy Childcare</a></li>";
+    '<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home financity-normal-menu"><a href="/buy-childcare/index.html">Buy Childcare</a></li>';
 const homeMenuSell =
-    "<li  class=\"menu-item menu-item-type-post_type menu-item-object-page financity-normal-menu\"><a href=\"/sell-childcare/index.html\">Sell Childcare</a></li>";
+    '<li  class="menu-item menu-item-type-post_type menu-item-object-page financity-normal-menu"><a href="/sell-childcare/index.html">Sell Childcare</a></li>';
 
 // Defining the sitemap stream
 const sitemapFile = `${outputLoc}sitemap.xml`;
 const sitemapStream = fs.createWriteStream(sitemapFile);
 const sitemapHeader =
-    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">";
+    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 const sitemapFooter = "\n</urlset>";
 
 // Defining some mutable variables so that they can be referenced in functions before they are used in the output loop
@@ -114,10 +117,19 @@ const eqSep = num => "=".repeat(num);
 const eq5 = eqSep(5);
 
 // Console logs a string and adds a stylistic separator to indicate that it is a section heading
-const logSection = name => cl("\n" + chalk.cyan(eq5) + " " + chalk.bold.yellow(name) + " " + chalk.cyan(eq5));
+const logSection = name =>
+    cl(
+        "\n" +
+            chalk.cyan(eq5) +
+            " " +
+            chalk.bold.yellow(name) +
+            " " +
+            chalk.cyan(eq5)
+    );
 
 // Console logs the name of a page being generated, along with the number of how many pages have been generated
-const logPage = (num, content) => cl(chalk.blue(`${num}. `) + chalk.magenta('Wrote: ') + content);
+const logPage = (num, content) =>
+    cl(chalk.blue(`${num}. `) + chalk.magenta("Wrote: ") + content);
 
 // Utilities ----------
 
@@ -170,10 +182,10 @@ const arrToCommas = arr =>
     R.pipe(
         R.toString,
         R.replace(/"|'/g, ""),
-        R.replace(/\[|\]/g, "\""),
+        R.replace(/\[|\]/g, '"'),
         R.replace(/,/g, ", "),
         R.replace(/ {2}/g, " "),
-        R.replace(/\\/g, "\""),
+        R.replace(/\\/g, '"'),
         R.trim
     )(arr);
 
@@ -309,19 +321,19 @@ const homeFooterFiltersMake = (industry, output) =>
     R.pipe(
         filter(
             "footerHeadingBuy",
-            "<div class=\"home-footer-heading-buy\">Buy:</div>"
+            '<div class="home-footer-heading-buy">Buy:</div>'
         ),
         filter(
             "footerHeadingSell",
-            "<div class=\"home-footer-heading-sell\">Sell:</div>"
+            '<div class="home-footer-heading-sell">Sell:</div>'
         ),
         filter(
             "footerBuyNsw",
-            "<ul class=\"home-footer-heading-nsw\"><li><a href=\"/buy-childcare/nsw.html\">NSW</a></li></ul>"
+            '<ul class="home-footer-heading-nsw"><li><a href="/buy-childcare/nsw.html">NSW</a></li></ul>'
         ),
         filter(
             "footerSellNsw",
-            "<ul class=\"home-footer-heading-nsw\"><li><a href=\"/sell-childcare/nsw.html\">NSW</a></li></ul>"
+            '<ul class="home-footer-heading-nsw"><li><a href="/sell-childcare/nsw.html">NSW</a></li></ul>'
         ),
         filter("footerBuyNswRegions", nswRegionUl("Buy", industry)),
         filter("footerSellNswRegions", nswRegionUl("Sell", industry))
@@ -372,9 +384,7 @@ const time = dateFormat(todayDate, "hh:MM");
 // Copyright footer ----------
 
 // Make the copyright line in the footer. It requires the current year
-const copyright = `<div class="abbaCopyright">© Abba Group Sydney ${
-    yyyy
-} | <a href="/directory.html">Sales, Mergers and Acquisitions Australia</a></div>`;
+const copyright = `<div class="abbaCopyright">© Abba Group Sydney ${yyyy} | <a href="/directory.html">Sales, Mergers and Acquisitions Australia</a></div>`;
 
 // Footer Lists ----------
 
@@ -496,13 +506,13 @@ const templateGet = (dirName, fileName) =>
 
 // Defining some of the footer breadcrumbs data
 const breadcrumbSeparator =
-    "<span class=\"select-breadcrumb-separator\"><span class=\"fa fa-angle-right\"></span></span>";
+    '<span class="select-breadcrumb-separator"><span class="fa fa-angle-right"></span></span>';
 const footerBreadcrumbsOpen =
-    "<span class=\"footerBreadcrumbs text-center block\">";
+    '<span class="footerBreadcrumbs text-center block">';
 const footerBreadcrumbsClose = "</span>";
 const footerBreadcrumbsSeparator =
-    "<span class=\"fa fa-angle-right footerSeparator\"></span>";
-const homeFooterBreadcrumb = "<a class=\"nowrap\" href=\"/index.html\">Home</a>";
+    '<span class="fa fa-angle-right footerSeparator"></span>';
+const homeFooterBreadcrumb = '<a class="nowrap" href="/index.html">Home</a>';
 
 // Make a single breadcrumb 'a href' link html tag
 const breadcrumbMakerGeneral = (path, name, arrow) =>
@@ -529,28 +539,14 @@ footerBreadcrumbsMake = arr =>
 // Subset SEO Strategy
 
 let SUBSET_COUNT = 0;
+let SUBSET_EXCLUDED_COUNT = 0;
 
 const isInSubset = () => {
-    if (SUBSET_COUNT === 100) { SUBSET_COUNT = 0 }
+    if (SUBSET_COUNT === 100) {
+        SUBSET_COUNT = 0;
+    }
     return settings.subset > SUBSET_COUNT / 100;
-}
-
-const subsetLog = () => console.log(isInSubset(SUBSET_COUNT));
-
-// Creating the footer lists that work with the subset SEO strategy
-
-const filterSubsetProjection = l => {
-    l.map(x => {
-        return isInSubset(x);
-        SUBSET_COUNT++;
-    })
-    SUBSET_COUNT = 0;
-}
-
-const subsetFooter = {
-    suburbs: filterSubsetProjection(suburbs)
-    regions: filterSubsetProjection(regions)
-}
+};
 
 // Output ----------
 
@@ -658,24 +654,24 @@ console.log("");
             var areaFilters = output =>
                 areaFiltersMake(
                     {
-                        footer            : nswFooterTemplate,
-                        trade             : trade,
-                        Trade             : Trade,
-                        industry          : industry,
-                        Industry          : Industry,
-                        name              : nsw,
-                        Name              : NSW,
-                        NameNoThe         : noThe(NSW),
-                        id                : "nsw",
-                        schema            : schema,
-                        keywords          : keyMake("", "", Trade, nswKeyArrTrade),
-                        menuItems         : homeMenuBuy + homeMenuSell,
-                        mobileBreadcrumbs : "",
-                        footerBreadcrumbs : nswFooterBreadcrumbs,
-                        heroImg           : "preschool-business-brokers-nsw-2.jpg",
-                        contentImg        :
+                        footer: nswFooterTemplate,
+                        trade: trade,
+                        Trade: Trade,
+                        industry: industry,
+                        Industry: Industry,
+                        name: nsw,
+                        Name: NSW,
+                        NameNoThe: noThe(NSW),
+                        id: "nsw",
+                        schema: schema,
+                        keywords: keyMake("", "", Trade, nswKeyArrTrade),
+                        menuItems: homeMenuBuy + homeMenuSell,
+                        mobileBreadcrumbs: "",
+                        footerBreadcrumbs: nswFooterBreadcrumbs,
+                        heroImg: "preschool-business-brokers-nsw-2.jpg",
+                        contentImg:
                             "children-playing-nsw-childcare-businesses.jpg",
-                        copyright         : copyright
+                        copyright: copyright
                     },
                     output
                 );
@@ -702,7 +698,7 @@ console.log("");
 
             // NSW regions ----------
 
-            directoryList += "<ul id=\"directoryUl\">\n";
+            directoryList += '<ul id="directoryUl">\n';
 
             for (c = 0; c < nswRegions.length; c++) {
                 const nswRegion = R.toLower(nswRegions[c]);
@@ -743,27 +739,27 @@ console.log("");
                 var areaFilters = output =>
                     areaFiltersMake(
                         {
-                            footer   : nswRegionFooterTemplate,
-                            trade    : trade,
-                            Trade    : Trade,
-                            industry : industry,
-                            Industry : Industry,
-                            name     : nswRegion,
-                            Name     : NSWRegion,
-                            id       : "nswRegion",
-                            schema   : schema,
-                            keywords : keyMake(
+                            footer: nswRegionFooterTemplate,
+                            trade: trade,
+                            Trade: Trade,
+                            industry: industry,
+                            Industry: Industry,
+                            name: nswRegion,
+                            Name: NSWRegion,
+                            id: "nswRegion",
+                            schema: schema,
+                            keywords: keyMake(
                                 "NSW",
                                 NSWRegion,
                                 Trade,
                                 nswRegionKeyArrTrade
                             ),
-                            menuItems         : homeMenuBuy + homeMenuSell,
-                            mobileBreadcrumbs : nswRegionMobileBreadcrumbs,
-                            footerBreadcrumbs : nswRegionFooterBreadcrumbs,
-                            heroImg           : "childcare-business-nsw.jpg",
-                            contentImg        : "preschool-business-nsw.jpg",
-                            copyright         : copyright
+                            menuItems: homeMenuBuy + homeMenuSell,
+                            mobileBreadcrumbs: nswRegionMobileBreadcrumbs,
+                            footerBreadcrumbs: nswRegionFooterBreadcrumbs,
+                            heroImg: "childcare-business-nsw.jpg",
+                            contentImg: "preschool-business-nsw.jpg",
+                            copyright: copyright
                         },
                         output
                     );
@@ -800,7 +796,8 @@ console.log("");
             var Region = "Sydney";
             var sydLoc = `${outputLoc}${trade}-${industry}`;
             var sydNameLoc = sydLoc + "/sydney/index.html";
-            var sydNameLocSitemap = `${trade}-${industry}` + "/sydney/index.html";
+            var sydNameLocSitemap =
+                `${trade}-${industry}` + "/sydney/index.html";
 
             var sydBreadcrumb =
                 `<a href="/${trade}-childcare/sydney/index.html">Sydney</a>` +
@@ -822,22 +819,22 @@ console.log("");
             var areaFilters = output =>
                 areaFiltersMake(
                     {
-                        footer            : sydneyFooterTemplate,
-                        trade             : trade,
-                        Trade             : Trade,
-                        industry          : industry,
-                        Industry          : Industry,
-                        name              : region,
-                        Name              : Region,
-                        id                : "sydney",
-                        schema            : schema,
-                        keywords          : keyMake("", "", Trade, sydKeyArrTrade),
-                        menuItems         : homeMenuBuy + homeMenuSell,
-                        mobileBreadcrumbs : sydneyMobileBreadcrumbs,
-                        footerBreadcrumbs : sydFooterBreadcrumbs,
-                        heroImg           : "childcare-business-sydney.jpg",
-                        contentImg        : "sydney-childcare-business-little-kid.jpg",
-                        copyright         : copyright
+                        footer: sydneyFooterTemplate,
+                        trade: trade,
+                        Trade: Trade,
+                        industry: industry,
+                        Industry: Industry,
+                        name: region,
+                        Name: Region,
+                        id: "sydney",
+                        schema: schema,
+                        keywords: keyMake("", "", Trade, sydKeyArrTrade),
+                        menuItems: homeMenuBuy + homeMenuSell,
+                        mobileBreadcrumbs: sydneyMobileBreadcrumbs,
+                        footerBreadcrumbs: sydFooterBreadcrumbs,
+                        heroImg: "childcare-business-sydney.jpg",
+                        contentImg: "sydney-childcare-business-little-kid.jpg",
+                        copyright: copyright
                     },
                     output
                 );
@@ -908,38 +905,55 @@ console.log("");
 
                 var regionPath = tradeIndPath + "sydney/";
 
-                var regionSuburbs = strToArr(
+                var regionSuburbs_ = strToArr(
                     fileToStr(
                         `${srcLoc}regions/${spacesToHyphens(regionNoThe)}.txt`
                     )
                 );
 
+                // Subset feature operates on the region suburbs. It filters them out based on the subset condition
+
+                var regionSuburbs = [];
+                regionSuburbs_.forEach(x => {
+                    if (isInSubset(x)) {
+                        regionSuburbs.push(x);
+                    } else {
+                        SUBSET_EXCLUDED_COUNT++;
+                        console.log(
+                            chalk.red(
+                                `${SUBSET_EXCLUDED_COUNT}. Excluded: ${x}`
+                            )
+                        );
+                    }
+                    SUBSET_COUNT++;
+                });
+
                 var areaFilters = output =>
                     areaFiltersMake(
                         {
-                            footer   : sydneyFooterTemplate,
-                            trade    : trade,
-                            Trade    : Trade,
-                            industry : industry,
-                            Industry : Industry,
-                            name     : region,
-                            Name     : Region,
-                            NameNoThe : RegionNoThe,
-                            id       : "sydney",
-                            schema   : schema,
-                            keywords : keyMake(
+                            footer: sydneyFooterTemplate,
+                            trade: trade,
+                            Trade: Trade,
+                            industry: industry,
+                            Industry: Industry,
+                            name: region,
+                            Name: Region,
+                            NameNoThe: RegionNoThe,
+                            id: "sydney",
+                            schema: schema,
+                            keywords: keyMake(
                                 "Suburb",
                                 Suburb,
                                 Trade,
                                 suburbKeyArrTrade
                             ),
-                            menuItems         : homeMenuBuy + homeMenuSell,
-                            mobileBreadcrumbs : sydneyMobileBreadcrumbs,
-                            footerBreadcrumbs : sydFooterBreadcrumbs,
-                            heroImg           :
+                            menuItems: homeMenuBuy + homeMenuSell,
+                            mobileBreadcrumbs: sydneyMobileBreadcrumbs,
+                            footerBreadcrumbs: sydFooterBreadcrumbs,
+                            heroImg:
                                 "childcare-business-sydney-e1540876733126.jpg",
-                            contentImg : "sydney-childcare-business2.jpg",
-                            copyright  : copyright
+                            contentImg: "sydney-childcare-business2.jpg",
+                            copyright: copyright
                         },
                         output
                     );
@@ -980,98 +994,98 @@ console.log("");
                 directoryList += `<a href="/${R.toLower(
                     tradeIndPath + spacesToHyphens(noThe(region)) + ".html"
                 )}-childcare/sydney/index.html"><h6 class="h7">${Trade} a ${Industry} Business in ${Region}</h6></a>\n`;
-                directoryList += "<ul id=\"directoryUl\">\n";
+                directoryList += '<ul id="directoryUl">\n';
 
                 // Suburbs (Suburb Pages) --------------------
-                var suburb = regionSuburbs[c];
-                var Suburb = toTitleCase(regionSuburbs[c]);
+                if (!R.isEmpty(regionSuburbs[c])) {
+                    var suburb = regionSuburbs[c] || "";
+                    var Suburb = toTitleCase(regionSuburbs[c] || "");
 
-                if (settings.genSuburbs === true || program.suburbs === true) {
-                    logSection("Suburbs");
+                    if (settings.genSuburbs === true || program.suburbs === true) {
+                        logSection("Suburbs");
 
-                    for (d = 0; d < regionSuburbs.length; d++) {
-                        var suburb = regionSuburbs[d];
-                        var Suburb = toTitleCase(regionSuburbs[d]);
-                        const suburbFilename = filenameMake(suburb);
+                        for (d = 0; d < regionSuburbs.length; d++) {
+                            var suburb = regionSuburbs[d];
+                            var Suburb = toTitleCase(regionSuburbs[d]);
+                            const suburbFilename = filenameMake(suburb);
 
-                        // const nearbySuburbs = ""
+                            // const nearbySuburbs = ""
 
-                        const nearbySuburbs = addUl(
-                            "",
-                            arrToLinks(
-                                suburbPath,
-                                getNearbyArr(suburb, locationsCache)
-                            )
-                        );
-
-                        const nearbySuburbsHeading = `<div class="regionFooterHeading">${Trade}ing a ${toTitleCase(
-                            industry
-                        )} Business in Nearby Suburbs:</div>`;
-
-                        const nameLoc = outputLoc + suburbPath + suburbFilename;
-                        const sitemapNameLoc = suburbPath + suburbFilename;
-
-                        const suburbFooterBreadcrumbs = footerBreadcrumbsMake([
-                            ausFooterBreadcrumb,
-                            sydFooterBreadcrumb,
-                            regionFooterBreadcrumb,
-                            suburb
-                        ]);
-
-                        var schema = schemaMaker(
-                            schemaHomeAusSydSydRegionSuburb(
-                                tradeIndPath,
-                                RegionNoThe,
-                                Suburb
-                            )
-                        );
-
-                        var areaFilters = output =>
-                            areaFiltersMake(
-                                {
-                                    footer   : suburbsFooterTemplate,
-                                    trade    : trade,
-                                    Trade    : Trade,
-                                    industry : industry,
-                                    Industry : Industry,
-                                    name     : suburb,
-                                    Name     : Suburb,
-                                    id       : "suburb",
-                                    schema   : schema,
-                                    keywords : keyMake(
-                                        "Suburb",
-                                        Suburb,
-                                        Trade,
-                                        suburbKeyArrTrade
-                                    ),
-                                    menuItems         : homeMenuBuy + homeMenuSell,
-                                    mobileBreadcrumbs : suburbMobileBreadcrumbs,
-                                    footerBreadcrumbs : suburbFooterBreadcrumbs,
-                                    heroImg           : "",
-                                    contentImg        : "daycare-business-sydney.jpg",
-                                    copyright         : copyright
-                                },
-                                output
+                            const nearbySuburbs = addUl(
+                                "",
+                                arrToLinks(
+                                    suburbPath,
+                                    getNearbyArr(suburb, locationsCache)
+                                )
                             );
 
-                        const suburbOutputFilters = outputTemplate =>
-                            R.pipe(
-                                filter("nearby", nearbySuburbs),
-                                filter(
-                                    "nearbySuburbsHeading",
-                                    nearbySuburbsHeading
-                                ),
-                                filter("RegionNoThe", RegionNoThe),
-                                filter("Region", Region)
-                            )(outputTemplate);
+                            const nearbySuburbsHeading = `<div class="regionFooterHeading">${Trade}ing a ${toTitleCase(
+                                industry
+                            )} Business in Nearby Suburbs:</div>`;
 
-                        const suburbOutputFile = R.pipe(
-                            generalFilters,
-                            areaFilters,
-                            suburbOutputFilters
-                        )(suburbsTemplate);
+                            const nameLoc = outputLoc + suburbPath + suburbFilename;
+                            const sitemapNameLoc = suburbPath + suburbFilename;
 
-                        if (isInSubset()) {
+                            const suburbFooterBreadcrumbs = footerBreadcrumbsMake([
+                                ausFooterBreadcrumb,
+                                sydFooterBreadcrumb,
+                                regionFooterBreadcrumb,
+                                suburb
+                            ]);
+
+                            var schema = schemaMaker(
+                                schemaHomeAusSydSydRegionSuburb(
+                                    tradeIndPath,
+                                    RegionNoThe,
+                                    Suburb
+                                )
+                            );
+
+                            var areaFilters = output =>
+                                areaFiltersMake(
+                                    {
+                                        footer: suburbsFooterTemplate,
+                                        trade: trade,
+                                        Trade: Trade,
+                                        industry: industry,
+                                        Industry: Industry,
+                                        name: suburb,
+                                        Name: Suburb,
+                                        id: "suburb",
+                                        schema: schema,
+                                        keywords: keyMake(
+                                            "Suburb",
+                                            Suburb,
+                                            Trade,
+                                            suburbKeyArrTrade
+                                        ),
+                                        menuItems: homeMenuBuy + homeMenuSell,
+                                        mobileBreadcrumbs: suburbMobileBreadcrumbs,
+                                        footerBreadcrumbs: suburbFooterBreadcrumbs,
+                                        heroImg: "",
+                                        contentImg: "daycare-business-sydney.jpg",
+                                        copyright: copyright
+                                    },
+                                    output
+                                );
+
+                            const suburbOutputFilters = outputTemplate =>
+                                R.pipe(
+                                    filter("nearby", nearbySuburbs),
+                                    filter(
+                                        "nearbySuburbsHeading",
+                                        nearbySuburbsHeading
+                                    ),
+                                    filter("RegionNoThe", RegionNoThe),
+                                    filter("Region", Region)
+                                )(outputTemplate);
+
+                            const suburbOutputFile = R.pipe(
+                                generalFilters,
+                                areaFilters,
+                                suburbOutputFilters
+                            )(suburbsTemplate);
+
                             fs.writeFileSync(nameLoc, suburbOutputFile);
                             logPage(n, `${trade} ${suburbFilename}`);
                             n++;
@@ -1079,14 +1093,10 @@ console.log("");
                             directoryList += `${consoleIndent}<li><a href="/${R.toLower(
                                 suburbPath + spacesToHyphens(suburbFilename)
                             )}">${Trade} a ${Industry} Business in <strong>${Suburb},<br />${RegionNoThe}</strong></a></li>\n`;
-                        } else {
-                            console.log(`${chalk.red("NOT IN SUBSET:")} ${trade} ${suburbFilename}`);
                         }
-
-                        SUBSET_COUNT++;
+                    } else {
+                        cl(chalk.magenta("(Generating suburbs is turned off)"));
                     }
-                } else {
-                    cl(chalk.magenta("(Generating suburbs is turned off)"));
                 }
             }
 
@@ -1098,9 +1108,8 @@ console.log("");
                 industry
             )}`;
             const ausNameLoc = ausLoc + "/index.html";
-            const ausNameLocSitemap = `${R.toLower(trade)}-${R.toLower(
-                industry
-            )}` + "/index.html";
+            const ausNameLocSitemap =
+                `${R.toLower(trade)}-${R.toLower(industry)}` + "/index.html";
 
             var schema = schemaMaker(schemaHomeAus(tradeIndPath));
 
@@ -1111,24 +1120,24 @@ console.log("");
             var areaFilters = output =>
                 areaFiltersMake(
                     {
-                        footer : fileToStr(
+                        footer: fileToStr(
                             `${srcLoc}${templateLoc}australia/footer-${trade}.html`
                         ),
-                        trade             : trade,
-                        Trade             : Trade,
-                        industry          : industry,
-                        Industry          : Industry,
-                        name              : "",
-                        Name              : "",
-                        id                : "aus",
-                        schema            : schema,
-                        keywords          : keyMake("", "", Trade, ausKeyArrTrade),
-                        menuItems         : menuItems,
-                        mobileBreadcrumbs : "",
-                        footerBreadcrumbs : ausFooterBreadcrumbs,
-                        heroImg           : "",
-                        contentImg        : "childcare-businesses-sydney.jpg",
-                        copyright         : copyright
+                        trade: trade,
+                        Trade: Trade,
+                        industry: industry,
+                        Industry: Industry,
+                        name: "",
+                        Name: "",
+                        id: "aus",
+                        schema: schema,
+                        keywords: keyMake("", "", Trade, ausKeyArrTrade),
+                        menuItems: menuItems,
+                        mobileBreadcrumbs: "",
+                        footerBreadcrumbs: ausFooterBreadcrumbs,
+                        heroImg: "",
+                        contentImg: "childcare-businesses-sydney.jpg",
+                        copyright: copyright
                     },
                     output
                 );
@@ -1140,11 +1149,11 @@ console.log("");
                 R.pipe(
                     filter(
                         "footerHeadingBuy",
-                        "<div class=\"home-footer-heading-buy\">Buy:</div>"
+                        '<div class="home-footer-heading-buy">Buy:</div>'
                     ),
                     filter(
                         "footerBuyNsw",
-                        "<ul class=\"home-footer-heading-nsw\"><li><a href=\"/buy-childcare/nsw.html\">NSW</a></li></ul>"
+                        '<ul class="home-footer-heading-nsw"><li><a href="/buy-childcare/nsw.html">NSW</a></li></ul>'
                     ),
                     filter("footerBuyNswRegions", nswRegionUl(trade, industry))
                 )(outputTemplate);
@@ -1171,31 +1180,31 @@ console.log("");
         var schema = schemaMaker(schemaHome);
 
         const homeButtonBuy =
-            "<a href=\"/buy-childcare/index.html\" class=\"abbaButton abbaButton-buy\">Buy a Childcare Business</a>";
+            '<a href="/buy-childcare/index.html" class="abbaButton abbaButton-buy">Buy a Childcare Business</a>';
         const homeButtonSell =
-            "<a href=\"/sell-childcare/index.html\"  class=\"abbaButton abbaButton-sell\">Sell a Childcare Business</a>";
+            '<a href="/sell-childcare/index.html"  class="abbaButton abbaButton-sell">Sell a Childcare Business</a>';
 
         var menuItems = homeMenuBuy + homeMenuSell;
 
         var areaFilters = output =>
             areaFiltersMake(
                 {
-                    footer            : homeFooterTemplate,
-                    trade             : trade,
-                    Trade             : Trade,
-                    industry          : industry,
-                    Industry          : Industry,
-                    name              : "",
-                    Name              : "",
-                    id                : "home",
-                    schema            : schema,
-                    keywords          : keyMake("", "", "", ausKeyArrAll),
-                    menuItems         : menuItems,
-                    mobileBreadcrumbs : "",
-                    footerBreadcrumbs : "",
-                    heroImg           : "",
-                    contentImg        : "",
-                    copyright         : copyright
+                    footer: homeFooterTemplate,
+                    trade: trade,
+                    Trade: Trade,
+                    industry: industry,
+                    Industry: Industry,
+                    name: "",
+                    Name: "",
+                    id: "home",
+                    schema: schema,
+                    keywords: keyMake("", "", "", ausKeyArrAll),
+                    menuItems: menuItems,
+                    mobileBreadcrumbs: "",
+                    footerBreadcrumbs: "",
+                    heroImg: "",
+                    contentImg: "",
+                    copyright: copyright
                 },
                 output
             );
@@ -1234,22 +1243,22 @@ console.log("");
         var areaFilters = output =>
             areaFiltersMake(
                 {
-                    footer            : homeFooterTemplate,
-                    trade             : trade,
-                    Trade             : Trade,
-                    industry          : industry,
-                    Industry          : Industry,
-                    name              : "",
-                    Name              : "",
-                    id                : "about",
-                    schema            : schema,
-                    keywords          : keyMake("", "", "", ausKeyArrAll),
-                    menuItems         : menuItems,
-                    mobileBreadcrumbs : "",
-                    footerBreadcrumbs : aboutFooterBreadcrumbs,
-                    heroImg           : "",
-                    contentImg        : "",
-                    copyright         : copyright
+                    footer: homeFooterTemplate,
+                    trade: trade,
+                    Trade: Trade,
+                    industry: industry,
+                    Industry: Industry,
+                    name: "",
+                    Name: "",
+                    id: "about",
+                    schema: schema,
+                    keywords: keyMake("", "", "", ausKeyArrAll),
+                    menuItems: menuItems,
+                    mobileBreadcrumbs: "",
+                    footerBreadcrumbs: aboutFooterBreadcrumbs,
+                    heroImg: "",
+                    contentImg: "",
+                    copyright: copyright
                 },
                 output
             );
@@ -1258,11 +1267,11 @@ console.log("");
             R.pipe(
                 filter(
                     "footerBuySyd",
-                    "<ul><li><a href=\"/buy-childcare/sydney/index.html\">Sydney</a></li></ul>"
+                    '<ul><li><a href="/buy-childcare/sydney/index.html">Sydney</a></li></ul>'
                 ),
                 filter(
                     "footerSellSyd",
-                    "<ul><li><a href=\"/sell-childcare/sydney/index.html\">Sydney</a></li></ul>"
+                    '<ul><li><a href="/sell-childcare/sydney/index.html">Sydney</a></li></ul>'
                 ),
                 filter(
                     "footerBuySydRegions",
@@ -1304,22 +1313,22 @@ console.log("");
         var areaFilters = output =>
             areaFiltersMake(
                 {
-                    footer            : pagesFooterTemplate,
-                    trade             : trade,
-                    Trade             : Trade,
-                    industry          : industry,
-                    Industry          : Industry,
-                    name              : "",
-                    Name              : "",
-                    id                : "contact",
-                    schema            : schema,
-                    keywords          : keyMake("", "", "", ausKeyArrAll),
-                    menuItems         : menuItems,
-                    mobileBreadcrumbs : "",
-                    footerBreadcrumbs : contactFooterBreadcrumbs,
-                    heroImg           : "",
-                    contentImg        : "",
-                    copyright         : copyright
+                    footer: pagesFooterTemplate,
+                    trade: trade,
+                    Trade: Trade,
+                    industry: industry,
+                    Industry: Industry,
+                    name: "",
+                    Name: "",
+                    id: "contact",
+                    schema: schema,
+                    keywords: keyMake("", "", "", ausKeyArrAll),
+                    menuItems: menuItems,
+                    mobileBreadcrumbs: "",
+                    footerBreadcrumbs: contactFooterBreadcrumbs,
+                    heroImg: "",
+                    contentImg: "",
+                    copyright: copyright
                 },
                 output
             );
@@ -1350,22 +1359,22 @@ console.log("");
     var areaFilters = output =>
         areaFiltersMake(
             {
-                footer            : pagesFooterTemplate,
-                trade             : trade,
-                Trade             : Trade,
-                industry          : industry,
-                Industry          : Industry,
-                name              : "",
-                Name              : "",
-                id                : "directory",
-                schema            : schema,
-                keywords          : keyMake("", "", "", ausKeyArrAll),
-                menuItems         : menuItems,
-                mobileBreadcrumbs : "",
-                footerBreadcrumbs : directoryFooterBreadcrumbs,
-                heroImg           : "",
-                contentImg        : "",
-                copyright         : copyright
+                footer: pagesFooterTemplate,
+                trade: trade,
+                Trade: Trade,
+                industry: industry,
+                Industry: Industry,
+                name: "",
+                Name: "",
+                id: "directory",
+                schema: schema,
+                keywords: keyMake("", "", "", ausKeyArrAll),
+                menuItems: menuItems,
+                mobileBreadcrumbs: "",
+                footerBreadcrumbs: directoryFooterBreadcrumbs,
+                heroImg: "",
+                contentImg: "",
+                copyright: copyright
             },
             output
         );
@@ -1408,6 +1417,10 @@ const duration = ((endTime - startTime) / 1000).toFixed(3);
 
 // Console log final output
 cl("");
-cl(chalk.cyan(eq5) + chalk.bold.yellow(` Finished in ${duration} seconds at ${time} `) + chalk.cyan(eq5));
+cl(
+    chalk.cyan(eq5) +
+        chalk.bold.yellow(` Finished in ${duration} seconds at ${time} `) +
+        chalk.cyan(eq5)
+);
 cl(chalk.green("Output location: ") + outputLoc);
 cl("");

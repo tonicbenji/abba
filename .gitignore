@@ -1,5 +1,6 @@
-# Nested git repo
+# Output folders
 public/
+output/
 
 # Mac OSX Files
 .DS_Store
