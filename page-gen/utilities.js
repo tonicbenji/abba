@@ -27,21 +27,6 @@ const prettyPath = l => l.join("/");
 
 const replaceToken = (a, b) => R.replace(new RegExp("{{" + a + "}}", "g"), b);
 
-// String Manipulation
-
-const titleCase = str => {
-    return str.toLowerCase().replace(/^(.)|[\s-](.)/g, $1 => {
-        return $1.toUpperCase();
-    });
-};
-
-const snakeCase = s => s.replace(/\s/g, "-")
-
-const filenameCase = s => R.pipe(
-    R.toLower,
-    snakeCase
-)(s);
-
 const theToLower = s => s.replace(/the/i, "the")
 
 const noThe = s => s.replace(/the/i, "")
@@ -72,12 +57,9 @@ module.exports = {
     fileToList,
     replaceToken,
     error,
-    titleCase,
     genLog,
     removeAllEmpty,
     relPathList,
-    snakeCase,
-    filenameCase,
     theToLower,
     noThe,
     headerLog,

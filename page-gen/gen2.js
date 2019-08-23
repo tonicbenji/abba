@@ -5,6 +5,7 @@ const now = require("performance-now");
 const program = require("commander");
 const dateFormat = require("dateformat");
 const shuffleSeed = require("shuffle-seed");
+var changeCase = require('change-case')
 
 // Personal modules ----------
 
@@ -26,7 +27,8 @@ const U = require("./utilities");
 // 1.5. State
 // 1.6. Map state regions
 // 1.7. City page
-// 1.8. Map suburbs
+// 1.8. Map city regions
+// 1.8.1. Map suburbs
 // (And some maps occur twice - over buy then sell)
 
 // TODO: make the subset feature use list truncation based on a fraction instead of the global counter method
@@ -34,6 +36,7 @@ const U = require("./utilities");
 // Paths to data (as well as some brief data provided directly) ----------
 
 const dataPaths = {
+    firstLevelPageTypes: ["home", "about", "contact", "country", "state", "state regions", "city", "city regions"],
     buySell: {
         data: ["Buy", "Sell"]
     },
@@ -90,38 +93,43 @@ const dataPaths = {
 // title (new for home, about)
 // all region => city region
 
-const generalContext = ({ name, pageType }) => {
+const contextItem = (f, key, value) => {
     return {
-        businessName: settings.businessName.toLowerCase(),
-        BusinessName: U.titleCase(settings.businessName),
-        BUSINESSNAME: settings.businessName.toUpperCase(),
-        name: name.toLowerCase(),
-        Name: U.titleCase(name),
-        NAME: name.toUpperCase(),
-        nameNoThe: U.noThe(name.toLowerCase()),
-        NameNoThe: U.noThe(U.titleCase(name)),
-        NAMENOTHE: U.noThe(name.toUpperCase()),
-        filename: `${U.filenameCase(name)}.html`,
-        pageType: pageType
+        [f(key)]: f(value)
+    }
+}
+
+const filenameFormat = name => `${changeCase.paramCase(name)}.html`
+
+const contextMaker = (key, value) => {
+    const key_ = !R.isEmpty(key) ? key : value;
+    return {
+        ...contextItem(R.toLower, key_, value),
+        ...contextItem(R.toUpper, key_, value),
+        ...contextItem(changeCase.camelCase, key_, value),
+        ...contextItem(changeCase.constantCase, key_, value),
+        filename: filenameFormat(value)
+    }
+}
+
+const generalContext = ({ name }) => {
+    return {
+        ...contextMaker("", settings.businessName),
+        ...contextMaker("", name),
+        // nameNoThe: U.noThe(name.toLowerCase()),
+        // NameNoThe: U.noThe(U.titleCase(name)),
+        // NAMENOTHE: U.noThe(name.toUpperCase()),
     };
 };
 
 const buySellContext = ({ buySell }) => {
     return {
-        buySell: buySell.toLowerCase(),
-        BuySell: U.titleCase(buySell),
-        BUYSELL: buySell.toUpperCase(),
-        buySellFilename: `${U.filenameCase(buySell)}.html`
+        ...contextMaker("buySell", buySell),
+        buySellFilename: filenameFormat(buySell)
     };
 };
 
-const industryContext = ({ industry }) => {
-    return {
-        industry: industry.toLowerCase(),
-        Industry: U.titleCase(industry),
-        INDUSTRY: industry.toUpperCase()
-    };
-};
+const industryContext = ({ industry }) => contextMaker("industry", industry);
 
 const homeContext = ({ home }) => {
     return {
@@ -133,57 +141,39 @@ const homeContext = ({ home }) => {
 const aboutContext = ({ about }) => {
     return {
         title: about,
-        filename: `${U.filenameCase(about)}.html`
+        filename: filenameFormat(about)
     };
 }
 
-const contactContext = ({ contact }) => aboutContext({ about: contact })
+const contactContext = ({ contact }) => {
+    return {
+        title: contact,
+        filename: filenameFormat(contact)
+    };
+}
+
 
 const countryContext = ({ country }) => {
     return {
-        country: country.toLowerCase(),
-        Country: U.titleCase(country),
-        COUNTRY: country.toUpperCase(),
+        ...contextMaker("", country),
         filename: "index.html"
     };
 };
 
-const stateContext = ({ state }) => {
-    return {
-        state: state.toLowerCase(),
-        State: U.titleCase(state),
-        STATE: state.toUpperCase()
-    };
-};
+const stateContext = ({ state }) => contextMaker("", state);
 
-const stateRegionContext = ({ stateRegion }) =>
-    stateContext({ state: stateRegion });
+const stateRegionContext = ({ stateRegion }) => contextMaker("", stateRegion);
 
 const cityContext = ({ city }) => {
     return {
-        city: city.toLowerCase(),
-        City: U.titleCase(city),
-        CITY: city.toUpperCase(),
-        filename: "index.js"
+        ...contextMaker("", city),
+        filename: "index.html"
     };
 };
 
-const cityRegionContext = ({ cityRegion }) => {
-    return {
-        cityRegion: cityRegion.toLowerCase(),
-        CityRegion: U.titleCase(cityRegion),
-        CITYREGION: cityRegion.toUpperCase(),
-        filename: `${U.filenameCase(cityRegion)}.html`
-    };
-};
+const cityRegionContext = ({ cityRegion }) => contextMaker("", cityRegion);
 
-const suburbContext = ({ suburb }) => {
-    return {
-        suburb: suburb.toLowerCase(),
-        Suburb: U.titleCase(suburb),
-        SUBURB: suburb.toUpperCase()
-    };
-};
+const suburbContext = ({ suburb }) => contextMaker("", cityRegion);
 
 const replaceTokens = (data, template) => {
     let OUTPUT = template;
@@ -195,10 +185,10 @@ const replaceTokens = (data, template) => {
 
 // Generators ----------
 
-const gen = pageTypes => {
+const gen = (pageTypes, context) => {
     pageTypes.map(pageType => {
-        const { data, template } = dataPaths[pageType];
-        U.headerLog(pageType);
+        const { data, template } = dataPaths[changeCase.camelCase(pageType)];
+        U.headerLog(changeCase.titleCase(pageType));
         switch (pageType) {
             case "home":
                 genHome(data, template, pageType);
@@ -215,17 +205,17 @@ const gen = pageTypes => {
             case "state":
                 genState(data, template, pageType);
                 break;
-            case "stateRegions":
+            case "state regions":
                 genStateRegions(data, template, pageType);
                 break;
             case "city":
                 genCity(data, template, pageType);
                 break;
-            case "cityRegions":
+            case "city regions":
                 genCityRegions(data, template, pageType);
                 break;
             case "suburbs":
-                genSuburbs(data, template, pageType);
+                genSuburbs(data, template, pageType, context);
                 break;
             default:
                 U.error("No valid pageTypes specified in config");
@@ -323,6 +313,7 @@ const genCountry = (data, template, pageType) => {
         const templateFile = U.fileToStr(template + context.buySellFilename);
 
         const output = replaceTokens(context, templateFile);
+        console.log(context);
 
         const path = [
             settings.outputLocation,
@@ -470,19 +461,17 @@ const genCityRegions = (data, template, pageType) => {
 
             U.genLog(buySell, data, prettyPath);
         });
+        // Generate the suburbs for each region
+        gen(["suburbs"], context);
     })
 };
 
-const genSuburbs = (data, template, pageType) => {
+const genSuburbs = (data, template, pageType, parentContext) => {
     const suburbs = U.removeAllEmpty(U.fileToList(data));
     suburbs.map(suburb =>
         dataPaths.buySell.data.map(buySell => {
             const context = R.mergeAll([
-                generalContext({ name: suburb, pageType }),
-                buySellContext({ buySell }),
-                industryContext({ industry: dataPaths.industry.data }),
-                countryContext({ country: dataPaths.country.data }),
-                stateContext({ state: dataPaths.state.data }),
+                parentContext,
                 suburbContext({ suburb })
             ]);
 
@@ -513,7 +502,7 @@ const genSuburbs = (data, template, pageType) => {
 
 const performanceTimerStart = now();
 
-gen(settings.pageTypes);
+gen(dataPaths.firstLevelPageTypes);
 
 const performanceTimerEnd = now();
 
