@@ -36,12 +36,12 @@ const filenameCase = name => changeCase.paramCase(noThe(name))
 
 const filenameFormat = name => `${filenameCase(name)}.html`
 
-const replaceToken = (a, b) => R.replace(new RegExp("{{" + a + "}}", "g"), b);
+const tokenise = s => `{{${s}}}`;
 
 const replaceTokens = (data, template) => {
     let OUTPUT = template;
     R.mapObjIndexed((num, key, obj) => {
-        OUTPUT = replaceToken(key, data[key])(OUTPUT);
+        OUTPUT = R.replace(new RegExp(tokenise(key), "g"), data[key], OUTPUT)
     }, data);
     return OUTPUT;
 };
@@ -77,7 +77,6 @@ module.exports = {
     readFile,
     fileToStr,
     fileToList,
-    replaceToken,
     error,
     genLog,
     removeAllEmpty,
@@ -89,5 +88,6 @@ module.exports = {
     performanceLog,
     filenameCase,
     filenameFormat,
-    replaceTokens
+    replaceTokens,
+    tokenise
 };
