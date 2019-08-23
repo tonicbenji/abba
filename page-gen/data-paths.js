@@ -1,5 +1,14 @@
 module.exports = {
-    firstLevelPageTypes: ["home", "about", "contact", "country", "state", "state regions", "city", "city regions"],
+    firstLevelPageTypes: [
+        "home",
+        "about",
+        "contact",
+        "country",
+        "state",
+        "state regions",
+        "city",
+        "city regions"
+    ],
     buySell: {
         data: ["Buy", "Sell"]
     },
@@ -44,7 +53,8 @@ module.exports = {
     },
     sitemap: {
         data: {
-            header: '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+            header:
+                '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
             footer: "\n</urlset>"
         }
     },

@@ -50,6 +50,9 @@ U.directoryStream.write(U.fileToStr(dataPaths.directory.data.footer));
 
 const performanceTimerEnd = now();
 
-const performanceTimerDuration = ((performanceTimerEnd - performanceTimerStart) / 1000).toFixed(3);
+const performanceTimerDuration = (
+    (performanceTimerEnd - performanceTimerStart) /
+    1000
+).toFixed(3);
 
 U.performanceLog(performanceTimerDuration);

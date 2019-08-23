@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const R = require("ramda");
 const chalk = require("chalk");
-const changeCase = require('change-case')
+const changeCase = require("change-case");
 const dateFormat = require("dateformat");
 const settings = require("./gen-config");
 
@@ -28,22 +28,22 @@ const prettyPath = l => l.join("/");
 
 // String Manipulation
 
-const theToLower = s => s.replace(/the/i, "the")
+const theToLower = s => s.replace(/the/i, "the");
 
-const noThe = s => s.replace(/the/i, "")
+const noThe = s => s.replace(/the/i, "");
 
-const wrapInLinebreaks = s => `\n${s}\n`
+const wrapInLinebreaks = s => `\n${s}\n`;
 
-const filenameCase = name => changeCase.paramCase(noThe(name))
+const filenameCase = name => changeCase.paramCase(noThe(name));
 
-const filenameFormat = name => `${filenameCase(name)}.html`
+const filenameFormat = name => `${filenameCase(name)}.html`;
 
 const tokenise = s => `{{${s}}}`;
 
 const replaceTokens = (data, template) => {
     let OUTPUT = template;
     R.mapObjIndexed((num, key, obj) => {
-        OUTPUT = R.replace(new RegExp(tokenise(key), "g"), data[key], OUTPUT)
+        OUTPUT = R.replace(new RegExp(tokenise(key), "g"), data[key], OUTPUT);
     }, data);
     return OUTPUT;
 };
@@ -63,19 +63,36 @@ const genLog = (action, name, path) => {
         [R.equals("Sell"), chalk.blue],
         [R.equals("Single"), chalk.cyan],
         [R.equals("Skipped"), chalk.red]
-    ])
-    console.log(chalk.yellow(`${PAGE_COUNT++}. `) + `${actionColour(action)} ${name} ${chalk.gray(path)}`);
-}
+    ]);
+    console.log(
+        chalk.yellow(`${PAGE_COUNT++}. `) +
+            `${actionColour(action)} ${name} ${chalk.gray(path)}`
+    );
+};
 
-const headerLogDelim = chalk.yellow('='.repeat(5));
+const headerLogDelim = chalk.yellow("=".repeat(5));
 
-const headerLog = s => console.log(wrapInLinebreaks(`${headerLogDelim} ${chalk.magenta(s.toUpperCase())} ${headerLogDelim}`));
+const headerLog = s =>
+    console.log(
+        wrapInLinebreaks(
+            `${headerLogDelim} ${chalk.magenta(
+                s.toUpperCase()
+            )} ${headerLogDelim}`
+        )
+    );
 
-const performanceLog = time => console.log(wrapInLinebreaks(chalk.grey(`Completed in ${chalk.yellow(time)} seconds.`)))
+const performanceLog = time =>
+    console.log(
+        wrapInLinebreaks(
+            chalk.grey(`Completed in ${chalk.yellow(time)} seconds.`)
+        )
+    );
 
 // Streams
 
-const sitemapStream = fs.createWriteStream(relPath(`${settings.outputLocation}/sitemap.xml`));
+const sitemapStream = fs.createWriteStream(
+    relPath(`${settings.outputLocation}/sitemap.xml`)
+);
 
 const sitemapItem = (path, lastmod) => `
 <url>
@@ -83,10 +100,12 @@ const sitemapItem = (path, lastmod) => `
     <lastmod>${lastmod}</lastmod>
 </url>`;
 
-const directoryStream = fs.createWriteStream(relPath(`${settings.outputLocation}/directory.html`));
+const directoryStream = fs.createWriteStream(
+    relPath(`${settings.outputLocation}/directory.html`)
+);
 
 const directoryItem = (path, text) => `
-<li><a href="${path}">${text}</a></li>`
+<li><a href="${path}">${text}</a></li>`;
 
 // Dates
 

@@ -1,13 +1,13 @@
 const R = require("ramda");
-const changeCase = require('change-case')
+const changeCase = require("change-case");
 const settings = require("./gen-config");
 const U = require("./utilities");
 
 const contextItem = (f, key, value) => {
     return {
         [f(key)]: f(value)
-    }
-}
+    };
+};
 
 const contextMaker = (key, value) => {
     const key_ = !R.isEmpty(key) ? key : value;
@@ -21,20 +21,20 @@ const contextMaker = (key, value) => {
         ...contextItem(changeCase.camelCase, "name", value),
         ...contextItem(changeCase.constantCase, "name", value),
         filename: U.filenameFormat(value)
-    }
-}
+    };
+};
 
 const components = () => {
     const path = "src/templates/components/";
     const files = ["bottomScripts", "contactForm", "header", "meta"];
-    return R.fromPairs(R.map(x => [x, U.fileToStr(path + `${x}.html`)], files))
-}
+    return R.fromPairs(R.map(x => [x, U.fileToStr(path + `${x}.html`)], files));
+};
 
 const general = ({ name }) => {
     return {
         ...components(),
         ...contextMaker("", settings.businessName),
-        ...contextMaker("", name),
+        ...contextMaker("", name)
         // nameNoThe: U.noThe(name.toLowerCase()),
         // NameNoThe: U.noThe(U.titleCase(name)),
         // NAMENOTHE: U.noThe(name.toUpperCase()),
@@ -55,22 +55,21 @@ const home = ({ home }) => {
         title: home,
         filename: "index.html"
     };
-}
+};
 
 const about = ({ about }) => {
     return {
         title: about,
         filename: U.filenameFormat(about)
     };
-}
+};
 
 const contact = ({ contact }) => {
     return {
         title: contact,
         filename: U.filenameFormat(contact)
     };
-}
-
+};
 
 const country = ({ country }) => {
     return {
@@ -109,4 +108,4 @@ module.exports = {
     city,
     cityRegion,
     suburb
-}
+};
