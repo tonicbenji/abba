@@ -7,9 +7,11 @@ const dateFormat = require("dateformat");
 const shuffleSeed = require("shuffle-seed");
 const changeCase = require('change-case')
 
-// Personal modules ----------
+// Modules ----------
 
 const settings = require("./gen-config");
+const dataPaths = require("./data-paths");
+const contexts = require("./contexts");
 const U = require("./utilities");
 
 // Guide ----------
@@ -33,54 +35,6 @@ const U = require("./utilities");
 
 // TODO: make the subset feature use list truncation based on a fraction instead of the global counter method
 
-// Paths to data (as well as some brief data provided directly) ----------
-
-const dataPaths = {
-    firstLevelPageTypes: ["home", "about", "contact", "country", "state", "state regions", "city", "city regions"],
-    buySell: {
-        data: ["Buy", "Sell"]
-    },
-    industry: {
-        data: "childcare"
-    },
-    home: {
-        data: "Buy and Sell Childcare Businesses across Australia",
-        template: "src/templates/pages/home.html"
-    },
-    about: {
-        data: "About Us",
-        template: "src/templates/pages/about.html"
-    },
-    contact: {
-        data: "Contact Us",
-        template: "src/templates/pages/contact.html"
-    },
-    country: {
-        data: "Australia",
-        template: "src/templates/australia/"
-    },
-    state: {
-        data: "NSW",
-        template: "src/templates/nsw/"
-    },
-    stateRegions: {
-        data: "src/nswRegions/nswRegions.txt",
-        template: "src/templates/nsw/"
-    },
-    city: {
-        data: "Sydney",
-        template: "src/templates/sydney/"
-    },
-    cityRegions: {
-        data: "src/regions/sydney.txt",
-        template: "src/templates/sydney/"
-    },
-    suburbs: {
-        data: "src/",
-        template: "src/templates/suburb/"
-    }
-};
-
 // Context Tokens ----------
 
 // TODO: grep replace rename the following tokens:
@@ -92,90 +46,6 @@ const dataPaths = {
 // all sydney => city
 // title (new for home, about)
 // all region => city region
-
-const contextItem = (f, key, value) => {
-    return {
-        [f(key)]: f(value)
-    }
-}
-
-const contextMaker = (key, value) => {
-    const key_ = !R.isEmpty(key) ? key : value;
-    return {
-        ...contextItem(R.toLower, key_, value),
-        ...contextItem(R.toUpper, key_, value),
-        ...contextItem(changeCase.camelCase, key_, value),
-        ...contextItem(changeCase.constantCase, key_, value),
-        ...contextItem(R.toLower, "name", value),
-        ...contextItem(R.toUpper, "name", value),
-        ...contextItem(changeCase.camelCase, "name", value),
-        ...contextItem(changeCase.constantCase, "name", value),
-        filename: U.filenameFormat(value)
-    }
-}
-
-const generalContext = ({ name }) => {
-    return {
-        ...contextMaker("", settings.businessName),
-        ...contextMaker("", name),
-        // nameNoThe: U.noThe(name.toLowerCase()),
-        // NameNoThe: U.noThe(U.titleCase(name)),
-        // NAMENOTHE: U.noThe(name.toUpperCase()),
-    };
-};
-
-const buySellContext = ({ buySell }) => {
-    return {
-        ...contextMaker("buySell", buySell),
-        buySellFilename: U.filenameFormat(buySell)
-    };
-};
-
-const industryContext = ({ industry }) => contextMaker("industry", industry);
-
-const homeContext = ({ home }) => {
-    return {
-        title: home,
-        filename: "index.html"
-    };
-}
-
-const aboutContext = ({ about }) => {
-    return {
-        title: about,
-        filename: U.filenameFormat(about)
-    };
-}
-
-const contactContext = ({ contact }) => {
-    return {
-        title: contact,
-        filename: U.filenameFormat(contact)
-    };
-}
-
-
-const countryContext = ({ country }) => {
-    return {
-        ...contextMaker("", country),
-        filename: "index.html"
-    };
-};
-
-const stateContext = ({ state }) => contextMaker("", state);
-
-const stateRegionContext = ({ stateRegion }) => contextMaker("", stateRegion);
-
-const cityContext = ({ city }) => {
-    return {
-        ...contextMaker("", city),
-        filename: "index.html"
-    };
-};
-
-const cityRegionContext = ({ cityRegion }) => contextMaker("", cityRegion);
-
-const suburbContext = ({ suburb }) => contextMaker("", suburb);
 
 const replaceTokens = (data, template) => {
     let OUTPUT = template;
@@ -227,10 +97,10 @@ const gen = (pageTypes, context) => {
 
 const genHome = (data, template, pageType) => {
         const context = R.mergeAll([
-            generalContext({ name: data, pageType }),
-            industryContext({ industry: dataPaths.industry.data }),
-            countryContext({ country: dataPaths.country.data }),
-            homeContext({ home: data })
+            contexts.general({ name: data, pageType }),
+            contexts.industry({ industry: dataPaths.industry.data }),
+            contexts.country({ country: dataPaths.country.data }),
+            contexts.home({ home: data })
         ]);
 
         const templateFile = U.fileToStr(template);
@@ -253,10 +123,10 @@ const genHome = (data, template, pageType) => {
 
 const genAbout = (data, template, pageType) => {
         const context = R.mergeAll([
-            generalContext({ name: data, pageType }),
-            industryContext({ industry: dataPaths.industry.data }),
-            countryContext({ country: dataPaths.country.data }),
-            aboutContext({ about: data })
+            contexts.general({ name: data, pageType }),
+            contexts.industry({ industry: dataPaths.industry.data }),
+            contexts.country({ country: dataPaths.country.data }),
+            contexts.about({ about: data })
         ]);
 
         const templateFile = U.fileToStr(template);
@@ -279,10 +149,10 @@ const genAbout = (data, template, pageType) => {
 
 const genContact = (data, template, pageType) => {
         const context = R.mergeAll([
-            generalContext({ name: data, pageType }),
-            industryContext({ industry: dataPaths.industry.data }),
-            countryContext({ country: dataPaths.country.data }),
-            contactContext({ contact: data })
+            contexts.general({ name: data, pageType }),
+            contexts.industry({ industry: dataPaths.industry.data }),
+            contexts.country({ country: dataPaths.country.data }),
+            contexts.contact({ contact: data })
         ]);
 
         const templateFile = U.fileToStr(template);
@@ -306,10 +176,10 @@ const genContact = (data, template, pageType) => {
 const genCountry = (data, template, pageType) => {
     dataPaths.buySell.data.map(buySell => {
         const context = R.mergeAll([
-            generalContext({ name: data, pageType }),
-            buySellContext({ buySell }),
-            industryContext({ industry: dataPaths.industry.data }),
-            countryContext({ country: dataPaths.country.data })
+            contexts.general({ name: data, pageType }),
+            contexts.buySell({ buySell }),
+            contexts.industry({ industry: dataPaths.industry.data }),
+            contexts.country({ country: dataPaths.country.data })
         ]);
 
         const templateFile = U.fileToStr(template + context.buySellFilename);
@@ -335,11 +205,11 @@ const genCountry = (data, template, pageType) => {
 const genState = (data, template, pageType) => {
     dataPaths.buySell.data.map(buySell => {
         const context = R.mergeAll([
-            generalContext({ name: data, pageType }),
-            buySellContext({ buySell }),
-            industryContext({ industry: dataPaths.industry.data }),
-            countryContext({ country: dataPaths.country.data }),
-            stateContext({ state: data })
+            contexts.general({ name: data, pageType }),
+            contexts.buySell({ buySell }),
+            contexts.industry({ industry: dataPaths.industry.data }),
+            contexts.country({ country: dataPaths.country.data }),
+            contexts.state({ state: data })
         ]);
 
         const templateFile = U.fileToStr(template + context.buySellFilename);
@@ -367,11 +237,11 @@ const genStateRegions = (data, template, pageType) => {
     stateRegions.map(stateRegion => {
         dataPaths.buySell.data.map(buySell => {
             const context = R.mergeAll([
-                generalContext({ name: stateRegion, pageType }),
-                buySellContext({ buySell }),
-                industryContext({ industry: dataPaths.industry.data }),
-                countryContext({ country: dataPaths.country.data }),
-                stateRegionContext({ stateRegion })
+                contexts.general({ name: stateRegion, pageType }),
+                contexts.buySell({ buySell }),
+                contexts.industry({ industry: dataPaths.industry.data }),
+                contexts.country({ country: dataPaths.country.data }),
+                contexts.stateRegion({ stateRegion })
             ]);
 
             const templateFile = U.fileToStr(
@@ -400,12 +270,12 @@ const genStateRegions = (data, template, pageType) => {
 const genCity = (data, template, pageType) => {
     dataPaths.buySell.data.map(buySell => {
         const context = R.mergeAll([
-            generalContext({ name: data, pageType }),
-            buySellContext({ buySell }),
-            industryContext({ industry: dataPaths.industry.data }),
-            countryContext({ country: dataPaths.country.data }),
-            stateContext({ state: dataPaths.state.data }),
-            cityContext({ city: data }),
+            contexts.general({ name: data, pageType }),
+            contexts.buySell({ buySell }),
+            contexts.industry({ industry: dataPaths.industry.data }),
+            contexts.country({ country: dataPaths.country.data }),
+            contexts.state({ state: dataPaths.state.data }),
+            contexts.city({ city: data }),
         ]);
 
         const templateFile = U.fileToStr(template + context.buySellFilename);
@@ -434,13 +304,13 @@ const genCityRegions = (data, template, pageType) => {
     cityRegions.map(cityRegion => {
         dataPaths.buySell.data.map(buySell => {
             const context = R.mergeAll([
-                generalContext({ name: data, pageType }),
-                buySellContext({ buySell }),
-                industryContext({ industry: dataPaths.industry.data }),
-                countryContext({ country: dataPaths.country.data }),
-                stateContext({ state: dataPaths.state.data }),
-                cityContext({ city: dataPaths.city.data }),
-                cityRegionContext({ cityRegion: cityRegion })
+                contexts.general({ name: data, pageType }),
+                contexts.buySell({ buySell }),
+                contexts.industry({ industry: dataPaths.industry.data }),
+                contexts.country({ country: dataPaths.country.data }),
+                contexts.state({ state: dataPaths.state.data }),
+                contexts.city({ city: dataPaths.city.data }),
+                contexts.cityRegion({ cityRegion: cityRegion })
             ]);
 
             const templateFile = U.fileToStr(template + context.buySellFilename);
@@ -478,8 +348,8 @@ const genSuburbs = (data, template, pageType, parentContext) => {
         dataPaths.buySell.data.map(buySell => {
             const context = R.mergeAll([
                 parentContext,
-                buySellContext({ buySell }),
-                suburbContext({ suburb })
+                contexts.buySell({ buySell }),
+                contexts.suburb({ suburb })
             ]);
 
             const templateFile = U.fileToStr(
