@@ -76,7 +76,7 @@ const dataPaths = {
         template: "src/templates/sydney/"
     },
     suburbs: {
-        data: "src/suburbs/demo-suburbs.txt",
+        data: "src/",
         template: "src/templates/suburb/"
     }
 };
@@ -99,7 +99,7 @@ const contextItem = (f, key, value) => {
     }
 }
 
-const filenameFormat = name => `${changeCase.paramCase(name)}.html`
+const filenameFormat = name => `${changeCase.paramCase(U.noThe(name))}.html`
 
 const contextMaker = (key, value) => {
     const key_ = !R.isEmpty(key) ? key : value;
@@ -108,6 +108,10 @@ const contextMaker = (key, value) => {
         ...contextItem(R.toUpper, key_, value),
         ...contextItem(changeCase.camelCase, key_, value),
         ...contextItem(changeCase.constantCase, key_, value),
+        ...contextItem(R.toLower, "name", value),
+        ...contextItem(R.toUpper, "name", value),
+        ...contextItem(changeCase.camelCase, "name", value),
+        ...contextItem(changeCase.constantCase, "name", value),
         filename: filenameFormat(value)
     }
 }
@@ -173,7 +177,7 @@ const cityContext = ({ city }) => {
 
 const cityRegionContext = ({ cityRegion }) => contextMaker("", cityRegion);
 
-const suburbContext = ({ suburb }) => contextMaker("", cityRegion);
+const suburbContext = ({ suburb }) => contextMaker("", suburb);
 
 const replaceTokens = (data, template) => {
     let OUTPUT = template;
@@ -313,7 +317,6 @@ const genCountry = (data, template, pageType) => {
         const templateFile = U.fileToStr(template + context.buySellFilename);
 
         const output = replaceTokens(context, templateFile);
-        console.log(context);
 
         const path = [
             settings.outputLocation,
@@ -415,7 +418,7 @@ const genCity = (data, template, pageType) => {
             settings.outputLocation,
             `${context.buySell}-${context.industry}`,
             data,
-            "index.js"
+            "index.html"
         ]
 
         const outputPath = U.relPathList(path);
@@ -439,7 +442,7 @@ const genCityRegions = (data, template, pageType) => {
                 countryContext({ country: dataPaths.country.data }),
                 stateContext({ state: dataPaths.state.data }),
                 cityContext({ city: dataPaths.city.data }),
-                cityRegionContext({ cityRegion: data })
+                cityRegionContext({ cityRegion: cityRegion })
             ]);
 
             const templateFile = U.fileToStr(template + context.buySellFilename);
@@ -449,8 +452,7 @@ const genCityRegions = (data, template, pageType) => {
             const path = [
                 settings.outputLocation,
                 `${context.buySell}-${context.industry}`,
-                data,
-                "index.js"
+                filenameFormat(cityRegion)
             ]
 
             const outputPath = U.relPathList(path);
@@ -459,15 +461,20 @@ const genCityRegions = (data, template, pageType) => {
             // Outputs
             fs.writeFileSync(outputPath, output);
 
-            U.genLog(buySell, data, prettyPath);
+            U.genLog(buySell, cityRegion, prettyPath);
+
+            // Child generator
+            gen(["suburbs"], context);
         });
         // Generate the suburbs for each region
-        gen(["suburbs"], context);
     })
 };
 
 const genSuburbs = (data, template, pageType, parentContext) => {
-    const suburbs = U.removeAllEmpty(U.fileToList(data));
+    console.log(parentContext);
+    const data_ = `${data}regions/${changeCase.paramCase(parentContext.name)}.txt`
+    console.log(data_);
+    const suburbs = U.removeAllEmpty(U.fileToList(data_));
     suburbs.map(suburb =>
         dataPaths.buySell.data.map(buySell => {
             const context = R.mergeAll([
@@ -506,6 +513,6 @@ gen(dataPaths.firstLevelPageTypes);
 
 const performanceTimerEnd = now();
 
-const performanceTimerDuration = ((performanceTimerStart - performanceTimerEnd) / 1000).toFixed(3);
+const performanceTimerDuration = ((performanceTimerEnd - performanceTimerStart) / 1000).toFixed(3);
 
 U.performanceLog(performanceTimerDuration);
