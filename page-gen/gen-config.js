@@ -10,6 +10,9 @@ module.exports = {
     subset: 0.02,
 
     // Gen2 ----------
-    businessName: "ABBA",
+    business: {
+        name: "ABBA",
+        trade: "business broker"
+    }
     outputLocation: "output2"
 };

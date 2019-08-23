@@ -52,6 +52,8 @@ const replaceTokens = (data, template) => {
 
 const removeAllEmpty = ss => R.reject(R.isEmpty, ss);
 
+const mergeDeepAll = l => R.reduce(R.mergeDeepRight, {}, l);
+
 // Logging
 
 const error = s => console.log(chalk.red(s));

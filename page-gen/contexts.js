@@ -53,7 +53,10 @@ const industry = ({ industry }) => contextMaker("industry", industry);
 const home = ({ home }) => {
     return {
         title: home,
-        filename: "index.html"
+        filename: "index.html",
+        keywords: {
+            home: [""]
+        }
     };
 };
 
@@ -74,7 +77,10 @@ const contact = ({ contact }) => {
 const country = ({ country }) => {
     return {
         ...contextMaker("", country),
-        filename: "index.html"
+        filename: "index.html",
+        keywords: {
+            country: [`${country} ${settings.business.trade}`]
+        }
     };
 };
 
