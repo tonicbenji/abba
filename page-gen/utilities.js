@@ -26,8 +26,6 @@ const prettyPath = l => l.join("/");
 
 // String Manipulation
 
-const replaceToken = (a, b) => R.replace(new RegExp("{{" + a + "}}", "g"), b);
-
 const theToLower = s => s.replace(/the/i, "the")
 
 const noThe = s => s.replace(/the/i, "")
@@ -37,6 +35,16 @@ const wrapInLinebreaks = s => `\n${s}\n`
 const filenameCase = name => changeCase.paramCase(noThe(name))
 
 const filenameFormat = name => `${filenameCase(name)}.html`
+
+const replaceToken = (a, b) => R.replace(new RegExp("{{" + a + "}}", "g"), b);
+
+const replaceTokens = (data, template) => {
+    let OUTPUT = template;
+    R.mapObjIndexed((num, key, obj) => {
+        OUTPUT = replaceToken(key, data[key])(OUTPUT);
+    }, data);
+    return OUTPUT;
+};
 
 // Data Manipulation
 
@@ -71,5 +79,6 @@ module.exports = {
     prettyPath,
     performanceLog,
     filenameCase,
-    filenameFormat
+    filenameFormat,
+    replaceTokens
 };
