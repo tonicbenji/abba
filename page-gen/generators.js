@@ -66,7 +66,7 @@ const home = (data, template, pageType) => {
 
         // Outputs
         fs.writeFileSync(outputPath, output);
-
+        U.sitemapStream.write(U.sitemapItem(data, "date"))
         U.genLog("Single", data, prettyPath);
 };
 

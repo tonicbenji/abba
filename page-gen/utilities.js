@@ -3,6 +3,7 @@ const path = require("path");
 const R = require("ramda");
 const chalk = require("chalk");
 const changeCase = require('change-case')
+const settings = require("./gen-config");
 
 // Globals
 
@@ -46,6 +47,12 @@ const replaceTokens = (data, template) => {
     return OUTPUT;
 };
 
+const sitemapItem = (path, lastmod) => `
+<url>
+    <loc>${path}</loc>
+    <lastmod>${lastmod}</lastmod>
+</url>`;
+
 // Data Manipulation
 
 const removeAllEmpty = ss => R.reject(R.isEmpty, ss);
@@ -71,6 +78,10 @@ const headerLog = s => console.log(wrapInLinebreaks(`${headerLogDelim} ${chalk.m
 
 const performanceLog = time => console.log(wrapInLinebreaks(chalk.grey(`Completed in ${chalk.yellow(time)} seconds.`)))
 
+// Streams
+
+const sitemapStream = fs.createWriteStream(relPath(`${settings.outputLocation}/sitemap.xml`));
+
 module.exports = {
     pathToList,
     relPath,
@@ -89,5 +100,7 @@ module.exports = {
     filenameCase,
     filenameFormat,
     replaceTokens,
-    tokenise
+    tokenise,
+    sitemapItem,
+    sitemapStream
 };

@@ -51,7 +51,11 @@ const U = require("./utilities");
 
 const performanceTimerStart = now();
 
+U.sitemapStream.write(dataPaths.sitemap.data.header);
+
 generators.run(dataPaths.firstLevelPageTypes);
+
+U.sitemapStream.write(dataPaths.sitemap.data.footer);
 
 const performanceTimerEnd = now();
 
