@@ -1,14 +1,4 @@
-const fs = require("fs");
-const path = require("path");
-const R = require("ramda");
 const now = require("performance-now");
-const program = require("commander");
-const shuffleSeed = require("shuffle-seed");
-const changeCase = require('change-case')
-
-// Modules ----------
-
-const settings = require("./gen-config");
 const dataPaths = require("./data-paths");
 const generators = require("./generators");
 const U = require("./utilities");
@@ -18,7 +8,7 @@ const U = require("./utilities");
 // This website generator maps over lists of data to generate pages using different templates and data. It uses the Ramda library to process data.
 // The generator maps over a list of page types. For each page type, it calls a function that will map over the pages within that type. Hence there are two essential levels of mapping, but more levels can be added. If you need a page to use data from a parent page, then you will need to nest map functions. See the cityRegion => suburb generator for an example of this.
 // However, the main way that data is passed to pages is by merging a series of object maker functions. These object makers accept data that they use to add context to their data. Then the merging causes object makers later in the sequence to be able to override the data of object makers higher up.
-// The maps output only side effects. They don't build up values due to performance considerations.
+// The maps output only side effects. They chuck out the list that they are mapping over rather than modifying it due to performance considerations.
 // Map structure:
 // 1. Map pageTypes
 // 1.1. Home
@@ -50,11 +40,13 @@ const U = require("./utilities");
 
 const performanceTimerStart = now();
 
-U.sitemapStream.write(dataPaths.sitemap.data.header);
+U.sitemapStream.write(U.relPath(dataPaths.sitemap.data.header));
+U.directoryStream.write(U.fileToStr(dataPaths.directory.data.header));
 
 generators.run(dataPaths.firstLevelPageTypes);
 
-U.sitemapStream.write(dataPaths.sitemap.data.footer);
+U.sitemapStream.write(U.relPath(dataPaths.sitemap.data.footer));
+U.directoryStream.write(U.fileToStr(dataPaths.directory.data.footer));
 
 const performanceTimerEnd = now();
 

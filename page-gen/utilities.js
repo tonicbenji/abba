@@ -48,12 +48,6 @@ const replaceTokens = (data, template) => {
     return OUTPUT;
 };
 
-const sitemapItem = (path, lastmod) => `
-<url>
-    <loc>${path}</loc>
-    <lastmod>${lastmod}</lastmod>
-</url>`;
-
 // Data Manipulation
 
 const removeAllEmpty = ss => R.reject(R.isEmpty, ss);
@@ -83,6 +77,17 @@ const performanceLog = time => console.log(wrapInLinebreaks(chalk.grey(`Complete
 
 const sitemapStream = fs.createWriteStream(relPath(`${settings.outputLocation}/sitemap.xml`));
 
+const sitemapItem = (path, lastmod) => `
+<url>
+    <loc>${path}</loc>
+    <lastmod>${lastmod}</lastmod>
+</url>`;
+
+const directoryStream = fs.createWriteStream(relPath(`${settings.outputLocation}/directory.html`));
+
+const directoryItem = (path, text) => `
+<li><a href="${path}">${text}</a></li>`
+
 // Dates
 
 const universalDate = dateFormat(new Date(), "yyyy-mm-dd");
@@ -108,5 +113,7 @@ module.exports = {
     tokenise,
     sitemapItem,
     sitemapStream,
+    directoryStream,
+    directoryItem,
     universalDate
 };
