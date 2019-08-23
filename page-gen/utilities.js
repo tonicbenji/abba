@@ -54,7 +54,16 @@ const removeAllEmpty = ss => R.reject(R.isEmpty, ss);
 
 const error = s => console.log(chalk.red(s));
 
-const genLog = (buySell, name, path) => console.log(chalk.yellow(`${PAGE_COUNT++}. `) + `${chalk.blue(buySell)} ${name} ${chalk.gray(path)}`);
+const genLog = (action, name, path) => {
+    const actionColour = R.cond([
+        // Needed to be written in point-free style for some reason due to Ramda library
+        [R.equals("Buy"), chalk.green],
+        [R.equals("Sell"), chalk.blue],
+        [R.equals("Single"), chalk.cyan],
+        [R.equals("Skipped"), chalk.red]
+    ])
+    console.log(chalk.yellow(`${PAGE_COUNT++}. `) + `${actionColour(action)} ${name} ${chalk.gray(path)}`);
+}
 
 const headerLogDelim = chalk.yellow('='.repeat(5));
 
