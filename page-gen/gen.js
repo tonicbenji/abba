@@ -4,7 +4,6 @@ const R = require("ramda");
 const now = require("performance-now");
 const program = require("commander");
 const chalk = require("chalk");
-const dateFormat = require("dateformat");
 const shuffleSeed = require("shuffle-seed");
 const settings = require("./gen-config");
 

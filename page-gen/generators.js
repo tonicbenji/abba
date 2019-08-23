@@ -1,5 +1,6 @@
 const fs = require("fs");
 const R = require("ramda");
+const dateFormat = require("dateformat");
 const changeCase = require('change-case')
 const dataPaths = require("./data-paths");
 const contexts = require("./contexts");
@@ -66,7 +67,7 @@ const home = (data, template, pageType) => {
 
         // Outputs
         fs.writeFileSync(outputPath, output);
-        U.sitemapStream.write(U.sitemapItem(data, "date"))
+        U.sitemapStream.write(U.sitemapItem(settings.domain + prettyPath, U.universalDate))
         U.genLog("Single", data, prettyPath);
 };
 

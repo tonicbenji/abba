@@ -3,6 +3,7 @@ const path = require("path");
 const R = require("ramda");
 const chalk = require("chalk");
 const changeCase = require('change-case')
+const dateFormat = require("dateformat");
 const settings = require("./gen-config");
 
 // Globals
@@ -82,6 +83,10 @@ const performanceLog = time => console.log(wrapInLinebreaks(chalk.grey(`Complete
 
 const sitemapStream = fs.createWriteStream(relPath(`${settings.outputLocation}/sitemap.xml`));
 
+// Dates
+
+const universalDate = dateFormat(new Date(), "yyyy-mm-dd");
+
 module.exports = {
     pathToList,
     relPath,
@@ -102,5 +107,6 @@ module.exports = {
     replaceTokens,
     tokenise,
     sitemapItem,
-    sitemapStream
+    sitemapStream,
+    universalDate
 };
