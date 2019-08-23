@@ -64,10 +64,11 @@ const home = (data, template, pageType) => {
 
         const outputPath = U.relPathList(path);
         const prettyPath = U.prettyPath(path);
+        const domainPath = settings.domain + prettyPath;
 
         // Outputs
         fs.writeFileSync(outputPath, output);
-        U.sitemapStream.write(U.sitemapItem(settings.domain + prettyPath, U.universalDate))
+        U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate))
         U.genLog("Single", data, prettyPath);
 };
 
@@ -90,10 +91,11 @@ const about = (data, template, pageType) => {
 
         const outputPath = U.relPathList(path);
         const prettyPath = U.prettyPath(path);
+        const domainPath = settings.domain + prettyPath;
 
         // Outputs
         fs.writeFileSync(outputPath, output);
-
+        U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate))
         U.genLog("Single", data, prettyPath);
 };
 
@@ -116,10 +118,11 @@ const contact = (data, template, pageType) => {
 
         const outputPath = U.relPathList(path);
         const prettyPath = U.prettyPath(path);
+        const domainPath = settings.domain + prettyPath;
 
         // Outputs
         fs.writeFileSync(outputPath, output);
-
+        U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate))
         U.genLog("Single", data, prettyPath);
 };
 
@@ -144,10 +147,11 @@ const country = (data, template, pageType) => {
 
         const outputPath = U.relPathList(path);
         const prettyPath = U.prettyPath(path);
+        const domainPath = settings.domain + prettyPath;
 
         // Outputs
         fs.writeFileSync(outputPath, output);
-
+        U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate))
         U.genLog(buySell, data, prettyPath);
     });
 };
@@ -174,10 +178,11 @@ const state = (data, template, pageType) => {
 
         const outputPath = U.relPathList(path);
         const prettyPath = U.prettyPath(path);
+        const domainPath = settings.domain + prettyPath;
 
         // Outputs
         fs.writeFileSync(outputPath, output);
-
+        U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate))
         U.genLog(buySell, data, prettyPath);
     });
 };
@@ -208,10 +213,11 @@ const stateRegions = (data, template, pageType) => {
 
             const outputPath = U.relPathList(path);
             const prettyPath = U.prettyPath(path);
+            const domainPath = settings.domain + prettyPath;
 
             // Outputs
             fs.writeFileSync(outputPath, output);
-
+            U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate))
             U.genLog(buySell, stateRegion, prettyPath);
         });
     });
@@ -241,10 +247,11 @@ const city = (data, template, pageType) => {
 
         const outputPath = U.relPathList(path);
         const prettyPath = U.prettyPath(path);
+        const domainPath = settings.domain + prettyPath;
 
         // Outputs
         fs.writeFileSync(outputPath, output);
-
+        U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate))
         U.genLog(buySell, data, prettyPath);
     });
 };
@@ -275,10 +282,11 @@ const cityRegions = (data, template, pageType) => {
 
             const outputPath = U.relPathList(path);
             const prettyPath = U.prettyPath(path);
+            const domainPath = settings.domain + prettyPath;
 
             // Outputs
             fs.writeFileSync(outputPath, output);
-
+            U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate))
             U.genLog(buySell, cityRegion, prettyPath);
 
             // Child generator
@@ -314,10 +322,11 @@ const suburbs = (data, template, pageType, parentContext) => {
 
             const outputPath = U.relPathList(path);
             const prettyPath = U.prettyPath(path);
+            const domainPath = settings.domain + prettyPath;
 
             // Outputs
             fs.writeFileSync(outputPath, output);
-
+            U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate))
             U.genLog(buySell, suburb, prettyPath);
         })
     );
