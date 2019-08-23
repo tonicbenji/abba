@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const R = require("ramda");
 const chalk = require("chalk");
+const changeCase = require('change-case')
 
 // Globals
 
@@ -23,7 +24,7 @@ const fileToList = p => fileToStr(p).split("\n");
 
 const prettyPath = l => l.join("/");
 
-// Regex
+// String Manipulation
 
 const replaceToken = (a, b) => R.replace(new RegExp("{{" + a + "}}", "g"), b);
 
@@ -32,6 +33,10 @@ const theToLower = s => s.replace(/the/i, "the")
 const noThe = s => s.replace(/the/i, "")
 
 const wrapInLinebreaks = s => `\n${s}\n`
+
+const filenameCase = name => changeCase.paramCase(noThe(name))
+
+const filenameFormat = name => `${filenameCase(name)}.html`
 
 // Data Manipulation
 
@@ -64,5 +69,7 @@ module.exports = {
     noThe,
     headerLog,
     prettyPath,
-    performanceLog
+    performanceLog,
+    filenameCase,
+    filenameFormat
 };

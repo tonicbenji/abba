@@ -5,7 +5,7 @@ const now = require("performance-now");
 const program = require("commander");
 const dateFormat = require("dateformat");
 const shuffleSeed = require("shuffle-seed");
-var changeCase = require('change-case')
+const changeCase = require('change-case')
 
 // Personal modules ----------
 
@@ -99,8 +99,6 @@ const contextItem = (f, key, value) => {
     }
 }
 
-const filenameFormat = name => `${changeCase.paramCase(U.noThe(name))}.html`
-
 const contextMaker = (key, value) => {
     const key_ = !R.isEmpty(key) ? key : value;
     return {
@@ -112,7 +110,7 @@ const contextMaker = (key, value) => {
         ...contextItem(R.toUpper, "name", value),
         ...contextItem(changeCase.camelCase, "name", value),
         ...contextItem(changeCase.constantCase, "name", value),
-        filename: filenameFormat(value)
+        filename: U.filenameFormat(value)
     }
 }
 
@@ -129,7 +127,7 @@ const generalContext = ({ name }) => {
 const buySellContext = ({ buySell }) => {
     return {
         ...contextMaker("buySell", buySell),
-        buySellFilename: filenameFormat(buySell)
+        buySellFilename: U.filenameFormat(buySell)
     };
 };
 
@@ -145,14 +143,14 @@ const homeContext = ({ home }) => {
 const aboutContext = ({ about }) => {
     return {
         title: about,
-        filename: filenameFormat(about)
+        filename: U.filenameFormat(about)
     };
 }
 
 const contactContext = ({ contact }) => {
     return {
         title: contact,
-        filename: filenameFormat(contact)
+        filename: U.filenameFormat(contact)
     };
 }
 
@@ -452,7 +450,7 @@ const genCityRegions = (data, template, pageType) => {
             const path = [
                 settings.outputLocation,
                 `${context.buySell}-${context.industry}`,
-                filenameFormat(cityRegion)
+                U.filenameFormat(cityRegion)
             ]
 
             const outputPath = U.relPathList(path);
@@ -464,21 +462,23 @@ const genCityRegions = (data, template, pageType) => {
             U.genLog(buySell, cityRegion, prettyPath);
 
             // Child generator
-            gen(["suburbs"], context);
+            if (buySell === "Buy") {
+                gen(["suburbs"], context);
+            }
         });
-        // Generate the suburbs for each region
     })
 };
 
 const genSuburbs = (data, template, pageType, parentContext) => {
     console.log(parentContext);
-    const data_ = `${data}regions/${changeCase.paramCase(parentContext.name)}.txt`
+    const data_ = `${data}regions/${U.filenameCase(parentContext.name)}.txt`
     console.log(data_);
     const suburbs = U.removeAllEmpty(U.fileToList(data_));
     suburbs.map(suburb =>
         dataPaths.buySell.data.map(buySell => {
             const context = R.mergeAll([
                 parentContext,
+                buySellContext({ buySell }),
                 suburbContext({ suburb })
             ]);
 
