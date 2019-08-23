@@ -24,8 +24,15 @@ const contextMaker = (key, value) => {
     }
 }
 
+const components = () => {
+    const path = "src/templates/components/";
+    const files = ["bottomScripts", "contactForm", "header", "meta"];
+    return R.fromPairs(R.map(x => [x, U.fileToStr(path + `${x}.html`)], files))
+}
+
 const general = ({ name }) => {
     return {
+        ...components(),
         ...contextMaker("", settings.businessName),
         ...contextMaker("", name),
         // nameNoThe: U.noThe(name.toLowerCase()),

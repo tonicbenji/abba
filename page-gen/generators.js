@@ -289,9 +289,7 @@ const cityRegions = (data, template, pageType) => {
 };
 
 const suburbs = (data, template, pageType, parentContext) => {
-    console.log(parentContext);
     const data_ = `${data}regions/${U.filenameCase(parentContext.name)}.txt`
-    console.log(data_);
     const suburbs = U.removeAllEmpty(U.fileToList(data_));
     suburbs.map(suburb =>
         dataPaths.buySell.data.map(buySell => {
