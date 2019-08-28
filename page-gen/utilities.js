@@ -113,6 +113,15 @@ const directoryItem = (path, text) => `
 
 const universalDate = dateFormat(new Date(), "yyyy-mm-dd");
 
+// Components
+
+const link = (path, contents) => `<a href="${path}">${contents}</a>`;
+
+const footerBreadcrumbs = l => `
+<span class="fa fa-angle-right footerSeparator"></span>
+    ${l.join("<span class=\"select-breadcrumb-separator\"><span class=\"fa fa-angle-right\"></span></span>")}
+</span>`;
+
 module.exports = {
     pathToList,
     relPath,
@@ -136,5 +145,7 @@ module.exports = {
     sitemapStream,
     directoryStream,
     directoryItem,
-    universalDate
+    universalDate,
+    link,
+    breadcrumbs
 };

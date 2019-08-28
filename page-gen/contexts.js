@@ -97,7 +97,16 @@ const city = ({ city }) => {
 
 const cityRegion = ({ cityRegion }) => contextMaker("", cityRegion);
 
-const suburb = ({ suburb }) => contextMaker("", suburb);
+const suburb = ({ suburb }) => {
+    return {
+        ...contextMaker("", suburb),
+        nearby: R.pipe(
+            U.readFile,
+            JSON.stringify,
+            R.lens(suburb)
+        )("src/locations/locations-cache.json")
+    }
+}
 
 module.exports = {
     contextItem,
