@@ -14,5 +14,6 @@ module.exports = {
         name: "ABBA",
         trade: "business broker"
     },
-    outputLocation: "output2"
+    outputLocation: "output2",
+    briefLogs: true
 };

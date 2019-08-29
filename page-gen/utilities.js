@@ -61,17 +61,21 @@ const mergeDeepAll = l => R.reduce(R.mergeDeepRight, {}, l);
 const error = s => console.log(chalk.red(s));
 
 const genLog = (action, name, path) => {
-    const actionColour = R.cond([
-        // Needed to be written in point-free style for some reason due to Ramda library
-        [R.equals("Buy"), chalk.green],
-        [R.equals("Sell"), chalk.blue],
-        [R.equals("Single"), chalk.cyan],
-        [R.equals("Skipped"), chalk.red]
-    ]);
-    console.log(
-        chalk.yellow(`${PAGE_COUNT++}. `) +
-            `${actionColour(action)} ${name} ${chalk.gray(path)}`
-    );
+    if (settings.briefLogs) {
+        process.stdout.write(`${PAGE_COUNT++}. `);
+    } else {
+        const actionColour = R.cond([
+            // Needed to be written in point-free style for some reason due to Ramda library
+            [R.equals("Buy"), chalk.green],
+            [R.equals("Sell"), chalk.blue],
+            [R.equals("Single"), chalk.cyan],
+            [R.equals("Skipped"), chalk.red]
+        ]);
+        console.log(
+            chalk.yellow(`${PAGE_COUNT++}. `) +
+                `${actionColour(action)} ${name} ${chalk.gray(path)}`
+        );
+    }
 };
 
 const headerLog = s => R.pipe(
@@ -115,10 +119,13 @@ const universalDate = dateFormat(new Date(), "yyyy-mm-dd");
 
 const link = (path, contents) => `<a href="${path}">${contents}</a>`;
 
-const footerBreadcrumbs = l => `
+const footerBreadcrumbs = listOfPathsContents => {
+    const l = listOfPathsContents.map(x => link(x[0], x[1]));
+    return `
 <span class="fa fa-angle-right footerSeparator"></span>
     ${l.join("<span class=\"select-breadcrumb-separator\"><span class=\"fa fa-angle-right\"></span></span>")}
 </span>`;
+}
 
 module.exports = {
     pathToList,
