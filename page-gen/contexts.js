@@ -15,11 +15,13 @@ const contextMaker = (key, value) => {
     return {
         ...contextItem(R.toLower, key_, value),
         ...contextItem(R.toUpper, key_, value),
+        ...contextItem(changeCase.titleCase, key_, value),
         ...contextItem(changeCase.camelCase, key_, value),
         ...contextItem(changeCase.constantCase, key_, value),
         ...contextItem(R.toLower, "name", value),
         ...contextItem(R.toUpper, "name", value),
-        ...contextItem(changeCase.camelCase, "name", value),
+        ...contextItem(changeCase.titleCase, "name", value),
+        ...contextItem(changeCase.camelCase, key_, value),
         ...contextItem(changeCase.constantCase, "name", value),
         filename: U.filenameFormat(value)
     };
@@ -28,32 +30,39 @@ const contextMaker = (key, value) => {
 const components = () => {
     const path = "src/templates/components/";
     const files = ["bottomScripts", "contactForm", "header", "meta"];
-    return R.fromPairs(R.map(x => [x, U.fileToStr(path + `${x}.html`)], files));
+    return {
+        ...R.fromPairs(R.map(x => [x, U.fileToStr(path + `${x}.html`)], files)),
+        ...dataPaths.components
+    };
 };
 
 const general = ({ name }) => {
     return {
         ...components(),
-        ...contextMaker("", settings.business.name),
-        ...contextMaker("", name)
-        // nameNoThe: U.noThe(name.toLowerCase()),
-        // NameNoThe: U.noThe(U.titleCase(name)),
-        // NAMENOTHE: U.noThe(name.toUpperCase()),
+        ...contextMaker("businessName", settings.business.name),
+        ...contextMaker("", name),
+        nameNoThe: U.noThe(name.toLowerCase()),
+        NameNoThe: U.noThe(changeCase.titleCase(name)),
+        NAMENOTHE: U.noThe(name.toUpperCase())
     };
 };
 
 const buySell = ({ buySell }) => {
     return {
         ...contextMaker("buySell", buySell),
+        ...contextMaker("trade", buySell),
         buySellFilename: U.filenameFormat(buySell)
     };
 };
 
 const industry = ({ industry }) => contextMaker("industry", industry);
 
-const home = ({ home }) => {
+const home = () => {
     return {
-        title: home,
+        title: "Buy and Sell Childcare Businesses across Australia",
+        get home() {
+            return this.title;
+        },
         filename: "index.html",
         keywords: {
             home: [""]
@@ -87,7 +96,12 @@ const country = ({ country }) => {
 
 const state = ({ state }) => contextMaker("", state);
 
-const stateRegion = ({ stateRegion }) => contextMaker("", stateRegion);
+const stateRegion = ({ stateRegion }) => {
+    return {
+        ...contextMaker("", stateRegion),
+        ...contextMaker("region", stateRegion)
+    };
+};
 
 const city = ({ city }) => {
     return {
@@ -96,14 +110,19 @@ const city = ({ city }) => {
     };
 };
 
-const cityRegion = ({ cityRegion }) => contextMaker("", cityRegion);
+const cityRegion = ({ cityRegion }) => {
+    return {
+        ...contextMaker("", cityRegion),
+        ...contextMaker("region", cityRegion)
+    };
+};
 
 const suburb = ({ suburb }) => {
     return {
         ...contextMaker("", suburb),
         nearby: dataPaths.suburbs.nearby[suburb]
-    }
-}
+    };
+};
 
 module.exports = {
     contextItem,

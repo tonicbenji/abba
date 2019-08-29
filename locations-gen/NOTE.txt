@@ -1,0 +1,1 @@
+The locations generator needs to output an object with suburbs as the keys, not a list anymore. You need to change this in order to generate a new locations-cache.json

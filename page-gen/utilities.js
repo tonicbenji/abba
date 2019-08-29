@@ -34,7 +34,7 @@ const noThe = s => s.replace(/the/i, "");
 
 const wrapInLinebreaks = s => `\n${s}\n`;
 
-const wrapInSpaces = s => ` ${s} `
+const wrapInSpaces = s => ` ${s} `;
 
 const filenameCase = name => changeCase.paramCase(noThe(name));
 
@@ -78,12 +78,13 @@ const genLog = (action, name, path) => {
     }
 };
 
-const headerLog = s => R.pipe(
-    wrapInSpaces,
-    chalk.bgMagenta,
-    wrapInLinebreaks,
-    console.log
-)(s);
+const headerLog = s =>
+    R.pipe(
+        wrapInSpaces,
+        chalk.bgMagenta,
+        wrapInLinebreaks,
+        console.log
+    )(s);
 
 const performanceLog = time =>
     console.log(
@@ -123,9 +124,34 @@ const footerBreadcrumbs = listOfPathsContents => {
     const l = listOfPathsContents.map(x => link(x[0], x[1]));
     return `
 <span class="fa fa-angle-right footerSeparator"></span>
-    ${l.join("<span class=\"select-breadcrumb-separator\"><span class=\"fa fa-angle-right\"></span></span>")}
+    ${l.join(
+        '<span class="select-breadcrumb-separator"><span class="fa fa-angle-right"></span></span>'
+    )}
 </span>`;
-}
+};
+
+const scriptTag = s => `<script type="application/ld+json">${s}</script>`;
+
+const schema = namePathList => {
+    const item = (i, name, path) => {
+        return {
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+                "@id": settings.domain + path,
+                name: name
+            }
+        };
+    };
+    return R.pipe(
+        JSON.stringify,
+        scriptTag
+    )({
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: namePathList.map((x, i) => item(i, x[0], x[1]))
+    });
+};
 
 module.exports = {
     pathToList,
@@ -152,5 +178,6 @@ module.exports = {
     directoryItem,
     universalDate,
     link,
-    footerBreadcrumbs
+    footerBreadcrumbs,
+    schema
 };

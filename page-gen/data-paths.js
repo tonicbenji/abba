@@ -1,4 +1,5 @@
 const U = require("./utilities");
+const settings = require("./gen-config");
 
 module.exports = {
     firstLevelPageTypes: [
@@ -66,5 +67,20 @@ module.exports = {
             header: "src/templates/directory/header.html",
             footer: "src/templates/directory/footer.html"
         }
+    },
+    components: {
+        tagline: "Business Sales, Acquisitions and Mergers",
+        description:
+            '<meta name="description" content="The Abba Group are Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity">',
+        formSubmittedMobile:
+            '<div id="formSubmittedMobile">✓&nbsp;&nbsp; Thank you, we will be in touch shortly</div>',
+        rootUrl: settings.rootUrl,
+        menuItems: `
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home financity-normal-menu"><a href="/buy-childcare/index.html">Buy Childcare</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page financity-normal-menu"><a href="/sell-childcare/index.html">Sell Childcare</a></li>`,
+        buttonBuy:
+            '<a href="/buy-childcare/index.html" class="abbaButton abbaButton-buy">Buy a Childcare Business</a>',
+        buttonSell:
+            '<a href="/sell-childcare/index.html"  class="abbaButton abbaButton-sell">Sell a Childcare Business</a>'
     }
 };
