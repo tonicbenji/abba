@@ -2,6 +2,7 @@ const now = require("performance-now");
 const dataPaths = require("./data-paths");
 const generators = require("./generators");
 const U = require("./utilities");
+const settings = require("./gen-config");
 
 // Guide ----------
 
@@ -44,6 +45,10 @@ U.sitemapStream.write(U.relPath(dataPaths.sitemap.data.header));
 U.directoryStream.write(U.fileToStr(dataPaths.directory.data.header));
 
 generators.run(dataPaths.firstLevelPageTypes);
+
+if (!settings.genSuburbs) {
+    U.warning("Generating suburbs is turned off.")
+}
 
 U.sitemapStream.write(U.relPath(dataPaths.sitemap.data.footer));
 U.directoryStream.write(U.fileToStr(dataPaths.directory.data.footer));

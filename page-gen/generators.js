@@ -40,7 +40,7 @@ const run = (pageTypes, context) => {
                 suburbs(data, template, pageType, context);
                 break;
             default:
-                U.error("No valid pageTypes specified in config");
+                U.warning("No valid pageTypes specified in config");
         }
     });
 };
@@ -67,8 +67,19 @@ const home = (data, template, pageType) => {
         },
         get schema() {
             return U.schema([[this.home, ""]]);
+        },
+        get nswRegions() {
+            return U.removeAllEmpty(U.fileToList(dataPaths.stateRegions.data));
+        },
+        get footerBuyNswRegions() {
+            return U.nswRegionFooterList("buy", this.industry, this.nswRegions);
+        },
+        get footerSellNswRegions() {
+            return U.nswRegionFooterList("sell", this.industry, this.nswRegions);
         }
     };
+    console.log(context.nswRegions);
+    console.log(context.footerSellNswRegions);
 
     const templateFile = U.fileToStr(template);
 
@@ -106,9 +117,10 @@ const about = (data, template, pageType) => {
             return U.schema([[this.home, ""], [this.title, this.filename]]);
         },
         get footerBreadcrumbs() {
-            return U.footerBreadcrumbs([[this.home, ""], [this.title, this.filename]]);
+            return U.footerBreadcrumbs([["Home", ""], [this.title, this.filename]]);
         }
     };
+    console.log(context);
 
     const templateFile = U.fileToStr(template);
 
@@ -143,7 +155,7 @@ const contact = (data, template, pageType) => {
             return settings.domain + context.prettyPath;
         },
         get schema() {
-            return U.schema([[this.home, ""], [this.title, this.prettyPath]]);
+            return U.schema([["Home", ""], [this.title, this.prettyPath]]);
         }
     };
 
@@ -188,7 +200,7 @@ const country = (data, template, pageType) => {
                 return `${this.Trade} ${this.Industry} in ${this.Name}`;
             },
             get schema() {
-                return U.schema([[this.home, ""], [this.pageTitle, this.path]]);
+                return U.schema([["Home", ""], [this.pageTitle, this.path]]);
             }
         };
 
@@ -231,7 +243,7 @@ const state = (data, template, pageType) => {
                 return settings.domain + context.prettyPath;
             },
             get schema() {
-                return U.schema([[this.home, ""], [this.pageTitle, this.path]]);
+                return U.schema([["Home", ""], [this.pageTitle, this.path]]);
             }
         };
 
@@ -276,7 +288,7 @@ const stateRegions = (data, template, pageType) => {
                     return settings.domain + context.prettyPath;
                 },
                 get schema() {
-                    return U.schema([[this.home, ""], [this.pageTitle, this.path]]);
+                    return U.schema([["Home", ""], [this.pageTitle, this.path]]);
                 }
             }
 
@@ -382,7 +394,7 @@ const cityRegions = (data, template, pageType) => {
             U.genLog(buySell, cityRegion, context.prettyPath);
 
             // Child generator
-            if (buySell === "Buy") {
+            if (settings.genSuburbs && buySell === "Buy") {
                 run(["suburbs"], context);
             }
         });

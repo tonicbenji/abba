@@ -82,7 +82,11 @@ module.exports = {
             '<a href="/buy-childcare/index.html" class="abbaButton abbaButton-buy">Buy a Childcare Business</a>',
         buttonSell:
             '<a href="/sell-childcare/index.html"  class="abbaButton abbaButton-sell">Sell a Childcare Business</a>',
-        copyright: `<div class="abbaCopyright">© Abba Group Sydney ${U.year} | <a href="/directory.html">Sales, Mergers and Acquisitions Australia</a></div>`
+        copyright: `<div class="abbaCopyright">© Abba Group Sydney ${U.year} | <a href="/directory.html">Sales, Mergers and Acquisitions Australia</a></div>`,
+        footerHeadingBuy: '<div class="home-footer-heading-buy">Buy:</div>',
+        footerHeadingSell: '<div class="home-footer-heading-sell">Sell:</div>',
+        footerBuyNsw: '<ul class="home-footer-heading-nsw"><li><a href="/buy-childcare/nsw.html">NSW</a></li></ul>',
+        footerSellNsw: '<ul class="home-footer-heading-nsw"><li><a href="/sell-childcare/nsw.html">NSW</a></li></ul>'
     },
     footer: {
         template: {
@@ -92,7 +96,7 @@ module.exports = {
             city:        U.fileToStr("src/templates/sydney/footer.html"),
             suburb:      U.fileToStr("src/templates/suburb/footer.html"),
             country:     "",
-            home:        ""
+            home:        U.fileToStr("src/templates/home/footer.html")
         }
     }
 };

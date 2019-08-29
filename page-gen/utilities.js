@@ -58,7 +58,7 @@ const mergeDeepAll = l => R.reduce(R.mergeDeepRight, {}, l);
 
 // Logging
 
-const error = s => console.log(chalk.red(s));
+const warning = s => console.log(chalk.red(s));
 
 const genLog = (action, name, path) => {
     if (settings.briefLogs) {
@@ -123,11 +123,18 @@ const year = dateFormat(new Date(), "yyyy");
 const link = (name, path) => `<a href="${path}">${name}</a>`;
 
 const footerBreadcrumbs = namePathList => {
-    const l = namePathList.map(x => link(x[0], x[1]));
+    const list = namePathList.map((x, i) => {
+        const [name, path] = x;
+        if ((i + 1) !== namePathList.length) {
+            return link(name, path);
+        } else {
+            return name
+        }
+    });
     return `
-<span class="fa fa-angle-right footerSeparator"></span>
-    ${l.join(
-        '<span class="select-breadcrumb-separator"><span class="fa fa-angle-right"></span></span>'
+<span class="footerBreadcrumbs text-center block">
+    ${list.join(
+        '<span class="fa fa-angle-right footerSeparator"></span>'
     )}
 </span>`;
 };
@@ -155,13 +162,21 @@ const schema = namePathList => {
     });
 };
 
+const ul = s => `<ul>${s}</ul>`;
+
+const li = s => `<li>${s}</li>`;
+
+const nswRegionFooterList = (trade, industry, regionsList) => {
+    return ul(regionsList.map(x => li(link(`${x} »`, `${trade}-${industry}/${x}`))).join(""));
+}
+
 module.exports = {
     pathToList,
     relPath,
     readFile,
     fileToStr,
     fileToList,
-    error,
+    warning,
     genLog,
     removeAllEmpty,
     relPathList,
@@ -182,5 +197,8 @@ module.exports = {
     year,
     link,
     footerBreadcrumbs,
-    schema
+    schema,
+    ul,
+    li,
+    nswRegionFooterList
 };

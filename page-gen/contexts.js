@@ -67,7 +67,8 @@ const home = () => {
         filename: "index.html",
         keywords: {
             home: [""]
-        }
+        },
+        footerBreadcrumbs: ""
     };
 };
 
