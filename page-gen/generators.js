@@ -48,7 +48,7 @@ const run = (pageTypes, context) => {
 const home = (data, template, pageType) => {
     const context = {
         ...R.mergeAll([
-            contexts.general({ name: data, pageType }),
+            contexts.general({ name: data, pageType, footerType: "page" }),
             contexts.industry({ industry: dataPaths.industry.data }),
             contexts.country({ country: dataPaths.country.data }),
             contexts.home()
@@ -69,6 +69,7 @@ const home = (data, template, pageType) => {
             return U.schema([[this.home, ""]]);
         }
     };
+    console.log(context);
 
     const templateFile = U.fileToStr(template);
 
@@ -84,7 +85,7 @@ const home = (data, template, pageType) => {
 const about = (data, template, pageType) => {
     const context = {
         ...R.mergeAll([
-            contexts.general({ name: data, pageType }),
+            contexts.general({ name: data, pageType, footerType: "page" }),
             contexts.home(),
             contexts.industry({ industry: dataPaths.industry.data }),
             contexts.country({ country: dataPaths.country.data }),
@@ -121,7 +122,7 @@ const about = (data, template, pageType) => {
 const contact = (data, template, pageType) => {
     const context = {
         ...R.mergeAll([
-            contexts.general({ name: data, pageType }),
+            contexts.general({ name: data, pageType, footerType: "page" }),
             contexts.home(),
             contexts.industry({ industry: dataPaths.industry.data }),
             contexts.country({ country: dataPaths.country.data }),
@@ -159,7 +160,7 @@ const country = (data, template, pageType) => {
     dataPaths.buySell.data.map(buySell => {
         const context = {
             ...R.mergeAll([
-                contexts.general({ name: data, pageType }),
+                contexts.general({ name: data, pageType, footerType: "country" }),
                 contexts.home(),
                 contexts.buySell({ buySell }),
                 contexts.industry({ industry: dataPaths.industry.data }),
@@ -205,7 +206,7 @@ const state = (data, template, pageType) => {
     dataPaths.buySell.data.map(buySell => {
         const context = {
             ...R.mergeAll([
-                contexts.general({ name: data, pageType }),
+                contexts.general({ name: data, pageType, footerType: "state" }),
                 contexts.buySell({ buySell }),
                 contexts.industry({ industry: dataPaths.industry.data }),
                 contexts.country({ country: dataPaths.country.data }),
@@ -250,7 +251,7 @@ const stateRegions = (data, template, pageType) => {
         dataPaths.buySell.data.map(buySell => {
             const context = {
                 ...R.mergeAll([
-                    contexts.general({ name: stateRegion, pageType }),
+                    contexts.general({ name: stateRegion, pageType, footerType: "stateRegion" }),
                     contexts.buySell({ buySell }),
                     contexts.industry({ industry: dataPaths.industry.data }),
                     contexts.country({ country: dataPaths.country.data }),
@@ -296,7 +297,7 @@ const city = (data, template, pageType) => {
     dataPaths.buySell.data.map(buySell => {
         const context = {
             ...R.mergeAll([
-                contexts.general({ name: data, pageType }),
+                contexts.general({ name: data, pageType, footerType: "city" }),
                 contexts.buySell({ buySell }),
                 contexts.industry({ industry: dataPaths.industry.data }),
                 contexts.country({ country: dataPaths.country.data }),
@@ -340,7 +341,7 @@ const cityRegions = (data, template, pageType) => {
         dataPaths.buySell.data.map(buySell => {
             const context = {
                 ...R.mergeAll([
-                    contexts.general({ name: data, pageType }),
+                    contexts.general({ name: data, pageType, footerType: "city" }),
                     contexts.buySell({ buySell }),
                     contexts.industry({ industry: dataPaths.industry.data }),
                     contexts.country({ country: dataPaths.country.data }),
@@ -394,6 +395,7 @@ const suburbs = (data, template, pageType, parentContext) => {
             const context = {
                 ...R.mergeAll([
                     parentContext,
+                    contexts.general({ name: data, pageType, footerType: "suburb" }),
                     contexts.buySell({ buySell }),
                     contexts.suburb({ suburb })
                 ]),

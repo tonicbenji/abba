@@ -82,5 +82,14 @@ module.exports = {
             '<a href="/buy-childcare/index.html" class="abbaButton abbaButton-buy">Buy a Childcare Business</a>',
         buttonSell:
             '<a href="/sell-childcare/index.html"  class="abbaButton abbaButton-sell">Sell a Childcare Business</a>'
+    },
+    footer: {
+        template: {
+            page:        U.readFile("src/templates/pages/footer.html"),
+            state:       U.readFile("src/templates/nsw/footer.html"),
+            stateRegion: U.readFile("src/templates/nswRegion/footer.html"),
+            city:        U.readFile("src/templates/sydney/footer.html"),
+            suburb:      U.readFile("src/templates/suburb/footer.html")
+        }
     }
 };

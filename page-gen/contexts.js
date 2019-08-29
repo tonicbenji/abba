@@ -27,23 +27,24 @@ const contextMaker = (key, value) => {
     };
 };
 
-const components = () => {
+const components = ({ pageType, footerType }) => {
     const path = "src/templates/components/";
     const files = ["bottomScripts", "contactForm", "header", "meta"];
     return {
         ...R.fromPairs(R.map(x => [x, U.fileToStr(path + `${x}.html`)], files)),
-        ...dataPaths.components
+        ...dataPaths.components,
+        footer: dataPaths.footer.template[footerType]
     };
 };
 
-const general = ({ name }) => {
+const general = ({ name, pageType }) => {
     return {
-        ...components(),
+        ...components({ pageType }),
         ...contextMaker("businessName", settings.business.name),
         ...contextMaker("", name),
         nameNoThe: U.noThe(name.toLowerCase()),
         NameNoThe: U.noThe(changeCase.titleCase(name)),
-        NAMENOTHE: U.noThe(name.toUpperCase())
+        NAMENOTHE: U.noThe(name.toUpperCase()),
     };
 };
 
@@ -73,7 +74,7 @@ const home = () => {
 const about = ({ about }) => {
     return {
         title: about,
-        filename: U.filenameFormat(about)
+        filename: U.filenameFormat(about),
     };
 };
 
@@ -94,19 +95,23 @@ const country = ({ country }) => {
     };
 };
 
-const state = ({ state }) => contextMaker("", state);
+const state = ({ state }) => {
+    return {
+        ...contextMaker("", state)
+    }
+}
 
 const stateRegion = ({ stateRegion }) => {
     return {
         ...contextMaker("", stateRegion),
-        ...contextMaker("region", stateRegion)
+        ...contextMaker("region", stateRegion),
     };
 };
 
 const city = ({ city }) => {
     return {
         ...contextMaker("", city),
-        filename: "index.html"
+        filename: "index.html",
     };
 };
 
