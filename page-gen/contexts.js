@@ -98,7 +98,9 @@ const country = ({ country }) => {
 
 const state = ({ state }) => {
     return {
-        ...contextMaker("", state)
+        ...contextMaker("", state),
+        ...contextMaker(state, state),
+        nswRegionList: U.removeAllEmpty(U.fileToList(dataPaths.stateRegions.data))
     }
 }
 
@@ -106,6 +108,7 @@ const stateRegion = ({ stateRegion }) => {
     return {
         ...contextMaker("", stateRegion),
         ...contextMaker("region", stateRegion),
+        filename: `${stateRegion}.html`
     };
 };
 

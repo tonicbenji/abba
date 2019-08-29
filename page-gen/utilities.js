@@ -120,7 +120,7 @@ const year = dateFormat(new Date(), "yyyy");
 
 // Components
 
-const link = (name, path) => `<a href="${path}">${name}</a>`;
+const link = (name, path) => `<a href="/${path}">${name}</a>`;
 
 const footerBreadcrumbs = namePathList => {
     const list = namePathList.map((x, i) => {
@@ -128,7 +128,7 @@ const footerBreadcrumbs = namePathList => {
         if ((i + 1) !== namePathList.length) {
             return link(name, path);
         } else {
-            return name
+            return name;
         }
     });
     return `
@@ -167,7 +167,7 @@ const ul = s => `<ul>${s}</ul>`;
 const li = s => `<li>${s}</li>`;
 
 const nswRegionFooterList = (trade, industry, regionsList) => {
-    return ul(regionsList.map(x => li(link(`${x} »`, `${trade}-${industry}/${x}`))).join(""));
+    return ul(regionsList.map(x => li(link(`${x}&nbsp;»`, `${trade}-${industry}/${changeCase.paramCase(noThe(x))}.html`))).join(""));
 }
 
 module.exports = {

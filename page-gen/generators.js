@@ -51,6 +51,7 @@ const home = (data, template, pageType) => {
             contexts.general({ name: data, pageType, footerType: "home" }),
             contexts.industry({ industry: dataPaths.industry.data }),
             contexts.country({ country: dataPaths.country.data }),
+            contexts.state({ state: dataPaths.state.data }),
             contexts.home()
         ]),
         get path() {
@@ -78,8 +79,6 @@ const home = (data, template, pageType) => {
             return U.nswRegionFooterList("sell", this.industry, this.nswRegions);
         }
     };
-    console.log(context.nswRegions);
-    console.log(context.footerSellNswRegions);
 
     const templateFile = U.fileToStr(template);
 
@@ -120,7 +119,6 @@ const about = (data, template, pageType) => {
             return U.footerBreadcrumbs([["Home", ""], [this.title, this.filename]]);
         }
     };
-    console.log(context);
 
     const templateFile = U.fileToStr(template);
 
@@ -221,6 +219,7 @@ const state = (data, template, pageType) => {
         const context = {
             ...R.mergeAll([
                 contexts.general({ name: data, pageType, footerType: "state" }),
+                contexts.home(),
                 contexts.buySell({ buySell }),
                 contexts.industry({ industry: dataPaths.industry.data }),
                 contexts.country({ country: dataPaths.country.data }),
@@ -244,6 +243,12 @@ const state = (data, template, pageType) => {
             },
             get schema() {
                 return U.schema([["Home", ""], [this.pageTitle, this.path]]);
+            },
+            get regionFooterUl() {
+                return U.nswRegionFooterList("buy", this.industry, this.nswRegionList);
+            },
+            get footerBreadcrumbs() {
+                return U.footerBreadcrumbs([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.NSW, `${this.pathSegment}/${this.nsw}.html`]]);
             }
         };
 
@@ -269,12 +274,16 @@ const stateRegions = (data, template, pageType) => {
                     contexts.buySell({ buySell }),
                     contexts.industry({ industry: dataPaths.industry.data }),
                     contexts.country({ country: dataPaths.country.data }),
+                    contexts.state({ state: dataPaths.state.data }),
                     contexts.stateRegion({ stateRegion })
                 ]),
+                get pathSegment() {
+                    return `${this.buySell}-${this.industry}`;
+                },
                 get path() {
                     return [
                         settings.outputLocation,
-                        `${this.buySell}-${this.industry}`,
+                        this.pathSegment,
                         this.filename
                     ];
                 },
@@ -289,6 +298,9 @@ const stateRegions = (data, template, pageType) => {
                 },
                 get schema() {
                     return U.schema([["Home", ""], [this.pageTitle, this.path]]);
+                },
+                get footerBreadcrumbs() {
+                    return U.footerBreadcrumbs([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.NSW, `${this.pathSegment}/${this.nsw}.html`], [this.Name, `${this.pathSegment}/${this.filename}`]]);
                 }
             }
 
