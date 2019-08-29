@@ -13,6 +13,6 @@ module.exports = {
     business: {
         name: "ABBA",
         trade: "business broker"
-    }
+    },
     outputLocation: "output2"
 };

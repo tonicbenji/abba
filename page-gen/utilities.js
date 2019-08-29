@@ -72,16 +72,12 @@ const genLog = (action, name, path) => {
     );
 };
 
-const headerLogDelim = chalk.yellow("=".repeat(5));
-
-const headerLog = s =>
-    console.log(
-        wrapInLinebreaks(
-            `${headerLogDelim} ${chalk.magenta(
-                s.toUpperCase()
-            )} ${headerLogDelim}`
-        )
-    );
+const headerLog = s => R.pipe(
+    chalk.bgMagenta,
+    chalk.yellow,
+    wrapInLinebreaks,
+    console.log
+)(s);
 
 const performanceLog = time =>
     console.log(
@@ -147,5 +143,5 @@ module.exports = {
     directoryItem,
     universalDate,
     link,
-    breadcrumbs
+    footerBreadcrumbs
 };
