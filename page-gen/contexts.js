@@ -33,7 +33,7 @@ const components = () => {
 const general = ({ name }) => {
     return {
         ...components(),
-        ...contextMaker("", settings.businessName),
+        ...contextMaker("", settings.business.name),
         ...contextMaker("", name)
         // nameNoThe: U.noThe(name.toLowerCase()),
         // NameNoThe: U.noThe(U.titleCase(name)),

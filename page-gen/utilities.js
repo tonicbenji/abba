@@ -72,12 +72,13 @@ const genLog = (action, name, path) => {
     );
 };
 
-const headerLog = s => R.pipe(
-    chalk.bgMagenta,
-    chalk.yellow,
-    wrapInLinebreaks,
-    console.log
-)(s);
+const headerLog = s => console.log(s);
+// R.pipe(
+//     chalk.bgMagenta,
+//     chalk.yellow,
+//     wrapInLinebreaks,
+//     console.log
+// )(s);
 
 const performanceLog = time =>
     console.log(

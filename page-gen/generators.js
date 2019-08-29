@@ -331,7 +331,7 @@ const suburbs = (data, template, pageType, parentContext) => {
             U.directoryStream.write(
                 U.directoryItem(
                     prettyPath,
-                    `${buySell} a ${industry} business in <strong>${name}</strong>`
+                    `${context.buySell} a ${context.industry} business in <strong>${context.name}</strong>`
                 )
             );
             U.genLog(buySell, suburb, prettyPath);
