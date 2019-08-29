@@ -210,28 +210,37 @@ const state = (data, template, pageType) => {
                 contexts.industry({ industry: dataPaths.industry.data }),
                 contexts.country({ country: dataPaths.country.data }),
                 contexts.state({ state: data })
-            ])
+            ]),
+            get path() {
+                return [
+                    settings.outputLocation,
+                    `${this.buySell}-${this.industry}`,
+                    this.filename
+                ];
+            },
+            get prettyPath() {
+                return U.prettyPath(this.path);
+            },
+            get outputPath() {
+                return U.relPathList(this.path);
+            },
+            get domainPath() {
+                return settings.domain + context.prettyPath;
+            },
+            get schema() {
+                return U.schema([[this.home, ""], [this.pageTitle, this.path]]);
+            }
         };
 
         const templateFile = U.fileToStr(template + context.buySellFilename);
 
         const output = U.replaceTokens(context, templateFile);
 
-        const path = [
-            settings.outputLocation,
-            `${context.buySell}-${context.industry}`,
-            context.filename
-        ];
-
-        const outputPath = U.relPathList(path);
-        const prettyPath = U.prettyPath(path);
-        const domainPath = settings.domain + prettyPath;
-
         // Outputs
-        fs.writeFileSync(outputPath, output);
-        U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate));
-        U.directoryStream.write(U.directoryItem(prettyPath, context.name));
-        U.genLog(buySell, data, prettyPath);
+        fs.writeFileSync(context.outputPath, output);
+        U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
+        U.directoryStream.write(U.directoryItem(context.prettyPath, context.name));
+        U.genLog(buySell, data, context.prettyPath);
     });
 };
 
@@ -239,13 +248,34 @@ const stateRegions = (data, template, pageType) => {
     const stateRegions = U.removeAllEmpty(U.fileToList(data));
     stateRegions.map(stateRegion => {
         dataPaths.buySell.data.map(buySell => {
-            const context = R.mergeAll([
-                contexts.general({ name: stateRegion, pageType }),
-                contexts.buySell({ buySell }),
-                contexts.industry({ industry: dataPaths.industry.data }),
-                contexts.country({ country: dataPaths.country.data }),
-                contexts.stateRegion({ stateRegion })
-            ]);
+            const context = {
+                ...R.mergeAll([
+                    contexts.general({ name: stateRegion, pageType }),
+                    contexts.buySell({ buySell }),
+                    contexts.industry({ industry: dataPaths.industry.data }),
+                    contexts.country({ country: dataPaths.country.data }),
+                    contexts.stateRegion({ stateRegion })
+                ]),
+                get path() {
+                    return [
+                        settings.outputLocation,
+                        `${this.buySell}-${this.industry}`,
+                        this.filename
+                    ];
+                },
+                get prettyPath() {
+                    return U.prettyPath(this.path);
+                },
+                get outputPath() {
+                    return U.relPathList(this.path);
+                },
+                get domainPath() {
+                    return settings.domain + context.prettyPath;
+                },
+                get schema() {
+                    return U.schema([[this.home, ""], [this.pageTitle, this.path]]);
+                }
+            }
 
             const templateFile = U.fileToStr(
                 template + context.buySellFilename
@@ -253,56 +283,54 @@ const stateRegions = (data, template, pageType) => {
 
             const output = U.replaceTokens(context, templateFile);
 
-            const path = [
-                settings.outputLocation,
-                `${context.buySell}-${context.industry}`,
-                context.filename
-            ];
-
-            const outputPath = U.relPathList(path);
-            const prettyPath = U.prettyPath(path);
-            const domainPath = settings.domain + prettyPath;
-
             // Outputs
-            fs.writeFileSync(outputPath, output);
-            U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate));
-            U.directoryStream.write(U.directoryItem(prettyPath, context.name));
-            U.genLog(buySell, stateRegion, prettyPath);
+            fs.writeFileSync(context.outputPath, output);
+            U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
+            U.directoryStream.write(U.directoryItem(context.prettyPath, context.name));
+            U.genLog(buySell, stateRegion, context.prettyPath);
         });
     });
 };
 
 const city = (data, template, pageType) => {
     dataPaths.buySell.data.map(buySell => {
-        const context = R.mergeAll([
-            contexts.general({ name: data, pageType }),
-            contexts.buySell({ buySell }),
-            contexts.industry({ industry: dataPaths.industry.data }),
-            contexts.country({ country: dataPaths.country.data }),
-            contexts.state({ state: dataPaths.state.data }),
-            contexts.city({ city: data })
-        ]);
+        const context = {
+            ...R.mergeAll([
+                contexts.general({ name: data, pageType }),
+                contexts.buySell({ buySell }),
+                contexts.industry({ industry: dataPaths.industry.data }),
+                contexts.country({ country: dataPaths.country.data }),
+                contexts.state({ state: dataPaths.state.data }),
+                contexts.city({ city: data })
+            ]),
+            get path() {
+                return [
+                    settings.outputLocation,
+                    `${this.buySell}-${this.industry}`,
+                    data,
+                    "index.html"
+                ];
+            },
+            get prettyPath() {
+                return U.prettyPath(this.path);
+            },
+            get outputPath() {
+                return U.relPathList(this.path);
+            },
+            get domainPath() {
+                return settings.domain + context.prettyPath;
+            }
+        };
 
         const templateFile = U.fileToStr(template + context.buySellFilename);
 
         const output = U.replaceTokens(context, templateFile);
 
-        const path = [
-            settings.outputLocation,
-            `${context.buySell}-${context.industry}`,
-            data,
-            "index.html"
-        ];
-
-        const outputPath = U.relPathList(path);
-        const prettyPath = U.prettyPath(path);
-        const domainPath = settings.domain + prettyPath;
-
         // Outputs
-        fs.writeFileSync(outputPath, output);
-        U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate));
-        U.directoryStream.write(U.directoryItem(prettyPath, context.name));
-        U.genLog(buySell, data, prettyPath);
+        fs.writeFileSync(context.outputPath, output);
+        U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
+        U.directoryStream.write(U.directoryItem(context.prettyPath, context.name));
+        U.genLog(buySell, data, context.prettyPath);
     });
 };
 
@@ -310,15 +338,33 @@ const cityRegions = (data, template, pageType) => {
     const cityRegions = U.removeAllEmpty(U.fileToList(data));
     cityRegions.map(cityRegion => {
         dataPaths.buySell.data.map(buySell => {
-            const context = R.mergeAll([
-                contexts.general({ name: data, pageType }),
-                contexts.buySell({ buySell }),
-                contexts.industry({ industry: dataPaths.industry.data }),
-                contexts.country({ country: dataPaths.country.data }),
-                contexts.state({ state: dataPaths.state.data }),
-                contexts.city({ city: dataPaths.city.data }),
-                contexts.cityRegion({ cityRegion: cityRegion })
-            ]);
+            const context = {
+                ...R.mergeAll([
+                    contexts.general({ name: data, pageType }),
+                    contexts.buySell({ buySell }),
+                    contexts.industry({ industry: dataPaths.industry.data }),
+                    contexts.country({ country: dataPaths.country.data }),
+                    contexts.state({ state: dataPaths.state.data }),
+                    contexts.city({ city: dataPaths.city.data }),
+                    contexts.cityRegion({ cityRegion: cityRegion })
+                ]),
+                get path() {
+                    return [
+                        settings.outputLocation,
+                        `${this.buySell}-${this.industry}`,
+                        U.filenameFormat(cityRegion)
+                    ];
+                },
+                get prettyPath() {
+                    return U.prettyPath(this.path);
+                },
+                get outputPath() {
+                    return U.relPathList(this.path);
+                },
+                get domainPath() {
+                    return settings.domain + context.prettyPath;
+                }
+            };
 
             const templateFile = U.fileToStr(
                 template + context.buySellFilename
@@ -326,21 +372,11 @@ const cityRegions = (data, template, pageType) => {
 
             const output = U.replaceTokens(context, templateFile);
 
-            const path = [
-                settings.outputLocation,
-                `${context.buySell}-${context.industry}`,
-                U.filenameFormat(cityRegion)
-            ];
-
-            const outputPath = U.relPathList(path);
-            const prettyPath = U.prettyPath(path);
-            const domainPath = settings.domain + prettyPath;
-
             // Outputs
-            fs.writeFileSync(outputPath, output);
-            U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate));
-            U.directoryStream.write(U.directoryItem(prettyPath, context.name));
-            U.genLog(buySell, cityRegion, prettyPath);
+            fs.writeFileSync(context.outputPath, output);
+            U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
+            U.directoryStream.write(U.directoryItem(context.prettyPath, context.name));
+            U.genLog(buySell, cityRegion, context.prettyPath);
 
             // Child generator
             if (buySell === "Buy") {
@@ -355,11 +391,29 @@ const suburbs = (data, template, pageType, parentContext) => {
     const suburbs = U.removeAllEmpty(U.fileToList(data_));
     suburbs.map(suburb =>
         dataPaths.buySell.data.map(buySell => {
-            const context = R.mergeAll([
-                parentContext,
-                contexts.buySell({ buySell }),
-                contexts.suburb({ suburb })
-            ]);
+            const context = {
+                ...R.mergeAll([
+                    parentContext,
+                    contexts.buySell({ buySell }),
+                    contexts.suburb({ suburb })
+                ]),
+                get path() {
+                    return [
+                        settings.outputLocation,
+                        `${this.buySell}-${this.industry}`,
+                        this.filename
+                    ];
+                },
+                get prettyPath() {
+                    return U.prettyPath(this.path);
+                },
+                get outputPath() {
+                    return U.relPathList(this.path);
+                },
+                get domainPath() {
+                    return settings.domain + context.prettyPath;
+                }
+            }
 
             const templateFile = U.fileToStr(
                 template + context.buySellFilename
@@ -367,28 +421,18 @@ const suburbs = (data, template, pageType, parentContext) => {
 
             const output = U.replaceTokens(context, templateFile);
 
-            const path = [
-                settings.outputLocation,
-                `${context.buySell}-${context.industry}`,
-                context.filename
-            ];
-
-            const outputPath = U.relPathList(path);
-            const prettyPath = U.prettyPath(path);
-            const domainPath = settings.domain + prettyPath;
-
             // Outputs
-            fs.writeFileSync(outputPath, output);
-            U.sitemapStream.write(U.sitemapItem(domainPath, U.universalDate));
+            fs.writeFileSync(context.outputPath, output);
+            U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
             U.directoryStream.write(
                 U.directoryItem(
-                    prettyPath,
+                    context.prettyPath,
                     `${context.buySell} a ${
                         context.industry
                     } business in <strong>${context.name}</strong>`
                 )
             );
-            U.genLog(buySell, suburb, prettyPath);
+            U.genLog(buySell, suburb, context.prettyPath);
         })
     );
 };
