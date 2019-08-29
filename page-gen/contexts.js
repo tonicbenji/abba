@@ -27,24 +27,24 @@ const contextMaker = (key, value) => {
     };
 };
 
-const components = ({ pageType, footerType }) => {
+const components = ({ footerType }) => {
     const path = "src/templates/components/";
     const files = ["bottomScripts", "contactForm", "header", "meta"];
     return {
         ...R.fromPairs(R.map(x => [x, U.fileToStr(path + `${x}.html`)], files)),
-        ...dataPaths.components,
-        footer: dataPaths.footer.template[footerType]
+        footer: dataPaths.footer.template[footerType],
+        ...dataPaths.components
     };
 };
 
-const general = ({ name, pageType }) => {
+const general = ({ name, pageType, footerType }) => {
     return {
-        ...components({ pageType }),
+        ...components({ footerType }),
         ...contextMaker("businessName", settings.business.name),
         ...contextMaker("", name),
         nameNoThe: U.noThe(name.toLowerCase()),
         NameNoThe: U.noThe(changeCase.titleCase(name)),
-        NAMENOTHE: U.noThe(name.toUpperCase()),
+        NAMENOTHE: U.noThe(name.toUpperCase())
     };
 };
 

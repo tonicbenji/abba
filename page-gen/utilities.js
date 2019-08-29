@@ -116,12 +116,14 @@ const directoryItem = (path, text) => `
 
 const universalDate = dateFormat(new Date(), "yyyy-mm-dd");
 
+const year = dateFormat(new Date(), "yyyy");
+
 // Components
 
-const link = (path, contents) => `<a href="${path}">${contents}</a>`;
+const link = (name, path) => `<a href="${path}">${name}</a>`;
 
-const footerBreadcrumbs = listOfPathsContents => {
-    const l = listOfPathsContents.map(x => link(x[0], x[1]));
+const footerBreadcrumbs = namePathList => {
+    const l = namePathList.map(x => link(x[0], x[1]));
     return `
 <span class="fa fa-angle-right footerSeparator"></span>
     ${l.join(
@@ -177,6 +179,7 @@ module.exports = {
     directoryStream,
     directoryItem,
     universalDate,
+    year,
     link,
     footerBreadcrumbs,
     schema

@@ -48,7 +48,7 @@ const run = (pageTypes, context) => {
 const home = (data, template, pageType) => {
     const context = {
         ...R.mergeAll([
-            contexts.general({ name: data, pageType, footerType: "page" }),
+            contexts.general({ name: data, pageType, footerType: "home" }),
             contexts.industry({ industry: dataPaths.industry.data }),
             contexts.country({ country: dataPaths.country.data }),
             contexts.home()
@@ -69,7 +69,6 @@ const home = (data, template, pageType) => {
             return U.schema([[this.home, ""]]);
         }
     };
-    console.log(context);
 
     const templateFile = U.fileToStr(template);
 
@@ -105,6 +104,9 @@ const about = (data, template, pageType) => {
         },
         get schema() {
             return U.schema([[this.home, ""], [this.title, this.filename]]);
+        },
+        get footerBreadcrumbs() {
+            return U.footerBreadcrumbs([[this.home, ""], [this.title, this.filename]]);
         }
     };
 

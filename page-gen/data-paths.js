@@ -81,15 +81,18 @@ module.exports = {
         buttonBuy:
             '<a href="/buy-childcare/index.html" class="abbaButton abbaButton-buy">Buy a Childcare Business</a>',
         buttonSell:
-            '<a href="/sell-childcare/index.html"  class="abbaButton abbaButton-sell">Sell a Childcare Business</a>'
+            '<a href="/sell-childcare/index.html"  class="abbaButton abbaButton-sell">Sell a Childcare Business</a>',
+        copyright: `<div class="abbaCopyright">© Abba Group Sydney ${U.year} | <a href="/directory.html">Sales, Mergers and Acquisitions Australia</a></div>`
     },
     footer: {
         template: {
-            page:        U.readFile("src/templates/pages/footer.html"),
-            state:       U.readFile("src/templates/nsw/footer.html"),
-            stateRegion: U.readFile("src/templates/nswRegion/footer.html"),
-            city:        U.readFile("src/templates/sydney/footer.html"),
-            suburb:      U.readFile("src/templates/suburb/footer.html")
+            page:        U.fileToStr("src/templates/pages/footer.html"),
+            state:       U.fileToStr("src/templates/nsw/footer.html"),
+            stateRegion: U.fileToStr("src/templates/nswRegion/footer.html"),
+            city:        U.fileToStr("src/templates/sydney/footer.html"),
+            suburb:      U.fileToStr("src/templates/suburb/footer.html"),
+            country:     "",
+            home:        ""
         }
     }
 };
