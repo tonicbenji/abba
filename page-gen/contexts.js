@@ -2,6 +2,7 @@ const R = require("ramda");
 const changeCase = require("change-case");
 const settings = require("./gen-config");
 const U = require("./utilities");
+const dataPaths = require("./data-paths");
 
 const contextItem = (f, key, value) => {
     return {
@@ -100,11 +101,7 @@ const cityRegion = ({ cityRegion }) => contextMaker("", cityRegion);
 const suburb = ({ suburb }) => {
     return {
         ...contextMaker("", suburb),
-        nearby: R.pipe(
-            U.readFile,
-            JSON.stringify,
-            R.lens(suburb)
-        )("src/locations/locations-cache.json")
+        nearby: dataPaths.suburbs.nearby[suburb]
     }
 }
 

@@ -34,6 +34,8 @@ const noThe = s => s.replace(/the/i, "");
 
 const wrapInLinebreaks = s => `\n${s}\n`;
 
+const wrapInSpaces = s => ` ${s} `
+
 const filenameCase = name => changeCase.paramCase(noThe(name));
 
 const filenameFormat = name => `${filenameCase(name)}.html`;
@@ -72,13 +74,12 @@ const genLog = (action, name, path) => {
     );
 };
 
-const headerLog = s => console.log(s);
-// R.pipe(
-//     chalk.bgMagenta,
-//     chalk.yellow,
-//     wrapInLinebreaks,
-//     console.log
-// )(s);
+const headerLog = s => R.pipe(
+    wrapInSpaces,
+    chalk.bgMagenta,
+    wrapInLinebreaks,
+    console.log
+)(s);
 
 const performanceLog = time =>
     console.log(

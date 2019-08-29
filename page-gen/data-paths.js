@@ -1,3 +1,5 @@
+const U = require("./utilities");
+
 module.exports = {
     firstLevelPageTypes: [
         "home",
@@ -49,7 +51,8 @@ module.exports = {
     },
     suburbs: {
         data: "src/",
-        template: "src/templates/suburb/"
+        template: "src/templates/suburb/",
+        nearby: JSON.parse(U.readFile("src/locations/locations-cache.json"))
     },
     sitemap: {
         data: {

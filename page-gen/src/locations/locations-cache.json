@@ -1,5002 +1,4501 @@
-[
-    {
-        "Annandale": [
-            "Lilyfield",
-            "Forest Lodge",
-            "Camperdown",
-            "Leichhardt",
-            "Glebe",
-            "Stanmore"
-        ]
-    },
-    {
-        "Abbotsford": [
-            "The Inner West",
-            "Wareemba",
-            "Chiswick",
-            "Five Dock",
-            "Breakfast Point",
-            "Russell Lea"
-        ]
-    },
-    {
-        "Belimbla Park": [
-            "The Oaks",
-            "Oakdale",
-            "Glenmore",
-            "Nattai",
-            "Mowbray Park",
-            "Orangeville"
-        ]
-    },
-    {
-        "Bangor": [
-            "Woronora Heights",
-            "Woronora",
-            "Menai",
-            "Barden Ridge",
-            "Illawong",
-            "Bonnet Bay"
-        ]
-    },
-    {
-        "Alfords Point": [
-            "Padstow Heights",
-            "Revesby Heights",
-            "Lugarno",
-            "Illawong",
-            "Picnic Point",
-            "Sandy Point"
-        ]
-    },
-    {
-        "Bilgola Plateau": [
-            "Clareville",
-            "Bilgola",
-            "Newport",
-            "Avalon",
-            "Scotland Island",
-            "Bayview"
-        ]
-    },
-    {
-        "Alexandria": [
-            "Waterloo",
-            "Redfern",
-            "Beaconsfield",
-            "Eveleigh",
-            "Zetland",
-            "Darlington"
-        ]
-    },
-    {
-        "Ashbury": [
-            "Croydon Park",
-            "Ashfield",
-            "Canterbury-Bankstown",
-            "Canterbury",
-            "Hurlstone Park",
-            "Burwood Heights"
-        ]
-    },
-    {
-        "Balgowlah": [
-            "Balgowlah Heights",
-            "Clontarf",
-            "North Balgowlah",
-            "Manly Vale",
-            "Fairlight",
-            "Seaforth"
-        ]
-    },
-    {
-        "Ashfield": [
-            "Summer Hill",
-            "Ashbury",
-            "Croydon",
-            "Haberfield",
-            "Croydon Park",
-            "Burwood Heights"
-        ]
-    },
-    {
-        "Baulkham Hills": [
-            "Winston Hills",
-            "North Rocks",
-            "Castle Hill",
-            "The Hills District",
-            "Bella Vista",
-            "Norwest"
-        ]
-    },
-    {
-        "Bardia": [
-            "Macquarie Links",
-            "Ingleburn",
-            "Denham Court",
-            "Macquarie Fields",
-            "Glenfield",
-            "Long Point"
-        ]
-    },
-    {
-        "Beecroft": [
-            "Cheltenham",
-            "Pennant Hills",
-            "West Pennant Hills",
-            "Epping",
-            "Carlingford",
-            "Cherrybrook"
-        ]
-    },
-    {
-        "Annangrove": [
-            "Nelson",
-            "Rouse Hill",
-            "Beaumont Hills",
-            "Box Hill",
-            "Kenthurst",
-            "North Kellyville"
-        ]
-    },
-    {
-        "Bexley": [
-            "Carlton",
-            "Rockdale",
-            "Kogarah",
-            "Allawah",
-            "Banksia",
-            "Bardwell Valley"
-        ]
-    },
-    {
-        "Balmain East": [
-            "Balmain",
-            "Birchgrove",
-            "Millers Point",
-            "Barangaroo",
-            "Dawes Point",
-            "The Rocks"
-        ]
-    },
-    {
-        "Belfield": [
-            "Belmore",
-            "Strathfield South",
-            "Lakemba",
-            "Enfield",
-            "Campsie",
-            "Croydon Park"
-        ]
-    },
-    {
-        "Arncliffe": [
-            "Turrella",
-            "Bardwell Valley",
-            "Wolli Creek",
-            "Banksia",
-            "Bardwell Park",
-            "Kyeemagh"
-        ]
-    },
-    {
-        "Bass Hill": [
-            "Georges Hall",
-            "Sefton",
-            "Villawood",
-            "Chester Hill",
-            "Birrong",
-            "Yagoona"
-        ]
-    },
-    {
-        "Balgowlah Heights": [
-            "Clontarf",
-            "Balgowlah",
-            "Fairlight",
-            "Manly Vale",
-            "Seaforth",
-            "North Balgowlah"
-        ]
-    },
-    {
-        "Bellevue Hill": [
-            "Woollahra",
-            "Double Bay",
-            "Point Piper",
-            "Bondi Junction",
-            "Rose Bay",
-            "Rose Bay North"
-        ]
-    },
-    {
-        "Beverley Park": [
-            "Kogarah Bay",
-            "Ramsgate",
-            "Allawah",
-            "Carlton",
-            "Carss Park",
-            "Kogarah"
-        ]
-    },
-    {
-        "Appin": [
-            "Gilead",
-            "Douglas Park",
-            "Wilton",
-            "Wedderburn",
-            "Menangle",
-            "Bingara Gorge"
-        ]
-    },
-    {
-        "Avalon": [
-            "Bilgola",
-            "Whale Beach",
-            "Clareville",
-            "Bilgola Plateau",
-            "Newport",
-            "Palm Beach"
-        ]
-    },
-    {
-        "Bilgola": [
-            "Bilgola Plateau",
-            "Avalon",
-            "Newport",
-            "Clareville",
-            "Whale Beach",
-            "Scotland Island"
-        ]
-    },
-    {
-        "Bickley Vale": [
-            "Cawdor",
-            "Grasmere",
-            "Mount Hunter",
-            "Camden Park",
-            "Camden",
-            "Spring Farm"
-        ]
-    },
-    {
-        "Bayview": [
-            "Church Point",
-            "Scotland Island",
-            "Elvina Bay",
-            "Newport",
-            "Mona Vale",
-            "Bilgola Plateau"
-        ]
-    },
-    {
-        "Belrose": [
-            "Frenchs Forest",
-            "The Forest District",
-            "Oxford Falls",
-            "Davidson",
-            "Forestville",
-            "Beacon Hill"
-        ]
-    },
-    {
-        "Beverly Hills": [
-            "Narwee",
-            "Penshurst",
-            "Mortdale",
-            "Roselands",
-            "The St George Region",
-            "Kingsgrove"
-        ]
-    },
-    {
-        "Banksmeadow": [
-            "The Eastern Suburbs",
-            "Botany",
-            "Hillsdale",
-            "Eastgardens",
-            "Pagewood",
-            "Matraville"
-        ]
-    },
-    {
-        "Beaconsfield": [
-            "Zetland",
-            "Alexandria",
-            "Waterloo",
-            "Rosebery",
-            "Erskineville",
-            "Eveleigh"
-        ]
-    },
-    {
-        "Allawah": [
-            "Carlton",
-            "Kogarah Bay",
-            "Beverley Park",
-            "South Hurstville",
-            "Carss Park",
-            "Connells Point"
-        ]
-    },
-    {
-        "Beaumont Hills": [
-            "Kellyville",
-            "North Kellyville",
-            "Rouse Hill",
-            "The Hills District",
-            "Bella Vista",
-            "Norwest"
-        ]
-    },
-    {
-        "Bardwell Park": [
-            "Bardwell Valley",
-            "Turrella",
-            "Arncliffe",
-            "Undercliffe",
-            "Earlwood",
-            "Clemton Park"
-        ]
-    },
-    {
-        "Ben Buckler": [
-            "North Bondi",
-            "Bondi Beach",
-            "Tamarama",
-            "Bondi",
-            "Dover Heights",
-            "Bronte"
-        ]
-    },
-    {
-        "Beacon Hill": [
-            "Narraweena",
-            "Allambie Heights",
-            "Brookvale",
-            "Oxford Falls",
-            "The Forest District",
-            "Frenchs Forest"
-        ]
-    },
-    {
-        "Banksia": [
-            "Kyeemagh",
-            "Rockdale",
-            "Arncliffe",
-            "Brighton-Le-Sands",
-            "Turrella",
-            "Bardwell Valley"
-        ]
-    },
-    {
-        "Airds": [
-            "Bradbury",
-            "Ambarvale",
-            "St Helens Park",
-            "Ruse",
-            "Englorie Park",
-            "Campbelltown"
-        ]
-    },
-    {
-        "Bingara Gorge": [
-            "Wilton",
-            "Douglas Park",
-            "Maldon",
-            "Pheasants Nest",
-            "Razorback",
-            "Tahmoor"
-        ]
-    },
-    {
-        "Bargo": [
-            "Yanderra",
-            "Buxton",
-            "Pheasants Nest",
-            "Tahmoor",
-            "Couridjah",
-            "Thirlmere"
-        ]
-    },
-    {
-        "Bella Vista": [
-            "Norwest",
-            "Kings Langley",
-            "The Hills District",
-            "North Kellyville",
-            "Kellyville",
-            "Baulkham Hills"
-        ]
-    },
-    {
-        "Barden Ridge": [
-            "Woronora Heights",
-            "Bangor",
-            "Menai",
-            "Woronora",
-            "Yarrawarrah",
-            "Lucas Heights"
-        ]
-    },
-    {
-        "Bankstown": [
-            "Yagoona",
-            "Mount Lewis",
-            "Greenacre",
-            "Punchbowl",
-            "Condell Park",
-            "Wiley Park"
-        ]
-    },
-    {
-        "Barangaroo": [
-            "Millers Point",
-            "The Rocks",
-            "Sydney CBD",
-            "Dawes Point",
-            "Pyrmont",
-            "Balmain East"
-        ]
-    },
-    {
-        "Belmore": [
-            "Lakemba",
-            "Campsie",
-            "Belfield",
-            "Roselands",
-            "Clemton Park",
-            "Wiley Park"
-        ]
-    },
-    {
-        "Balmain": [
-            "Birchgrove",
-            "Balmain East",
-            "Rozelle",
-            "Lilyfield",
-            "Woolwich",
-            "Millers Point"
-        ]
-    },
-    {
-        "Artarmon": [
-            "Chatswood",
-            "Willoughby",
-            "Lane Cove",
-            "Lane Cove North",
-            "St Leonards",
-            "Naremburn"
-        ]
-    },
-    {
-        "Allambie Heights": [
-            "Beacon Hill",
-            "Brookvale",
-            "Frenchs Forest",
-            "The Forest District",
-            "Narraweena",
-            "North Manly"
-        ]
-    },
-    {
-        "Bardwell Valley": [
-            "Bardwell Park",
-            "Turrella",
-            "Arncliffe",
-            "Banksia",
-            "Rockdale",
-            "Earlwood"
-        ]
-    },
-    {
-        "Ambarvale": [
-            "Englorie Park",
-            "Macarthur",
-            "Bradbury",
-            "Glen Alpine",
-            "Blair Athol",
-            "Campbelltown"
-        ]
-    },
-    {
-        "Burragorang": [
-            "Nattai",
-            "Oakdale",
-            "Yerranderie",
-            "Belimbla Park",
-            "Lakesland",
-            "Mowbray Park"
-        ]
-    },
-    {
-        "Blairmount": [
-            "Currans Hill",
-            "Blair Athol",
-            "Claymore",
-            "Gregory Hills",
-            "Eagle Vale",
-            "Eschol Park"
-        ]
-    },
-    {
-        "Breakfast Point": [
-            "Mortlake",
-            "Tennyson Point",
-            "Abbotsford",
-            "Gladesville",
-            "Putney",
-            "Concord"
-        ]
-    },
-    {
-        "Birchgrove": [
-            "Balmain",
-            "Balmain East",
-            "Woolwich",
-            "Rozelle",
-            "Waverton",
-            "Greenwich"
-        ]
-    },
-    {
-        "Birrong": [
-            "Potts Hill",
-            "Regents Park",
-            "Sefton",
-            "Yagoona",
-            "Chullora",
-            "Chester Hill"
-        ]
-    },
-    {
-        "Bondi Junction": [
-            "Woollahra",
-            "Charing Cross",
-            "Bondi",
-            "Waverley",
-            "Queens Park",
-            "Bellevue Hill"
-        ]
-    },
-    {
-        "Burwood": [
-            "Croydon",
-            "Canada Bay",
-            "Burwood Heights",
-            "Enfield",
-            "Concord",
-            "Strathfield"
-        ]
-    },
-    {
-        "Centennial Park": [
-            "Kensington",
-            "Moore Park",
-            "Queens Park",
-            "Randwick",
-            "Paddington",
-            "Zetland"
-        ]
-    },
-    {
-        "Castlecrag": [
-            "East Willoughby",
-            "Northbridge",
-            "Middle Cove",
-            "North Willoughby",
-            "Seaforth",
-            "Willoughby"
-        ]
-    },
-    {
-        "Botany": [
-            "The Eastern Suburbs",
-            "Banksmeadow",
-            "Mascot",
-            "Pagewood",
-            "Sydney Airport",
-            "Eastgardens"
-        ]
-    },
-    {
-        "Canterbury": [
-            "Canterbury-Bankstown",
-            "Hurlstone Park",
-            "Undercliffe",
-            "Earlwood",
-            "Ashbury",
-            "Campsie"
-        ]
-    },
-    {
-        "Bradbury": [
-            "Airds",
-            "Ambarvale",
-            "Englorie Park",
-            "Macarthur",
-            "Campbelltown",
-            "St Helens Park"
-        ]
-    },
-    {
-        "Canterbury-Bankstown": [
-            "Canterbury",
-            "Hurlstone Park",
-            "Undercliffe",
-            "Earlwood",
-            "Ashbury",
-            "Campsie"
-        ]
-    },
-    {
-        "Brookvale": [
-            "North Manly",
-            "Dee Why",
-            "Narraweena",
-            "Allambie Heights",
-            "Freshwater",
-            "Curl Curl"
-        ]
-    },
-    {
-        "Bronte": [
-            "Clovelly",
-            "Waverley",
-            "Clovelly West",
-            "Charing Cross",
-            "Tamarama",
-            "Queens Park"
-        ]
-    },
-    {
-        "Carlingford": [
-            "Dundas Valley",
-            "Oatlands",
-            "North Rocks",
-            "Epping",
-            "Beecroft",
-            "Dundas"
-        ]
-    },
-    {
-        "Camden": [
-            "Elderslie",
-            "Kirkham",
-            "Grasmere",
-            "Spring Farm",
-            "Ellis Lane",
-            "Cawdor"
-        ]
-    },
-    {
-        "Chatswood": [
-            "Artarmon",
-            "Roseville",
-            "Lane Cove North",
-            "Chatswood West",
-            "Willoughby",
-            "Lane Cove"
-        ]
-    },
-    {
-        "Castle Cove": [
-            "Middle Cove",
-            "Roseville Chase",
-            "North Willoughby",
-            "Killarney Heights",
-            "East Willoughby",
-            "East Lindfield"
-        ]
-    },
-    {
-        "Campsie": [
-            "Clemton Park",
-            "Belmore",
-            "Canterbury",
-            "Canterbury-Bankstown",
-            "Belfield",
-            "Croydon Park"
-        ]
-    },
-    {
-        "Burwood Heights": [
-            "Croydon Park",
-            "Enfield",
-            "Burwood",
-            "Croydon",
-            "Ashbury",
-            "Ashfield"
-        ]
-    },
-    {
-        "Carlton": [
-            "Allawah",
-            "Kogarah",
-            "Beverley Park",
-            "Bexley",
-            "Kogarah Bay",
-            "Ramsgate"
-        ]
-    },
-    {
-        "Bundeena": [
-            "Burraneer",
-            "Maianbar",
-            "Cronulla",
-            "Port Hacking",
-            "Dolans Bay",
-            "Lilli Pilli"
-        ]
-    },
-    {
-        "Buxton": [
-            "Couridjah",
-            "Thirlmere",
-            "Tahmoor",
-            "Bargo",
-            "Yanderra",
-            "Pheasants Nest"
-        ]
-    },
-    {
-        "Cammeray": [
-            "Cremorne",
-            "Northbridge",
-            "Neutral Bay",
-            "Crows Nest",
-            "Naremburn",
-            "Cremorne Point"
-        ]
-    },
-    {
-        "Bonnet Bay": [
-            "Como",
-            "Jannali",
-            "Illawong",
-            "Oyster Bay",
-            "Woronora",
-            "Bangor"
-        ]
-    },
-    {
-        "Burraneer": [
-            "Maianbar",
-            "Dolans Bay",
-            "Port Hacking",
-            "Lilli Pilli",
-            "Cronulla",
-            "Bundeena"
-        ]
-    },
-    {
-        "Brownlow Hill": [
-            "Ellis Lane",
-            "Grasmere",
-            "Cobbitty",
-            "Mount Hunter",
-            "Camden",
-            "Kirkham"
-        ]
-    },
-    {
-        "Campbelltown": [
-            "Blair Athol",
-            "Macarthur",
-            "Leumeah",
-            "Woodbine",
-            "Claymore",
-            "Ambarvale"
-        ]
-    },
-    {
-        "Bondi": [
-            "Tamarama",
-            "Waverley",
-            "Bondi Junction",
-            "Charing Cross",
-            "Bellevue Hill",
-            "Bondi Beach"
-        ]
-    },
-    {
-        "Box Hill": [
-            "Nelson",
-            "Rouse Hill",
-            "Annangrove",
-            "Maraylya",
-            "Beaumont Hills",
-            "North Kellyville"
-        ]
-    },
-    {
-        "Blakehurst": [
-            "Kyle Bay",
-            "Carss Park",
-            "Connells Point",
-            "South Hurstville",
-            "Kogarah Bay",
-            "Allawah"
-        ]
-    },
-    {
-        "Cabarita": [
-            "Diamond Bay",
-            "Lansdowne",
-            "Wisemans Ferry",
-            "Leets Vale",
-            "Great Mackerel Beach",
-            "Lower Portland"
-        ]
-    },
-    {
-        "Carss Park": [
-            "Kogarah Bay",
-            "Blakehurst",
-            "Beverley Park",
-            "Allawah",
-            "South Hurstville",
-            "Kyle Bay"
-        ]
-    },
-    {
-        "Caringbah": [
-            "Caringbah South",
-            "Yowie Bay",
-            "Woolooware",
-            "Dolans Bay",
-            "Miranda",
-            "Sylvania Waters"
-        ]
-    },
-    {
-        "Brighton-Le-Sands": [
-            "Kyeemagh",
-            "Banksia",
-            "Monterey",
-            "Rockdale",
-            "Kogarah",
-            "Ramsgate Beach"
-        ]
-    },
-    {
-        "Cawdor": [
-            "Bickley Vale",
-            "Camden Park",
-            "Grasmere",
-            "Camden",
-            "Spring Farm",
-            "Elderslie"
-        ]
-    },
-    {
-        "Chatswood West": [
-            "The Northern Suburbs",
-            "Lane Cove North",
-            "Roseville",
-            "Chatswood",
-            "Lane Cove West",
-            "Lane Cove"
-        ]
-    },
-    {
-        "Blair Athol": [
-            "Campbelltown",
-            "Macarthur",
-            "Blairmount",
-            "Englorie Park",
-            "Claymore",
-            "Ambarvale"
-        ]
-    },
-    {
-        "Camden Park": [
-            "Cawdor",
-            "Spring Farm",
-            "Bickley Vale",
-            "Menangle Park",
-            "Camden",
-            "Elderslie"
-        ]
-    },
-    {
-        "Catherine Field": [
-            "Oran Park",
-            "Gledswood Hills",
-            "Leppington",
-            "Gregory Hills",
-            "Harrington Park",
-            "Smeaton Grange"
-        ]
-    },
-    {
-        "Bondi Beach": [
-            "North Bondi",
-            "Ben Buckler",
-            "Tamarama",
-            "Bondi",
-            "Rose Bay",
-            "Rose Bay North"
-        ]
-    },
-    {
-        "Caringbah South": [
-            "Caringbah",
-            "Dolans Bay",
-            "Yowie Bay",
-            "Lilli Pilli",
-            "Port Hacking",
-            "Woolooware"
-        ]
-    },
-    {
-        "Bow Bowing": [
-            "St Andrews",
-            "Minto",
-            "Raby",
-            "Denham Court",
-            "Varroville",
-            "Ingleburn"
-        ]
-    },
-    {
-        "Cattai": [
-            "Maraylya",
-            "Maroota",
-            "South Maroota",
-            "Sackville North",
-            "Glenorie",
-            "Nelson"
-        ]
-    },
-    {
-        "Canada Bay": [
-            "Croydon",
-            "Concord",
-            "Five Dock",
-            "Burwood",
-            "The Inner West",
-            "Wareemba"
-        ]
-    },
-    {
-        "Bringelly": [
-            "Rossmore",
-            "Catherine Field",
-            "Leppington",
-            "Oran Park",
-            "Gledswood Hills",
-            "Silverdale"
-        ]
-    },
-    {
-        "Charing Cross": [
-            "Waverley",
-            "Queens Park",
-            "Bronte",
-            "Bondi Junction",
-            "Bondi",
-            "Clovelly West"
-        ]
-    },
-    {
-        "Castle Hill": [
-            "The Hills District",
-            "Glenhaven",
-            "Baulkham Hills",
-            "Cherrybrook",
-            "West Pennant Hills",
-            "Norwest"
-        ]
-    },
-    {
-        "Camperdown": [
-            "Forest Lodge",
-            "Newtown",
-            "Eveleigh",
-            "Glebe",
-            "Annandale",
-            "Stanmore"
-        ]
-    },
-    {
-        "Couridjah": [
-            "Buxton",
-            "Thirlmere",
-            "Tahmoor",
-            "Picton",
-            "Lakesland",
-            "Bargo"
-        ]
-    },
-    {
-        "Clareville": [
-            "Bilgola Plateau",
-            "Bilgola",
-            "Scotland Island",
-            "Avalon",
-            "Newport",
-            "Morning Bay"
-        ]
-    },
-    {
-        "Clontarf": [
-            "Balgowlah Heights",
-            "Balgowlah",
-            "Seaforth",
-            "Mosman",
-            "North Balgowlah",
-            "Fairlight"
-        ]
-    },
-    {
-        "Davidson": [
-            "East Killara",
-            "Belrose",
-            "St Ives",
-            "Forestville",
-            "East Lindfield",
-            "The Forest District"
-        ]
-    },
-    {
-        "Concord": [
-            "North Strathfield",
-            "Canada Bay",
-            "Homebush",
-            "Burwood",
-            "Breakfast Point",
-            "Concord West"
-        ]
-    },
-    {
-        "Chiswick": [
-            "Wareemba",
-            "Abbotsford",
-            "The Inner West",
-            "Russell Lea",
-            "Five Dock",
-            "Drummoyne"
-        ]
-    },
-    {
-        "Chippendale": [
-            "Ultimo",
-            "Darlington",
-            "Haymarket",
-            "Strawberry Hills",
-            "Redfern",
-            "Surry Hills"
-        ]
-    },
-    {
-        "Coogee": [
-            "Clovelly West",
-            "Clovelly",
-            "St Pauls",
-            "South Coogee",
-            "Bronte",
-            "Randwick"
-        ]
-    },
-    {
-        "Cobbitty": [
-            "Ellis Lane",
-            "Brownlow Hill",
-            "Kirkham",
-            "Camden",
-            "Harrington Park",
-            "Grasmere"
-        ]
-    },
-    {
-        "Cremorne": [
-            "Cammeray",
-            "Neutral Bay",
-            "Cremorne Point",
-            "Mosman",
-            "Northbridge",
-            "Crows Nest"
-        ]
-    },
-    {
-        "Clovelly": [
-            "Clovelly West",
-            "Bronte",
-            "Coogee",
-            "Waverley",
-            "Charing Cross",
-            "Tamarama"
-        ]
-    },
-    {
-        "Cromer": [
-            "Wheeler Heights",
-            "Dee Why",
-            "Collaroy Plateau",
-            "Narraweena",
-            "Collaroy",
-            "Narrabeen"
-        ]
-    },
-    {
-        "Collaroy Plateau": [
-            "Narrabeen",
-            "Collaroy",
-            "Wheeler Heights",
-            "Cromer",
-            "Narrabeen North",
-            "Dee Why"
-        ]
-    },
-    {
-        "Collaroy": [
-            "Narrabeen",
-            "Collaroy Plateau",
-            "Wheeler Heights",
-            "Cromer",
-            "Narrabeen North",
-            "Dee Why"
-        ]
-    },
-    {
-        "Cronulla": [
-            "Woolooware",
-            "Burraneer",
-            "Dolans Bay",
-            "Bundeena",
-            "Port Hacking",
-            "Caringbah South"
-        ]
-    },
-    {
-        "Chester Hill": [
-            "Sefton",
-            "Regents Park",
-            "Birrong",
-            "Villawood",
-            "Bass Hill",
-            "Potts Hill"
-        ]
-    },
-    {
-        "Darling Point": [
-            "Elizabeth Bay",
-            "Double Bay",
-            "Rushcutters Bay",
-            "Edgecliff",
-            "Point Piper",
-            "Potts Point"
-        ]
-    },
-    {
-        "Chifley": [
-            "Malabar",
-            "Matraville",
-            "Phillip Bay",
-            "Little Bay",
-            "Hillsdale",
-            "Port Botany"
-        ]
-    },
-    {
-        "Como": [
-            "Oyster Bay",
-            "Bonnet Bay",
-            "Jannali",
-            "Kareela",
-            "Illawong",
-            "Oatley"
-        ]
-    },
-    {
-        "Concord West": [
-            "Liberty Grove",
-            "Mortlake",
-            "North Strathfield",
-            "Rhodes",
-            "Concord",
-            "Breakfast Point"
-        ]
-    },
-    {
-        "Clovelly West": [
-            "Clovelly",
-            "Coogee",
-            "Bronte",
-            "Charing Cross",
-            "Waverley",
-            "Queens Park"
-        ]
-    },
-    {
-        "Daceyville": [
-            "Kingsford",
-            "Eastlakes",
-            "Pagewood",
-            "Rosebery",
-            "Randwick",
-            "Eastgardens"
-        ]
-    },
-    {
-        "Cheltenham": [
-            "Beecroft",
-            "Epping",
-            "Pennant Hills",
-            "North Epping",
-            "West Pennant Hills",
-            "Carlingford"
-        ]
-    },
-    {
-        "Darlington": [
-            "Chippendale",
-            "Eveleigh",
-            "Redfern",
-            "Ultimo",
-            "Strawberry Hills",
-            "Haymarket"
-        ]
-    },
-    {
-        "Church Point": [
-            "Bayview",
-            "Elvina Bay",
-            "Scotland Island",
-            "Lovett Bay",
-            "Morning Bay",
-            "Newport"
-        ]
-    },
-    {
-        "Darlinghurst": [
-            "Kings Cross",
-            "Rushcutters Bay",
-            "Woolloomooloo",
-            "Paddington",
-            "Elizabeth Bay",
-            "Potts Point"
-        ]
-    },
-    {
-        "Croydon Park": [
-            "Burwood Heights",
-            "Ashbury",
-            "Ashfield",
-            "Enfield",
-            "Canterbury",
-            "Canterbury-Bankstown"
-        ]
-    },
-    {
-        "Denham Court": [
-            "Ingleburn",
-            "Bow Bowing",
-            "Varroville",
-            "Bardia",
-            "St Andrews",
-            "Raby"
-        ]
-    },
-    {
-        "Curl Curl": [
-            "Freshwater",
-            "North Curl Curl",
-            "Queenscliff",
-            "Brookvale",
-            "North Manly",
-            "Dee Why"
-        ]
-    },
-    {
-        "Currans Hill": [
-            "Smeaton Grange",
-            "Gregory Hills",
-            "Blairmount",
-            "Narellan Vale",
-            "Mount Annan",
-            "Narellan"
-        ]
-    },
-    {
-        "Cherrybrook": [
-            "Westleigh",
-            "West Pennant Hills",
-            "Pennant Hills",
-            "Beecroft",
-            "Castle Hill",
-            "Cheltenham"
-        ]
-    },
-    {
-        "Condell Park": [
-            "Georges Hall",
-            "Yagoona",
-            "Bankstown",
-            "Milperra",
-            "Revesby",
-            "Bass Hill"
-        ]
-    },
-    {
-        "Denistone East": [
-            "Denistone",
-            "West Ryde",
-            "Ryde",
-            "Eastwood",
-            "North Ryde",
-            "Denistone West"
-        ]
-    },
-    {
-        "Dolls Point": [
-            "Sandringham",
-            "Sans Souci",
-            "Ramsgate",
-            "Ramsgate Beach",
-            "Beverley Park",
-            "Monterey"
-        ]
-    },
-    {
-        "Cremorne Point": [
-            "Neutral Bay",
-            "Kirribilli",
-            "Cremorne",
-            "Milsons Point",
-            "Lavender Bay",
-            "Mosman"
-        ]
-    },
-    {
-        "Connells Point": [
-            "South Hurstville",
-            "Hurstville Grove",
-            "Kyle Bay",
-            "Blakehurst",
-            "Allawah",
-            "Hurstville"
-        ]
-    },
-    {
-        "Coasters Retreat": [
-            "Great Mackerel Beach",
-            "Palm Beach",
-            "Morning Bay",
-            "Whale Beach",
-            "Lovett Bay",
-            "Clareville"
-        ]
-    },
-    {
-        "Cottage Point": [
-            "The North Shore",
-            "Duffys Forest",
-            "Terrey Hills",
-            "Elvina Bay",
-            "Lovett Bay",
-            "Morning Bay"
-        ]
-    },
-    {
-        "Dee Why": [
-            "Cromer",
-            "North Curl Curl",
-            "Narraweena",
-            "Brookvale",
-            "Curl Curl",
-            "Freshwater"
-        ]
-    },
-    {
-        "Crows Nest": [
-            "Naremburn",
-            "St Leonards",
-            "Cammeray",
-            "North Sydney",
-            "Wollstonecraft",
-            "Neutral Bay"
-        ]
-    },
-    {
-        "Dolans Bay": [
-            "Port Hacking",
-            "Lilli Pilli",
-            "Caringbah South",
-            "Burraneer",
-            "Maianbar",
-            "Caringbah"
-        ]
-    },
-    {
-        "Chullora": [
-            "Potts Hill",
-            "Regents Park",
-            "Greenacre",
-            "Birrong",
-            "Strathfield South",
-            "Mount Lewis"
-        ]
-    },
-    {
-        "Double Bay": [
-            "Edgecliff",
-            "Darling Point",
-            "Woollahra",
-            "Bellevue Hill",
-            "Point Piper",
-            "Rushcutters Bay"
-        ]
-    },
-    {
-        "Dawes Point": [
-            "The Rocks",
-            "Millers Point",
-            "Barangaroo",
-            "Milsons Point",
-            "McMahons Point",
-            "Kirribilli"
-        ]
-    },
-    {
-        "Clemton Park": [
-            "Campsie",
-            "Kingsgrove",
-            "Belmore",
-            "Roselands",
-            "Canterbury-Bankstown",
-            "Canterbury"
-        ]
-    },
-    {
-        "Denistone West": [
-            "Denistone",
-            "West Ryde",
-            "Eastwood",
-            "Melrose Park",
-            "Dundas Valley",
-            "Meadowbank"
-        ]
-    },
-    {
-        "Denistone": [
-            "Denistone West",
-            "West Ryde",
-            "Denistone East",
-            "Eastwood",
-            "Meadowbank",
-            "Melrose Park"
-        ]
-    },
-    {
-        "Diamond Bay": [
-            "Lansdowne",
-            "Wisemans Ferry",
-            "Palm Beach",
-            "Great Mackerel Beach",
-            "Whale Beach",
-            "Coasters Retreat"
-        ]
-    },
-    {
-        "Croydon": [
-            "Burwood",
-            "Canada Bay",
-            "Ashfield",
-            "Burwood Heights",
-            "Five Dock",
-            "Croydon Park"
-        ]
-    },
-    {
-        "Claymore": [
-            "Eagle Vale",
-            "Woodbine",
-            "Eschol Park",
-            "Blairmount",
-            "Blair Athol",
-            "Kearns"
-        ]
-    },
-    {
-        "Dural": [
-            "Kenthurst",
-            "Glenhaven",
-            "Galston",
-            "Middle Dural",
-            "Cherrybrook",
-            "Castle Hill"
-        ]
-    },
-    {
-        "Dover Heights": [
-            "Rose Bay North",
-            "Rose Bay",
-            "North Bondi",
-            "Vaucluse",
-            "Bondi Beach",
-            "Ben Buckler"
-        ]
-    },
-    {
-        "East Ryde": [
-            "Lane Cove West",
-            "The Northern Suburbs",
-            "Gladesville",
-            "Linley Point",
-            "North Ryde",
-            "Lane Cove North"
-        ]
-    },
-    {
-        "Elderslie": [
-            "Camden",
-            "Kirkham",
-            "Spring Farm",
-            "Narellan",
-            "Narellan Vale",
-            "Harrington Park"
-        ]
-    },
-    {
-        "Forestville": [
-            "Killarney Heights",
-            "Roseville Chase",
-            "Frenchs Forest",
-            "The Forest District",
-            "East Lindfield",
-            "Castle Cove"
-        ]
-    },
-    {
-        "Drummoyne": [
-            "Russell Lea",
-            "Chiswick",
-            "Rodd Point",
-            "Huntleys Point",
-            "Rozelle",
-            "Woolwich"
-        ]
-    },
-    {
-        "Gilead": [
-            "Wedderburn",
-            "St Helens Park",
-            "Rosemeadow",
-            "Menangle",
-            "Glen Alpine",
-            "Airds"
-        ]
-    },
-    {
-        "Elanora Heights": [
-            "Narrabeen North",
-            "The Northern Beaches",
-            "Warriewood",
-            "Ingleside",
-            "Narrabeen",
-            "Collaroy Plateau"
-        ]
-    },
-    {
-        "Eastlakes": [
-            "Rosebery",
-            "Daceyville",
-            "Kingsford",
-            "Zetland",
-            "Beaconsfield",
-            "Kensington"
-        ]
-    },
-    {
-        "Glenorie": [
-            "Middle Dural",
-            "Galston",
-            "Kenthurst",
-            "Annangrove",
-            "Maraylya",
-            "Nelson"
-        ]
-    },
-    {
-        "Five Dock": [
-            "The Inner West",
-            "Wareemba",
-            "Canada Bay",
-            "Rodd Point",
-            "Russell Lea",
-            "Abbotsford"
-        ]
-    },
-    {
-        "Elvina Bay": [
-            "Lovett Bay",
-            "Scotland Island",
-            "Morning Bay",
-            "Church Point",
-            "Bayview",
-            "Clareville"
-        ]
-    },
-    {
-        "Duffys Forest": [
-            "The North Shore",
-            "Terrey Hills",
-            "St Ives Chase",
-            "North Turramurra",
-            "St Ives",
-            "Cottage Point"
-        ]
-    },
-    {
-        "Douglas Park": [
-            "Bingara Gorge",
-            "Wilton",
-            "Razorback",
-            "Appin",
-            "Menangle",
-            "Maldon"
-        ]
-    },
-    {
-        "Dulwich Hill": [
-            "Hurlstone Park",
-            "Marrickville",
-            "Lewisham",
-            "Petersham",
-            "Summer Hill",
-            "Undercliffe"
-        ]
-    },
-    {
-        "Forest Lodge": [
-            "Glebe",
-            "Camperdown",
-            "Annandale",
-            "Ultimo",
-            "Newtown",
-            "Eveleigh"
-        ]
-    },
-    {
-        "Engadine": [
-            "Yarrawarrah",
-            "Heathcote",
-            "Barden Ridge",
-            "Loftus",
-            "Lucas Heights",
-            "Woronora Heights"
-        ]
-    },
-    {
-        "Glebe": [
-            "Forest Lodge",
-            "Ultimo",
-            "Pyrmont",
-            "Camperdown",
-            "Annandale",
-            "Chippendale"
-        ]
-    },
-    {
-        "Eastgardens": [
-            "Pagewood",
-            "Hillsdale",
-            "The Eastern Suburbs",
-            "Maroubra",
-            "Matraville",
-            "Daceyville"
-        ]
-    },
-    {
-        "Freshwater": [
-            "Curl Curl",
-            "Queenscliff",
-            "North Curl Curl",
-            "North Manly",
-            "Brookvale",
-            "Dee Why"
-        ]
-    },
-    {
-        "Enmore": [
-            "Stanmore",
-            "Newtown",
-            "Marrickville",
-            "St Peters",
-            "Petersham",
-            "Camperdown"
-        ]
-    },
-    {
-        "Erskineville": [
-            "St Peters",
-            "Newtown",
-            "Eveleigh",
-            "Alexandria",
-            "Beaconsfield",
-            "Enmore"
-        ]
-    },
-    {
-        "Edgecliff": [
-            "Double Bay",
-            "Rushcutters Bay",
-            "Paddington",
-            "Woollahra",
-            "Darling Point",
-            "Elizabeth Bay"
-        ]
-    },
-    {
-        "Eastwood": [
-            "Denistone West",
-            "Denistone",
-            "Epping",
-            "Denistone East",
-            "West Ryde",
-            "Dundas Valley"
-        ]
-    },
-    {
-        "East Killara": [
-            "East Lindfield",
-            "Killara",
-            "Davidson",
-            "Lindfield",
-            "Gordon",
-            "Roseville Chase"
-        ]
-    },
-    {
-        "Glenfield": [
-            "Macquarie Links",
-            "Bardia",
-            "Macquarie Fields",
-            "Ingleburn",
-            "Long Point",
-            "Denham Court"
-        ]
-    },
-    {
-        "Glenhaven": [
-            "Castle Hill",
-            "The Hills District",
-            "Dural",
-            "Kenthurst",
-            "Cherrybrook",
-            "North Kellyville"
-        ]
-    },
-    {
-        "Earlwood": [
-            "Undercliffe",
-            "Hurlstone Park",
-            "Canterbury-Bankstown",
-            "Canterbury",
-            "Bardwell Park",
-            "Dulwich Hill"
-        ]
-    },
-    {
-        "Glenmore": [
-            "The Oaks",
-            "Mount Hunter",
-            "Orangeville",
-            "Belimbla Park",
-            "Bickley Vale",
-            "Grasmere"
-        ]
-    },
-    {
-        "Eschol Park": [
-            "Eagle Vale",
-            "Kearns",
-            "Raby",
-            "Claymore",
-            "St Andrews",
-            "Woodbine"
-        ]
-    },
-    {
-        "Eveleigh": [
-            "Darlington",
-            "Newtown",
-            "Alexandria",
-            "Camperdown",
-            "Erskineville",
-            "Chippendale"
-        ]
-    },
-    {
-        "East Lindfield": [
-            "Roseville Chase",
-            "Lindfield",
-            "East Killara",
-            "Castle Cove",
-            "Killara",
-            "Roseville"
-        ]
-    },
-    {
-        "Ermington": [
-            "Melrose Park",
-            "Denistone West",
-            "Dundas Valley",
-            "West Ryde",
-            "Meadowbank",
-            "Denistone"
-        ]
-    },
-    {
-        "Englorie Park": [
-            "Ambarvale",
-            "Macarthur",
-            "Glen Alpine",
-            "Blair Athol",
-            "Bradbury",
-            "Campbelltown"
-        ]
-    },
-    {
-        "Enfield": [
-            "Burwood Heights",
-            "Strathfield",
-            "Croydon Park",
-            "Belfield",
-            "Strathfield South",
-            "Burwood"
-        ]
-    },
-    {
-        "Ellis Lane": [
-            "Brownlow Hill",
-            "Cobbitty",
-            "Grasmere",
-            "Camden",
-            "Kirkham",
-            "Elderslie"
-        ]
-    },
-    {
-        "Fairlight": [
-            "Queenscliff",
-            "Balgowlah",
-            "Balgowlah Heights",
-            "Manly",
-            "Manly Vale",
-            "North Manly"
-        ]
-    },
-    {
-        "Georges Hall": [
-            "Bass Hill",
-            "Condell Park",
-            "Milperra",
-            "Villawood",
-            "Sefton",
-            "Yagoona"
-        ]
-    },
-    {
-        "Dundas": [
-            "Oatlands",
-            "Ermington",
-            "Dundas Valley",
-            "Carlingford",
-            "North Rocks",
-            "Melrose Park"
-        ]
-    },
-    {
-        "Eagle Vale": [
-            "Eschol Park",
-            "Claymore",
-            "Woodbine",
-            "Kearns",
-            "Raby",
-            "St Andrews"
-        ]
-    },
-    {
-        "Galston": [
-            "Middle Dural",
-            "Dural",
-            "Kenthurst",
-            "Glenorie",
-            "Glenhaven",
-            "Hornsby"
-        ]
-    },
-    {
-        "Gladesville": [
-            "Tennyson Point",
-            "Hunters Hill",
-            "Putney",
-            "Breakfast Point",
-            "Mortlake",
-            "Huntleys Point"
-        ]
-    },
-    {
-        "Epping": [
-            "Eastwood",
-            "Cheltenham",
-            "North Epping",
-            "Dundas Valley",
-            "Carlingford",
-            "Denistone West"
-        ]
-    },
-    {
-        "East Hills": [
-            "Panania",
-            "Sandy Point",
-            "Picnic Point",
-            "Revesby",
-            "Revesby Heights",
-            "Milperra"
-        ]
-    },
-    {
-        "Frenchs Forest": [
-            "The Forest District",
-            "Oxford Falls",
-            "Beacon Hill",
-            "Allambie Heights",
-            "Belrose",
-            "Forestville"
-        ]
-    },
-    {
-        "Glen Alpine": [
-            "Englorie Park",
-            "Ambarvale",
-            "Rosemeadow",
-            "Macarthur",
-            "Bradbury",
-            "St Helens Park"
-        ]
-    },
-    {
-        "Dundas Valley": [
-            "Denistone West",
-            "Eastwood",
-            "Ermington",
-            "Carlingford",
-            "Oatlands",
-            "Denistone"
-        ]
-    },
-    {
-        "Gledswood Hills": [
-            "Gregory Hills",
-            "Kearns",
-            "Varroville",
-            "Smeaton Grange",
-            "Eschol Park",
-            "Currans Hill"
-        ]
-    },
-    {
-        "East Willoughby": [
-            "North Willoughby",
-            "Middle Cove",
-            "Willoughby",
-            "Castlecrag",
-            "Castle Cove",
-            "Northbridge"
-        ]
-    },
-    {
-        "Elizabeth Bay": [
-            "Rushcutters Bay",
-            "Potts Point",
-            "Woolloomooloo",
-            "Kings Cross",
-            "Darling Point",
-            "Darlinghurst"
-        ]
-    },
-    {
-        "Gordon": [
-            "Pymble",
-            "Killara",
-            "West Pymble",
-            "East Killara",
-            "Lindfield",
-            "Turramurra"
-        ]
-    },
-    {
-        "Kogarah Bay": [
-            "Carss Park",
-            "Beverley Park",
-            "Allawah",
-            "Blakehurst",
-            "Carlton",
-            "Ramsgate"
-        ]
-    },
-    {
-        "Haymarket": [
-            "Ultimo",
-            "The Central Business District",
-            "Chippendale",
-            "Strawberry Hills",
-            "Surry Hills",
-            "Pyrmont"
-        ]
-    },
-    {
-        "Gregory Hills": [
-            "Currans Hill",
-            "Smeaton Grange",
-            "Gledswood Hills",
-            "Blairmount",
-            "Kearns",
-            "Eschol Park"
-        ]
-    },
-    {
-        "Gymea Bay": [
-            "Grays Point",
-            "Yowie Bay",
-            "The Sutherland Shire",
-            "Gymea",
-            "Miranda",
-            "Kirrawee"
-        ]
-    },
-    {
-        "Gymea": [
-            "Kirrawee",
-            "Miranda",
-            "Gymea Bay",
-            "Kareela",
-            "Yowie Bay",
-            "Sutherland"
-        ]
-    },
-    {
-        "Grasmere": [
-            "Bickley Vale",
-            "Brownlow Hill",
-            "Ellis Lane",
-            "Camden",
-            "Cawdor",
-            "Mount Hunter"
-        ]
-    },
-    {
-        "Kellyville": [
-            "North Kellyville",
-            "Beaumont Hills",
-            "The Hills District",
-            "Norwest",
-            "Bella Vista",
-            "Rouse Hill"
-        ]
-    },
-    {
-        "Haberfield": [
-            "Summer Hill",
-            "Lewisham",
-            "Leichhardt",
-            "Ashfield",
-            "Petersham",
-            "Rodd Point"
-        ]
-    },
-    {
-        "Killara": [
-            "Lindfield",
-            "Gordon",
-            "East Killara",
-            "East Lindfield",
-            "Roseville",
-            "Chatswood West"
-        ]
-    },
-    {
-        "Kareela": [
-            "Oyster Bay",
-            "Jannali",
-            "Como",
-            "Kangaroo Point",
-            "Gymea",
-            "Kirrawee"
-        ]
-    },
-    {
-        "Greenacre": [
-            "Mount Lewis",
-            "Bankstown",
-            "Wiley Park",
-            "Chullora",
-            "Strathfield South",
-            "Yagoona"
-        ]
-    },
-    {
-        "Hurstville Grove": [
-            "Connells Point",
-            "South Hurstville",
-            "Kyle Bay",
-            "Hurstville",
-            "Oatley",
-            "The St George Region"
-        ]
-    },
-    {
-        "Huntleys Point": [
-            "Hunters Hill",
-            "Linley Point",
-            "Drummoyne",
-            "Chiswick",
-            "Longueville",
-            "Woolwich"
-        ]
-    },
-    {
-        "Hornsby": [
-            "Waitara",
-            "Wahroonga",
-            "North Wahroonga",
-            "Warrawee",
-            "Westleigh",
-            "Turramurra"
-        ]
-    },
-    {
-        "Hillsdale": [
-            "Matraville",
-            "Eastgardens",
-            "Maroubra",
-            "Pagewood",
-            "The Eastern Suburbs",
-            "Chifley"
-        ]
-    },
-    {
-        "Kurnell": [
-            "La Perouse",
-            "Port Botany",
-            "Phillip Bay",
-            "Little Bay",
-            "Chifley",
-            "Banksmeadow"
-        ]
-    },
-    {
-        "Hurstville": [
-            "The St George Region",
-            "Penshurst",
-            "South Hurstville",
-            "Hurstville Grove",
-            "Connells Point",
-            "Allawah"
-        ]
-    },
-    {
-        "Homebush": [
-            "North Strathfield",
-            "Homebush West",
-            "Strathfield",
-            "Concord",
-            "Concord West",
-            "Liberty Grove"
-        ]
-    },
-    {
-        "Kingsford": [
-            "Daceyville",
-            "Randwick",
-            "Eastlakes",
-            "St Pauls",
-            "Kensington",
-            "Pagewood"
-        ]
-    },
-    {
-        "Greenwich": [
-            "Wollstonecraft",
-            "Northwood",
-            "Waverton",
-            "St Leonards",
-            "Woolwich",
-            "Longueville"
-        ]
-    },
-    {
-        "Kentlyn": [
-            "Minto Heights",
-            "Minto",
-            "Ruse",
-            "Leumeah",
-            "Long Point",
-            "Bow Bowing"
-        ]
-    },
-    {
-        "Kangaroo Point": [
-            "Kyle Bay",
-            "Sylvania",
-            "Blakehurst",
-            "Oyster Bay",
-            "Kareela",
-            "Connells Point"
-        ]
-    },
-    {
-        "Ingleside": [
-            "The Northern Beaches",
-            "Elanora Heights",
-            "Church Point",
-            "Bayview",
-            "Narrabeen North",
-            "Terrey Hills"
-        ]
-    },
-    {
-        "Harrington Park": [
-            "Narellan",
-            "Kirkham",
-            "Smeaton Grange",
-            "Oran Park",
-            "Narellan Vale",
-            "Elderslie"
-        ]
-    },
-    {
-        "Lakesland": [
-            "Mowbray Park",
-            "Thirlmere",
-            "Picton",
-            "Couridjah",
-            "Tahmoor",
-            "Belimbla Park"
-        ]
-    },
-    {
-        "Illawong": [
-            "Bonnet Bay",
-            "Lugarno",
-            "Bangor",
-            "Alfords Point",
-            "Como",
-            "Menai"
-        ]
-    },
-    {
-        "Hurlstone Park": [
-            "Canterbury-Bankstown",
-            "Canterbury",
-            "Earlwood",
-            "Undercliffe",
-            "Dulwich Hill",
-            "Ashbury"
-        ]
-    },
-    {
-        "Ingleburn": [
-            "Denham Court",
-            "Macquarie Fields",
-            "Macquarie Links",
-            "Minto",
-            "Bow Bowing",
-            "Bardia"
-        ]
-    },
-    {
-        "Kearns": [
-            "Eschol Park",
-            "Raby",
-            "Eagle Vale",
-            "Varroville",
-            "St Andrews",
-            "Claymore"
-        ]
-    },
-    {
-        "Kirrawee": [
-            "Sutherland",
-            "Gymea",
-            "Jannali",
-            "Gymea Bay",
-            "Grays Point",
-            "Kareela"
-        ]
-    },
-    {
-        "Grays Point": [
-            "Gymea Bay",
-            "The Sutherland Shire",
-            "Kirrawee",
-            "Gymea",
-            "Yowie Bay",
-            "Loftus"
-        ]
-    },
-    {
-        "Kyeemagh": [
-            "Banksia",
-            "Brighton-Le-Sands",
-            "Rockdale",
-            "Arncliffe",
-            "Sydney Airport",
-            "Wolli Creek"
-        ]
-    },
-    {
-        "Jannali": [
-            "Como",
-            "Oyster Bay",
-            "Bonnet Bay",
-            "Kareela",
-            "Sutherland",
-            "Kirrawee"
-        ]
-    },
-    {
-        "Lakemba": [
-            "Belmore",
-            "Roselands",
-            "Wiley Park",
-            "Belfield",
-            "Campsie",
-            "Clemton Park"
-        ]
-    },
-    {
-        "Hunters Hill": [
-            "Huntleys Point",
-            "Linley Point",
-            "Gladesville",
-            "Longueville",
-            "Riverview",
-            "Chiswick"
-        ]
-    },
-    {
-        "Kingsgrove": [
-            "Clemton Park",
-            "Roselands",
-            "Bardwell Park",
-            "Beverly Hills",
-            "Belmore",
-            "Campsie"
-        ]
-    },
-    {
-        "Kensington": [
-            "Centennial Park",
-            "Zetland",
-            "Moore Park",
-            "Randwick",
-            "Kingsford",
-            "Waterloo"
-        ]
-    },
-    {
-        "Homebush West": [
-            "Homebush",
-            "North Strathfield",
-            "Strathfield",
-            "Liberty Grove",
-            "Concord West",
-            "Strathfield South"
-        ]
-    },
-    {
-        "Kogarah": [
-            "Carlton",
-            "Monterey",
-            "Beverley Park",
-            "Bexley",
-            "Rockdale",
-            "Ramsgate"
-        ]
-    },
-    {
-        "Kirribilli": [
-            "Milsons Point",
-            "Lavender Bay",
-            "Dawes Point",
-            "McMahons Point",
-            "Cremorne Point",
-            "The Rocks"
-        ]
-    },
-    {
-        "Kings Langley": [
-            "Norwest",
-            "Bella Vista",
-            "North Kellyville",
-            "Kellyville",
-            "The Hills District",
-            "Winston Hills"
-        ]
-    },
-    {
-        "Kyle Bay": [
-            "Blakehurst",
-            "Connells Point",
-            "South Hurstville",
-            "Kangaroo Point",
-            "Hurstville Grove",
-            "Carss Park"
-        ]
-    },
-    {
-        "Kenthurst": [
-            "Dural",
-            "Middle Dural",
-            "Glenhaven",
-            "Galston",
-            "Annangrove",
-            "North Kellyville"
-        ]
-    },
-    {
-        "Great Mackerel Beach": [
-            "Coasters Retreat",
-            "Palm Beach",
-            "Whale Beach",
-            "Morning Bay",
-            "Lovett Bay",
-            "Clareville"
-        ]
-    },
-    {
-        "Kirkham": [
-            "Elderslie",
-            "Camden",
-            "Harrington Park",
-            "Narellan",
-            "Ellis Lane",
-            "Cobbitty"
-        ]
-    },
-    {
-        "La Perouse": [
-            "Phillip Bay",
-            "Little Bay",
-            "Port Botany",
-            "Chifley",
-            "Malabar",
-            "Matraville"
-        ]
-    },
-    {
-        "Heathcote": [
-            "Engadine",
-            "Yarrawarrah",
-            "Lucas Heights",
-            "Loftus",
-            "Barden Ridge",
-            "Woronora Heights"
-        ]
-    },
-    {
-        "Killarney Heights": [
-            "Castle Cove",
-            "Roseville Chase",
-            "Forestville",
-            "Middle Cove",
-            "North Willoughby",
-            "East Lindfield"
-        ]
-    },
-    {
-        "Kings Cross": [
-            "Woolloomooloo",
-            "Darlinghurst",
-            "Rushcutters Bay",
-            "Elizabeth Bay",
-            "Potts Point",
-            "Paddington"
-        ]
-    },
-    {
-        "Lilli Pilli": [
-            "Port Hacking",
-            "Dolans Bay",
-            "Maianbar",
-            "Caringbah South",
-            "Burraneer",
-            "The Sutherland Shire"
-        ]
-    },
-    {
-        "Macquarie Fields": [
-            "Macquarie Links",
-            "Long Point",
-            "Ingleburn",
-            "Bardia",
-            "Glenfield",
-            "Minto Heights"
-        ]
-    },
-    {
-        "Leppington": [
-            "Catherine Field",
-            "Varroville",
-            "Denham Court",
-            "Gledswood Hills",
-            "Rossmore",
-            "Bardia"
-        ]
-    },
-    {
-        "Lower Portland": [
-            "Sackville North",
-            "Leets Vale",
-            "Maroota",
-            "South Maroota",
-            "Wisemans Ferry",
-            "Cattai"
-        ]
-    },
-    {
-        "Maldon": [
-            "Picton",
-            "Tahmoor",
-            "Bingara Gorge",
-            "Pheasants Nest",
-            "Razorback",
-            "Wilton"
-        ]
-    },
-    {
-        "Marrickville": [
-            "Petersham",
-            "Enmore",
-            "Dulwich Hill",
-            "Stanmore",
-            "Lewisham",
-            "Sydenham"
-        ]
-    },
-    {
-        "Leichhardt": [
-            "Stanmore",
-            "Annandale",
-            "Petersham",
-            "Haberfield",
-            "Lilyfield",
-            "Lewisham"
-        ]
-    },
-    {
-        "Lindfield": [
-            "Killara",
-            "Roseville",
-            "East Lindfield",
-            "Chatswood West",
-            "East Killara",
-            "The Northern Suburbs"
-        ]
-    },
-    {
-        "Melrose Park": [
-            "Ermington",
-            "Meadowbank",
-            "West Ryde",
-            "Denistone West",
-            "Rhodes",
-            "Denistone"
-        ]
-    },
-    {
-        "Lucas Heights": [
-            "Barden Ridge",
-            "Engadine",
-            "Heathcote",
-            "Menai",
-            "Yarrawarrah",
-            "Woronora Heights"
-        ]
-    },
-    {
-        "Lilyfield": [
-            "Rozelle",
-            "Annandale",
-            "Leichhardt",
-            "Forest Lodge",
-            "Glebe",
-            "Balmain"
-        ]
-    },
-    {
-        "Maraylya": [
-            "Cattai",
-            "Nelson",
-            "Annangrove",
-            "Box Hill",
-            "Glenorie",
-            "Maroota"
-        ]
-    },
-    {
-        "Lane Cove North": [
-            "Lane Cove",
-            "Chatswood West",
-            "Lane Cove West",
-            "Chatswood",
-            "The Northern Suburbs",
-            "Artarmon"
-        ]
-    },
-    {
-        "Maianbar": [
-            "Port Hacking",
-            "Burraneer",
-            "Lilli Pilli",
-            "Dolans Bay",
-            "Bundeena",
-            "Caringbah South"
-        ]
-    },
-    {
-        "Maroubra": [
-            "Hillsdale",
-            "Matraville",
-            "Eastgardens",
-            "Malabar",
-            "Pagewood",
-            "Chifley"
-        ]
-    },
-    {
-        "Lewisham": [
-            "Summer Hill",
-            "Petersham",
-            "Haberfield",
-            "Marrickville",
-            "Dulwich Hill",
-            "Leichhardt"
-        ]
-    },
-    {
-        "Long Point": [
-            "Macquarie Fields",
-            "Minto Heights",
-            "Ingleburn",
-            "Macquarie Links",
-            "Minto",
-            "Kentlyn"
-        ]
-    },
-    {
-        "Lane Cove West": [
-            "East Ryde",
-            "Lane Cove North",
-            "Lane Cove",
-            "Linley Point",
-            "Riverview",
-            "The Northern Suburbs"
-        ]
-    },
-    {
-        "Middle Cove": [
-            "North Willoughby",
-            "East Willoughby",
-            "Castle Cove",
-            "Castlecrag",
-            "Willoughby",
-            "Roseville Chase"
-        ]
-    },
-    {
-        "Leumeah": [
-            "Woodbine",
-            "Ruse",
-            "Campbelltown",
-            "Claymore",
-            "Eagle Vale",
-            "Blair Athol"
-        ]
-    },
-    {
-        "Liberty Grove": [
-            "Concord West",
-            "Rhodes",
-            "Mortlake",
-            "North Strathfield",
-            "Homebush",
-            "Concord"
-        ]
-    },
-    {
-        "Lavender Bay": [
-            "McMahons Point",
-            "North Sydney",
-            "Milsons Point",
-            "Waverton",
-            "Kirribilli",
-            "Dawes Point"
-        ]
-    },
-    {
-        "Milperra": [
-            "Condell Park",
-            "Georges Hall",
-            "Revesby",
-            "Panania",
-            "East Hills",
-            "Bass Hill"
-        ]
-    },
-    {
-        "Manly": [
-            "Fairlight",
-            "Queenscliff",
-            "Balgowlah Heights",
-            "Freshwater",
-            "Balgowlah",
-            "Curl Curl"
-        ]
-    },
-    {
-        "Lugarno": [
-            "Padstow Heights",
-            "Illawong",
-            "Alfords Point",
-            "Peakhurst",
-            "Como",
-            "Oatley"
-        ]
-    },
-    {
-        "Macquarie Links": [
-            "Bardia",
-            "Macquarie Fields",
-            "Glenfield",
-            "Ingleburn",
-            "Denham Court",
-            "Long Point"
-        ]
-    },
-    {
-        "Loftus": [
-            "Yarrawarrah",
-            "Sutherland",
-            "Woronora",
-            "Woronora Heights",
-            "Kirrawee",
-            "Grays Point"
-        ]
-    },
-    {
-        "Malabar": [
-            "Chifley",
-            "Matraville",
-            "Little Bay",
-            "Maroubra",
-            "Phillip Bay",
-            "Hillsdale"
-        ]
-    },
-    {
-        "Longueville": [
-            "Riverview",
-            "Woolwich",
-            "Northwood",
-            "Linley Point",
-            "Greenwich",
-            "Huntleys Point"
-        ]
-    },
-    {
-        "Leets Vale": [
-            "Wisemans Ferry",
-            "Lower Portland",
-            "Sackville North",
-            "South Maroota",
-            "Maroota",
-            "Cattai"
-        ]
-    },
-    {
-        "Little Bay": [
-            "Phillip Bay",
-            "Chifley",
-            "La Perouse",
-            "Malabar",
-            "Port Botany",
-            "Matraville"
-        ]
-    },
-    {
-        "Millers Point": [
-            "Barangaroo",
-            "The Rocks",
-            "Dawes Point",
-            "Sydney CBD",
-            "Balmain East",
-            "Pyrmont"
-        ]
-    },
-    {
-        "Milsons Point": [
-            "Kirribilli",
-            "Lavender Bay",
-            "McMahons Point",
-            "Dawes Point",
-            "North Sydney",
-            "The Rocks"
-        ]
-    },
-    {
-        "Matraville": [
-            "Hillsdale",
-            "Chifley",
-            "Malabar",
-            "Maroubra",
-            "Eastgardens",
-            "Phillip Bay"
-        ]
-    },
-    {
-        "Menangle Park": [
-            "Menangle",
-            "Camden Park",
-            "Spring Farm",
-            "Glen Alpine",
-            "Mount Annan",
-            "Rosemeadow"
-        ]
-    },
-    {
-        "Minto Heights": [
-            "Minto",
-            "Kentlyn",
-            "Long Point",
-            "Ingleburn",
-            "Bow Bowing",
-            "St Andrews"
-        ]
-    },
-    {
-        "Lane Cove": [
-            "Lane Cove North",
-            "Riverview",
-            "Lane Cove West",
-            "Artarmon",
-            "Northwood",
-            "Chatswood"
-        ]
-    },
-    {
-        "Linley Point": [
-            "Hunters Hill",
-            "Riverview",
-            "Huntleys Point",
-            "Longueville",
-            "Lane Cove West",
-            "Lane Cove"
-        ]
-    },
-    {
-        "Lansdowne": [
-            "Diamond Bay",
-            "Wisemans Ferry",
-            "Palm Beach",
-            "Great Mackerel Beach",
-            "Whale Beach",
-            "Coasters Retreat"
-        ]
-    },
-    {
-        "Mascot": [
-            "Sydney Airport",
-            "Rosebery",
-            "Botany",
-            "Beaconsfield",
-            "Sydenham",
-            "St Peters"
-        ]
-    },
-    {
-        "Macarthur": [
-            "Englorie Park",
-            "Ambarvale",
-            "Blair Athol",
-            "Campbelltown",
-            "Glen Alpine",
-            "Bradbury"
-        ]
-    },
-    {
-        "Middle Dural": [
-            "Galston",
-            "Kenthurst",
-            "Glenorie",
-            "Dural",
-            "Annangrove",
-            "Glenhaven"
-        ]
-    },
-    {
-        "Manly Vale": [
-            "North Manly",
-            "North Balgowlah",
-            "Balgowlah",
-            "Fairlight",
-            "Queenscliff",
-            "Brookvale"
-        ]
-    },
-    {
-        "Menai": [
-            "Bangor",
-            "Barden Ridge",
-            "Illawong",
-            "Woronora Heights",
-            "Alfords Point",
-            "Woronora"
-        ]
-    },
-    {
-        "Minto": [
-            "Bow Bowing",
-            "St Andrews",
-            "Minto Heights",
-            "Ingleburn",
-            "Raby",
-            "Denham Court"
-        ]
-    },
-    {
-        "McMahons Point": [
-            "Lavender Bay",
-            "North Sydney",
-            "Milsons Point",
-            "Waverton",
-            "Dawes Point",
-            "Kirribilli"
-        ]
-    },
-    {
-        "Maroota": [
-            "South Maroota",
-            "Cattai",
-            "Sackville North",
-            "Maraylya",
-            "Glenorie",
-            "Leets Vale"
-        ]
-    },
-    {
-        "Meadowbank": [
-            "West Ryde",
-            "Melrose Park",
-            "Rhodes",
-            "Ryde",
-            "Denistone",
-            "Denistone West"
-        ]
-    },
-    {
-        "Lovett Bay": [
-            "Morning Bay",
-            "Elvina Bay",
-            "Scotland Island",
-            "Clareville",
-            "Church Point",
-            "Coasters Retreat"
-        ]
-    },
-    {
-        "Menangle": [
-            "Menangle Park",
-            "Camden Park",
-            "Gilead",
-            "Rosemeadow",
-            "Glen Alpine",
-            "Spring Farm"
-        ]
-    },
-    {
-        "Miranda": [
-            "Yowie Bay",
-            "Sylvania Waters",
-            "Gymea",
-            "Caringbah",
-            "Gymea Bay",
-            "Taren Point"
-        ]
-    },
-    {
-        "Mortlake": [
-            "Breakfast Point",
-            "Tennyson Point",
-            "Putney",
-            "Concord West",
-            "Liberty Grove",
-            "Concord"
-        ]
-    },
-    {
-        "Nangarin": [
-            "Yanderra",
-            "Bargo",
-            "Buxton",
-            "Couridjah",
-            "Pheasants Nest",
-            "Tahmoor"
-        ]
-    },
-    {
-        "Narellan": [
-            "Narellan Vale",
-            "Harrington Park",
-            "Smeaton Grange",
-            "Elderslie",
-            "Kirkham",
-            "Currans Hill"
-        ]
-    },
-    {
-        "Narrabeen North": [
-            "Elanora Heights",
-            "Warriewood",
-            "Narrabeen",
-            "Collaroy Plateau",
-            "The Northern Beaches",
-            "Collaroy"
-        ]
-    },
-    {
-        "Narwee": [
-            "Beverly Hills",
-            "Riverwood",
-            "Roselands",
-            "Penshurst",
-            "Mortdale",
-            "Punchbowl"
-        ]
-    },
-    {
-        "Naremburn": [
-            "St Leonards",
-            "Crows Nest",
-            "Willoughby",
-            "Northbridge",
-            "Wollstonecraft",
-            "Cammeray"
-        ]
-    },
-    {
-        "North Epping": [
-            "South Turramurra",
-            "West Pymble",
-            "Cheltenham",
-            "Epping",
-            "Eastwood",
-            "Pennant Hills"
-        ]
-    },
-    {
-        "North Ryde": [
-            "Denistone East",
-            "East Ryde",
-            "Ryde",
-            "West Pymble",
-            "The Northern Suburbs",
-            "Denistone"
-        ]
-    },
-    {
-        "Narraweena": [
-            "Beacon Hill",
-            "Cromer",
-            "Dee Why",
-            "Brookvale",
-            "Wheeler Heights",
-            "Allambie Heights"
-        ]
-    },
-    {
-        "Narellan Vale": [
-            "Narellan",
-            "Smeaton Grange",
-            "Mount Annan",
-            "Currans Hill",
-            "Harrington Park",
-            "Elderslie"
-        ]
-    },
-    {
-        "Mosman": [
-            "Cremorne",
-            "Cremorne Point",
-            "Cammeray",
-            "Neutral Bay",
-            "Clontarf",
-            "Northbridge"
-        ]
-    },
-    {
-        "Oatlands": [
-            "Dundas",
-            "North Rocks",
-            "Carlingford",
-            "Dundas Valley",
-            "Ermington",
-            "Denistone West"
-        ]
-    },
-    {
-        "Mount Annan": [
-            "Narellan Vale",
-            "Currans Hill",
-            "Narellan",
-            "Blairmount",
-            "Smeaton Grange",
-            "Glen Alpine"
-        ]
-    },
-    {
-        "Monterey": [
-            "Ramsgate Beach",
-            "Ramsgate",
-            "Kogarah",
-            "Brighton-Le-Sands",
-            "Sans Souci",
-            "Beverley Park"
-        ]
-    },
-    {
-        "Newport": [
-            "Bilgola Plateau",
-            "Bilgola",
-            "Clareville",
-            "Mona Vale",
-            "Bayview",
-            "Scotland Island"
-        ]
-    },
-    {
-        "Mona Vale": [
-            "Warriewood",
-            "Newport",
-            "Bayview",
-            "Church Point",
-            "Bilgola Plateau",
-            "Elanora Heights"
-        ]
-    },
-    {
-        "North Wahroonga": [
-            "Waitara",
-            "Wahroonga",
-            "North Turramurra",
-            "Hornsby",
-            "Warrawee",
-            "St Ives Chase"
-        ]
-    },
-    {
-        "Mowbray Park": [
-            "Lakesland",
-            "Picton",
-            "Thirlmere",
-            "Belimbla Park",
-            "The Oaks",
-            "Couridjah"
-        ]
-    },
-    {
-        "Oxford Falls": [
-            "Frenchs Forest",
-            "The Forest District",
-            "Beacon Hill",
-            "Narraweena",
-            "Belrose",
-            "Allambie Heights"
-        ]
-    },
-    {
-        "Northwood": [
-            "Greenwich",
-            "Longueville",
-            "Riverview",
-            "Wollstonecraft",
-            "Woolwich",
-            "Lane Cove"
-        ]
-    },
-    {
-        "Nelson": [
-            "Annangrove",
-            "Box Hill",
-            "Rouse Hill",
-            "Maraylya",
-            "Beaumont Hills",
-            "Kellyville"
-        ]
-    },
-    {
-        "Padstow Heights": [
-            "Lugarno",
-            "Peakhurst",
-            "Revesby Heights",
-            "Alfords Point",
-            "Padstow",
-            "Picnic Point"
-        ]
-    },
-    {
-        "North Strathfield": [
-            "Homebush",
-            "Concord",
-            "Concord West",
-            "Homebush West",
-            "Liberty Grove",
-            "Strathfield"
-        ]
-    },
-    {
-        "Moore Park": [
-            "Centennial Park",
-            "Waterloo",
-            "Kensington",
-            "Surry Hills",
-            "Paddington",
-            "Strawberry Hills"
-        ]
-    },
-    {
-        "Oyster Bay": [
-            "Kareela",
-            "Como",
-            "Jannali",
-            "Kangaroo Point",
-            "Bonnet Bay",
-            "Sylvania"
-        ]
-    },
-    {
-        "Newtown": [
-            "Camperdown",
-            "Erskineville",
-            "Eveleigh",
-            "Enmore",
-            "St Peters",
-            "Stanmore"
-        ]
-    },
-    {
-        "North Balgowlah": [
-            "Manly Vale",
-            "Balgowlah",
-            "Seaforth",
-            "North Manly",
-            "Clontarf",
-            "Allambie Heights"
-        ]
-    },
-    {
-        "North Curl Curl": [
-            "Curl Curl",
-            "Freshwater",
-            "Dee Why",
-            "Queenscliff",
-            "Brookvale",
-            "North Manly"
-        ]
-    },
-    {
-        "Oran Park": [
-            "Catherine Field",
-            "Harrington Park",
-            "Gledswood Hills",
-            "Smeaton Grange",
-            "Gregory Hills",
-            "Narellan"
-        ]
-    },
-    {
-        "Oatley": [
-            "Mortdale",
-            "Hurstville Grove",
-            "Penshurst",
-            "Connells Point",
-            "Kyle Bay",
-            "South Hurstville"
-        ]
-    },
-    {
-        "North Willoughby": [
-            "Middle Cove",
-            "East Willoughby",
-            "Castle Cove",
-            "Willoughby",
-            "Castlecrag",
-            "Roseville Chase"
-        ]
-    },
-    {
-        "Mortdale": [
-            "Oatley",
-            "Penshurst",
-            "Peakhurst",
-            "Beverly Hills",
-            "Narwee",
-            "Hurstville Grove"
-        ]
-    },
-    {
-        "North Rocks": [
-            "Oatlands",
-            "Carlingford",
-            "Baulkham Hills",
-            "Dundas",
-            "Winston Hills",
-            "Dundas Valley"
-        ]
-    },
-    {
-        "North Sydney": [
-            "Lavender Bay",
-            "McMahons Point",
-            "Waverton",
-            "Milsons Point",
-            "Neutral Bay",
-            "Wollstonecraft"
-        ]
-    },
-    {
-        "Mount Lewis": [
-            "Greenacre",
-            "Bankstown",
-            "Wiley Park",
-            "Punchbowl",
-            "Yagoona",
-            "Lakemba"
-        ]
-    },
-    {
-        "North Manly": [
-            "Manly Vale",
-            "Brookvale",
-            "Queenscliff",
-            "Freshwater",
-            "Curl Curl",
-            "North Balgowlah"
-        ]
-    },
-    {
-        "North Bondi": [
-            "Bondi Beach",
-            "Ben Buckler",
-            "Tamarama",
-            "Dover Heights",
-            "Bondi",
-            "Rose Bay"
-        ]
-    },
-    {
-        "North Kellyville": [
-            "Kellyville",
-            "Beaumont Hills",
-            "The Hills District",
-            "Norwest",
-            "Bella Vista",
-            "Rouse Hill"
-        ]
-    },
-    {
-        "Neutral Bay": [
-            "Cremorne",
-            "Cremorne Point",
-            "Cammeray",
-            "North Sydney",
-            "Lavender Bay",
-            "Crows Nest"
-        ]
-    },
-    {
-        "Northbridge": [
-            "Cammeray",
-            "Castlecrag",
-            "Naremburn",
-            "Willoughby",
-            "Crows Nest",
-            "East Willoughby"
-        ]
-    },
-    {
-        "Oakdale": [
-            "Belimbla Park",
-            "Nattai",
-            "The Oaks",
-            "Glenmore",
-            "Mowbray Park",
-            "Lakesland"
-        ]
-    },
-    {
-        "Mount Hunter": [
-            "Glenmore",
-            "Bickley Vale",
-            "Grasmere",
-            "Brownlow Hill",
-            "Cawdor",
-            "Ellis Lane"
-        ]
-    },
-    {
-        "Paddington": [
-            "Darlinghurst",
-            "Edgecliff",
-            "Rushcutters Bay",
-            "Kings Cross",
-            "Surry Hills",
-            "Moore Park"
-        ]
-    },
-    {
-        "Orangeville": [
-            "Werombi",
-            "Glenmore",
-            "Theresa Park",
-            "Mount Hunter",
-            "Brownlow Hill",
-            "The Oaks"
-        ]
-    },
-    {
-        "North Turramurra": [
-            "St Ives Chase",
-            "North Wahroonga",
-            "St Ives",
-            "Wahroonga",
-            "Warrawee",
-            "Turramurra"
-        ]
-    },
-    {
-        "Morning Bay": [
-            "Lovett Bay",
-            "Scotland Island",
-            "Elvina Bay",
-            "Clareville",
-            "Coasters Retreat",
-            "Bilgola Plateau"
-        ]
-    },
-    {
-        "Narrabeen": [
-            "Collaroy Plateau",
-            "Collaroy",
-            "Wheeler Heights",
-            "Narrabeen North",
-            "Cromer",
-            "Elanora Heights"
-        ]
-    },
-    {
-        "Norwest": [
-            "Bella Vista",
-            "Kings Langley",
-            "The Hills District",
-            "North Kellyville",
-            "Kellyville",
-            "Baulkham Hills"
-        ]
-    },
-    {
-        "Nattai": [
-            "Oakdale",
-            "Belimbla Park",
-            "Burragorang",
-            "The Oaks",
-            "Glenmore",
-            "Orangeville"
-        ]
-    },
-    {
-        "Roseville Chase": [
-            "Castle Cove",
-            "East Lindfield",
-            "Killarney Heights",
-            "Forestville",
-            "Middle Cove",
-            "North Willoughby"
-        ]
-    },
-    {
-        "Rhodes": [
-            "Meadowbank",
-            "Liberty Grove",
-            "Concord West",
-            "Putney",
-            "Melrose Park",
-            "Ryde"
-        ]
-    },
-    {
-        "Panania": [
-            "Revesby",
-            "East Hills",
-            "Picnic Point",
-            "Revesby Heights",
-            "Sandy Point",
-            "Padstow"
-        ]
-    },
-    {
-        "Pheasants Nest": [
-            "Tahmoor",
-            "Bingara Gorge",
-            "Maldon",
-            "Wilton",
-            "Bargo",
-            "Couridjah"
-        ]
-    },
-    {
-        "Point Piper": [
-            "Bellevue Hill",
-            "Double Bay",
-            "Darling Point",
-            "Rose Bay North",
-            "Rose Bay",
-            "Edgecliff"
-        ]
-    },
-    {
-        "Port Hacking": [
-            "Lilli Pilli",
-            "Dolans Bay",
-            "Maianbar",
-            "Burraneer",
-            "Caringbah South",
-            "Caringbah"
-        ]
-    },
-    {
-        "Peakhurst": [
-            "Padstow Heights",
-            "Riverwood",
-            "Mortdale",
-            "Padstow",
-            "Lugarno",
-            "Narwee"
-        ]
-    },
-    {
-        "Queenscliff": [
-            "Freshwater",
-            "Curl Curl",
-            "Fairlight",
-            "North Manly",
-            "Manly Vale",
-            "North Curl Curl"
-        ]
-    },
-    {
-        "Padstow": [
-            "Riverwood",
-            "Padstow Heights",
-            "Revesby Heights",
-            "Peakhurst",
-            "Revesby",
-            "Panania"
-        ]
-    },
-    {
-        "Picton": [
-            "Maldon",
-            "Thirlmere",
-            "Tahmoor",
-            "Mowbray Park",
-            "Lakesland",
-            "Razorback"
-        ]
-    },
-    {
-        "Petersham": [
-            "Lewisham",
-            "Stanmore",
-            "Marrickville",
-            "Leichhardt",
-            "Enmore",
-            "Summer Hill"
-        ]
-    },
-    {
-        "Revesby": [
-            "Panania",
-            "Revesby Heights",
-            "Padstow",
-            "Picnic Point",
-            "East Hills",
-            "Condell Park"
-        ]
-    },
-    {
-        "Pyrmont": [
-            "Ultimo",
-            "The Central Business District",
-            "Haymarket",
-            "Glebe",
-            "Barangaroo",
-            "Sydney CBD"
-        ]
-    },
-    {
-        "Phillip Bay": [
-            "Little Bay",
-            "La Perouse",
-            "Chifley",
-            "Port Botany",
-            "Matraville",
-            "Malabar"
-        ]
-    },
-    {
-        "Pymble": [
-            "Turramurra",
-            "Gordon",
-            "West Pymble",
-            "South Turramurra",
-            "Warrawee",
-            "Wahroonga"
-        ]
-    },
-    {
-        "Randwick": [
-            "St Pauls",
-            "Kingsford",
-            "Kensington",
-            "Daceyville",
-            "Coogee",
-            "Clovelly West"
-        ]
-    },
-    {
-        "Redfern": [
-            "Strawberry Hills",
-            "Waterloo",
-            "Darlington",
-            "Chippendale",
-            "Surry Hills",
-            "Alexandria"
-        ]
-    },
-    {
-        "Palm Beach": [
-            "Whale Beach",
-            "Coasters Retreat",
-            "Great Mackerel Beach",
-            "Avalon",
-            "Clareville",
-            "Morning Bay"
-        ]
-    },
-    {
-        "Rozelle": [
-            "Lilyfield",
-            "Balmain",
-            "Drummoyne",
-            "Birchgrove",
-            "Annandale",
-            "Rodd Point"
-        ]
-    },
-    {
-        "Rouse Hill": [
-            "Beaumont Hills",
-            "Annangrove",
-            "Nelson",
-            "North Kellyville",
-            "Kellyville",
-            "Box Hill"
-        ]
-    },
-    {
-        "Riverview": [
-            "Longueville",
-            "Lane Cove",
-            "Linley Point",
-            "Northwood",
-            "Lane Cove West",
-            "Lane Cove North"
-        ]
-    },
-    {
-        "Rossmore": [
-            "Bringelly",
-            "Leppington",
-            "Catherine Field",
-            "Oran Park",
-            "Gledswood Hills",
-            "Varroville"
-        ]
-    },
-    {
-        "Potts Hill": [
-            "Regents Park",
-            "Birrong",
-            "Chullora",
-            "Yagoona",
-            "Sefton",
-            "Chester Hill"
-        ]
-    },
-    {
-        "Revesby Heights": [
-            "Picnic Point",
-            "Padstow Heights",
-            "Panania",
-            "Alfords Point",
-            "Padstow",
-            "Revesby"
-        ]
-    },
-    {
-        "Punchbowl": [
-            "Wiley Park",
-            "Riverwood",
-            "Mount Lewis",
-            "Bankstown",
-            "Narwee",
-            "Greenacre"
-        ]
-    },
-    {
-        "Potts Point": [
-            "Woolloomooloo",
-            "Elizabeth Bay",
-            "Kings Cross",
-            "Rushcutters Bay",
-            "Darlinghurst",
-            "Darling Point"
-        ]
-    },
-    {
-        "Putney": [
-            "Tennyson Point",
-            "Ryde",
-            "Mortlake",
-            "Gladesville",
-            "Rhodes",
-            "Breakfast Point"
-        ]
-    },
-    {
-        "Russell Lea": [
-            "Rodd Point",
-            "Wareemba",
-            "Chiswick",
-            "Drummoyne",
-            "The Inner West",
-            "Five Dock"
-        ]
-    },
-    {
-        "Picnic Point": [
-            "Revesby Heights",
-            "Panania",
-            "Sandy Point",
-            "East Hills",
-            "Revesby",
-            "Alfords Point"
-        ]
-    },
-    {
-        "Riverwood": [
-            "Peakhurst",
-            "Padstow",
-            "Punchbowl",
-            "Narwee",
-            "Beverly Hills",
-            "Mortdale"
-        ]
-    },
-    {
-        "Ramsgate Beach": [
-            "Ramsgate",
-            "Monterey",
-            "Sans Souci",
-            "Dolls Point",
-            "Beverley Park",
-            "Kogarah"
-        ]
-    },
-    {
-        "Queens Park": [
-            "Charing Cross",
-            "Waverley",
-            "Bondi Junction",
-            "Bronte",
-            "Clovelly West",
-            "Bondi"
-        ]
-    },
-    {
-        "Port Botany": [
-            "Phillip Bay",
-            "La Perouse",
-            "Matraville",
-            "Chifley",
-            "Banksmeadow",
-            "Little Bay"
-        ]
-    },
-    {
-        "Ramsgate": [
-            "Ramsgate Beach",
-            "Sans Souci",
-            "Beverley Park",
-            "Monterey",
-            "Dolls Point",
-            "Kogarah"
-        ]
-    },
-    {
-        "Pennant Hills": [
-            "Beecroft",
-            "Westleigh",
-            "Cheltenham",
-            "West Pennant Hills",
-            "Cherrybrook",
-            "North Epping"
-        ]
-    },
-    {
-        "Rockdale": [
-            "Banksia",
-            "Bexley",
-            "Kogarah",
-            "Kyeemagh",
-            "Brighton-Le-Sands",
-            "Arncliffe"
-        ]
-    },
-    {
-        "Ruse": [
-            "Leumeah",
-            "Campbelltown",
-            "Airds",
-            "Bradbury",
-            "Woodbine",
-            "Kentlyn"
-        ]
-    },
-    {
-        "Raby": [
-            "Kearns",
-            "Eschol Park",
-            "St Andrews",
-            "Varroville",
-            "Eagle Vale",
-            "Bow Bowing"
-        ]
-    },
-    {
-        "Roselands": [
-            "Lakemba",
-            "Belmore",
-            "Kingsgrove",
-            "Clemton Park",
-            "Wiley Park",
-            "Narwee"
-        ]
-    },
-    {
-        "Rodd Point": [
-            "Russell Lea",
-            "Five Dock",
-            "Wareemba",
-            "The Inner West",
-            "Drummoyne",
-            "Chiswick"
-        ]
-    },
-    {
-        "Penshurst": [
-            "The St George Region",
-            "Hurstville",
-            "Beverly Hills",
-            "Mortdale",
-            "Hurstville Grove",
-            "Oatley"
-        ]
-    },
-    {
-        "Rose Bay": [
-            "Rose Bay North",
-            "Dover Heights",
-            "Bellevue Hill",
-            "Point Piper",
-            "Bondi",
-            "North Bondi"
-        ]
-    },
-    {
-        "Rosebery": [
-            "Eastlakes",
-            "Beaconsfield",
-            "Mascot",
-            "Daceyville",
-            "Zetland",
-            "Kingsford"
-        ]
-    },
-    {
-        "Roseville": [
-            "Chatswood West",
-            "Lindfield",
-            "Chatswood",
-            "The Northern Suburbs",
-            "Lane Cove North",
-            "East Lindfield"
-        ]
-    },
-    {
-        "Rushcutters Bay": [
-            "Elizabeth Bay",
-            "Kings Cross",
-            "Woolloomooloo",
-            "Potts Point",
-            "Darlinghurst",
-            "Edgecliff"
-        ]
-    },
-    {
-        "Regents Park": [
-            "Potts Hill",
-            "Birrong",
-            "Chullora",
-            "Sefton",
-            "Chester Hill",
-            "Yagoona"
-        ]
-    },
-    {
-        "Pagewood": [
-            "Eastgardens",
-            "The Eastern Suburbs",
-            "Hillsdale",
-            "Daceyville",
-            "Kingsford",
-            "Eastlakes"
-        ]
-    },
-    {
-        "Razorback": [
-            "Maldon",
-            "Camden Park",
-            "Douglas Park",
-            "Picton",
-            "Cawdor",
-            "Menangle"
-        ]
-    },
-    {
-        "Rose Bay North": [
-            "Rose Bay",
-            "Dover Heights",
-            "Bellevue Hill",
-            "Point Piper",
-            "Bondi",
-            "North Bondi"
-        ]
-    },
-    {
-        "Rosemeadow": [
-            "St Helens Park",
-            "Glen Alpine",
-            "Ambarvale",
-            "Englorie Park",
-            "Bradbury",
-            "Wedderburn"
-        ]
-    },
-    {
-        "Sackville North": [
-            "Lower Portland",
-            "Maroota",
-            "South Maroota",
-            "Leets Vale",
-            "Cattai",
-            "Maraylya"
-        ]
-    },
-    {
-        "Sandringham": [
-            "Dolls Point",
-            "Sans Souci",
-            "Ramsgate",
-            "Ramsgate Beach",
-            "Carss Park",
-            "Kogarah Bay"
-        ]
-    },
-    {
-        "St Ives": [
-            "St Ives Chase",
-            "North Turramurra",
-            "Davidson",
-            "Turramurra",
-            "Pymble",
-            "East Killara"
-        ]
-    },
-    {
-        "Ryde": [
-            "Putney",
-            "Meadowbank",
-            "West Ryde",
-            "Denistone East",
-            "Rhodes",
-            "Denistone"
-        ]
-    },
-    {
-        "Silverdale": [
-            "Warragamba",
-            "Werombi",
-            "Theresa Park",
-            "Bringelly",
-            "Orangeville",
-            "Cobbitty"
-        ]
-    },
-    {
-        "Tennyson Point": [
-            "Gladesville",
-            "Putney",
-            "Breakfast Point",
-            "Mortlake",
-            "Abbotsford",
-            "Ryde"
-        ]
-    },
-    {
-        "Smeaton Grange": [
-            "Currans Hill",
-            "Gregory Hills",
-            "Narellan Vale",
-            "Narellan",
-            "Harrington Park",
-            "Blairmount"
-        ]
-    },
-    {
-        "Terrey Hills": [
-            "Duffys Forest",
-            "The North Shore",
-            "Ingleside",
-            "The Northern Beaches",
-            "Belrose",
-            "Elanora Heights"
-        ]
-    },
-    {
-        "St Ives Chase": [
-            "North Turramurra",
-            "St Ives",
-            "North Wahroonga",
-            "Warrawee",
-            "Turramurra",
-            "Wahroonga"
-        ]
-    },
-    {
-        "Tamarama": [
-            "Bondi",
-            "Bronte",
-            "Bondi Beach",
-            "Waverley",
-            "Charing Cross",
-            "Ben Buckler"
-        ]
-    },
-    {
-        "Sylvania": [
-            "Sylvania Waters",
-            "Kangaroo Point",
-            "Taren Point",
-            "Kareela",
-            "Kyle Bay",
-            "Blakehurst"
-        ]
-    },
-    {
-        "Strathfield": [
-            "Enfield",
-            "Strathfield South",
-            "Homebush",
-            "Burwood",
-            "Burwood Heights",
-            "North Strathfield"
-        ]
-    },
-    {
-        "Sydenham": [
-            "St Peters",
-            "Tempe",
-            "Enmore",
-            "Marrickville",
-            "Erskineville",
-            "Wolli Creek"
-        ]
-    },
-    {
-        "South Turramurra": [
-            "North Epping",
-            "West Pymble",
-            "Pymble",
-            "Turramurra",
-            "Gordon",
-            "Warrawee"
-        ]
-    },
-    {
-        "The Rocks": [
-            "Dawes Point",
-            "Millers Point",
-            "Barangaroo",
-            "Sydney CBD",
-            "Milsons Point",
-            "Kirribilli"
-        ]
-    },
-    {
-        "Seaforth": [
-            "North Balgowlah",
-            "Castlecrag",
-            "Balgowlah",
-            "Clontarf",
-            "Manly Vale",
-            "Northbridge"
-        ]
-    },
-    {
-        "South Maroota": [
-            "Maroota",
-            "Cattai",
-            "Sackville North",
-            "Maraylya",
-            "Glenorie",
-            "Leets Vale"
-        ]
-    },
-    {
-        "The Oaks": [
-            "Glenmore",
-            "Belimbla Park",
-            "Mount Hunter",
-            "Orangeville",
-            "Oakdale",
-            "Mowbray Park"
-        ]
-    },
-    {
-        "South Hurstville": [
-            "Connells Point",
-            "Hurstville Grove",
-            "Blakehurst",
-            "Kyle Bay",
-            "Allawah",
-            "Hurstville"
-        ]
-    },
-    {
-        "Sans Souci": [
-            "Dolls Point",
-            "Ramsgate",
-            "Sandringham",
-            "Ramsgate Beach",
-            "Beverley Park",
-            "Kogarah Bay"
-        ]
-    },
-    {
-        "Spring Farm": [
-            "Elderslie",
-            "Camden",
-            "Camden Park",
-            "Cawdor",
-            "Narellan",
-            "Narellan Vale"
-        ]
-    },
-    {
-        "St Peters": [
-            "Erskineville",
-            "Sydenham",
-            "Enmore",
-            "Newtown",
-            "Eveleigh",
-            "Stanmore"
-        ]
-    },
-    {
-        "Surry Hills": [
-            "Strawberry Hills",
-            "Haymarket",
-            "Redfern",
-            "Chippendale",
-            "The Central Business District",
-            "Darlinghurst"
-        ]
-    },
-    {
-        "South Coogee": [
-            "Coogee",
-            "St Pauls",
-            "Maroubra",
-            "Clovelly",
-            "Clovelly West",
-            "Randwick"
-        ]
-    },
-    {
-        "Sandy Point": [
-            "East Hills",
-            "Picnic Point",
-            "Panania",
-            "Revesby Heights",
-            "Alfords Point",
-            "Revesby"
-        ]
-    },
-    {
-        "St Andrews": [
-            "Bow Bowing",
-            "Raby",
-            "Minto",
-            "Eschol Park",
-            "Eagle Vale",
-            "Kearns"
-        ]
-    },
-    {
-        "Summer Hill": [
-            "Lewisham",
-            "Haberfield",
-            "Ashfield",
-            "Petersham",
-            "Dulwich Hill",
-            "Ashbury"
-        ]
-    },
-    {
-        "Sefton": [
-            "Chester Hill",
-            "Birrong",
-            "Bass Hill",
-            "Regents Park",
-            "Potts Hill",
-            "Villawood"
-        ]
-    },
-    {
-        "Sydney CBD": [
-            "Barangaroo",
-            "The Central Business District",
-            "The Rocks",
-            "Millers Point",
-            "Woolloomooloo",
-            "Pyrmont"
-        ]
-    },
-    {
-        "The Eastern Suburbs": [
-            "Banksmeadow",
-            "Botany",
-            "Eastgardens",
-            "Pagewood",
-            "Hillsdale",
-            "Matraville"
-        ]
-    },
-    {
-        "St Helens Park": [
-            "Rosemeadow",
-            "Wedderburn",
-            "Airds",
-            "Bradbury",
-            "Ambarvale",
-            "Glen Alpine"
-        ]
-    },
-    {
-        "The Northern Suburbs": [
-            "Chatswood West",
-            "Lane Cove North",
-            "Roseville",
-            "Lane Cove West",
-            "East Ryde",
-            "Lane Cove"
-        ]
-    },
-    {
-        "The Inner West": [
-            "Wareemba",
-            "Abbotsford",
-            "Five Dock",
-            "Chiswick",
-            "Russell Lea",
-            "Rodd Point"
-        ]
-    },
-    {
-        "The Northern Beaches": [
-            "Ingleside",
-            "Elanora Heights",
-            "Narrabeen North",
-            "Warriewood",
-            "Mona Vale",
-            "Bayview"
-        ]
-    },
-    {
-        "Strawberry Hills": [
-            "Surry Hills",
-            "Redfern",
-            "Chippendale",
-            "Haymarket",
-            "Darlington",
-            "Ultimo"
-        ]
-    },
-    {
-        "Tahmoor": [
-            "Couridjah",
-            "Thirlmere",
-            "Pheasants Nest",
-            "Picton",
-            "Maldon",
-            "Buxton"
-        ]
-    },
-    {
-        "Strathfield South": [
-            "Strathfield",
-            "Belfield",
-            "Enfield",
-            "Chullora",
-            "Greenacre",
-            "Burwood Heights"
-        ]
-    },
-    {
-        "Stanmore": [
-            "Enmore",
-            "Petersham",
-            "Leichhardt",
-            "Newtown",
-            "Marrickville",
-            "Camperdown"
-        ]
-    },
-    {
-        "Taren Point": [
-            "Sylvania Waters",
-            "Sylvania",
-            "Miranda",
-            "Sandringham",
-            "Caringbah",
-            "Kangaroo Point"
-        ]
-    },
-    {
-        "Tempe": [
-            "Wolli Creek",
-            "Sydenham",
-            "Turrella",
-            "Arncliffe",
-            "Marrickville",
-            "Sydney Airport"
-        ]
-    },
-    {
-        "The North Shore": [
-            "Duffys Forest",
-            "Terrey Hills",
-            "Cottage Point",
-            "St Ives Chase",
-            "North Turramurra",
-            "Ingleside"
-        ]
-    },
-    {
-        "The Central Business District": [
-            "Haymarket",
-            "Sydney CBD",
-            "Pyrmont",
-            "Ultimo",
-            "Surry Hills",
-            "Chippendale"
-        ]
-    },
-    {
-        "Sutherland": [
-            "Kirrawee",
-            "Woronora",
-            "Loftus",
-            "Jannali",
-            "Gymea",
-            "Woronora Heights"
-        ]
-    },
-    {
-        "St Pauls": [
-            "Randwick",
-            "Coogee",
-            "Clovelly West",
-            "Kingsford",
-            "South Coogee",
-            "Clovelly"
-        ]
-    },
-    {
-        "St Leonards": [
-            "Naremburn",
-            "Crows Nest",
-            "Wollstonecraft",
-            "Greenwich",
-            "Northwood",
-            "Willoughby"
-        ]
-    },
-    {
-        "The Forest District": [
-            "Frenchs Forest",
-            "Oxford Falls",
-            "Beacon Hill",
-            "Allambie Heights",
-            "Belrose",
-            "Forestville"
-        ]
-    },
-    {
-        "Scotland Island": [
-            "Elvina Bay",
-            "Lovett Bay",
-            "Morning Bay",
-            "Clareville",
-            "Church Point",
-            "Bayview"
-        ]
-    },
-    {
-        "Sylvania Waters": [
-            "Taren Point",
-            "Sylvania",
-            "Miranda",
-            "Caringbah",
-            "Gymea",
-            "Kangaroo Point"
-        ]
-    },
-    {
-        "Sydney Airport": [
-            "Mascot",
-            "Kyeemagh",
-            "Tempe",
-            "Botany",
-            "Wolli Creek",
-            "Banksia"
-        ]
-    },
-    {
-        "The Hills District": [
-            "Castle Hill",
-            "Bella Vista",
-            "Norwest",
-            "Kellyville",
-            "North Kellyville",
-            "Glenhaven"
-        ]
-    },
-    {
-        "West Ryde": [
-            "Denistone",
-            "Meadowbank",
-            "Denistone West",
-            "Melrose Park",
-            "Denistone East",
-            "Ryde"
-        ]
-    },
-    {
-        "Turrella": [
-            "Arncliffe",
-            "Bardwell Valley",
-            "Wolli Creek",
-            "Bardwell Park",
-            "Banksia",
-            "Tempe"
-        ]
-    },
-    {
-        "Thirlmere": [
-            "Couridjah",
-            "Tahmoor",
-            "Lakesland",
-            "Picton",
-            "Mowbray Park",
-            "Buxton"
-        ]
-    },
-    {
-        "Villawood": [
-            "Bass Hill",
-            "Chester Hill",
-            "Sefton",
-            "Georges Hall",
-            "Birrong",
-            "Regents Park"
-        ]
-    },
-    {
-        "Turramurra": [
-            "Warrawee",
-            "Pymble",
-            "Wahroonga",
-            "South Turramurra",
-            "Gordon",
-            "West Pymble"
-        ]
-    },
-    {
-        "Wahroonga": [
-            "Warrawee",
-            "Waitara",
-            "Turramurra",
-            "North Wahroonga",
-            "Hornsby",
-            "North Turramurra"
-        ]
-    },
-    {
-        "Yerranderie": [
-            "Burragorang",
-            "Nattai",
-            "Oakdale",
-            "Lakesland",
-            "Belimbla Park",
-            "Mowbray Park"
-        ]
-    },
-    {
-        "Wilton": [
-            "Bingara Gorge",
-            "Douglas Park",
-            "Pheasants Nest",
-            "Maldon",
-            "Appin",
-            "Tahmoor"
-        ]
-    },
-    {
-        "Yarrawarrah": [
-            "Loftus",
-            "Engadine",
-            "Woronora Heights",
-            "Woronora",
-            "Barden Ridge",
-            "Sutherland"
-        ]
-    },
-    {
-        "Varroville": [
-            "Raby",
-            "Kearns",
-            "St Andrews",
-            "Bow Bowing",
-            "Denham Court",
-            "Eschol Park"
-        ]
-    },
-    {
-        "Woolloomooloo": [
-            "Potts Point",
-            "Kings Cross",
-            "Elizabeth Bay",
-            "Rushcutters Bay",
-            "Darlinghurst",
-            "Sydney CBD"
-        ]
-    },
-    {
-        "Westleigh": [
-            "Pennant Hills",
-            "Cherrybrook",
-            "Beecroft",
-            "West Pennant Hills",
-            "Hornsby",
-            "Waitara"
-        ]
-    },
-    {
-        "Whale Beach": [
-            "Palm Beach",
-            "Avalon",
-            "Coasters Retreat",
-            "Clareville",
-            "Bilgola",
-            "Great Mackerel Beach"
-        ]
-    },
-    {
-        "Woodbine": [
-            "Claymore",
-            "Eagle Vale",
-            "Leumeah",
-            "Eschol Park",
-            "Campbelltown",
-            "St Andrews"
-        ]
-    },
-    {
-        "Woronora": [
-            "Woronora Heights",
-            "Bangor",
-            "Sutherland",
-            "Loftus",
-            "Bonnet Bay",
-            "Jannali"
-        ]
-    },
-    {
-        "Waitara": [
-            "Hornsby",
-            "Wahroonga",
-            "North Wahroonga",
-            "Warrawee",
-            "Turramurra",
-            "Westleigh"
-        ]
-    },
-    {
-        "Wisemans Ferry": [
-            "Leets Vale",
-            "Lower Portland",
-            "Sackville North",
-            "South Maroota",
-            "Maroota",
-            "Cattai"
-        ]
-    },
-    {
-        "Waverton": [
-            "Wollstonecraft",
-            "North Sydney",
-            "McMahons Point",
-            "Lavender Bay",
-            "Greenwich",
-            "Milsons Point"
-        ]
-    },
-    {
-        "Waverley": [
-            "Charing Cross",
-            "Queens Park",
-            "Bronte",
-            "Bondi",
-            "Bondi Junction",
-            "Tamarama"
-        ]
-    },
-    {
-        "Waterloo": [
-            "Alexandria",
-            "Redfern",
-            "Zetland",
-            "Moore Park",
-            "Beaconsfield",
-            "Strawberry Hills"
-        ]
-    },
-    {
-        "Wolli Creek": [
-            "Tempe",
-            "Arncliffe",
-            "Turrella",
-            "Banksia",
-            "Bardwell Valley",
-            "Kyeemagh"
-        ]
-    },
-    {
-        "Vaucluse": [
-            "Dover Heights",
-            "Watsons Bay",
-            "Rose Bay",
-            "Rose Bay North",
-            "Point Piper",
-            "Bellevue Hill"
-        ]
-    },
-    {
-        "Warrawee": [
-            "Wahroonga",
-            "Turramurra",
-            "Waitara",
-            "Pymble",
-            "North Wahroonga",
-            "Hornsby"
-        ]
-    },
-    {
-        "Warragamba": [
-            "Silverdale",
-            "Werombi",
-            "Theresa Park",
-            "Bringelly",
-            "Orangeville",
-            "Cobbitty"
-        ]
-    },
-    {
-        "Wareemba": [
-            "The Inner West",
-            "Chiswick",
-            "Abbotsford",
-            "Five Dock",
-            "Russell Lea",
-            "Rodd Point"
-        ]
-    },
-    {
-        "Woolwich": [
-            "Longueville",
-            "Birchgrove",
-            "Greenwich",
-            "Northwood",
-            "Drummoyne",
-            "Riverview"
-        ]
-    },
-    {
-        "Yagoona": [
-            "Bankstown",
-            "Birrong",
-            "Potts Hill",
-            "Regents Park",
-            "Condell Park",
-            "Mount Lewis"
-        ]
-    },
-    {
-        "Winston Hills": [
-            "Baulkham Hills",
-            "North Rocks",
-            "Norwest",
-            "Bella Vista",
-            "Kings Langley",
-            "Oatlands"
-        ]
-    },
-    {
-        "Watsons Bay": [
-            "Vaucluse",
-            "Dover Heights",
-            "Mosman",
-            "Manly",
-            "Balgowlah Heights",
-            "Rose Bay North"
-        ]
-    },
-    {
-        "Ultimo": [
-            "Chippendale",
-            "Haymarket",
-            "Darlington",
-            "Pyrmont",
-            "The Central Business District",
-            "Glebe"
-        ]
-    },
-    {
-        "Wheeler Heights": [
-            "Collaroy Plateau",
-            "Cromer",
-            "Narrabeen",
-            "Collaroy",
-            "Narraweena",
-            "Dee Why"
-        ]
-    },
-    {
-        "Werombi": [
-            "Theresa Park",
-            "Orangeville",
-            "Silverdale",
-            "Brownlow Hill",
-            "Cobbitty",
-            "Warragamba"
-        ]
-    },
-    {
-        "The Sutherland Shire": [
-            "Gymea Bay",
-            "Yowie Bay",
-            "Grays Point",
-            "Lilli Pilli",
-            "Caringbah South",
-            "Port Hacking"
-        ]
-    },
-    {
-        "West Pymble": [
-            "South Turramurra",
-            "Gordon",
-            "North Epping",
-            "Pymble",
-            "North Ryde",
-            "Turramurra"
-        ]
-    },
-    {
-        "Willoughby": [
-            "East Willoughby",
-            "Naremburn",
-            "North Willoughby",
-            "Artarmon",
-            "Middle Cove",
-            "Northbridge"
-        ]
-    },
-    {
-        "Woollahra": [
-            "Bondi Junction",
-            "Bellevue Hill",
-            "Double Bay",
-            "Edgecliff",
-            "Paddington",
-            "Queens Park"
-        ]
-    },
-    {
-        "Yanderra": [
-            "Bargo",
-            "Buxton",
-            "Pheasants Nest",
-            "Couridjah",
-            "Tahmoor",
-            "Thirlmere"
-        ]
-    },
-    {
-        "Undercliffe": [
-            "Earlwood",
-            "Hurlstone Park",
-            "Canterbury",
-            "Canterbury-Bankstown",
-            "Bardwell Park",
-            "Dulwich Hill"
-        ]
-    },
-    {
-        "Waterfall": [
-            "Heathcote",
-            "Engadine",
-            "Yarrawarrah",
-            "Lucas Heights",
-            "Loftus",
-            "Grays Point"
-        ]
-    },
-    {
-        "Wedderburn": [
-            "St Helens Park",
-            "Gilead",
-            "Rosemeadow",
-            "Airds",
-            "Bradbury",
-            "Ambarvale"
-        ]
-    },
-    {
-        "Zetland": [
-            "Waterloo",
-            "Beaconsfield",
-            "Kensington",
-            "Alexandria",
-            "Moore Park",
-            "Redfern"
-        ]
-    },
-    {
-        "Wiley Park": [
-            "Punchbowl",
-            "Lakemba",
-            "Mount Lewis",
-            "Greenacre",
-            "Roselands",
-            "Belmore"
-        ]
-    },
-    {
-        "The St George Region": [
-            "Hurstville",
-            "Penshurst",
-            "South Hurstville",
-            "Hurstville Grove",
-            "Allawah",
-            "Connells Point"
-        ]
-    },
-    {
-        "Wollstonecraft": [
-            "Greenwich",
-            "Waverton",
-            "St Leonards",
-            "North Sydney",
-            "Crows Nest",
-            "Northwood"
-        ]
-    },
-    {
-        "Woolooware": [
-            "Cronulla",
-            "Caringbah",
-            "Caringbah South",
-            "Dolans Bay",
-            "Burraneer",
-            "Port Hacking"
-        ]
-    },
-    {
-        "Yowie Bay": [
-            "Gymea Bay",
-            "Miranda",
-            "Caringbah South",
-            "Caringbah",
-            "The Sutherland Shire",
-            "Lilli Pilli"
-        ]
-    },
-    {
-        "Theresa Park": [
-            "Werombi",
-            "Brownlow Hill",
-            "Cobbitty",
-            "Orangeville",
-            "Ellis Lane",
-            "Grasmere"
-        ]
-    },
-    {
-        "Warriewood": [
-            "Narrabeen North",
-            "Mona Vale",
-            "Elanora Heights",
-            "The Northern Beaches",
-            "Narrabeen",
-            "Ingleside"
-        ]
-    },
-    {
-        "West Pennant Hills": [
-            "Beecroft",
-            "Cherrybrook",
-            "Pennant Hills",
-            "Cheltenham",
-            "Westleigh",
-            "Carlingford"
-        ]
-    },
-    {
-        "Woronora Heights": [
-            "Woronora",
-            "Bangor",
-            "Barden Ridge",
-            "Loftus",
-            "Sutherland",
-            "Yarrawarrah"
-        ]
-    }
-]
+{
+    "Annandale": [
+        "Lilyfield",
+        "Forest Lodge",
+        "Camperdown",
+        "Leichhardt",
+        "Glebe",
+        "Stanmore"
+    ]
+    ,
+    "Abbotsford": [
+        "The Inner West",
+        "Wareemba",
+        "Chiswick",
+        "Five Dock",
+        "Breakfast Point",
+        "Russell Lea"
+    ]
+    ,
+    "Belimbla Park": [
+        "The Oaks",
+        "Oakdale",
+        "Glenmore",
+        "Nattai",
+        "Mowbray Park",
+        "Orangeville"
+    ]
+    ,
+    "Bangor": [
+        "Woronora Heights",
+        "Woronora",
+        "Menai",
+        "Barden Ridge",
+        "Illawong",
+        "Bonnet Bay"
+    ]
+    ,
+    "Alfords Point": [
+        "Padstow Heights",
+        "Revesby Heights",
+        "Lugarno",
+        "Illawong",
+        "Picnic Point",
+        "Sandy Point"
+    ]
+    ,
+    "Bilgola Plateau": [
+        "Clareville",
+        "Bilgola",
+        "Newport",
+        "Avalon",
+        "Scotland Island",
+        "Bayview"
+    ]
+    ,
+    "Alexandria": [
+        "Waterloo",
+        "Redfern",
+        "Beaconsfield",
+        "Eveleigh",
+        "Zetland",
+        "Darlington"
+    ]
+    ,
+    "Ashbury": [
+        "Croydon Park",
+        "Ashfield",
+        "Canterbury-Bankstown",
+        "Canterbury",
+        "Hurlstone Park",
+        "Burwood Heights"
+    ]
+    ,
+    "Balgowlah": [
+        "Balgowlah Heights",
+        "Clontarf",
+        "North Balgowlah",
+        "Manly Vale",
+        "Fairlight",
+        "Seaforth"
+    ]
+    ,
+    "Ashfield": [
+        "Summer Hill",
+        "Ashbury",
+        "Croydon",
+        "Haberfield",
+        "Croydon Park",
+        "Burwood Heights"
+    ]
+    ,
+    "Baulkham Hills": [
+        "Winston Hills",
+        "North Rocks",
+        "Castle Hill",
+        "The Hills District",
+        "Bella Vista",
+        "Norwest"
+    ]
+    ,
+    "Bardia": [
+        "Macquarie Links",
+        "Ingleburn",
+        "Denham Court",
+        "Macquarie Fields",
+        "Glenfield",
+        "Long Point"
+    ]
+    ,
+    "Beecroft": [
+        "Cheltenham",
+        "Pennant Hills",
+        "West Pennant Hills",
+        "Epping",
+        "Carlingford",
+        "Cherrybrook"
+    ]
+    ,
+    "Annangrove": [
+        "Nelson",
+        "Rouse Hill",
+        "Beaumont Hills",
+        "Box Hill",
+        "Kenthurst",
+        "North Kellyville"
+    ]
+    ,
+    "Bexley": [
+        "Carlton",
+        "Rockdale",
+        "Kogarah",
+        "Allawah",
+        "Banksia",
+        "Bardwell Valley"
+    ]
+    ,
+    "Balmain East": [
+        "Balmain",
+        "Birchgrove",
+        "Millers Point",
+        "Barangaroo",
+        "Dawes Point",
+        "The Rocks"
+    ]
+    ,
+    "Belfield": [
+        "Belmore",
+        "Strathfield South",
+        "Lakemba",
+        "Enfield",
+        "Campsie",
+        "Croydon Park"
+    ]
+    ,
+    "Arncliffe": [
+        "Turrella",
+        "Bardwell Valley",
+        "Wolli Creek",
+        "Banksia",
+        "Bardwell Park",
+        "Kyeemagh"
+    ]
+    ,
+    "Bass Hill": [
+        "Georges Hall",
+        "Sefton",
+        "Villawood",
+        "Chester Hill",
+        "Birrong",
+        "Yagoona"
+    ]
+    ,
+    "Balgowlah Heights": [
+        "Clontarf",
+        "Balgowlah",
+        "Fairlight",
+        "Manly Vale",
+        "Seaforth",
+        "North Balgowlah"
+    ]
+    ,
+    "Bellevue Hill": [
+        "Woollahra",
+        "Double Bay",
+        "Point Piper",
+        "Bondi Junction",
+        "Rose Bay",
+        "Rose Bay North"
+    ]
+    ,
+    "Beverley Park": [
+        "Kogarah Bay",
+        "Ramsgate",
+        "Allawah",
+        "Carlton",
+        "Carss Park",
+        "Kogarah"
+    ]
+    ,
+    "Appin": [
+        "Gilead",
+        "Douglas Park",
+        "Wilton",
+        "Wedderburn",
+        "Menangle",
+        "Bingara Gorge"
+    ]
+    ,
+    "Avalon": [
+        "Bilgola",
+        "Whale Beach",
+        "Clareville",
+        "Bilgola Plateau",
+        "Newport",
+        "Palm Beach"
+    ]
+    ,
+    "Bilgola": [
+        "Bilgola Plateau",
+        "Avalon",
+        "Newport",
+        "Clareville",
+        "Whale Beach",
+        "Scotland Island"
+    ]
+    ,
+    "Bickley Vale": [
+        "Cawdor",
+        "Grasmere",
+        "Mount Hunter",
+        "Camden Park",
+        "Camden",
+        "Spring Farm"
+    ]
+    ,
+    "Bayview": [
+        "Church Point",
+        "Scotland Island",
+        "Elvina Bay",
+        "Newport",
+        "Mona Vale",
+        "Bilgola Plateau"
+    ]
+    ,
+    "Belrose": [
+        "Frenchs Forest",
+        "The Forest District",
+        "Oxford Falls",
+        "Davidson",
+        "Forestville",
+        "Beacon Hill"
+    ]
+    ,
+    "Beverly Hills": [
+        "Narwee",
+        "Penshurst",
+        "Mortdale",
+        "Roselands",
+        "The St George Region",
+        "Kingsgrove"
+    ]
+    ,
+    "Banksmeadow": [
+        "The Eastern Suburbs",
+        "Botany",
+        "Hillsdale",
+        "Eastgardens",
+        "Pagewood",
+        "Matraville"
+    ]
+    ,
+    "Beaconsfield": [
+        "Zetland",
+        "Alexandria",
+        "Waterloo",
+        "Rosebery",
+        "Erskineville",
+        "Eveleigh"
+    ]
+    ,
+    "Allawah": [
+        "Carlton",
+        "Kogarah Bay",
+        "Beverley Park",
+        "South Hurstville",
+        "Carss Park",
+        "Connells Point"
+    ]
+    ,
+    "Beaumont Hills": [
+        "Kellyville",
+        "North Kellyville",
+        "Rouse Hill",
+        "The Hills District",
+        "Bella Vista",
+        "Norwest"
+    ]
+    ,
+    "Bardwell Park": [
+        "Bardwell Valley",
+        "Turrella",
+        "Arncliffe",
+        "Undercliffe",
+        "Earlwood",
+        "Clemton Park"
+    ]
+    ,
+    "Ben Buckler": [
+        "North Bondi",
+        "Bondi Beach",
+        "Tamarama",
+        "Bondi",
+        "Dover Heights",
+        "Bronte"
+    ]
+    ,
+    "Beacon Hill": [
+        "Narraweena",
+        "Allambie Heights",
+        "Brookvale",
+        "Oxford Falls",
+        "The Forest District",
+        "Frenchs Forest"
+    ]
+    ,
+    "Banksia": [
+        "Kyeemagh",
+        "Rockdale",
+        "Arncliffe",
+        "Brighton-Le-Sands",
+        "Turrella",
+        "Bardwell Valley"
+    ]
+    ,
+    "Airds": [
+        "Bradbury",
+        "Ambarvale",
+        "St Helens Park",
+        "Ruse",
+        "Englorie Park",
+        "Campbelltown"
+    ]
+    ,
+    "Bingara Gorge": [
+        "Wilton",
+        "Douglas Park",
+        "Maldon",
+        "Pheasants Nest",
+        "Razorback",
+        "Tahmoor"
+    ]
+    ,
+    "Bargo": [
+        "Yanderra",
+        "Buxton",
+        "Pheasants Nest",
+        "Tahmoor",
+        "Couridjah",
+        "Thirlmere"
+    ]
+    ,
+    "Bella Vista": [
+        "Norwest",
+        "Kings Langley",
+        "The Hills District",
+        "North Kellyville",
+        "Kellyville",
+        "Baulkham Hills"
+    ]
+    ,
+    "Barden Ridge": [
+        "Woronora Heights",
+        "Bangor",
+        "Menai",
+        "Woronora",
+        "Yarrawarrah",
+        "Lucas Heights"
+    ]
+    ,
+    "Bankstown": [
+        "Yagoona",
+        "Mount Lewis",
+        "Greenacre",
+        "Punchbowl",
+        "Condell Park",
+        "Wiley Park"
+    ]
+    ,
+    "Barangaroo": [
+        "Millers Point",
+        "The Rocks",
+        "Sydney CBD",
+        "Dawes Point",
+        "Pyrmont",
+        "Balmain East"
+    ]
+    ,
+    "Belmore": [
+        "Lakemba",
+        "Campsie",
+        "Belfield",
+        "Roselands",
+        "Clemton Park",
+        "Wiley Park"
+    ]
+    ,
+    "Balmain": [
+        "Birchgrove",
+        "Balmain East",
+        "Rozelle",
+        "Lilyfield",
+        "Woolwich",
+        "Millers Point"
+    ]
+    ,
+    "Artarmon": [
+        "Chatswood",
+        "Willoughby",
+        "Lane Cove",
+        "Lane Cove North",
+        "St Leonards",
+        "Naremburn"
+    ]
+    ,
+    "Allambie Heights": [
+        "Beacon Hill",
+        "Brookvale",
+        "Frenchs Forest",
+        "The Forest District",
+        "Narraweena",
+        "North Manly"
+    ]
+    ,
+    "Bardwell Valley": [
+        "Bardwell Park",
+        "Turrella",
+        "Arncliffe",
+        "Banksia",
+        "Rockdale",
+        "Earlwood"
+    ]
+    ,
+    "Ambarvale": [
+        "Englorie Park",
+        "Macarthur",
+        "Bradbury",
+        "Glen Alpine",
+        "Blair Athol",
+        "Campbelltown"
+    ]
+    ,
+    "Burragorang": [
+        "Nattai",
+        "Oakdale",
+        "Yerranderie",
+        "Belimbla Park",
+        "Lakesland",
+        "Mowbray Park"
+    ]
+    ,
+    "Blairmount": [
+        "Currans Hill",
+        "Blair Athol",
+        "Claymore",
+        "Gregory Hills",
+        "Eagle Vale",
+        "Eschol Park"
+    ]
+    ,
+    "Breakfast Point": [
+        "Mortlake",
+        "Tennyson Point",
+        "Abbotsford",
+        "Gladesville",
+        "Putney",
+        "Concord"
+    ]
+    ,
+    "Birchgrove": [
+        "Balmain",
+        "Balmain East",
+        "Woolwich",
+        "Rozelle",
+        "Waverton",
+        "Greenwich"
+    ]
+    ,
+    "Birrong": [
+        "Potts Hill",
+        "Regents Park",
+        "Sefton",
+        "Yagoona",
+        "Chullora",
+        "Chester Hill"
+    ]
+    ,
+    "Bondi Junction": [
+        "Woollahra",
+        "Charing Cross",
+        "Bondi",
+        "Waverley",
+        "Queens Park",
+        "Bellevue Hill"
+    ]
+    ,
+    "Burwood": [
+        "Croydon",
+        "Canada Bay",
+        "Burwood Heights",
+        "Enfield",
+        "Concord",
+        "Strathfield"
+    ]
+    ,
+    "Centennial Park": [
+        "Kensington",
+        "Moore Park",
+        "Queens Park",
+        "Randwick",
+        "Paddington",
+        "Zetland"
+    ]
+    ,
+    "Castlecrag": [
+        "East Willoughby",
+        "Northbridge",
+        "Middle Cove",
+        "North Willoughby",
+        "Seaforth",
+        "Willoughby"
+    ]
+    ,
+    "Botany": [
+        "The Eastern Suburbs",
+        "Banksmeadow",
+        "Mascot",
+        "Pagewood",
+        "Sydney Airport",
+        "Eastgardens"
+    ]
+    ,
+    "Canterbury": [
+        "Canterbury-Bankstown",
+        "Hurlstone Park",
+        "Undercliffe",
+        "Earlwood",
+        "Ashbury",
+        "Campsie"
+    ]
+    ,
+    "Bradbury": [
+        "Airds",
+        "Ambarvale",
+        "Englorie Park",
+        "Macarthur",
+        "Campbelltown",
+        "St Helens Park"
+    ]
+    ,
+    "Canterbury-Bankstown": [
+        "Canterbury",
+        "Hurlstone Park",
+        "Undercliffe",
+        "Earlwood",
+        "Ashbury",
+        "Campsie"
+    ]
+    ,
+    "Brookvale": [
+        "North Manly",
+        "Dee Why",
+        "Narraweena",
+        "Allambie Heights",
+        "Freshwater",
+        "Curl Curl"
+    ]
+    ,
+    "Bronte": [
+        "Clovelly",
+        "Waverley",
+        "Clovelly West",
+        "Charing Cross",
+        "Tamarama",
+        "Queens Park"
+    ]
+    ,
+    "Carlingford": [
+        "Dundas Valley",
+        "Oatlands",
+        "North Rocks",
+        "Epping",
+        "Beecroft",
+        "Dundas"
+    ]
+    ,
+    "Camden": [
+        "Elderslie",
+        "Kirkham",
+        "Grasmere",
+        "Spring Farm",
+        "Ellis Lane",
+        "Cawdor"
+    ]
+    ,
+    "Chatswood": [
+        "Artarmon",
+        "Roseville",
+        "Lane Cove North",
+        "Chatswood West",
+        "Willoughby",
+        "Lane Cove"
+    ]
+    ,
+    "Castle Cove": [
+        "Middle Cove",
+        "Roseville Chase",
+        "North Willoughby",
+        "Killarney Heights",
+        "East Willoughby",
+        "East Lindfield"
+    ]
+    ,
+    "Campsie": [
+        "Clemton Park",
+        "Belmore",
+        "Canterbury",
+        "Canterbury-Bankstown",
+        "Belfield",
+        "Croydon Park"
+    ]
+    ,
+    "Burwood Heights": [
+        "Croydon Park",
+        "Enfield",
+        "Burwood",
+        "Croydon",
+        "Ashbury",
+        "Ashfield"
+    ]
+    ,
+    "Carlton": [
+        "Allawah",
+        "Kogarah",
+        "Beverley Park",
+        "Bexley",
+        "Kogarah Bay",
+        "Ramsgate"
+    ]
+    ,
+    "Bundeena": [
+        "Burraneer",
+        "Maianbar",
+        "Cronulla",
+        "Port Hacking",
+        "Dolans Bay",
+        "Lilli Pilli"
+    ]
+    ,
+    "Buxton": [
+        "Couridjah",
+        "Thirlmere",
+        "Tahmoor",
+        "Bargo",
+        "Yanderra",
+        "Pheasants Nest"
+    ]
+    ,
+    "Cammeray": [
+        "Cremorne",
+        "Northbridge",
+        "Neutral Bay",
+        "Crows Nest",
+        "Naremburn",
+        "Cremorne Point"
+    ]
+    ,
+    "Bonnet Bay": [
+        "Como",
+        "Jannali",
+        "Illawong",
+        "Oyster Bay",
+        "Woronora",
+        "Bangor"
+    ]
+    ,
+    "Burraneer": [
+        "Maianbar",
+        "Dolans Bay",
+        "Port Hacking",
+        "Lilli Pilli",
+        "Cronulla",
+        "Bundeena"
+    ]
+    ,
+    "Brownlow Hill": [
+        "Ellis Lane",
+        "Grasmere",
+        "Cobbitty",
+        "Mount Hunter",
+        "Camden",
+        "Kirkham"
+    ]
+    ,
+    "Campbelltown": [
+        "Blair Athol",
+        "Macarthur",
+        "Leumeah",
+        "Woodbine",
+        "Claymore",
+        "Ambarvale"
+    ]
+    ,
+    "Bondi": [
+        "Tamarama",
+        "Waverley",
+        "Bondi Junction",
+        "Charing Cross",
+        "Bellevue Hill",
+        "Bondi Beach"
+    ]
+    ,
+    "Box Hill": [
+        "Nelson",
+        "Rouse Hill",
+        "Annangrove",
+        "Maraylya",
+        "Beaumont Hills",
+        "North Kellyville"
+    ]
+    ,
+    "Blakehurst": [
+        "Kyle Bay",
+        "Carss Park",
+        "Connells Point",
+        "South Hurstville",
+        "Kogarah Bay",
+        "Allawah"
+    ]
+    ,
+    "Cabarita": [
+        "Diamond Bay",
+        "Lansdowne",
+        "Wisemans Ferry",
+        "Leets Vale",
+        "Great Mackerel Beach",
+        "Lower Portland"
+    ]
+    ,
+    "Carss Park": [
+        "Kogarah Bay",
+        "Blakehurst",
+        "Beverley Park",
+        "Allawah",
+        "South Hurstville",
+        "Kyle Bay"
+    ]
+    ,
+    "Caringbah": [
+        "Caringbah South",
+        "Yowie Bay",
+        "Woolooware",
+        "Dolans Bay",
+        "Miranda",
+        "Sylvania Waters"
+    ]
+    ,
+    "Brighton-Le-Sands": [
+        "Kyeemagh",
+        "Banksia",
+        "Monterey",
+        "Rockdale",
+        "Kogarah",
+        "Ramsgate Beach"
+    ]
+    ,
+    "Cawdor": [
+        "Bickley Vale",
+        "Camden Park",
+        "Grasmere",
+        "Camden",
+        "Spring Farm",
+        "Elderslie"
+    ]
+    ,
+    "Chatswood West": [
+        "The Northern Suburbs",
+        "Lane Cove North",
+        "Roseville",
+        "Chatswood",
+        "Lane Cove West",
+        "Lane Cove"
+    ]
+    ,
+    "Blair Athol": [
+        "Campbelltown",
+        "Macarthur",
+        "Blairmount",
+        "Englorie Park",
+        "Claymore",
+        "Ambarvale"
+    ]
+    ,
+    "Camden Park": [
+        "Cawdor",
+        "Spring Farm",
+        "Bickley Vale",
+        "Menangle Park",
+        "Camden",
+        "Elderslie"
+    ]
+    ,
+    "Catherine Field": [
+        "Oran Park",
+        "Gledswood Hills",
+        "Leppington",
+        "Gregory Hills",
+        "Harrington Park",
+        "Smeaton Grange"
+    ]
+    ,
+    "Bondi Beach": [
+        "North Bondi",
+        "Ben Buckler",
+        "Tamarama",
+        "Bondi",
+        "Rose Bay",
+        "Rose Bay North"
+    ]
+    ,
+    "Caringbah South": [
+        "Caringbah",
+        "Dolans Bay",
+        "Yowie Bay",
+        "Lilli Pilli",
+        "Port Hacking",
+        "Woolooware"
+    ]
+    ,
+    "Bow Bowing": [
+        "St Andrews",
+        "Minto",
+        "Raby",
+        "Denham Court",
+        "Varroville",
+        "Ingleburn"
+    ]
+    ,
+    "Cattai": [
+        "Maraylya",
+        "Maroota",
+        "South Maroota",
+        "Sackville North",
+        "Glenorie",
+        "Nelson"
+    ]
+    ,
+    "Canada Bay": [
+        "Croydon",
+        "Concord",
+        "Five Dock",
+        "Burwood",
+        "The Inner West",
+        "Wareemba"
+    ]
+    ,
+    "Bringelly": [
+        "Rossmore",
+        "Catherine Field",
+        "Leppington",
+        "Oran Park",
+        "Gledswood Hills",
+        "Silverdale"
+    ]
+    ,
+    "Charing Cross": [
+        "Waverley",
+        "Queens Park",
+        "Bronte",
+        "Bondi Junction",
+        "Bondi",
+        "Clovelly West"
+    ]
+    ,
+    "Castle Hill": [
+        "The Hills District",
+        "Glenhaven",
+        "Baulkham Hills",
+        "Cherrybrook",
+        "West Pennant Hills",
+        "Norwest"
+    ]
+    ,
+    "Camperdown": [
+        "Forest Lodge",
+        "Newtown",
+        "Eveleigh",
+        "Glebe",
+        "Annandale",
+        "Stanmore"
+    ]
+    ,
+    "Couridjah": [
+        "Buxton",
+        "Thirlmere",
+        "Tahmoor",
+        "Picton",
+        "Lakesland",
+        "Bargo"
+    ]
+    ,
+    "Clareville": [
+        "Bilgola Plateau",
+        "Bilgola",
+        "Scotland Island",
+        "Avalon",
+        "Newport",
+        "Morning Bay"
+    ]
+    ,
+    "Clontarf": [
+        "Balgowlah Heights",
+        "Balgowlah",
+        "Seaforth",
+        "Mosman",
+        "North Balgowlah",
+        "Fairlight"
+    ]
+    ,
+    "Davidson": [
+        "East Killara",
+        "Belrose",
+        "St Ives",
+        "Forestville",
+        "East Lindfield",
+        "The Forest District"
+    ]
+    ,
+    "Concord": [
+        "North Strathfield",
+        "Canada Bay",
+        "Homebush",
+        "Burwood",
+        "Breakfast Point",
+        "Concord West"
+    ]
+    ,
+    "Chiswick": [
+        "Wareemba",
+        "Abbotsford",
+        "The Inner West",
+        "Russell Lea",
+        "Five Dock",
+        "Drummoyne"
+    ]
+    ,
+    "Chippendale": [
+        "Ultimo",
+        "Darlington",
+        "Haymarket",
+        "Strawberry Hills",
+        "Redfern",
+        "Surry Hills"
+    ]
+    ,
+    "Coogee": [
+        "Clovelly West",
+        "Clovelly",
+        "St Pauls",
+        "South Coogee",
+        "Bronte",
+        "Randwick"
+    ]
+    ,
+    "Cobbitty": [
+        "Ellis Lane",
+        "Brownlow Hill",
+        "Kirkham",
+        "Camden",
+        "Harrington Park",
+        "Grasmere"
+    ]
+    ,
+    "Cremorne": [
+        "Cammeray",
+        "Neutral Bay",
+        "Cremorne Point",
+        "Mosman",
+        "Northbridge",
+        "Crows Nest"
+    ]
+    ,
+    "Clovelly": [
+        "Clovelly West",
+        "Bronte",
+        "Coogee",
+        "Waverley",
+        "Charing Cross",
+        "Tamarama"
+    ]
+    ,
+    "Cromer": [
+        "Wheeler Heights",
+        "Dee Why",
+        "Collaroy Plateau",
+        "Narraweena",
+        "Collaroy",
+        "Narrabeen"
+    ]
+    ,
+    "Collaroy Plateau": [
+        "Narrabeen",
+        "Collaroy",
+        "Wheeler Heights",
+        "Cromer",
+        "Narrabeen North",
+        "Dee Why"
+    ]
+    ,
+    "Collaroy": [
+        "Narrabeen",
+        "Collaroy Plateau",
+        "Wheeler Heights",
+        "Cromer",
+        "Narrabeen North",
+        "Dee Why"
+    ]
+    ,
+    "Cronulla": [
+        "Woolooware",
+        "Burraneer",
+        "Dolans Bay",
+        "Bundeena",
+        "Port Hacking",
+        "Caringbah South"
+    ]
+    ,
+    "Chester Hill": [
+        "Sefton",
+        "Regents Park",
+        "Birrong",
+        "Villawood",
+        "Bass Hill",
+        "Potts Hill"
+    ]
+    ,
+    "Darling Point": [
+        "Elizabeth Bay",
+        "Double Bay",
+        "Rushcutters Bay",
+        "Edgecliff",
+        "Point Piper",
+        "Potts Point"
+    ]
+    ,
+    "Chifley": [
+        "Malabar",
+        "Matraville",
+        "Phillip Bay",
+        "Little Bay",
+        "Hillsdale",
+        "Port Botany"
+    ]
+    ,
+    "Como": [
+        "Oyster Bay",
+        "Bonnet Bay",
+        "Jannali",
+        "Kareela",
+        "Illawong",
+        "Oatley"
+    ]
+    ,
+    "Concord West": [
+        "Liberty Grove",
+        "Mortlake",
+        "North Strathfield",
+        "Rhodes",
+        "Concord",
+        "Breakfast Point"
+    ]
+    ,
+    "Clovelly West": [
+        "Clovelly",
+        "Coogee",
+        "Bronte",
+        "Charing Cross",
+        "Waverley",
+        "Queens Park"
+    ]
+    ,
+    "Daceyville": [
+        "Kingsford",
+        "Eastlakes",
+        "Pagewood",
+        "Rosebery",
+        "Randwick",
+        "Eastgardens"
+    ]
+    ,
+    "Cheltenham": [
+        "Beecroft",
+        "Epping",
+        "Pennant Hills",
+        "North Epping",
+        "West Pennant Hills",
+        "Carlingford"
+    ]
+    ,
+    "Darlington": [
+        "Chippendale",
+        "Eveleigh",
+        "Redfern",
+        "Ultimo",
+        "Strawberry Hills",
+        "Haymarket"
+    ]
+    ,
+    "Church Point": [
+        "Bayview",
+        "Elvina Bay",
+        "Scotland Island",
+        "Lovett Bay",
+        "Morning Bay",
+        "Newport"
+    ]
+    ,
+    "Darlinghurst": [
+        "Kings Cross",
+        "Rushcutters Bay",
+        "Woolloomooloo",
+        "Paddington",
+        "Elizabeth Bay",
+        "Potts Point"
+    ]
+    ,
+    "Croydon Park": [
+        "Burwood Heights",
+        "Ashbury",
+        "Ashfield",
+        "Enfield",
+        "Canterbury",
+        "Canterbury-Bankstown"
+    ]
+    ,
+    "Denham Court": [
+        "Ingleburn",
+        "Bow Bowing",
+        "Varroville",
+        "Bardia",
+        "St Andrews",
+        "Raby"
+    ]
+    ,
+    "Curl Curl": [
+        "Freshwater",
+        "North Curl Curl",
+        "Queenscliff",
+        "Brookvale",
+        "North Manly",
+        "Dee Why"
+    ]
+    ,
+    "Currans Hill": [
+        "Smeaton Grange",
+        "Gregory Hills",
+        "Blairmount",
+        "Narellan Vale",
+        "Mount Annan",
+        "Narellan"
+    ]
+    ,
+    "Cherrybrook": [
+        "Westleigh",
+        "West Pennant Hills",
+        "Pennant Hills",
+        "Beecroft",
+        "Castle Hill",
+        "Cheltenham"
+    ]
+    ,
+    "Condell Park": [
+        "Georges Hall",
+        "Yagoona",
+        "Bankstown",
+        "Milperra",
+        "Revesby",
+        "Bass Hill"
+    ]
+    ,
+    "Denistone East": [
+        "Denistone",
+        "West Ryde",
+        "Ryde",
+        "Eastwood",
+        "North Ryde",
+        "Denistone West"
+    ]
+    ,
+    "Dolls Point": [
+        "Sandringham",
+        "Sans Souci",
+        "Ramsgate",
+        "Ramsgate Beach",
+        "Beverley Park",
+        "Monterey"
+    ]
+    ,
+    "Cremorne Point": [
+        "Neutral Bay",
+        "Kirribilli",
+        "Cremorne",
+        "Milsons Point",
+        "Lavender Bay",
+        "Mosman"
+    ]
+    ,
+    "Connells Point": [
+        "South Hurstville",
+        "Hurstville Grove",
+        "Kyle Bay",
+        "Blakehurst",
+        "Allawah",
+        "Hurstville"
+    ]
+    ,
+    "Coasters Retreat": [
+        "Great Mackerel Beach",
+        "Palm Beach",
+        "Morning Bay",
+        "Whale Beach",
+        "Lovett Bay",
+        "Clareville"
+    ]
+    ,
+    "Cottage Point": [
+        "The North Shore",
+        "Duffys Forest",
+        "Terrey Hills",
+        "Elvina Bay",
+        "Lovett Bay",
+        "Morning Bay"
+    ]
+    ,
+    "Dee Why": [
+        "Cromer",
+        "North Curl Curl",
+        "Narraweena",
+        "Brookvale",
+        "Curl Curl",
+        "Freshwater"
+    ]
+    ,
+    "Crows Nest": [
+        "Naremburn",
+        "St Leonards",
+        "Cammeray",
+        "North Sydney",
+        "Wollstonecraft",
+        "Neutral Bay"
+    ]
+    ,
+    "Dolans Bay": [
+        "Port Hacking",
+        "Lilli Pilli",
+        "Caringbah South",
+        "Burraneer",
+        "Maianbar",
+        "Caringbah"
+    ]
+    ,
+    "Chullora": [
+        "Potts Hill",
+        "Regents Park",
+        "Greenacre",
+        "Birrong",
+        "Strathfield South",
+        "Mount Lewis"
+    ]
+    ,
+    "Double Bay": [
+        "Edgecliff",
+        "Darling Point",
+        "Woollahra",
+        "Bellevue Hill",
+        "Point Piper",
+        "Rushcutters Bay"
+    ]
+    ,
+    "Dawes Point": [
+        "The Rocks",
+        "Millers Point",
+        "Barangaroo",
+        "Milsons Point",
+        "McMahons Point",
+        "Kirribilli"
+    ]
+    ,
+    "Clemton Park": [
+        "Campsie",
+        "Kingsgrove",
+        "Belmore",
+        "Roselands",
+        "Canterbury-Bankstown",
+        "Canterbury"
+    ]
+    ,
+    "Denistone West": [
+        "Denistone",
+        "West Ryde",
+        "Eastwood",
+        "Melrose Park",
+        "Dundas Valley",
+        "Meadowbank"
+    ]
+    ,
+    "Denistone": [
+        "Denistone West",
+        "West Ryde",
+        "Denistone East",
+        "Eastwood",
+        "Meadowbank",
+        "Melrose Park"
+    ]
+    ,
+    "Diamond Bay": [
+        "Lansdowne",
+        "Wisemans Ferry",
+        "Palm Beach",
+        "Great Mackerel Beach",
+        "Whale Beach",
+        "Coasters Retreat"
+    ]
+    ,
+    "Croydon": [
+        "Burwood",
+        "Canada Bay",
+        "Ashfield",
+        "Burwood Heights",
+        "Five Dock",
+        "Croydon Park"
+    ]
+    ,
+    "Claymore": [
+        "Eagle Vale",
+        "Woodbine",
+        "Eschol Park",
+        "Blairmount",
+        "Blair Athol",
+        "Kearns"
+    ]
+    ,
+    "Dural": [
+        "Kenthurst",
+        "Glenhaven",
+        "Galston",
+        "Middle Dural",
+        "Cherrybrook",
+        "Castle Hill"
+    ]
+    ,
+    "Dover Heights": [
+        "Rose Bay North",
+        "Rose Bay",
+        "North Bondi",
+        "Vaucluse",
+        "Bondi Beach",
+        "Ben Buckler"
+    ]
+    ,
+    "East Ryde": [
+        "Lane Cove West",
+        "The Northern Suburbs",
+        "Gladesville",
+        "Linley Point",
+        "North Ryde",
+        "Lane Cove North"
+    ]
+    ,
+    "Elderslie": [
+        "Camden",
+        "Kirkham",
+        "Spring Farm",
+        "Narellan",
+        "Narellan Vale",
+        "Harrington Park"
+    ]
+    ,
+    "Forestville": [
+        "Killarney Heights",
+        "Roseville Chase",
+        "Frenchs Forest",
+        "The Forest District",
+        "East Lindfield",
+        "Castle Cove"
+    ]
+    ,
+    "Drummoyne": [
+        "Russell Lea",
+        "Chiswick",
+        "Rodd Point",
+        "Huntleys Point",
+        "Rozelle",
+        "Woolwich"
+    ]
+    ,
+    "Gilead": [
+        "Wedderburn",
+        "St Helens Park",
+        "Rosemeadow",
+        "Menangle",
+        "Glen Alpine",
+        "Airds"
+    ]
+    ,
+    "Elanora Heights": [
+        "Narrabeen North",
+        "The Northern Beaches",
+        "Warriewood",
+        "Ingleside",
+        "Narrabeen",
+        "Collaroy Plateau"
+    ]
+    ,
+    "Eastlakes": [
+        "Rosebery",
+        "Daceyville",
+        "Kingsford",
+        "Zetland",
+        "Beaconsfield",
+        "Kensington"
+    ]
+    ,
+    "Glenorie": [
+        "Middle Dural",
+        "Galston",
+        "Kenthurst",
+        "Annangrove",
+        "Maraylya",
+        "Nelson"
+    ]
+    ,
+    "Five Dock": [
+        "The Inner West",
+        "Wareemba",
+        "Canada Bay",
+        "Rodd Point",
+        "Russell Lea",
+        "Abbotsford"
+    ]
+    ,
+    "Elvina Bay": [
+        "Lovett Bay",
+        "Scotland Island",
+        "Morning Bay",
+        "Church Point",
+        "Bayview",
+        "Clareville"
+    ]
+    ,
+    "Duffys Forest": [
+        "The North Shore",
+        "Terrey Hills",
+        "St Ives Chase",
+        "North Turramurra",
+        "St Ives",
+        "Cottage Point"
+    ]
+    ,
+    "Douglas Park": [
+        "Bingara Gorge",
+        "Wilton",
+        "Razorback",
+        "Appin",
+        "Menangle",
+        "Maldon"
+    ]
+    ,
+    "Dulwich Hill": [
+        "Hurlstone Park",
+        "Marrickville",
+        "Lewisham",
+        "Petersham",
+        "Summer Hill",
+        "Undercliffe"
+    ]
+    ,
+    "Forest Lodge": [
+        "Glebe",
+        "Camperdown",
+        "Annandale",
+        "Ultimo",
+        "Newtown",
+        "Eveleigh"
+    ]
+    ,
+    "Engadine": [
+        "Yarrawarrah",
+        "Heathcote",
+        "Barden Ridge",
+        "Loftus",
+        "Lucas Heights",
+        "Woronora Heights"
+    ]
+    ,
+    "Glebe": [
+        "Forest Lodge",
+        "Ultimo",
+        "Pyrmont",
+        "Camperdown",
+        "Annandale",
+        "Chippendale"
+    ]
+    ,
+    "Eastgardens": [
+        "Pagewood",
+        "Hillsdale",
+        "The Eastern Suburbs",
+        "Maroubra",
+        "Matraville",
+        "Daceyville"
+    ]
+    ,
+    "Freshwater": [
+        "Curl Curl",
+        "Queenscliff",
+        "North Curl Curl",
+        "North Manly",
+        "Brookvale",
+        "Dee Why"
+    ]
+    ,
+    "Enmore": [
+        "Stanmore",
+        "Newtown",
+        "Marrickville",
+        "St Peters",
+        "Petersham",
+        "Camperdown"
+    ]
+    ,
+    "Erskineville": [
+        "St Peters",
+        "Newtown",
+        "Eveleigh",
+        "Alexandria",
+        "Beaconsfield",
+        "Enmore"
+    ]
+    ,
+    "Edgecliff": [
+        "Double Bay",
+        "Rushcutters Bay",
+        "Paddington",
+        "Woollahra",
+        "Darling Point",
+        "Elizabeth Bay"
+    ]
+    ,
+    "Eastwood": [
+        "Denistone West",
+        "Denistone",
+        "Epping",
+        "Denistone East",
+        "West Ryde",
+        "Dundas Valley"
+    ]
+    ,
+    "East Killara": [
+        "East Lindfield",
+        "Killara",
+        "Davidson",
+        "Lindfield",
+        "Gordon",
+        "Roseville Chase"
+    ]
+    ,
+    "Glenfield": [
+        "Macquarie Links",
+        "Bardia",
+        "Macquarie Fields",
+        "Ingleburn",
+        "Long Point",
+        "Denham Court"
+    ]
+    ,
+    "Glenhaven": [
+        "Castle Hill",
+        "The Hills District",
+        "Dural",
+        "Kenthurst",
+        "Cherrybrook",
+        "North Kellyville"
+    ]
+    ,
+    "Earlwood": [
+        "Undercliffe",
+        "Hurlstone Park",
+        "Canterbury-Bankstown",
+        "Canterbury",
+        "Bardwell Park",
+        "Dulwich Hill"
+    ]
+    ,
+    "Glenmore": [
+        "The Oaks",
+        "Mount Hunter",
+        "Orangeville",
+        "Belimbla Park",
+        "Bickley Vale",
+        "Grasmere"
+    ]
+    ,
+    "Eschol Park": [
+        "Eagle Vale",
+        "Kearns",
+        "Raby",
+        "Claymore",
+        "St Andrews",
+        "Woodbine"
+    ]
+    ,
+    "Eveleigh": [
+        "Darlington",
+        "Newtown",
+        "Alexandria",
+        "Camperdown",
+        "Erskineville",
+        "Chippendale"
+    ]
+    ,
+    "East Lindfield": [
+        "Roseville Chase",
+        "Lindfield",
+        "East Killara",
+        "Castle Cove",
+        "Killara",
+        "Roseville"
+    ]
+    ,
+    "Ermington": [
+        "Melrose Park",
+        "Denistone West",
+        "Dundas Valley",
+        "West Ryde",
+        "Meadowbank",
+        "Denistone"
+    ]
+    ,
+    "Englorie Park": [
+        "Ambarvale",
+        "Macarthur",
+        "Glen Alpine",
+        "Blair Athol",
+        "Bradbury",
+        "Campbelltown"
+    ]
+    ,
+    "Enfield": [
+        "Burwood Heights",
+        "Strathfield",
+        "Croydon Park",
+        "Belfield",
+        "Strathfield South",
+        "Burwood"
+    ]
+    ,
+    "Ellis Lane": [
+        "Brownlow Hill",
+        "Cobbitty",
+        "Grasmere",
+        "Camden",
+        "Kirkham",
+        "Elderslie"
+    ]
+    ,
+    "Fairlight": [
+        "Queenscliff",
+        "Balgowlah",
+        "Balgowlah Heights",
+        "Manly",
+        "Manly Vale",
+        "North Manly"
+    ]
+    ,
+    "Georges Hall": [
+        "Bass Hill",
+        "Condell Park",
+        "Milperra",
+        "Villawood",
+        "Sefton",
+        "Yagoona"
+    ]
+    ,
+    "Dundas": [
+        "Oatlands",
+        "Ermington",
+        "Dundas Valley",
+        "Carlingford",
+        "North Rocks",
+        "Melrose Park"
+    ]
+    ,
+    "Eagle Vale": [
+        "Eschol Park",
+        "Claymore",
+        "Woodbine",
+        "Kearns",
+        "Raby",
+        "St Andrews"
+    ]
+    ,
+    "Galston": [
+        "Middle Dural",
+        "Dural",
+        "Kenthurst",
+        "Glenorie",
+        "Glenhaven",
+        "Hornsby"
+    ]
+    ,
+    "Gladesville": [
+        "Tennyson Point",
+        "Hunters Hill",
+        "Putney",
+        "Breakfast Point",
+        "Mortlake",
+        "Huntleys Point"
+    ]
+    ,
+    "Epping": [
+        "Eastwood",
+        "Cheltenham",
+        "North Epping",
+        "Dundas Valley",
+        "Carlingford",
+        "Denistone West"
+    ]
+    ,
+    "East Hills": [
+        "Panania",
+        "Sandy Point",
+        "Picnic Point",
+        "Revesby",
+        "Revesby Heights",
+        "Milperra"
+    ]
+    ,
+    "Frenchs Forest": [
+        "The Forest District",
+        "Oxford Falls",
+        "Beacon Hill",
+        "Allambie Heights",
+        "Belrose",
+        "Forestville"
+    ]
+    ,
+    "Glen Alpine": [
+        "Englorie Park",
+        "Ambarvale",
+        "Rosemeadow",
+        "Macarthur",
+        "Bradbury",
+        "St Helens Park"
+    ]
+    ,
+    "Dundas Valley": [
+        "Denistone West",
+        "Eastwood",
+        "Ermington",
+        "Carlingford",
+        "Oatlands",
+        "Denistone"
+    ]
+    ,
+    "Gledswood Hills": [
+        "Gregory Hills",
+        "Kearns",
+        "Varroville",
+        "Smeaton Grange",
+        "Eschol Park",
+        "Currans Hill"
+    ]
+    ,
+    "East Willoughby": [
+        "North Willoughby",
+        "Middle Cove",
+        "Willoughby",
+        "Castlecrag",
+        "Castle Cove",
+        "Northbridge"
+    ]
+    ,
+    "Elizabeth Bay": [
+        "Rushcutters Bay",
+        "Potts Point",
+        "Woolloomooloo",
+        "Kings Cross",
+        "Darling Point",
+        "Darlinghurst"
+    ]
+    ,
+    "Gordon": [
+        "Pymble",
+        "Killara",
+        "West Pymble",
+        "East Killara",
+        "Lindfield",
+        "Turramurra"
+    ]
+    ,
+    "Kogarah Bay": [
+        "Carss Park",
+        "Beverley Park",
+        "Allawah",
+        "Blakehurst",
+        "Carlton",
+        "Ramsgate"
+    ]
+    ,
+    "Haymarket": [
+        "Ultimo",
+        "The Central Business District",
+        "Chippendale",
+        "Strawberry Hills",
+        "Surry Hills",
+        "Pyrmont"
+    ]
+    ,
+    "Gregory Hills": [
+        "Currans Hill",
+        "Smeaton Grange",
+        "Gledswood Hills",
+        "Blairmount",
+        "Kearns",
+        "Eschol Park"
+    ]
+    ,
+    "Gymea Bay": [
+        "Grays Point",
+        "Yowie Bay",
+        "The Sutherland Shire",
+        "Gymea",
+        "Miranda",
+        "Kirrawee"
+    ]
+    ,
+    "Gymea": [
+        "Kirrawee",
+        "Miranda",
+        "Gymea Bay",
+        "Kareela",
+        "Yowie Bay",
+        "Sutherland"
+    ]
+    ,
+    "Grasmere": [
+        "Bickley Vale",
+        "Brownlow Hill",
+        "Ellis Lane",
+        "Camden",
+        "Cawdor",
+        "Mount Hunter"
+    ]
+    ,
+    "Kellyville": [
+        "North Kellyville",
+        "Beaumont Hills",
+        "The Hills District",
+        "Norwest",
+        "Bella Vista",
+        "Rouse Hill"
+    ]
+    ,
+    "Haberfield": [
+        "Summer Hill",
+        "Lewisham",
+        "Leichhardt",
+        "Ashfield",
+        "Petersham",
+        "Rodd Point"
+    ]
+    ,
+    "Killara": [
+        "Lindfield",
+        "Gordon",
+        "East Killara",
+        "East Lindfield",
+        "Roseville",
+        "Chatswood West"
+    ]
+    ,
+    "Kareela": [
+        "Oyster Bay",
+        "Jannali",
+        "Como",
+        "Kangaroo Point",
+        "Gymea",
+        "Kirrawee"
+    ]
+    ,
+    "Greenacre": [
+        "Mount Lewis",
+        "Bankstown",
+        "Wiley Park",
+        "Chullora",
+        "Strathfield South",
+        "Yagoona"
+    ]
+    ,
+    "Hurstville Grove": [
+        "Connells Point",
+        "South Hurstville",
+        "Kyle Bay",
+        "Hurstville",
+        "Oatley",
+        "The St George Region"
+    ]
+    ,
+    "Huntleys Point": [
+        "Hunters Hill",
+        "Linley Point",
+        "Drummoyne",
+        "Chiswick",
+        "Longueville",
+        "Woolwich"
+    ]
+    ,
+    "Hornsby": [
+        "Waitara",
+        "Wahroonga",
+        "North Wahroonga",
+        "Warrawee",
+        "Westleigh",
+        "Turramurra"
+    ]
+    ,
+    "Hillsdale": [
+        "Matraville",
+        "Eastgardens",
+        "Maroubra",
+        "Pagewood",
+        "The Eastern Suburbs",
+        "Chifley"
+    ]
+    ,
+    "Kurnell": [
+        "La Perouse",
+        "Port Botany",
+        "Phillip Bay",
+        "Little Bay",
+        "Chifley",
+        "Banksmeadow"
+    ]
+    ,
+    "Hurstville": [
+        "The St George Region",
+        "Penshurst",
+        "South Hurstville",
+        "Hurstville Grove",
+        "Connells Point",
+        "Allawah"
+    ]
+    ,
+    "Homebush": [
+        "North Strathfield",
+        "Homebush West",
+        "Strathfield",
+        "Concord",
+        "Concord West",
+        "Liberty Grove"
+    ]
+    ,
+    "Kingsford": [
+        "Daceyville",
+        "Randwick",
+        "Eastlakes",
+        "St Pauls",
+        "Kensington",
+        "Pagewood"
+    ]
+    ,
+    "Greenwich": [
+        "Wollstonecraft",
+        "Northwood",
+        "Waverton",
+        "St Leonards",
+        "Woolwich",
+        "Longueville"
+    ]
+    ,
+    "Kentlyn": [
+        "Minto Heights",
+        "Minto",
+        "Ruse",
+        "Leumeah",
+        "Long Point",
+        "Bow Bowing"
+    ]
+    ,
+    "Kangaroo Point": [
+        "Kyle Bay",
+        "Sylvania",
+        "Blakehurst",
+        "Oyster Bay",
+        "Kareela",
+        "Connells Point"
+    ]
+    ,
+    "Ingleside": [
+        "The Northern Beaches",
+        "Elanora Heights",
+        "Church Point",
+        "Bayview",
+        "Narrabeen North",
+        "Terrey Hills"
+    ]
+    ,
+    "Harrington Park": [
+        "Narellan",
+        "Kirkham",
+        "Smeaton Grange",
+        "Oran Park",
+        "Narellan Vale",
+        "Elderslie"
+    ]
+    ,
+    "Lakesland": [
+        "Mowbray Park",
+        "Thirlmere",
+        "Picton",
+        "Couridjah",
+        "Tahmoor",
+        "Belimbla Park"
+    ]
+    ,
+    "Illawong": [
+        "Bonnet Bay",
+        "Lugarno",
+        "Bangor",
+        "Alfords Point",
+        "Como",
+        "Menai"
+    ]
+    ,
+    "Hurlstone Park": [
+        "Canterbury-Bankstown",
+        "Canterbury",
+        "Earlwood",
+        "Undercliffe",
+        "Dulwich Hill",
+        "Ashbury"
+    ]
+    ,
+    "Ingleburn": [
+        "Denham Court",
+        "Macquarie Fields",
+        "Macquarie Links",
+        "Minto",
+        "Bow Bowing",
+        "Bardia"
+    ]
+    ,
+    "Kearns": [
+        "Eschol Park",
+        "Raby",
+        "Eagle Vale",
+        "Varroville",
+        "St Andrews",
+        "Claymore"
+    ]
+    ,
+    "Kirrawee": [
+        "Sutherland",
+        "Gymea",
+        "Jannali",
+        "Gymea Bay",
+        "Grays Point",
+        "Kareela"
+    ]
+    ,
+    "Grays Point": [
+        "Gymea Bay",
+        "The Sutherland Shire",
+        "Kirrawee",
+        "Gymea",
+        "Yowie Bay",
+        "Loftus"
+    ]
+    ,
+    "Kyeemagh": [
+        "Banksia",
+        "Brighton-Le-Sands",
+        "Rockdale",
+        "Arncliffe",
+        "Sydney Airport",
+        "Wolli Creek"
+    ]
+    ,
+    "Jannali": [
+        "Como",
+        "Oyster Bay",
+        "Bonnet Bay",
+        "Kareela",
+        "Sutherland",
+        "Kirrawee"
+    ]
+    ,
+    "Lakemba": [
+        "Belmore",
+        "Roselands",
+        "Wiley Park",
+        "Belfield",
+        "Campsie",
+        "Clemton Park"
+    ]
+    ,
+    "Hunters Hill": [
+        "Huntleys Point",
+        "Linley Point",
+        "Gladesville",
+        "Longueville",
+        "Riverview",
+        "Chiswick"
+    ]
+    ,
+    "Kingsgrove": [
+        "Clemton Park",
+        "Roselands",
+        "Bardwell Park",
+        "Beverly Hills",
+        "Belmore",
+        "Campsie"
+    ]
+    ,
+    "Kensington": [
+        "Centennial Park",
+        "Zetland",
+        "Moore Park",
+        "Randwick",
+        "Kingsford",
+        "Waterloo"
+    ]
+    ,
+    "Homebush West": [
+        "Homebush",
+        "North Strathfield",
+        "Strathfield",
+        "Liberty Grove",
+        "Concord West",
+        "Strathfield South"
+    ]
+    ,
+    "Kogarah": [
+        "Carlton",
+        "Monterey",
+        "Beverley Park",
+        "Bexley",
+        "Rockdale",
+        "Ramsgate"
+    ]
+    ,
+    "Kirribilli": [
+        "Milsons Point",
+        "Lavender Bay",
+        "Dawes Point",
+        "McMahons Point",
+        "Cremorne Point",
+        "The Rocks"
+    ]
+    ,
+    "Kings Langley": [
+        "Norwest",
+        "Bella Vista",
+        "North Kellyville",
+        "Kellyville",
+        "The Hills District",
+        "Winston Hills"
+    ]
+    ,
+    "Kyle Bay": [
+        "Blakehurst",
+        "Connells Point",
+        "South Hurstville",
+        "Kangaroo Point",
+        "Hurstville Grove",
+        "Carss Park"
+    ]
+    ,
+    "Kenthurst": [
+        "Dural",
+        "Middle Dural",
+        "Glenhaven",
+        "Galston",
+        "Annangrove",
+        "North Kellyville"
+    ]
+    ,
+    "Great Mackerel Beach": [
+        "Coasters Retreat",
+        "Palm Beach",
+        "Whale Beach",
+        "Morning Bay",
+        "Lovett Bay",
+        "Clareville"
+    ]
+    ,
+    "Kirkham": [
+        "Elderslie",
+        "Camden",
+        "Harrington Park",
+        "Narellan",
+        "Ellis Lane",
+        "Cobbitty"
+    ]
+    ,
+    "La Perouse": [
+        "Phillip Bay",
+        "Little Bay",
+        "Port Botany",
+        "Chifley",
+        "Malabar",
+        "Matraville"
+    ]
+    ,
+    "Heathcote": [
+        "Engadine",
+        "Yarrawarrah",
+        "Lucas Heights",
+        "Loftus",
+        "Barden Ridge",
+        "Woronora Heights"
+    ]
+    ,
+    "Killarney Heights": [
+        "Castle Cove",
+        "Roseville Chase",
+        "Forestville",
+        "Middle Cove",
+        "North Willoughby",
+        "East Lindfield"
+    ]
+    ,
+    "Kings Cross": [
+        "Woolloomooloo",
+        "Darlinghurst",
+        "Rushcutters Bay",
+        "Elizabeth Bay",
+        "Potts Point",
+        "Paddington"
+    ]
+    ,
+    "Lilli Pilli": [
+        "Port Hacking",
+        "Dolans Bay",
+        "Maianbar",
+        "Caringbah South",
+        "Burraneer",
+        "The Sutherland Shire"
+    ]
+    ,
+    "Macquarie Fields": [
+        "Macquarie Links",
+        "Long Point",
+        "Ingleburn",
+        "Bardia",
+        "Glenfield",
+        "Minto Heights"
+    ]
+    ,
+    "Leppington": [
+        "Catherine Field",
+        "Varroville",
+        "Denham Court",
+        "Gledswood Hills",
+        "Rossmore",
+        "Bardia"
+    ]
+    ,
+    "Lower Portland": [
+        "Sackville North",
+        "Leets Vale",
+        "Maroota",
+        "South Maroota",
+        "Wisemans Ferry",
+        "Cattai"
+    ]
+    ,
+    "Maldon": [
+        "Picton",
+        "Tahmoor",
+        "Bingara Gorge",
+        "Pheasants Nest",
+        "Razorback",
+        "Wilton"
+    ]
+    ,
+    "Marrickville": [
+        "Petersham",
+        "Enmore",
+        "Dulwich Hill",
+        "Stanmore",
+        "Lewisham",
+        "Sydenham"
+    ]
+    ,
+    "Leichhardt": [
+        "Stanmore",
+        "Annandale",
+        "Petersham",
+        "Haberfield",
+        "Lilyfield",
+        "Lewisham"
+    ]
+    ,
+    "Lindfield": [
+        "Killara",
+        "Roseville",
+        "East Lindfield",
+        "Chatswood West",
+        "East Killara",
+        "The Northern Suburbs"
+    ]
+    ,
+    "Melrose Park": [
+        "Ermington",
+        "Meadowbank",
+        "West Ryde",
+        "Denistone West",
+        "Rhodes",
+        "Denistone"
+    ]
+    ,
+    "Lucas Heights": [
+        "Barden Ridge",
+        "Engadine",
+        "Heathcote",
+        "Menai",
+        "Yarrawarrah",
+        "Woronora Heights"
+    ]
+    ,
+    "Lilyfield": [
+        "Rozelle",
+        "Annandale",
+        "Leichhardt",
+        "Forest Lodge",
+        "Glebe",
+        "Balmain"
+    ]
+    ,
+    "Maraylya": [
+        "Cattai",
+        "Nelson",
+        "Annangrove",
+        "Box Hill",
+        "Glenorie",
+        "Maroota"
+    ]
+    ,
+    "Lane Cove North": [
+        "Lane Cove",
+        "Chatswood West",
+        "Lane Cove West",
+        "Chatswood",
+        "The Northern Suburbs",
+        "Artarmon"
+    ]
+    ,
+    "Maianbar": [
+        "Port Hacking",
+        "Burraneer",
+        "Lilli Pilli",
+        "Dolans Bay",
+        "Bundeena",
+        "Caringbah South"
+    ]
+    ,
+    "Maroubra": [
+        "Hillsdale",
+        "Matraville",
+        "Eastgardens",
+        "Malabar",
+        "Pagewood",
+        "Chifley"
+    ]
+    ,
+    "Lewisham": [
+        "Summer Hill",
+        "Petersham",
+        "Haberfield",
+        "Marrickville",
+        "Dulwich Hill",
+        "Leichhardt"
+    ]
+    ,
+    "Long Point": [
+        "Macquarie Fields",
+        "Minto Heights",
+        "Ingleburn",
+        "Macquarie Links",
+        "Minto",
+        "Kentlyn"
+    ]
+    ,
+    "Lane Cove West": [
+        "East Ryde",
+        "Lane Cove North",
+        "Lane Cove",
+        "Linley Point",
+        "Riverview",
+        "The Northern Suburbs"
+    ]
+    ,
+    "Middle Cove": [
+        "North Willoughby",
+        "East Willoughby",
+        "Castle Cove",
+        "Castlecrag",
+        "Willoughby",
+        "Roseville Chase"
+    ]
+    ,
+    "Leumeah": [
+        "Woodbine",
+        "Ruse",
+        "Campbelltown",
+        "Claymore",
+        "Eagle Vale",
+        "Blair Athol"
+    ]
+    ,
+    "Liberty Grove": [
+        "Concord West",
+        "Rhodes",
+        "Mortlake",
+        "North Strathfield",
+        "Homebush",
+        "Concord"
+    ]
+    ,
+    "Lavender Bay": [
+        "McMahons Point",
+        "North Sydney",
+        "Milsons Point",
+        "Waverton",
+        "Kirribilli",
+        "Dawes Point"
+    ]
+    ,
+    "Milperra": [
+        "Condell Park",
+        "Georges Hall",
+        "Revesby",
+        "Panania",
+        "East Hills",
+        "Bass Hill"
+    ]
+    ,
+    "Manly": [
+        "Fairlight",
+        "Queenscliff",
+        "Balgowlah Heights",
+        "Freshwater",
+        "Balgowlah",
+        "Curl Curl"
+    ]
+    ,
+    "Lugarno": [
+        "Padstow Heights",
+        "Illawong",
+        "Alfords Point",
+        "Peakhurst",
+        "Como",
+        "Oatley"
+    ]
+    ,
+    "Macquarie Links": [
+        "Bardia",
+        "Macquarie Fields",
+        "Glenfield",
+        "Ingleburn",
+        "Denham Court",
+        "Long Point"
+    ]
+    ,
+    "Loftus": [
+        "Yarrawarrah",
+        "Sutherland",
+        "Woronora",
+        "Woronora Heights",
+        "Kirrawee",
+        "Grays Point"
+    ]
+    ,
+    "Malabar": [
+        "Chifley",
+        "Matraville",
+        "Little Bay",
+        "Maroubra",
+        "Phillip Bay",
+        "Hillsdale"
+    ]
+    ,
+    "Longueville": [
+        "Riverview",
+        "Woolwich",
+        "Northwood",
+        "Linley Point",
+        "Greenwich",
+        "Huntleys Point"
+    ]
+    ,
+    "Leets Vale": [
+        "Wisemans Ferry",
+        "Lower Portland",
+        "Sackville North",
+        "South Maroota",
+        "Maroota",
+        "Cattai"
+    ]
+    ,
+    "Little Bay": [
+        "Phillip Bay",
+        "Chifley",
+        "La Perouse",
+        "Malabar",
+        "Port Botany",
+        "Matraville"
+    ]
+    ,
+    "Millers Point": [
+        "Barangaroo",
+        "The Rocks",
+        "Dawes Point",
+        "Sydney CBD",
+        "Balmain East",
+        "Pyrmont"
+    ]
+    ,
+    "Milsons Point": [
+        "Kirribilli",
+        "Lavender Bay",
+        "McMahons Point",
+        "Dawes Point",
+        "North Sydney",
+        "The Rocks"
+    ]
+    ,
+    "Matraville": [
+        "Hillsdale",
+        "Chifley",
+        "Malabar",
+        "Maroubra",
+        "Eastgardens",
+        "Phillip Bay"
+    ]
+    ,
+    "Menangle Park": [
+        "Menangle",
+        "Camden Park",
+        "Spring Farm",
+        "Glen Alpine",
+        "Mount Annan",
+        "Rosemeadow"
+    ]
+    ,
+    "Minto Heights": [
+        "Minto",
+        "Kentlyn",
+        "Long Point",
+        "Ingleburn",
+        "Bow Bowing",
+        "St Andrews"
+    ]
+    ,
+    "Lane Cove": [
+        "Lane Cove North",
+        "Riverview",
+        "Lane Cove West",
+        "Artarmon",
+        "Northwood",
+        "Chatswood"
+    ]
+    ,
+    "Linley Point": [
+        "Hunters Hill",
+        "Riverview",
+        "Huntleys Point",
+        "Longueville",
+        "Lane Cove West",
+        "Lane Cove"
+    ]
+    ,
+    "Lansdowne": [
+        "Diamond Bay",
+        "Wisemans Ferry",
+        "Palm Beach",
+        "Great Mackerel Beach",
+        "Whale Beach",
+        "Coasters Retreat"
+    ]
+    ,
+    "Mascot": [
+        "Sydney Airport",
+        "Rosebery",
+        "Botany",
+        "Beaconsfield",
+        "Sydenham",
+        "St Peters"
+    ]
+    ,
+    "Macarthur": [
+        "Englorie Park",
+        "Ambarvale",
+        "Blair Athol",
+        "Campbelltown",
+        "Glen Alpine",
+        "Bradbury"
+    ]
+    ,
+    "Middle Dural": [
+        "Galston",
+        "Kenthurst",
+        "Glenorie",
+        "Dural",
+        "Annangrove",
+        "Glenhaven"
+    ]
+    ,
+    "Manly Vale": [
+        "North Manly",
+        "North Balgowlah",
+        "Balgowlah",
+        "Fairlight",
+        "Queenscliff",
+        "Brookvale"
+    ]
+    ,
+    "Menai": [
+        "Bangor",
+        "Barden Ridge",
+        "Illawong",
+        "Woronora Heights",
+        "Alfords Point",
+        "Woronora"
+    ]
+    ,
+    "Minto": [
+        "Bow Bowing",
+        "St Andrews",
+        "Minto Heights",
+        "Ingleburn",
+        "Raby",
+        "Denham Court"
+    ]
+    ,
+    "McMahons Point": [
+        "Lavender Bay",
+        "North Sydney",
+        "Milsons Point",
+        "Waverton",
+        "Dawes Point",
+        "Kirribilli"
+    ]
+    ,
+    "Maroota": [
+        "South Maroota",
+        "Cattai",
+        "Sackville North",
+        "Maraylya",
+        "Glenorie",
+        "Leets Vale"
+    ]
+    ,
+    "Meadowbank": [
+        "West Ryde",
+        "Melrose Park",
+        "Rhodes",
+        "Ryde",
+        "Denistone",
+        "Denistone West"
+    ]
+    ,
+    "Lovett Bay": [
+        "Morning Bay",
+        "Elvina Bay",
+        "Scotland Island",
+        "Clareville",
+        "Church Point",
+        "Coasters Retreat"
+    ]
+    ,
+    "Menangle": [
+        "Menangle Park",
+        "Camden Park",
+        "Gilead",
+        "Rosemeadow",
+        "Glen Alpine",
+        "Spring Farm"
+    ]
+    ,
+    "Miranda": [
+        "Yowie Bay",
+        "Sylvania Waters",
+        "Gymea",
+        "Caringbah",
+        "Gymea Bay",
+        "Taren Point"
+    ]
+    ,
+    "Mortlake": [
+        "Breakfast Point",
+        "Tennyson Point",
+        "Putney",
+        "Concord West",
+        "Liberty Grove",
+        "Concord"
+    ]
+    ,
+    "Nangarin": [
+        "Yanderra",
+        "Bargo",
+        "Buxton",
+        "Couridjah",
+        "Pheasants Nest",
+        "Tahmoor"
+    ]
+    ,
+    "Narellan": [
+        "Narellan Vale",
+        "Harrington Park",
+        "Smeaton Grange",
+        "Elderslie",
+        "Kirkham",
+        "Currans Hill"
+    ]
+    ,
+    "Narrabeen North": [
+        "Elanora Heights",
+        "Warriewood",
+        "Narrabeen",
+        "Collaroy Plateau",
+        "The Northern Beaches",
+        "Collaroy"
+    ]
+    ,
+    "Narwee": [
+        "Beverly Hills",
+        "Riverwood",
+        "Roselands",
+        "Penshurst",
+        "Mortdale",
+        "Punchbowl"
+    ]
+    ,
+    "Naremburn": [
+        "St Leonards",
+        "Crows Nest",
+        "Willoughby",
+        "Northbridge",
+        "Wollstonecraft",
+        "Cammeray"
+    ]
+    ,
+    "North Epping": [
+        "South Turramurra",
+        "West Pymble",
+        "Cheltenham",
+        "Epping",
+        "Eastwood",
+        "Pennant Hills"
+    ]
+    ,
+    "North Ryde": [
+        "Denistone East",
+        "East Ryde",
+        "Ryde",
+        "West Pymble",
+        "The Northern Suburbs",
+        "Denistone"
+    ]
+    ,
+    "Narraweena": [
+        "Beacon Hill",
+        "Cromer",
+        "Dee Why",
+        "Brookvale",
+        "Wheeler Heights",
+        "Allambie Heights"
+    ]
+    ,
+    "Narellan Vale": [
+        "Narellan",
+        "Smeaton Grange",
+        "Mount Annan",
+        "Currans Hill",
+        "Harrington Park",
+        "Elderslie"
+    ]
+    ,
+    "Mosman": [
+        "Cremorne",
+        "Cremorne Point",
+        "Cammeray",
+        "Neutral Bay",
+        "Clontarf",
+        "Northbridge"
+    ]
+    ,
+    "Oatlands": [
+        "Dundas",
+        "North Rocks",
+        "Carlingford",
+        "Dundas Valley",
+        "Ermington",
+        "Denistone West"
+    ]
+    ,
+    "Mount Annan": [
+        "Narellan Vale",
+        "Currans Hill",
+        "Narellan",
+        "Blairmount",
+        "Smeaton Grange",
+        "Glen Alpine"
+    ]
+    ,
+    "Monterey": [
+        "Ramsgate Beach",
+        "Ramsgate",
+        "Kogarah",
+        "Brighton-Le-Sands",
+        "Sans Souci",
+        "Beverley Park"
+    ]
+    ,
+    "Newport": [
+        "Bilgola Plateau",
+        "Bilgola",
+        "Clareville",
+        "Mona Vale",
+        "Bayview",
+        "Scotland Island"
+    ]
+    ,
+    "Mona Vale": [
+        "Warriewood",
+        "Newport",
+        "Bayview",
+        "Church Point",
+        "Bilgola Plateau",
+        "Elanora Heights"
+    ]
+    ,
+    "North Wahroonga": [
+        "Waitara",
+        "Wahroonga",
+        "North Turramurra",
+        "Hornsby",
+        "Warrawee",
+        "St Ives Chase"
+    ]
+    ,
+    "Mowbray Park": [
+        "Lakesland",
+        "Picton",
+        "Thirlmere",
+        "Belimbla Park",
+        "The Oaks",
+        "Couridjah"
+    ]
+    ,
+    "Oxford Falls": [
+        "Frenchs Forest",
+        "The Forest District",
+        "Beacon Hill",
+        "Narraweena",
+        "Belrose",
+        "Allambie Heights"
+    ]
+    ,
+    "Northwood": [
+        "Greenwich",
+        "Longueville",
+        "Riverview",
+        "Wollstonecraft",
+        "Woolwich",
+        "Lane Cove"
+    ]
+    ,
+    "Nelson": [
+        "Annangrove",
+        "Box Hill",
+        "Rouse Hill",
+        "Maraylya",
+        "Beaumont Hills",
+        "Kellyville"
+    ]
+    ,
+    "Padstow Heights": [
+        "Lugarno",
+        "Peakhurst",
+        "Revesby Heights",
+        "Alfords Point",
+        "Padstow",
+        "Picnic Point"
+    ]
+    ,
+    "North Strathfield": [
+        "Homebush",
+        "Concord",
+        "Concord West",
+        "Homebush West",
+        "Liberty Grove",
+        "Strathfield"
+    ]
+    ,
+    "Moore Park": [
+        "Centennial Park",
+        "Waterloo",
+        "Kensington",
+        "Surry Hills",
+        "Paddington",
+        "Strawberry Hills"
+    ]
+    ,
+    "Oyster Bay": [
+        "Kareela",
+        "Como",
+        "Jannali",
+        "Kangaroo Point",
+        "Bonnet Bay",
+        "Sylvania"
+    ]
+    ,
+    "Newtown": [
+        "Camperdown",
+        "Erskineville",
+        "Eveleigh",
+        "Enmore",
+        "St Peters",
+        "Stanmore"
+    ]
+    ,
+    "North Balgowlah": [
+        "Manly Vale",
+        "Balgowlah",
+        "Seaforth",
+        "North Manly",
+        "Clontarf",
+        "Allambie Heights"
+    ]
+    ,
+    "North Curl Curl": [
+        "Curl Curl",
+        "Freshwater",
+        "Dee Why",
+        "Queenscliff",
+        "Brookvale",
+        "North Manly"
+    ]
+    ,
+    "Oran Park": [
+        "Catherine Field",
+        "Harrington Park",
+        "Gledswood Hills",
+        "Smeaton Grange",
+        "Gregory Hills",
+        "Narellan"
+    ]
+    ,
+    "Oatley": [
+        "Mortdale",
+        "Hurstville Grove",
+        "Penshurst",
+        "Connells Point",
+        "Kyle Bay",
+        "South Hurstville"
+    ]
+    ,
+    "North Willoughby": [
+        "Middle Cove",
+        "East Willoughby",
+        "Castle Cove",
+        "Willoughby",
+        "Castlecrag",
+        "Roseville Chase"
+    ]
+    ,
+    "Mortdale": [
+        "Oatley",
+        "Penshurst",
+        "Peakhurst",
+        "Beverly Hills",
+        "Narwee",
+        "Hurstville Grove"
+    ]
+    ,
+    "North Rocks": [
+        "Oatlands",
+        "Carlingford",
+        "Baulkham Hills",
+        "Dundas",
+        "Winston Hills",
+        "Dundas Valley"
+    ]
+    ,
+    "North Sydney": [
+        "Lavender Bay",
+        "McMahons Point",
+        "Waverton",
+        "Milsons Point",
+        "Neutral Bay",
+        "Wollstonecraft"
+    ]
+    ,
+    "Mount Lewis": [
+        "Greenacre",
+        "Bankstown",
+        "Wiley Park",
+        "Punchbowl",
+        "Yagoona",
+        "Lakemba"
+    ]
+    ,
+    "North Manly": [
+        "Manly Vale",
+        "Brookvale",
+        "Queenscliff",
+        "Freshwater",
+        "Curl Curl",
+        "North Balgowlah"
+    ]
+    ,
+    "North Bondi": [
+        "Bondi Beach",
+        "Ben Buckler",
+        "Tamarama",
+        "Dover Heights",
+        "Bondi",
+        "Rose Bay"
+    ]
+    ,
+    "North Kellyville": [
+        "Kellyville",
+        "Beaumont Hills",
+        "The Hills District",
+        "Norwest",
+        "Bella Vista",
+        "Rouse Hill"
+    ]
+    ,
+    "Neutral Bay": [
+        "Cremorne",
+        "Cremorne Point",
+        "Cammeray",
+        "North Sydney",
+        "Lavender Bay",
+        "Crows Nest"
+    ]
+    ,
+    "Northbridge": [
+        "Cammeray",
+        "Castlecrag",
+        "Naremburn",
+        "Willoughby",
+        "Crows Nest",
+        "East Willoughby"
+    ]
+    ,
+    "Oakdale": [
+        "Belimbla Park",
+        "Nattai",
+        "The Oaks",
+        "Glenmore",
+        "Mowbray Park",
+        "Lakesland"
+    ]
+    ,
+    "Mount Hunter": [
+        "Glenmore",
+        "Bickley Vale",
+        "Grasmere",
+        "Brownlow Hill",
+        "Cawdor",
+        "Ellis Lane"
+    ]
+    ,
+    "Paddington": [
+        "Darlinghurst",
+        "Edgecliff",
+        "Rushcutters Bay",
+        "Kings Cross",
+        "Surry Hills",
+        "Moore Park"
+    ]
+    ,
+    "Orangeville": [
+        "Werombi",
+        "Glenmore",
+        "Theresa Park",
+        "Mount Hunter",
+        "Brownlow Hill",
+        "The Oaks"
+    ]
+    ,
+    "North Turramurra": [
+        "St Ives Chase",
+        "North Wahroonga",
+        "St Ives",
+        "Wahroonga",
+        "Warrawee",
+        "Turramurra"
+    ]
+    ,
+    "Morning Bay": [
+        "Lovett Bay",
+        "Scotland Island",
+        "Elvina Bay",
+        "Clareville",
+        "Coasters Retreat",
+        "Bilgola Plateau"
+    ]
+    ,
+    "Narrabeen": [
+        "Collaroy Plateau",
+        "Collaroy",
+        "Wheeler Heights",
+        "Narrabeen North",
+        "Cromer",
+        "Elanora Heights"
+    ]
+    ,
+    "Norwest": [
+        "Bella Vista",
+        "Kings Langley",
+        "The Hills District",
+        "North Kellyville",
+        "Kellyville",
+        "Baulkham Hills"
+    ]
+    ,
+    "Nattai": [
+        "Oakdale",
+        "Belimbla Park",
+        "Burragorang",
+        "The Oaks",
+        "Glenmore",
+        "Orangeville"
+    ]
+    ,
+    "Roseville Chase": [
+        "Castle Cove",
+        "East Lindfield",
+        "Killarney Heights",
+        "Forestville",
+        "Middle Cove",
+        "North Willoughby"
+    ]
+    ,
+    "Rhodes": [
+        "Meadowbank",
+        "Liberty Grove",
+        "Concord West",
+        "Putney",
+        "Melrose Park",
+        "Ryde"
+    ]
+    ,
+    "Panania": [
+        "Revesby",
+        "East Hills",
+        "Picnic Point",
+        "Revesby Heights",
+        "Sandy Point",
+        "Padstow"
+    ]
+    ,
+    "Pheasants Nest": [
+        "Tahmoor",
+        "Bingara Gorge",
+        "Maldon",
+        "Wilton",
+        "Bargo",
+        "Couridjah"
+    ]
+    ,
+    "Point Piper": [
+        "Bellevue Hill",
+        "Double Bay",
+        "Darling Point",
+        "Rose Bay North",
+        "Rose Bay",
+        "Edgecliff"
+    ]
+    ,
+    "Port Hacking": [
+        "Lilli Pilli",
+        "Dolans Bay",
+        "Maianbar",
+        "Burraneer",
+        "Caringbah South",
+        "Caringbah"
+    ]
+    ,
+    "Peakhurst": [
+        "Padstow Heights",
+        "Riverwood",
+        "Mortdale",
+        "Padstow",
+        "Lugarno",
+        "Narwee"
+    ]
+    ,
+    "Queenscliff": [
+        "Freshwater",
+        "Curl Curl",
+        "Fairlight",
+        "North Manly",
+        "Manly Vale",
+        "North Curl Curl"
+    ]
+    ,
+    "Padstow": [
+        "Riverwood",
+        "Padstow Heights",
+        "Revesby Heights",
+        "Peakhurst",
+        "Revesby",
+        "Panania"
+    ]
+    ,
+    "Picton": [
+        "Maldon",
+        "Thirlmere",
+        "Tahmoor",
+        "Mowbray Park",
+        "Lakesland",
+        "Razorback"
+    ]
+    ,
+    "Petersham": [
+        "Lewisham",
+        "Stanmore",
+        "Marrickville",
+        "Leichhardt",
+        "Enmore",
+        "Summer Hill"
+    ]
+    ,
+    "Revesby": [
+        "Panania",
+        "Revesby Heights",
+        "Padstow",
+        "Picnic Point",
+        "East Hills",
+        "Condell Park"
+    ]
+    ,
+    "Pyrmont": [
+        "Ultimo",
+        "The Central Business District",
+        "Haymarket",
+        "Glebe",
+        "Barangaroo",
+        "Sydney CBD"
+    ]
+    ,
+    "Phillip Bay": [
+        "Little Bay",
+        "La Perouse",
+        "Chifley",
+        "Port Botany",
+        "Matraville",
+        "Malabar"
+    ]
+    ,
+    "Pymble": [
+        "Turramurra",
+        "Gordon",
+        "West Pymble",
+        "South Turramurra",
+        "Warrawee",
+        "Wahroonga"
+    ]
+    ,
+    "Randwick": [
+        "St Pauls",
+        "Kingsford",
+        "Kensington",
+        "Daceyville",
+        "Coogee",
+        "Clovelly West"
+    ]
+    ,
+    "Redfern": [
+        "Strawberry Hills",
+        "Waterloo",
+        "Darlington",
+        "Chippendale",
+        "Surry Hills",
+        "Alexandria"
+    ]
+    ,
+    "Palm Beach": [
+        "Whale Beach",
+        "Coasters Retreat",
+        "Great Mackerel Beach",
+        "Avalon",
+        "Clareville",
+        "Morning Bay"
+    ]
+    ,
+    "Rozelle": [
+        "Lilyfield",
+        "Balmain",
+        "Drummoyne",
+        "Birchgrove",
+        "Annandale",
+        "Rodd Point"
+    ]
+    ,
+    "Rouse Hill": [
+        "Beaumont Hills",
+        "Annangrove",
+        "Nelson",
+        "North Kellyville",
+        "Kellyville",
+        "Box Hill"
+    ]
+    ,
+    "Riverview": [
+        "Longueville",
+        "Lane Cove",
+        "Linley Point",
+        "Northwood",
+        "Lane Cove West",
+        "Lane Cove North"
+    ]
+    ,
+    "Rossmore": [
+        "Bringelly",
+        "Leppington",
+        "Catherine Field",
+        "Oran Park",
+        "Gledswood Hills",
+        "Varroville"
+    ]
+    ,
+    "Potts Hill": [
+        "Regents Park",
+        "Birrong",
+        "Chullora",
+        "Yagoona",
+        "Sefton",
+        "Chester Hill"
+    ]
+    ,
+    "Revesby Heights": [
+        "Picnic Point",
+        "Padstow Heights",
+        "Panania",
+        "Alfords Point",
+        "Padstow",
+        "Revesby"
+    ]
+    ,
+    "Punchbowl": [
+        "Wiley Park",
+        "Riverwood",
+        "Mount Lewis",
+        "Bankstown",
+        "Narwee",
+        "Greenacre"
+    ]
+    ,
+    "Potts Point": [
+        "Woolloomooloo",
+        "Elizabeth Bay",
+        "Kings Cross",
+        "Rushcutters Bay",
+        "Darlinghurst",
+        "Darling Point"
+    ]
+    ,
+    "Putney": [
+        "Tennyson Point",
+        "Ryde",
+        "Mortlake",
+        "Gladesville",
+        "Rhodes",
+        "Breakfast Point"
+    ]
+    ,
+    "Russell Lea": [
+        "Rodd Point",
+        "Wareemba",
+        "Chiswick",
+        "Drummoyne",
+        "The Inner West",
+        "Five Dock"
+    ]
+    ,
+    "Picnic Point": [
+        "Revesby Heights",
+        "Panania",
+        "Sandy Point",
+        "East Hills",
+        "Revesby",
+        "Alfords Point"
+    ]
+    ,
+    "Riverwood": [
+        "Peakhurst",
+        "Padstow",
+        "Punchbowl",
+        "Narwee",
+        "Beverly Hills",
+        "Mortdale"
+    ]
+    ,
+    "Ramsgate Beach": [
+        "Ramsgate",
+        "Monterey",
+        "Sans Souci",
+        "Dolls Point",
+        "Beverley Park",
+        "Kogarah"
+    ]
+    ,
+    "Queens Park": [
+        "Charing Cross",
+        "Waverley",
+        "Bondi Junction",
+        "Bronte",
+        "Clovelly West",
+        "Bondi"
+    ]
+    ,
+    "Port Botany": [
+        "Phillip Bay",
+        "La Perouse",
+        "Matraville",
+        "Chifley",
+        "Banksmeadow",
+        "Little Bay"
+    ]
+    ,
+    "Ramsgate": [
+        "Ramsgate Beach",
+        "Sans Souci",
+        "Beverley Park",
+        "Monterey",
+        "Dolls Point",
+        "Kogarah"
+    ]
+    ,
+    "Pennant Hills": [
+        "Beecroft",
+        "Westleigh",
+        "Cheltenham",
+        "West Pennant Hills",
+        "Cherrybrook",
+        "North Epping"
+    ]
+    ,
+    "Rockdale": [
+        "Banksia",
+        "Bexley",
+        "Kogarah",
+        "Kyeemagh",
+        "Brighton-Le-Sands",
+        "Arncliffe"
+    ]
+    ,
+    "Ruse": [
+        "Leumeah",
+        "Campbelltown",
+        "Airds",
+        "Bradbury",
+        "Woodbine",
+        "Kentlyn"
+    ]
+    ,
+    "Raby": [
+        "Kearns",
+        "Eschol Park",
+        "St Andrews",
+        "Varroville",
+        "Eagle Vale",
+        "Bow Bowing"
+    ]
+    ,
+    "Roselands": [
+        "Lakemba",
+        "Belmore",
+        "Kingsgrove",
+        "Clemton Park",
+        "Wiley Park",
+        "Narwee"
+    ]
+    ,
+    "Rodd Point": [
+        "Russell Lea",
+        "Five Dock",
+        "Wareemba",
+        "The Inner West",
+        "Drummoyne",
+        "Chiswick"
+    ]
+    ,
+    "Penshurst": [
+        "The St George Region",
+        "Hurstville",
+        "Beverly Hills",
+        "Mortdale",
+        "Hurstville Grove",
+        "Oatley"
+    ]
+    ,
+    "Rose Bay": [
+        "Rose Bay North",
+        "Dover Heights",
+        "Bellevue Hill",
+        "Point Piper",
+        "Bondi",
+        "North Bondi"
+    ]
+    ,
+    "Rosebery": [
+        "Eastlakes",
+        "Beaconsfield",
+        "Mascot",
+        "Daceyville",
+        "Zetland",
+        "Kingsford"
+    ]
+    ,
+    "Roseville": [
+        "Chatswood West",
+        "Lindfield",
+        "Chatswood",
+        "The Northern Suburbs",
+        "Lane Cove North",
+        "East Lindfield"
+    ]
+    ,
+    "Rushcutters Bay": [
+        "Elizabeth Bay",
+        "Kings Cross",
+        "Woolloomooloo",
+        "Potts Point",
+        "Darlinghurst",
+        "Edgecliff"
+    ]
+    ,
+    "Regents Park": [
+        "Potts Hill",
+        "Birrong",
+        "Chullora",
+        "Sefton",
+        "Chester Hill",
+        "Yagoona"
+    ]
+    ,
+    "Pagewood": [
+        "Eastgardens",
+        "The Eastern Suburbs",
+        "Hillsdale",
+        "Daceyville",
+        "Kingsford",
+        "Eastlakes"
+    ]
+    ,
+    "Razorback": [
+        "Maldon",
+        "Camden Park",
+        "Douglas Park",
+        "Picton",
+        "Cawdor",
+        "Menangle"
+    ]
+    ,
+    "Rose Bay North": [
+        "Rose Bay",
+        "Dover Heights",
+        "Bellevue Hill",
+        "Point Piper",
+        "Bondi",
+        "North Bondi"
+    ]
+    ,
+    "Rosemeadow": [
+        "St Helens Park",
+        "Glen Alpine",
+        "Ambarvale",
+        "Englorie Park",
+        "Bradbury",
+        "Wedderburn"
+    ]
+    ,
+    "Sackville North": [
+        "Lower Portland",
+        "Maroota",
+        "South Maroota",
+        "Leets Vale",
+        "Cattai",
+        "Maraylya"
+    ]
+    ,
+    "Sandringham": [
+        "Dolls Point",
+        "Sans Souci",
+        "Ramsgate",
+        "Ramsgate Beach",
+        "Carss Park",
+        "Kogarah Bay"
+    ]
+    ,
+    "St Ives": [
+        "St Ives Chase",
+        "North Turramurra",
+        "Davidson",
+        "Turramurra",
+        "Pymble",
+        "East Killara"
+    ]
+    ,
+    "Ryde": [
+        "Putney",
+        "Meadowbank",
+        "West Ryde",
+        "Denistone East",
+        "Rhodes",
+        "Denistone"
+    ]
+    ,
+    "Silverdale": [
+        "Warragamba",
+        "Werombi",
+        "Theresa Park",
+        "Bringelly",
+        "Orangeville",
+        "Cobbitty"
+    ]
+    ,
+    "Tennyson Point": [
+        "Gladesville",
+        "Putney",
+        "Breakfast Point",
+        "Mortlake",
+        "Abbotsford",
+        "Ryde"
+    ]
+    ,
+    "Smeaton Grange": [
+        "Currans Hill",
+        "Gregory Hills",
+        "Narellan Vale",
+        "Narellan",
+        "Harrington Park",
+        "Blairmount"
+    ]
+    ,
+    "Terrey Hills": [
+        "Duffys Forest",
+        "The North Shore",
+        "Ingleside",
+        "The Northern Beaches",
+        "Belrose",
+        "Elanora Heights"
+    ]
+    ,
+    "St Ives Chase": [
+        "North Turramurra",
+        "St Ives",
+        "North Wahroonga",
+        "Warrawee",
+        "Turramurra",
+        "Wahroonga"
+    ]
+    ,
+    "Tamarama": [
+        "Bondi",
+        "Bronte",
+        "Bondi Beach",
+        "Waverley",
+        "Charing Cross",
+        "Ben Buckler"
+    ]
+    ,
+    "Sylvania": [
+        "Sylvania Waters",
+        "Kangaroo Point",
+        "Taren Point",
+        "Kareela",
+        "Kyle Bay",
+        "Blakehurst"
+    ]
+    ,
+    "Strathfield": [
+        "Enfield",
+        "Strathfield South",
+        "Homebush",
+        "Burwood",
+        "Burwood Heights",
+        "North Strathfield"
+    ]
+    ,
+    "Sydenham": [
+        "St Peters",
+        "Tempe",
+        "Enmore",
+        "Marrickville",
+        "Erskineville",
+        "Wolli Creek"
+    ]
+    ,
+    "South Turramurra": [
+        "North Epping",
+        "West Pymble",
+        "Pymble",
+        "Turramurra",
+        "Gordon",
+        "Warrawee"
+    ]
+    ,
+    "The Rocks": [
+        "Dawes Point",
+        "Millers Point",
+        "Barangaroo",
+        "Sydney CBD",
+        "Milsons Point",
+        "Kirribilli"
+    ]
+    ,
+    "Seaforth": [
+        "North Balgowlah",
+        "Castlecrag",
+        "Balgowlah",
+        "Clontarf",
+        "Manly Vale",
+        "Northbridge"
+    ]
+    ,
+    "South Maroota": [
+        "Maroota",
+        "Cattai",
+        "Sackville North",
+        "Maraylya",
+        "Glenorie",
+        "Leets Vale"
+    ]
+    ,
+    "The Oaks": [
+        "Glenmore",
+        "Belimbla Park",
+        "Mount Hunter",
+        "Orangeville",
+        "Oakdale",
+        "Mowbray Park"
+    ]
+    ,
+    "South Hurstville": [
+        "Connells Point",
+        "Hurstville Grove",
+        "Blakehurst",
+        "Kyle Bay",
+        "Allawah",
+        "Hurstville"
+    ]
+    ,
+    "Sans Souci": [
+        "Dolls Point",
+        "Ramsgate",
+        "Sandringham",
+        "Ramsgate Beach",
+        "Beverley Park",
+        "Kogarah Bay"
+    ]
+    ,
+    "Spring Farm": [
+        "Elderslie",
+        "Camden",
+        "Camden Park",
+        "Cawdor",
+        "Narellan",
+        "Narellan Vale"
+    ]
+    ,
+    "St Peters": [
+        "Erskineville",
+        "Sydenham",
+        "Enmore",
+        "Newtown",
+        "Eveleigh",
+        "Stanmore"
+    ]
+    ,
+    "Surry Hills": [
+        "Strawberry Hills",
+        "Haymarket",
+        "Redfern",
+        "Chippendale",
+        "The Central Business District",
+        "Darlinghurst"
+    ]
+    ,
+    "South Coogee": [
+        "Coogee",
+        "St Pauls",
+        "Maroubra",
+        "Clovelly",
+        "Clovelly West",
+        "Randwick"
+    ]
+    ,
+    "Sandy Point": [
+        "East Hills",
+        "Picnic Point",
+        "Panania",
+        "Revesby Heights",
+        "Alfords Point",
+        "Revesby"
+    ]
+    ,
+    "St Andrews": [
+        "Bow Bowing",
+        "Raby",
+        "Minto",
+        "Eschol Park",
+        "Eagle Vale",
+        "Kearns"
+    ]
+    ,
+    "Summer Hill": [
+        "Lewisham",
+        "Haberfield",
+        "Ashfield",
+        "Petersham",
+        "Dulwich Hill",
+        "Ashbury"
+    ]
+    ,
+    "Sefton": [
+        "Chester Hill",
+        "Birrong",
+        "Bass Hill",
+        "Regents Park",
+        "Potts Hill",
+        "Villawood"
+    ]
+    ,
+    "Sydney CBD": [
+        "Barangaroo",
+        "The Central Business District",
+        "The Rocks",
+        "Millers Point",
+        "Woolloomooloo",
+        "Pyrmont"
+    ]
+    ,
+    "The Eastern Suburbs": [
+        "Banksmeadow",
+        "Botany",
+        "Eastgardens",
+        "Pagewood",
+        "Hillsdale",
+        "Matraville"
+    ]
+    ,
+    "St Helens Park": [
+        "Rosemeadow",
+        "Wedderburn",
+        "Airds",
+        "Bradbury",
+        "Ambarvale",
+        "Glen Alpine"
+    ]
+    ,
+    "The Northern Suburbs": [
+        "Chatswood West",
+        "Lane Cove North",
+        "Roseville",
+        "Lane Cove West",
+        "East Ryde",
+        "Lane Cove"
+    ]
+    ,
+    "The Inner West": [
+        "Wareemba",
+        "Abbotsford",
+        "Five Dock",
+        "Chiswick",
+        "Russell Lea",
+        "Rodd Point"
+    ]
+    ,
+    "The Northern Beaches": [
+        "Ingleside",
+        "Elanora Heights",
+        "Narrabeen North",
+        "Warriewood",
+        "Mona Vale",
+        "Bayview"
+    ]
+    ,
+    "Strawberry Hills": [
+        "Surry Hills",
+        "Redfern",
+        "Chippendale",
+        "Haymarket",
+        "Darlington",
+        "Ultimo"
+    ]
+    ,
+    "Tahmoor": [
+        "Couridjah",
+        "Thirlmere",
+        "Pheasants Nest",
+        "Picton",
+        "Maldon",
+        "Buxton"
+    ]
+    ,
+    "Strathfield South": [
+        "Strathfield",
+        "Belfield",
+        "Enfield",
+        "Chullora",
+        "Greenacre",
+        "Burwood Heights"
+    ]
+    ,
+    "Stanmore": [
+        "Enmore",
+        "Petersham",
+        "Leichhardt",
+        "Newtown",
+        "Marrickville",
+        "Camperdown"
+    ]
+    ,
+    "Taren Point": [
+        "Sylvania Waters",
+        "Sylvania",
+        "Miranda",
+        "Sandringham",
+        "Caringbah",
+        "Kangaroo Point"
+    ]
+    ,
+    "Tempe": [
+        "Wolli Creek",
+        "Sydenham",
+        "Turrella",
+        "Arncliffe",
+        "Marrickville",
+        "Sydney Airport"
+    ]
+    ,
+    "The North Shore": [
+        "Duffys Forest",
+        "Terrey Hills",
+        "Cottage Point",
+        "St Ives Chase",
+        "North Turramurra",
+        "Ingleside"
+    ]
+    ,
+    "The Central Business District": [
+        "Haymarket",
+        "Sydney CBD",
+        "Pyrmont",
+        "Ultimo",
+        "Surry Hills",
+        "Chippendale"
+    ]
+    ,
+    "Sutherland": [
+        "Kirrawee",
+        "Woronora",
+        "Loftus",
+        "Jannali",
+        "Gymea",
+        "Woronora Heights"
+    ]
+    ,
+    "St Pauls": [
+        "Randwick",
+        "Coogee",
+        "Clovelly West",
+        "Kingsford",
+        "South Coogee",
+        "Clovelly"
+    ]
+    ,
+    "St Leonards": [
+        "Naremburn",
+        "Crows Nest",
+        "Wollstonecraft",
+        "Greenwich",
+        "Northwood",
+        "Willoughby"
+    ]
+    ,
+    "The Forest District": [
+        "Frenchs Forest",
+        "Oxford Falls",
+        "Beacon Hill",
+        "Allambie Heights",
+        "Belrose",
+        "Forestville"
+    ]
+    ,
+    "Scotland Island": [
+        "Elvina Bay",
+        "Lovett Bay",
+        "Morning Bay",
+        "Clareville",
+        "Church Point",
+        "Bayview"
+    ]
+    ,
+    "Sylvania Waters": [
+        "Taren Point",
+        "Sylvania",
+        "Miranda",
+        "Caringbah",
+        "Gymea",
+        "Kangaroo Point"
+    ]
+    ,
+    "Sydney Airport": [
+        "Mascot",
+        "Kyeemagh",
+        "Tempe",
+        "Botany",
+        "Wolli Creek",
+        "Banksia"
+    ]
+    ,
+    "The Hills District": [
+        "Castle Hill",
+        "Bella Vista",
+        "Norwest",
+        "Kellyville",
+        "North Kellyville",
+        "Glenhaven"
+    ]
+    ,
+    "West Ryde": [
+        "Denistone",
+        "Meadowbank",
+        "Denistone West",
+        "Melrose Park",
+        "Denistone East",
+        "Ryde"
+    ]
+    ,
+    "Turrella": [
+        "Arncliffe",
+        "Bardwell Valley",
+        "Wolli Creek",
+        "Bardwell Park",
+        "Banksia",
+        "Tempe"
+    ]
+    ,
+    "Thirlmere": [
+        "Couridjah",
+        "Tahmoor",
+        "Lakesland",
+        "Picton",
+        "Mowbray Park",
+        "Buxton"
+    ]
+    ,
+    "Villawood": [
+        "Bass Hill",
+        "Chester Hill",
+        "Sefton",
+        "Georges Hall",
+        "Birrong",
+        "Regents Park"
+    ]
+    ,
+    "Turramurra": [
+        "Warrawee",
+        "Pymble",
+        "Wahroonga",
+        "South Turramurra",
+        "Gordon",
+        "West Pymble"
+    ]
+    ,
+    "Wahroonga": [
+        "Warrawee",
+        "Waitara",
+        "Turramurra",
+        "North Wahroonga",
+        "Hornsby",
+        "North Turramurra"
+    ]
+    ,
+    "Yerranderie": [
+        "Burragorang",
+        "Nattai",
+        "Oakdale",
+        "Lakesland",
+        "Belimbla Park",
+        "Mowbray Park"
+    ]
+    ,
+    "Wilton": [
+        "Bingara Gorge",
+        "Douglas Park",
+        "Pheasants Nest",
+        "Maldon",
+        "Appin",
+        "Tahmoor"
+    ]
+    ,
+    "Yarrawarrah": [
+        "Loftus",
+        "Engadine",
+        "Woronora Heights",
+        "Woronora",
+        "Barden Ridge",
+        "Sutherland"
+    ]
+    ,
+    "Varroville": [
+        "Raby",
+        "Kearns",
+        "St Andrews",
+        "Bow Bowing",
+        "Denham Court",
+        "Eschol Park"
+    ]
+    ,
+    "Woolloomooloo": [
+        "Potts Point",
+        "Kings Cross",
+        "Elizabeth Bay",
+        "Rushcutters Bay",
+        "Darlinghurst",
+        "Sydney CBD"
+    ]
+    ,
+    "Westleigh": [
+        "Pennant Hills",
+        "Cherrybrook",
+        "Beecroft",
+        "West Pennant Hills",
+        "Hornsby",
+        "Waitara"
+    ]
+    ,
+    "Whale Beach": [
+        "Palm Beach",
+        "Avalon",
+        "Coasters Retreat",
+        "Clareville",
+        "Bilgola",
+        "Great Mackerel Beach"
+    ]
+    ,
+    "Woodbine": [
+        "Claymore",
+        "Eagle Vale",
+        "Leumeah",
+        "Eschol Park",
+        "Campbelltown",
+        "St Andrews"
+    ]
+    ,
+    "Woronora": [
+        "Woronora Heights",
+        "Bangor",
+        "Sutherland",
+        "Loftus",
+        "Bonnet Bay",
+        "Jannali"
+    ]
+    ,
+    "Waitara": [
+        "Hornsby",
+        "Wahroonga",
+        "North Wahroonga",
+        "Warrawee",
+        "Turramurra",
+        "Westleigh"
+    ]
+    ,
+    "Wisemans Ferry": [
+        "Leets Vale",
+        "Lower Portland",
+        "Sackville North",
+        "South Maroota",
+        "Maroota",
+        "Cattai"
+    ]
+    ,
+    "Waverton": [
+        "Wollstonecraft",
+        "North Sydney",
+        "McMahons Point",
+        "Lavender Bay",
+        "Greenwich",
+        "Milsons Point"
+    ]
+    ,
+    "Waverley": [
+        "Charing Cross",
+        "Queens Park",
+        "Bronte",
+        "Bondi",
+        "Bondi Junction",
+        "Tamarama"
+    ]
+    ,
+    "Waterloo": [
+        "Alexandria",
+        "Redfern",
+        "Zetland",
+        "Moore Park",
+        "Beaconsfield",
+        "Strawberry Hills"
+    ]
+    ,
+    "Wolli Creek": [
+        "Tempe",
+        "Arncliffe",
+        "Turrella",
+        "Banksia",
+        "Bardwell Valley",
+        "Kyeemagh"
+    ]
+    ,
+    "Vaucluse": [
+        "Dover Heights",
+        "Watsons Bay",
+        "Rose Bay",
+        "Rose Bay North",
+        "Point Piper",
+        "Bellevue Hill"
+    ]
+    ,
+    "Warrawee": [
+        "Wahroonga",
+        "Turramurra",
+        "Waitara",
+        "Pymble",
+        "North Wahroonga",
+        "Hornsby"
+    ]
+    ,
+    "Warragamba": [
+        "Silverdale",
+        "Werombi",
+        "Theresa Park",
+        "Bringelly",
+        "Orangeville",
+        "Cobbitty"
+    ]
+    ,
+    "Wareemba": [
+        "The Inner West",
+        "Chiswick",
+        "Abbotsford",
+        "Five Dock",
+        "Russell Lea",
+        "Rodd Point"
+    ]
+    ,
+    "Woolwich": [
+        "Longueville",
+        "Birchgrove",
+        "Greenwich",
+        "Northwood",
+        "Drummoyne",
+        "Riverview"
+    ]
+    ,
+    "Yagoona": [
+        "Bankstown",
+        "Birrong",
+        "Potts Hill",
+        "Regents Park",
+        "Condell Park",
+        "Mount Lewis"
+    ]
+    ,
+    "Winston Hills": [
+        "Baulkham Hills",
+        "North Rocks",
+        "Norwest",
+        "Bella Vista",
+        "Kings Langley",
+        "Oatlands"
+    ]
+    ,
+    "Watsons Bay": [
+        "Vaucluse",
+        "Dover Heights",
+        "Mosman",
+        "Manly",
+        "Balgowlah Heights",
+        "Rose Bay North"
+    ]
+    ,
+    "Ultimo": [
+        "Chippendale",
+        "Haymarket",
+        "Darlington",
+        "Pyrmont",
+        "The Central Business District",
+        "Glebe"
+    ]
+    ,
+    "Wheeler Heights": [
+        "Collaroy Plateau",
+        "Cromer",
+        "Narrabeen",
+        "Collaroy",
+        "Narraweena",
+        "Dee Why"
+    ]
+    ,
+    "Werombi": [
+        "Theresa Park",
+        "Orangeville",
+        "Silverdale",
+        "Brownlow Hill",
+        "Cobbitty",
+        "Warragamba"
+    ]
+    ,
+    "The Sutherland Shire": [
+        "Gymea Bay",
+        "Yowie Bay",
+        "Grays Point",
+        "Lilli Pilli",
+        "Caringbah South",
+        "Port Hacking"
+    ]
+    ,
+    "West Pymble": [
+        "South Turramurra",
+        "Gordon",
+        "North Epping",
+        "Pymble",
+        "North Ryde",
+        "Turramurra"
+    ]
+    ,
+    "Willoughby": [
+        "East Willoughby",
+        "Naremburn",
+        "North Willoughby",
+        "Artarmon",
+        "Middle Cove",
+        "Northbridge"
+    ]
+    ,
+    "Woollahra": [
+        "Bondi Junction",
+        "Bellevue Hill",
+        "Double Bay",
+        "Edgecliff",
+        "Paddington",
+        "Queens Park"
+    ]
+    ,
+    "Yanderra": [
+        "Bargo",
+        "Buxton",
+        "Pheasants Nest",
+        "Couridjah",
+        "Tahmoor",
+        "Thirlmere"
+    ]
+    ,
+    "Undercliffe": [
+        "Earlwood",
+        "Hurlstone Park",
+        "Canterbury",
+        "Canterbury-Bankstown",
+        "Bardwell Park",
+        "Dulwich Hill"
+    ]
+    ,
+    "Waterfall": [
+        "Heathcote",
+        "Engadine",
+        "Yarrawarrah",
+        "Lucas Heights",
+        "Loftus",
+        "Grays Point"
+    ]
+    ,
+    "Wedderburn": [
+        "St Helens Park",
+        "Gilead",
+        "Rosemeadow",
+        "Airds",
+        "Bradbury",
+        "Ambarvale"
+    ]
+    ,
+    "Zetland": [
+        "Waterloo",
+        "Beaconsfield",
+        "Kensington",
+        "Alexandria",
+        "Moore Park",
+        "Redfern"
+    ]
+    ,
+    "Wiley Park": [
+        "Punchbowl",
+        "Lakemba",
+        "Mount Lewis",
+        "Greenacre",
+        "Roselands",
+        "Belmore"
+    ]
+    ,
+    "The St George Region": [
+        "Hurstville",
+        "Penshurst",
+        "South Hurstville",
+        "Hurstville Grove",
+        "Allawah",
+        "Connells Point"
+    ]
+    ,
+    "Wollstonecraft": [
+        "Greenwich",
+        "Waverton",
+        "St Leonards",
+        "North Sydney",
+        "Crows Nest",
+        "Northwood"
+    ]
+    ,
+    "Woolooware": [
+        "Cronulla",
+        "Caringbah",
+        "Caringbah South",
+        "Dolans Bay",
+        "Burraneer",
+        "Port Hacking"
+    ]
+    ,
+    "Yowie Bay": [
+        "Gymea Bay",
+        "Miranda",
+        "Caringbah South",
+        "Caringbah",
+        "The Sutherland Shire",
+        "Lilli Pilli"
+    ]
+    ,
+    "Theresa Park": [
+        "Werombi",
+        "Brownlow Hill",
+        "Cobbitty",
+        "Orangeville",
+        "Ellis Lane",
+        "Grasmere"
+    ]
+    ,
+    "Warriewood": [
+        "Narrabeen North",
+        "Mona Vale",
+        "Elanora Heights",
+        "The Northern Beaches",
+        "Narrabeen",
+        "Ingleside"
+    ]
+    ,
+    "West Pennant Hills": [
+        "Beecroft",
+        "Cherrybrook",
+        "Pennant Hills",
+        "Cheltenham",
+        "Westleigh",
+        "Carlingford"
+    ]
+    ,
+    "Woronora Heights": [
+        "Woronora",
+        "Bangor",
+        "Barden Ridge",
+        "Loftus",
+        "Sutherland",
+        "Yarrawarrah"
+    ]
+}
