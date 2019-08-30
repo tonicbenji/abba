@@ -432,7 +432,7 @@ const cityRegions = (data, template, pageType) => {
                     return subset;
                 },
                 get regionFooterHeading() {
-                    return `<div class="regionFooterHeading">${this.Trade} a ${this.Industry} Business in one of ${this.Name}’s Suburbs:</div>`;
+                    return R.isEmpty(this.cityRegionSuburbs) ? "" : `<div class="regionFooterHeading">${this.Trade} a ${this.Industry} Business in one of ${this.Name}’s Suburbs:</div>`;
                 },
                 get regionFooterUl() {
                     return U.cityRegionFooterList(this.pathSegment, this.sydney, this.cityRegionSuburbs);
@@ -491,6 +491,16 @@ const suburbs = (data, template, pageType, parentContext) => {
                 },
                 get domainPath() {
                     return settings.domain + context.prettyPath;
+                },
+                get nearbySuburbs() {
+                    return R.intersection(dataPaths.suburbs.nearby[suburb], this.cityRegionSuburbs);
+                },
+                get nearbySuburbsHeading() {
+                    return R.isEmpty(this.nearbySuburbs) ? "" : `<div class="regionFooterHeading">${this.Trade}ing a ${this.Industry} Business in Nearby Suburbs:</div>`
+                },
+                get nearby() {
+                    // TODO: filter this against the subset list
+                    return U.cityRegionFooterList(this.pathSegment, this.sydney, this.nearbySuburbs);
                 }
             }
 

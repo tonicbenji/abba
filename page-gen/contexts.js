@@ -137,8 +137,7 @@ const cityRegion = ({ cityRegion }) => {
 
 const suburb = ({ suburb }) => {
     return {
-        ...contextMaker("", suburb),
-        nearby: dataPaths.suburbs.nearby[suburb]
+        ...contextMaker("", suburb)
     };
 };
 
