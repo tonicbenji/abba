@@ -48,7 +48,8 @@ module.exports = {
     },
     cityRegions: {
         data: "src/regions/sydney.txt",
-        template: "src/templates/sydney/"
+        template: "src/templates/sydney/",
+        suburbs: "src/regions/"
     },
     suburbs: {
         data: "src/",

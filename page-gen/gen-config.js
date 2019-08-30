@@ -4,7 +4,6 @@ module.exports = {
     useBaseUrl: true,
     suburbsFile: "wikipedia-suburbs",
     logFiles: true,
-    subset: 0.02,
 
     // Gen2 ----------
     rootUrl: "",
@@ -15,5 +14,6 @@ module.exports = {
     },
     outputLocation: "output2",
     briefLogs: true,
-    genSuburbs: false
+    genSuburbs: true,
+    subset: 0.02
 };

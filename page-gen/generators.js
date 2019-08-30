@@ -6,6 +6,7 @@ const dataPaths = require("./data-paths");
 const contexts = require("./contexts");
 const U = require("./utilities");
 const settings = require("./gen-config");
+const shuffleSeed = require("shuffle-seed");
 
 const run = (pageTypes, context) => {
     pageTypes.map(pageType => {
@@ -37,7 +38,7 @@ const run = (pageTypes, context) => {
                 cityRegions(data, template, pageType);
                 break;
             case "suburbs":
-                suburbs(data, template, pageType, context);
+                suburbs(context.cityRegionSuburbs, template, pageType, context);
                 break;
             default:
                 U.warning("No valid pageTypes specified in config");
@@ -425,12 +426,17 @@ const cityRegions = (data, template, pageType) => {
                 get schema() {
                     return U.schema([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.Sydney, `${this.pathSegment}/${this.sydney}/index.html`], [this.Name, this.prettyPath]]);
                 },
-                get regionFooterHeading() {
-                    return `<div class="regionFooterHeading">${this.Trade} a ${this.Industry} Business in one of ${this.NameNoThe}’s Regions:</div>`;
+                get cityRegionSuburbs() {
+                    const list = U.removeAllEmpty(U.fileToList(dataPaths.cityRegions.suburbs + `${U.filenameCase(cityRegion)}.txt`));
+                    const subset = R.take(Math.ceil(list.length * settings.subset), shuffleSeed.shuffle(list, cityRegion));
+                    return subset;
                 },
-                // get regionFooterUl() {
-                //     return U.cityRegionFooterList(this.pathSegment, this.cityRegionList);
-                // },
+                get regionFooterHeading() {
+                    return `<div class="regionFooterHeading">${this.Trade} a ${this.Industry} Business in one of ${this.Name}’s Suburbs:</div>`;
+                },
+                get regionFooterUl() {
+                    return U.cityRegionFooterList(this.pathSegment, this.sydney, this.cityRegionSuburbs);
+                },
                 get footerBreadcrumbs() {
                     return U.footerBreadcrumbs([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.Sydney, `${this.pathSegment}/${this.sydney}/index.html`], [this.Name, ""]]);
                 }
@@ -457,14 +463,12 @@ const cityRegions = (data, template, pageType) => {
 };
 
 const suburbs = (data, template, pageType, parentContext) => {
-    const data_ = `${data}regions/${U.filenameCase(parentContext.name)}.txt`;
-    const suburbs = U.removeAllEmpty(U.fileToList(data_));
-    suburbs.map(suburb =>
+    data.map(suburb =>
         dataPaths.buySell.data.map(buySell => {
             const context = {
                 ...R.mergeAll([
                     parentContext,
-                    contexts.general({ name: data, pageType, footerType: "suburb" }),
+                    contexts.general({ name: suburb, pageType, footerType: "suburb" }),
                     contexts.buySell({ buySell }),
                     contexts.suburb({ suburb })
                 ]),

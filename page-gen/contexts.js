@@ -130,7 +130,8 @@ const city = ({ city }) => {
 const cityRegion = ({ cityRegion }) => {
     return {
         ...contextMaker("", cityRegion),
-        ...contextMaker("region", cityRegion)
+        ...contextMaker("region", cityRegion),
+        cityRegionSuburbs: dataPaths.suburbs.nearby[cityRegion]
     };
 };
 
