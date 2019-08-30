@@ -94,7 +94,7 @@ const headerLog = s =>
 const performanceLog = time =>
     console.log(
         wrapInLinebreaks(
-            chalk.grey(`Completed in ${chalk.yellow(time)} seconds.`)
+            chalk.grey(`Completed in ${chalk.yellow(time)} seconds. ${chalk.yellow(settings.subset * 100 + "%")} of suburbs generated.`)
         )
     );
 
