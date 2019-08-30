@@ -86,6 +86,7 @@ const genLog = (action, name, path) => {
 const headerLog = s =>
     R.pipe(
         wrapInSpaces,
+        s => settings.briefLogs ? `\n${s}` : s,
         chalk.bgMagenta,
         wrapInLinebreaks,
         console.log

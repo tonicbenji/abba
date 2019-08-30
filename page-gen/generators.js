@@ -11,36 +11,45 @@ const shuffleSeed = require("shuffle-seed");
 const run = (pageTypes, context) => {
     pageTypes.map(pageType => {
         const { data, template } = dataPaths[changeCase.camelCase(pageType)];
-        U.headerLog(changeCase.titleCase(pageType));
         switch (pageType) {
             case "home":
+                U.headerLog(changeCase.titleCase(pageType));
                 home(data, template, pageType);
                 break;
             case "about":
+                U.headerLog(changeCase.titleCase(pageType));
                 about(data, template, pageType);
                 break;
             case "contact":
+                U.headerLog(changeCase.titleCase(pageType));
                 contact(data, template, pageType);
                 break;
             case "country":
+                U.headerLog(changeCase.titleCase(pageType));
                 country(data, template, pageType);
                 break;
             case "state":
+                U.headerLog(changeCase.titleCase(pageType));
                 state(data, template, pageType);
                 break;
             case "state regions":
+                U.headerLog(changeCase.titleCase(pageType));
                 stateRegions(data, template, pageType);
                 break;
             case "city":
+                U.headerLog(changeCase.titleCase(pageType));
                 city(data, template, pageType);
                 break;
             case "city regions":
+                U.headerLog(changeCase.titleCase(pageType));
                 cityRegions(data, template, pageType);
                 break;
             case "suburbs":
+                U.headerLog(changeCase.titleCase(`${context.name} ${pageType}`));
                 suburbs(context.cityRegionSuburbs, template, pageType, context);
                 break;
             case "directory":
+                U.headerLog(changeCase.titleCase(pageType));
                 directory(data, template, pageType);
                 break;
             default:
@@ -858,7 +867,7 @@ const directory = (data, template, pageType) => {
                 return `<a href="${this.industry}-${buySell.toLowerCase()}/index.html"><h4>${buySell} ${this.Industry} in ${this.Australia}&nbsp;»</h4></a>`
                     + `<a href="${this.industry}-${buySell.toLowerCase()}/${this.nsw}.html"><h5>${buySell} ${this.Industry} in ${this.NSW}&nbsp;»</h5></a>`
                     + directoryUl(this.nswRegionList.map(stateRegion => {
-                        return `<li><a href="/${buySell.toLowerCase()}-${this.industry}/${U.filenameFormat(stateRegion)}">${buySell} a ${this.Industry} Business in <strong>${stateRegion}</strong></a></li>`
+                        return `<li><a href="/${buySell.toLowerCase()}-${this.industry}/${U.filenameFormat(stateRegion)}">${buySell} a ${this.Industry} Business in <strong>${stateRegion}</strong>&nbsp;»</a></li>`
                     }).join(""))
                     + `<a href="${this.industry}-${buySell.toLowerCase()}/${this.sydney}/index.html"><h6>${buySell} ${this.Industry} in ${this.Sydney}&nbsp;»</h6></a>`
                     + U.removeAllEmpty(U.fileToList(dataPaths.cityRegions.data)).map(cityRegion => {
@@ -875,7 +884,7 @@ const directory = (data, template, pageType) => {
                             );
                             return subset;
                         }
-                        return `<a href="/${buySell.toLowerCase()}-${this.industry}/${U.filenameFormat(cityRegion)}"><h6 class="h7">${buySell} a ${this.Industry} Business in ${changeCase.titleCase(cityRegion)}</h6></a>`
+                        return `<a href="/${buySell.toLowerCase()}-${this.industry}/${U.filenameFormat(cityRegion)}"><h6 class="h7">${buySell} a ${this.Industry} Business in ${changeCase.titleCase(cityRegion)}&nbsp;»</h6></a>`
                             + directoryUl(cityRegionSuburbs().map(suburb => {
                                 return `<li><a href="/${buySell.toLowerCase()}-${this.industry}/${this.sydney}/${U.filenameFormat(suburb)}">${buySell} a ${this.Industry} Business in <strong>${changeCase.titleCase(suburb)},<br>${changeCase.titleCase(cityRegion)}</strong></a></li>`;
                             }).join(""));
@@ -897,7 +906,7 @@ const directory = (data, template, pageType) => {
     // Outputs
     fs.writeFileSync(context.outputPath, output);
     U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
-    U.genLog("Single", data, context.prettyPath);
+    U.genLog("Single", context.Name, context.prettyPath);
 };
 
 module.exports = {
