@@ -142,6 +142,11 @@ const footerBreadcrumbs = namePathList => {
 </span>`;
 };
 
+const mobileBreadcrumb = (name, path) =>
+    `<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a class="nowrap" href="/${path}">« ${name}</a></li>`
+
+const mobileBreadcrumbs = namePathList => namePathList.map(([name, path]) => mobileBreadcrumb(name, path)).join("")
+
 const scriptTag = s => `<script type="application/ld+json">${s}</script>`;
 
 const schema = namePathList => {
@@ -217,7 +222,7 @@ const makeKeywords = obj => {
     )(obj);
 };
 
-contextualKeywords = ({ trade, industry, name }) => {
+const contextualKeywords = ({ trade, industry, name }) => {
     return {
         contextual: [
             `${trade} a ${industry} Business ${name}`,
@@ -263,5 +268,6 @@ module.exports = {
     mergeDeepAll,
     stringList,
     makeKeywords,
-    contextualKeywords
+    contextualKeywords,
+    mobileBreadcrumbs
 };

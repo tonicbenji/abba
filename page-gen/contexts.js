@@ -23,6 +23,7 @@ const contextMaker = (key, value) => {
         ...contextItem(changeCase.titleCase, "name", value),
         ...contextItem(changeCase.camelCase, key_, value),
         ...contextItem(changeCase.constantCase, "name", value),
+        ...contextItem(U.filenameCase, `filename${key_}`, value),
         filename: U.filenameFormat(value)
     };
 };
@@ -46,7 +47,8 @@ const general = ({ name, pageType, footerType }) => {
         NameNoThe: U.noThe(changeCase.titleCase(name)),
         NAMENOTHE: U.noThe(name.toUpperCase()),
         domain: settings.domain,
-        Domain: U.escForwardSlashes(settings.domain)
+        Domain: U.escForwardSlashes(settings.domain),
+        mobileBreadcrumbs: ""
     };
 };
 
