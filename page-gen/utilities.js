@@ -166,8 +166,11 @@ const ul = s => `<ul>${s}</ul>`;
 
 const li = s => `<li>${s}</li>`;
 
-const nswRegionFooterList = (trade, industry, regionsList) => {
-    return ul(regionsList.map(x => li(link(`${x}&nbsp;»`, `${trade}-${industry}/${changeCase.paramCase(noThe(x))}.html`))).join(""));
+const nswRegionFooterList = (pathSegment, regionsList) => {
+    return ul(
+        `<li><a href="${pathSegment}/sydney/index.html">Sydney&nbsp;»</a></li>` +
+        regionsList.map(x => li(link(`${x}&nbsp;»`, `${pathSegment}/${changeCase.paramCase(noThe(x))}.html`))).join("")
+    );
 }
 
 module.exports = {

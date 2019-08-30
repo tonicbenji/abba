@@ -54,6 +54,9 @@ const home = (data, template, pageType) => {
             contexts.state({ state: dataPaths.state.data }),
             contexts.home()
         ]),
+        get pathSegment() {
+            return `${this.buySell}-${this.industry}`;
+        },
         get path() {
             return [settings.outputLocation, context.filename];
         },
@@ -73,10 +76,10 @@ const home = (data, template, pageType) => {
             return U.removeAllEmpty(U.fileToList(dataPaths.stateRegions.data));
         },
         get footerBuyNswRegions() {
-            return U.nswRegionFooterList("buy", this.industry, this.nswRegions);
+            return U.nswRegionFooterList(this.pathSegment, this.nswRegions);
         },
         get footerSellNswRegions() {
-            return U.nswRegionFooterList("sell", this.industry, this.nswRegions);
+            return U.nswRegionFooterList(this.pathSegment, this.nswRegions);
         }
     };
 
@@ -178,10 +181,13 @@ const country = (data, template, pageType) => {
                 contexts.industry({ industry: dataPaths.industry.data }),
                 contexts.country({ country: dataPaths.country.data })
             ]),
+            get pathSegment() {
+                return `${this.buySell}-${this.industry}`;
+            },
             get path() {
                 return [
                     settings.outputLocation,
-                    `${this.buySell}-${this.industry}`,
+                    this.pathSegment,
                     this.filename
                 ];
             },
@@ -225,10 +231,13 @@ const state = (data, template, pageType) => {
                 contexts.country({ country: dataPaths.country.data }),
                 contexts.state({ state: data })
             ]),
+            get pathSegment() {
+                return `${this.buySell}-${this.industry}`;
+            },
             get path() {
                 return [
                     settings.outputLocation,
-                    `${this.buySell}-${this.industry}`,
+                    this.pathSegment,
                     this.filename
                 ];
             },
@@ -245,7 +254,7 @@ const state = (data, template, pageType) => {
                 return U.schema([["Home", ""], [this.pageTitle, this.path]]);
             },
             get regionFooterUl() {
-                return U.nswRegionFooterList("buy", this.industry, this.nswRegionList);
+                return U.nswRegionFooterList(this.pathSegment, this.nswRegionList);
             },
             get footerBreadcrumbs() {
                 return U.footerBreadcrumbs([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.NSW, `${this.pathSegment}/${this.nsw}.html`]]);
@@ -300,7 +309,7 @@ const stateRegions = (data, template, pageType) => {
                     return U.schema([["Home", ""], [this.pageTitle, this.path]]);
                 },
                 get footerBreadcrumbs() {
-                    return U.footerBreadcrumbs([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.NSW, `${this.pathSegment}/${this.nsw}.html`], [this.Name, `${this.pathSegment}/${this.filename}`]]);
+                    return U.footerBreadcrumbs([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.NSW, `${this.pathSegment}/${this.nsw}.html`], [this.Name, `${this.pathSegment}/${this.namenothe}.html`]]);
                 }
             }
 
@@ -330,10 +339,13 @@ const city = (data, template, pageType) => {
                 contexts.state({ state: dataPaths.state.data }),
                 contexts.city({ city: data })
             ]),
+            get pathSegment() {
+                return `${this.buySell}-${this.industry}`;
+            },
             get path() {
                 return [
                     settings.outputLocation,
-                    `${this.buySell}-${this.industry}`,
+                    this.pathSegment,
                     data,
                     "index.html"
                 ];
@@ -375,10 +387,13 @@ const cityRegions = (data, template, pageType) => {
                     contexts.city({ city: dataPaths.city.data }),
                     contexts.cityRegion({ cityRegion: cityRegion })
                 ]),
+                get pathSegment() {
+                    return `${this.buySell}-${this.industry}`;
+                },
                 get path() {
                     return [
                         settings.outputLocation,
-                        `${this.buySell}-${this.industry}`,
+                        this.pathSegment,
                         U.filenameFormat(cityRegion)
                     ];
                 },
@@ -425,10 +440,13 @@ const suburbs = (data, template, pageType, parentContext) => {
                     contexts.buySell({ buySell }),
                     contexts.suburb({ suburb })
                 ]),
+                get pathSegment() {
+                    return `${this.buySell}-${this.industry}`;
+                },
                 get path() {
                     return [
                         settings.outputLocation,
-                        `${this.buySell}-${this.industry}`,
+                        this.pathSegment,
                         this.filename
                     ];
                 },

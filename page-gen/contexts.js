@@ -108,7 +108,7 @@ const stateRegion = ({ stateRegion }) => {
     return {
         ...contextMaker("", stateRegion),
         ...contextMaker("region", stateRegion),
-        filename: `${stateRegion}.html`
+        filename: U.filenameFormat(stateRegion)
     };
 };
 
