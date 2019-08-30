@@ -100,7 +100,10 @@ module.exports = {
             stateRegion: U.fileToStr("src/templates/nswRegion/footer.html"),
             city: U.fileToStr("src/templates/sydney/footer.html"),
             suburb: U.fileToStr("src/templates/suburb/footer.html"),
-            country: "",
+            country: {
+                buy: U.fileToStr("src/templates/australia/footer-buy.html"),
+                sell: U.fileToStr("src/templates/australia/footer-sell.html")
+            },
             home: U.fileToStr("src/templates/home/footer.html")
         }
     }

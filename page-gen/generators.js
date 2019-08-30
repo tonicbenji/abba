@@ -211,6 +211,7 @@ const country = (data, template, pageType) => {
                     industry: dataPaths.industry.data,
                     buySell
                 }),
+                contexts.state({ state: dataPaths.state.data }),
                 contexts.country({ country: dataPaths.country.data })
             ]),
             get pathSegment() {
@@ -238,6 +239,27 @@ const country = (data, template, pageType) => {
             get schema() {
                 return U.schema([["Home", ""], [this.pageTitle, this.path]]);
             },
+            get footer() {
+                return dataPaths.footer.template.country[this.trade]
+            },
+            get footerBuyNswRegions() {
+                return U.nswRegionFooterList(
+                    `buy-${this.industry}`,
+                    this.nswRegionList
+                );
+            },
+            get footerSellNswRegions() {
+                return U.nswRegionFooterList(
+                    `buy-${this.industry}`,
+                    this.nswRegionList
+                );
+            },
+            get footerBreadcrumbs() {
+                return U.footerBreadcrumbs([
+                    ["Home", ""],
+                    [this.Name, ""]
+                ]);
+            },
             get keywords() {
                 return U.makeKeywords(
                     R.merge(
@@ -251,7 +273,6 @@ const country = (data, template, pageType) => {
                 );
             }
         };
-        console.log(context.keywords);
 
         const templateFile = U.fileToStr(template + context.buySellFilename);
 
