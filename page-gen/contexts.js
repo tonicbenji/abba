@@ -45,7 +45,8 @@ const general = ({ name, pageType, footerType }) => {
         nameNoThe: U.noThe(name.toLowerCase()),
         NameNoThe: U.noThe(changeCase.titleCase(name)),
         NAMENOTHE: U.noThe(name.toUpperCase()),
-        domain: settings.domain
+        domain: settings.domain,
+        Domain: U.escForwardSlashes(settings.domain)
     };
 };
 
@@ -57,7 +58,21 @@ const buySell = ({ buySell }) => {
     };
 };
 
-const industry = ({ industry }) => contextMaker("industry", industry);
+const industry = ({ buySell, industry }) => {
+    return {
+        ...contextMaker("industry", industry),
+        keywordLists: {
+            industry: [
+                `${buySell} ${industry}`,
+                `${buySell} ${industry} Business`,
+                `${buySell} preschool`,
+                `${buySell} mergers`,
+                `${buySell} acquisitions`,
+                `${buySell} ${settings.business.trade}`
+            ]
+        }
+    };
+};
 
 const home = () => {
     return {
@@ -66,10 +81,8 @@ const home = () => {
             return this.title;
         },
         filename: "index.html",
-        keywords: {
-            home: [""]
-        },
-        footerBreadcrumbs: ""
+        footerBreadcrumbs: "",
+        id: U.id("home")
     };
 };
 
@@ -77,13 +90,15 @@ const about = ({ about }) => {
     return {
         title: about,
         filename: U.filenameFormat(about),
+        id: U.id("about")
     };
 };
 
 const contact = ({ contact }) => {
     return {
         title: contact,
-        filename: U.filenameFormat(contact)
+        filename: U.filenameFormat(contact),
+        id: U.id("contact")
     };
 };
 
@@ -91,8 +106,16 @@ const country = ({ country }) => {
     return {
         ...contextMaker("", country),
         filename: "index.html",
-        keywords: {
-            country: [`${country} ${settings.business.trade}`]
+        heroImg: "",
+        contentImg: "childcare-businesses-sydney.jpg",
+        id: U.id("aus"),
+        keywordLists: {
+            country: [
+                `${country} ${settings.business.trade}`,
+                `${settings.business.name} ${
+                    settings.business.trade
+                } ${country}`
+            ]
         }
     };
 };
@@ -101,18 +124,23 @@ const state = ({ state }) => {
     return {
         ...contextMaker("", state),
         ...contextMaker(state, state),
-        nswRegionList: U.removeAllEmpty(U.fileToList(dataPaths.stateRegions.data)),
-        get id() {
-            return U.id(this.name);
-        }
-    }
-}
+        nswRegionList: U.removeAllEmpty(
+            U.fileToList(dataPaths.stateRegions.data)
+        ),
+        heroImg: "preschool-business-brokers-nsw-2.jpg",
+        contentImg: "children-playing-nsw-childcare-businesses.jpg",
+        id: U.id("nsw")
+    };
+};
 
 const stateRegion = ({ stateRegion }) => {
     return {
         ...contextMaker("", stateRegion),
         ...contextMaker("region", stateRegion),
-        filename: U.filenameFormat(stateRegion)
+        filename: U.filenameFormat(stateRegion),
+        heroImg: "childcare-business-nsw.jpg",
+        contentImg: "preschool-business-nsw.jpg",
+        id: U.id("nswRegion")
     };
 };
 
@@ -120,10 +148,12 @@ const city = ({ city }) => {
     return {
         ...contextMaker("", city),
         filename: "index.html",
-        cityRegionList: U.removeAllEmpty(U.fileToList(dataPaths.cityRegions.data)),
-        get id() {
-            return U.id(this.name);
-        }
+        cityRegionList: U.removeAllEmpty(
+            U.fileToList(dataPaths.cityRegions.data)
+        ),
+        heroImg: "childcare-business-sydney.jpg",
+        contentImg: "sydney-childcare-business-little-kid.jpg",
+        id: U.id("sydney")
     };
 };
 
@@ -131,13 +161,17 @@ const cityRegion = ({ cityRegion }) => {
     return {
         ...contextMaker("", cityRegion),
         ...contextMaker("region", cityRegion),
-        cityRegionSuburbs: dataPaths.suburbs.nearby[cityRegion]
+        cityRegionSuburbs: dataPaths.suburbs.nearby[cityRegion],
+        id: U.id("sydney")
     };
 };
 
 const suburb = ({ suburb }) => {
     return {
-        ...contextMaker("", suburb)
+        ...contextMaker("", suburb),
+        heroImg: "",
+        contentImg: "daycare-business-sydney.jpg",
+        id: U.id("suburb")
     };
 };
 

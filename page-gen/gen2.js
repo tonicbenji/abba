@@ -47,7 +47,7 @@ U.directoryStream.write(U.fileToStr(dataPaths.directory.data.header));
 generators.run(dataPaths.firstLevelPageTypes);
 
 if (!settings.genSuburbs) {
-    U.warning("Generating suburbs is turned off.")
+    U.warning("Generating suburbs is turned off.");
 }
 
 U.sitemapStream.write(U.relPath(dataPaths.sitemap.data.footer));

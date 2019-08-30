@@ -5,6 +5,7 @@ const chalk = require("chalk");
 const changeCase = require("change-case");
 const dateFormat = require("dateformat");
 const settings = require("./gen-config");
+const shuffleSeed = require("shuffle-seed");
 
 // Globals
 
@@ -49,6 +50,10 @@ const replaceTokens = (data, template) => {
     }, data);
     return OUTPUT;
 };
+
+const escForwardSlashes = str => R.replace(/\//g, "\\/", str);
+
+const stringList = s => s.join(", ");
 
 // Data Manipulation
 
@@ -125,7 +130,7 @@ const link = (name, path) => `<a href="/${path}">${name}</a>`;
 const footerBreadcrumbs = namePathList => {
     const list = namePathList.map((x, i) => {
         const [name, path] = x;
-        if ((i + 1) !== namePathList.length) {
+        if (i + 1 !== namePathList.length) {
             return link(name, path);
         } else {
             return name;
@@ -133,9 +138,7 @@ const footerBreadcrumbs = namePathList => {
     });
     return `
 <span class="footerBreadcrumbs text-center block">
-    ${list.join(
-        '<span class="fa fa-angle-right footerSeparator"></span>'
-    )}
+    ${list.join('<span class="fa fa-angle-right footerSeparator"></span>')}
 </span>`;
 };
 
@@ -169,15 +172,59 @@ const li = s => `<li>${s}</li>`;
 const nswRegionFooterList = (pathSegment, regionsList) => {
     return ul(
         `<li><a href="/${pathSegment}/sydney/index.html">Sydney&nbsp;»</a></li>` +
-        regionsList.map(x => li(link(`${x}&nbsp;»`, `${pathSegment}/${changeCase.paramCase(noThe(x))}.html`))).join("")
+            regionsList
+                .map(x =>
+                    li(
+                        link(
+                            `${x}&nbsp;»`,
+                            `${pathSegment}/${changeCase.paramCase(
+                                noThe(x)
+                            )}.html`
+                        )
+                    )
+                )
+                .join("")
     );
-}
+};
 
 const cityRegionFooterList = (pathSegment, city, regionsList) => {
-    return ul(regionsList.map(x => li(link(`${x}&nbsp;»`, `${pathSegment}/${city}/${changeCase.paramCase(noThe(x))}.html`))).join(""));
-}
+    return ul(
+        regionsList
+            .map(x =>
+                li(
+                    link(
+                        `${x}&nbsp;»`,
+                        `${pathSegment}/${city}/${changeCase.paramCase(
+                            noThe(x)
+                        )}.html`
+                    )
+                )
+            )
+            .join("")
+    );
+};
 
-const id = id => `id=${id}`
+const id = id => `id=${id}`;
+
+const makeKeywords = obj => {
+    return R.pipe(
+        R.values,
+        R.unnest,
+        l => shuffleSeed.shuffle(l, this.name),
+        R.take(8),
+        stringList,
+        s => `"${s}"`
+    )(obj);
+};
+
+contextualKeywords = ({ trade, industry, name }) => {
+    return {
+        contextual: [
+            `${trade} a ${industry} Business ${name}`,
+            `${trade} ${settings.business.trade} ${name}`
+        ]
+    };
+};
 
 module.exports = {
     pathToList,
@@ -211,5 +258,10 @@ module.exports = {
     li,
     nswRegionFooterList,
     cityRegionFooterList,
-    id
+    id,
+    escForwardSlashes,
+    mergeDeepAll,
+    stringList,
+    makeKeywords,
+    contextualKeywords
 };

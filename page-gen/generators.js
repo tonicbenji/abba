@@ -48,9 +48,12 @@ const run = (pageTypes, context) => {
 
 const home = (data, template, pageType) => {
     const context = {
-        ...R.mergeAll([
+        ...U.mergeDeepAll([
             contexts.general({ name: data, pageType, footerType: "home" }),
-            contexts.industry({ industry: dataPaths.industry.data }),
+            contexts.industry({
+                industry: dataPaths.industry.data,
+                buySell: "Trade"
+            }),
             contexts.country({ country: dataPaths.country.data }),
             contexts.state({ state: dataPaths.state.data }),
             contexts.home()
@@ -74,10 +77,19 @@ const home = (data, template, pageType) => {
             return U.removeAllEmpty(U.fileToList(dataPaths.stateRegions.data));
         },
         get footerBuyNswRegions() {
-            return U.nswRegionFooterList(`buy-${this.industry}`, this.nswRegions);
+            return U.nswRegionFooterList(
+                `buy-${this.industry}`,
+                this.nswRegions
+            );
         },
         get footerSellNswRegions() {
-            return U.nswRegionFooterList(`buy-${this.industry}`, this.nswRegions);
+            return U.nswRegionFooterList(
+                `buy-${this.industry}`,
+                this.nswRegions
+            );
+        },
+        get keywords() {
+            return U.makeKeywords(this.keywordLists);
         }
     };
 
@@ -94,10 +106,13 @@ const home = (data, template, pageType) => {
 
 const about = (data, template, pageType) => {
     const context = {
-        ...R.mergeAll([
+        ...U.mergeDeepAll([
             contexts.general({ name: data, pageType, footerType: "page" }),
             contexts.home(),
-            contexts.industry({ industry: dataPaths.industry.data }),
+            contexts.industry({
+                industry: dataPaths.industry.data,
+                buySell: "Trade"
+            }),
             contexts.country({ country: dataPaths.country.data }),
             contexts.about({ about: data })
         ]),
@@ -117,7 +132,13 @@ const about = (data, template, pageType) => {
             return U.schema([[this.home, ""], [this.title, this.filename]]);
         },
         get footerBreadcrumbs() {
-            return U.footerBreadcrumbs([["Home", ""], [this.title, this.filename]]);
+            return U.footerBreadcrumbs([
+                ["Home", ""],
+                [this.title, this.filename]
+            ]);
+        },
+        get keywords() {
+            return U.makeKeywords(this.keywordLists);
         }
     };
 
@@ -134,10 +155,13 @@ const about = (data, template, pageType) => {
 
 const contact = (data, template, pageType) => {
     const context = {
-        ...R.mergeAll([
+        ...U.mergeDeepAll([
             contexts.general({ name: data, pageType, footerType: "page" }),
             contexts.home(),
-            contexts.industry({ industry: dataPaths.industry.data }),
+            contexts.industry({
+                industry: dataPaths.industry.data,
+                buySell: "Trade"
+            }),
             contexts.country({ country: dataPaths.country.data }),
             contexts.contact({ contact: data })
         ]),
@@ -155,6 +179,9 @@ const contact = (data, template, pageType) => {
         },
         get schema() {
             return U.schema([["Home", ""], [this.title, this.prettyPath]]);
+        },
+        get keywords() {
+            return U.makeKeywords(this.keywordLists);
         }
     };
 
@@ -172,11 +199,18 @@ const contact = (data, template, pageType) => {
 const country = (data, template, pageType) => {
     dataPaths.buySell.data.map(buySell => {
         const context = {
-            ...R.mergeAll([
-                contexts.general({ name: data, pageType, footerType: "country" }),
+            ...U.mergeDeepAll([
+                contexts.general({
+                    name: data,
+                    pageType,
+                    footerType: "country"
+                }),
                 contexts.home(),
                 contexts.buySell({ buySell }),
-                contexts.industry({ industry: dataPaths.industry.data }),
+                contexts.industry({
+                    industry: dataPaths.industry.data,
+                    buySell
+                }),
                 contexts.country({ country: dataPaths.country.data })
             ]),
             get pathSegment() {
@@ -203,8 +237,21 @@ const country = (data, template, pageType) => {
             },
             get schema() {
                 return U.schema([["Home", ""], [this.pageTitle, this.path]]);
+            },
+            get keywords() {
+                return U.makeKeywords(
+                    R.merge(
+                        this.keywordLists,
+                        U.contextualKeywords({
+                            trade: this.Trade,
+                            industry: this.Industry,
+                            name: this.Name
+                        })
+                    )
+                );
             }
         };
+        console.log(context.keywords);
 
         const templateFile = U.fileToStr(template + context.buySellFilename);
 
@@ -212,8 +259,12 @@ const country = (data, template, pageType) => {
 
         // Outputs
         fs.writeFileSync(context.outputPath, output);
-        U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
-        U.directoryStream.write(U.directoryItem(context.prettyPath, context.name));
+        U.sitemapStream.write(
+            U.sitemapItem(context.domainPath, U.universalDate)
+        );
+        U.directoryStream.write(
+            U.directoryItem(context.prettyPath, context.name)
+        );
         U.genLog(buySell, data, context.prettyPath);
     });
 };
@@ -221,11 +272,14 @@ const country = (data, template, pageType) => {
 const state = (data, template, pageType) => {
     dataPaths.buySell.data.map(buySell => {
         const context = {
-            ...R.mergeAll([
+            ...U.mergeDeepAll([
                 contexts.general({ name: data, pageType, footerType: "state" }),
                 contexts.home(),
                 contexts.buySell({ buySell }),
-                contexts.industry({ industry: dataPaths.industry.data }),
+                contexts.industry({
+                    industry: dataPaths.industry.data,
+                    buySell
+                }),
                 contexts.country({ country: dataPaths.country.data }),
                 contexts.state({ state: data })
             ]),
@@ -252,13 +306,34 @@ const state = (data, template, pageType) => {
                 return U.schema([["Home", ""], [this.pageTitle, this.path]]);
             },
             get regionFooterHeading() {
-                return `<div class="regionFooterHeading">${this.Trade} a ${this.Industry} Business in one of ${this.NSW}’s Regions:</div>`;
+                return `<div class="regionFooterHeading">${this.Trade} a ${
+                    this.Industry
+                } Business in one of ${this.NSW}’s Regions:</div>`;
             },
             get regionFooterUl() {
-                return U.nswRegionFooterList(this.pathSegment, this.nswRegionList);
+                return U.nswRegionFooterList(
+                    this.pathSegment,
+                    this.nswRegionList
+                );
             },
             get footerBreadcrumbs() {
-                return U.footerBreadcrumbs([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.NSW, `${this.pathSegment}/${this.nsw}.html`]]);
+                return U.footerBreadcrumbs([
+                    ["Home", ""],
+                    [this.Australia, `${this.pathSegment}/index.html`],
+                    [this.NSW, `${this.pathSegment}/${this.nsw}.html`]
+                ]);
+            },
+            get keywords() {
+                return U.makeKeywords(
+                    R.merge(
+                        this.keywordLists,
+                        U.contextualKeywords({
+                            trade: this.Trade,
+                            industry: this.Industry,
+                            name: this.Name
+                        })
+                    )
+                );
             }
         };
 
@@ -268,8 +343,12 @@ const state = (data, template, pageType) => {
 
         // Outputs
         fs.writeFileSync(context.outputPath, output);
-        U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
-        U.directoryStream.write(U.directoryItem(context.prettyPath, context.name));
+        U.sitemapStream.write(
+            U.sitemapItem(context.domainPath, U.universalDate)
+        );
+        U.directoryStream.write(
+            U.directoryItem(context.prettyPath, context.name)
+        );
         U.genLog(buySell, data, context.prettyPath);
     });
 };
@@ -279,10 +358,17 @@ const stateRegions = (data, template, pageType) => {
     stateRegions.map(stateRegion => {
         dataPaths.buySell.data.map(buySell => {
             const context = {
-                ...R.mergeAll([
-                    contexts.general({ name: stateRegion, pageType, footerType: "stateRegion" }),
+                ...U.mergeDeepAll([
+                    contexts.general({
+                        name: stateRegion,
+                        pageType,
+                        footerType: "stateRegion"
+                    }),
                     contexts.buySell({ buySell }),
-                    contexts.industry({ industry: dataPaths.industry.data }),
+                    contexts.industry({
+                        industry: dataPaths.industry.data,
+                        buySell
+                    }),
                     contexts.country({ country: dataPaths.country.data }),
                     contexts.state({ state: dataPaths.state.data }),
                     contexts.stateRegion({ stateRegion })
@@ -307,15 +393,40 @@ const stateRegions = (data, template, pageType) => {
                     return settings.domain + context.prettyPath;
                 },
                 get schema() {
-                    return U.schema([["Home", ""], [this.pageTitle, this.path]]);
+                    return U.schema([
+                        ["Home", ""],
+                        [this.pageTitle, this.path]
+                    ]);
                 },
                 get regionFooterHeading() {
-                    return `<div class="regionFooterHeading">${this.Trade} a ${this.Industry} Business in one of ${this.NameNoThe}’s Regions:</div>`;
+                    return `<div class="regionFooterHeading">${this.Trade} a ${
+                        this.Industry
+                    } Business in one of ${this.NameNoThe}’s Regions:</div>`;
                 },
                 get footerBreadcrumbs() {
-                    return U.footerBreadcrumbs([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.NSW, `${this.pathSegment}/${this.nsw}.html`], [this.Name, `${this.pathSegment}/${this.namenothe}.html`]]);
+                    return U.footerBreadcrumbs([
+                        ["Home", ""],
+                        [this.Australia, `${this.pathSegment}/index.html`],
+                        [this.NSW, `${this.pathSegment}/${this.nsw}.html`],
+                        [
+                            this.Name,
+                            `${this.pathSegment}/${this.namenothe}.html`
+                        ]
+                    ]);
+                },
+                get keywords() {
+                    return U.makeKeywords(
+                        R.merge(
+                            this.keywordLists,
+                            U.contextualKeywords({
+                                trade: this.Trade,
+                                industry: this.Industry,
+                                name: this.Name
+                            })
+                        )
+                    );
                 }
-            }
+            };
 
             const templateFile = U.fileToStr(
                 template + context.buySellFilename
@@ -325,8 +436,12 @@ const stateRegions = (data, template, pageType) => {
 
             // Outputs
             fs.writeFileSync(context.outputPath, output);
-            U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
-            U.directoryStream.write(U.directoryItem(context.prettyPath, context.name));
+            U.sitemapStream.write(
+                U.sitemapItem(context.domainPath, U.universalDate)
+            );
+            U.directoryStream.write(
+                U.directoryItem(context.prettyPath, context.name)
+            );
             U.genLog(buySell, stateRegion, context.prettyPath);
         });
     });
@@ -335,10 +450,13 @@ const stateRegions = (data, template, pageType) => {
 const city = (data, template, pageType) => {
     dataPaths.buySell.data.map(buySell => {
         const context = {
-            ...R.mergeAll([
+            ...U.mergeDeepAll([
                 contexts.general({ name: data, pageType, footerType: "city" }),
                 contexts.buySell({ buySell }),
-                contexts.industry({ industry: dataPaths.industry.data }),
+                contexts.industry({
+                    industry: dataPaths.industry.data,
+                    buySell
+                }),
                 contexts.country({ country: dataPaths.country.data }),
                 contexts.state({ state: dataPaths.state.data }),
                 contexts.city({ city: data })
@@ -364,16 +482,42 @@ const city = (data, template, pageType) => {
                 return settings.domain + context.prettyPath;
             },
             get schema() {
-                return U.schema([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.Name, this.prettyPath]]);
+                return U.schema([
+                    ["Home", ""],
+                    [this.Australia, `${this.pathSegment}/index.html`],
+                    [this.Name, this.prettyPath]
+                ]);
             },
             get regionFooterHeading() {
-                return `<div class="regionFooterHeading">${this.Trade} a ${this.Industry} Business in one of ${this.Name}’s Regions:</div>`;
+                return `<div class="regionFooterHeading">${this.Trade} a ${
+                    this.Industry
+                } Business in one of ${this.Name}’s Regions:</div>`;
             },
             get regionFooterUl() {
-                return U.cityRegionFooterList(this.pathSegment, this.name, this.cityRegionList);
+                return U.cityRegionFooterList(
+                    this.pathSegment,
+                    this.name,
+                    this.cityRegionList
+                );
             },
             get footerBreadcrumbs() {
-                return U.footerBreadcrumbs([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.Name, ""]]);
+                return U.footerBreadcrumbs([
+                    ["Home", ""],
+                    [this.Australia, `${this.pathSegment}/index.html`],
+                    [this.Name, ""]
+                ]);
+            },
+            get keywords() {
+                return U.makeKeywords(
+                    R.merge(
+                        this.keywordLists,
+                        U.contextualKeywords({
+                            trade: this.Trade,
+                            industry: this.Industry,
+                            name: this.Name
+                        })
+                    )
+                );
             }
         };
 
@@ -383,8 +527,12 @@ const city = (data, template, pageType) => {
 
         // Outputs
         fs.writeFileSync(context.outputPath, output);
-        U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
-        U.directoryStream.write(U.directoryItem(context.prettyPath, context.name));
+        U.sitemapStream.write(
+            U.sitemapItem(context.domainPath, U.universalDate)
+        );
+        U.directoryStream.write(
+            U.directoryItem(context.prettyPath, context.name)
+        );
         U.genLog(buySell, data, context.prettyPath);
     });
 };
@@ -394,10 +542,17 @@ const cityRegions = (data, template, pageType) => {
     cityRegions.map(cityRegion => {
         dataPaths.buySell.data.map(buySell => {
             const context = {
-                ...R.mergeAll([
-                    contexts.general({ name: data, pageType, footerType: "city" }),
+                ...U.mergeDeepAll([
+                    contexts.general({
+                        name: data,
+                        pageType,
+                        footerType: "city"
+                    }),
                     contexts.buySell({ buySell }),
-                    contexts.industry({ industry: dataPaths.industry.data }),
+                    contexts.industry({
+                        industry: dataPaths.industry.data,
+                        buySell
+                    }),
                     contexts.country({ country: dataPaths.country.data }),
                     contexts.state({ state: dataPaths.state.data }),
                     contexts.city({ city: dataPaths.city.data }),
@@ -424,21 +579,65 @@ const cityRegions = (data, template, pageType) => {
                     return settings.domain + context.prettyPath;
                 },
                 get schema() {
-                    return U.schema([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.Sydney, `${this.pathSegment}/${this.sydney}/index.html`], [this.Name, this.prettyPath]]);
+                    return U.schema([
+                        ["Home", ""],
+                        [this.Australia, `${this.pathSegment}/index.html`],
+                        [
+                            this.Sydney,
+                            `${this.pathSegment}/${this.sydney}/index.html`
+                        ],
+                        [this.Name, this.prettyPath]
+                    ]);
                 },
                 get cityRegionSuburbs() {
-                    const list = U.removeAllEmpty(U.fileToList(dataPaths.cityRegions.suburbs + `${U.filenameCase(cityRegion)}.txt`));
-                    const subset = R.take(Math.ceil(list.length * settings.subset), shuffleSeed.shuffle(list, cityRegion));
+                    const list = U.removeAllEmpty(
+                        U.fileToList(
+                            dataPaths.cityRegions.suburbs +
+                                `${U.filenameCase(cityRegion)}.txt`
+                        )
+                    );
+                    const subset = R.take(
+                        Math.ceil(list.length * settings.subset),
+                        shuffleSeed.shuffle(list, cityRegion)
+                    );
                     return subset;
                 },
                 get regionFooterHeading() {
-                    return R.isEmpty(this.cityRegionSuburbs) ? "" : `<div class="regionFooterHeading">${this.Trade} a ${this.Industry} Business in one of ${this.Name}’s Suburbs:</div>`;
+                    return R.isEmpty(this.cityRegionSuburbs)
+                        ? ""
+                        : `<div class="regionFooterHeading">${this.Trade} a ${
+                              this.Industry
+                          } Business in one of ${this.Name}’s Suburbs:</div>`;
                 },
                 get regionFooterUl() {
-                    return U.cityRegionFooterList(this.pathSegment, this.sydney, this.cityRegionSuburbs);
+                    return U.cityRegionFooterList(
+                        this.pathSegment,
+                        this.sydney,
+                        this.cityRegionSuburbs
+                    );
                 },
                 get footerBreadcrumbs() {
-                    return U.footerBreadcrumbs([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.Sydney, `${this.pathSegment}/${this.sydney}/index.html`], [this.Name, ""]]);
+                    return U.footerBreadcrumbs([
+                        ["Home", ""],
+                        [this.Australia, `${this.pathSegment}/index.html`],
+                        [
+                            this.Sydney,
+                            `${this.pathSegment}/${this.sydney}/index.html`
+                        ],
+                        [this.Name, ""]
+                    ]);
+                },
+                get keywords() {
+                    return U.makeKeywords(
+                        R.merge(
+                            this.keywordLists,
+                            U.contextualKeywords({
+                                trade: this.Trade,
+                                industry: this.Industry,
+                                name: this.Name
+                            })
+                        )
+                    );
                 }
             };
 
@@ -450,8 +649,12 @@ const cityRegions = (data, template, pageType) => {
 
             // Outputs
             fs.writeFileSync(context.outputPath, output);
-            U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
-            U.directoryStream.write(U.directoryItem(context.prettyPath, context.name));
+            U.sitemapStream.write(
+                U.sitemapItem(context.domainPath, U.universalDate)
+            );
+            U.directoryStream.write(
+                U.directoryItem(context.prettyPath, context.name)
+            );
             U.genLog(buySell, cityRegion, context.prettyPath);
 
             // Child generator
@@ -466,9 +669,13 @@ const suburbs = (data, template, pageType, parentContext) => {
     data.map(suburb =>
         dataPaths.buySell.data.map(buySell => {
             const context = {
-                ...R.mergeAll([
+                ...U.mergeDeepAll([
                     parentContext,
-                    contexts.general({ name: suburb, pageType, footerType: "suburb" }),
+                    contexts.general({
+                        name: suburb,
+                        pageType,
+                        footerType: "suburb"
+                    }),
                     contexts.buySell({ buySell }),
                     contexts.suburb({ suburb })
                 ]),
@@ -493,16 +700,40 @@ const suburbs = (data, template, pageType, parentContext) => {
                     return settings.domain + context.prettyPath;
                 },
                 get nearbySuburbs() {
-                    return R.intersection(dataPaths.suburbs.nearby[suburb], this.cityRegionSuburbs);
+                    return R.intersection(
+                        dataPaths.suburbs.nearby[suburb],
+                        this.cityRegionSuburbs
+                    );
                 },
                 get nearbySuburbsHeading() {
-                    return R.isEmpty(this.nearbySuburbs) ? "" : `<div class="regionFooterHeading">${this.Trade}ing a ${this.Industry} Business in Nearby Suburbs:</div>`
+                    return R.isEmpty(this.nearbySuburbs)
+                        ? ""
+                        : `<div class="regionFooterHeading">${
+                              this.Trade
+                          }ing a ${
+                              this.Industry
+                          } Business in Nearby Suburbs:</div>`;
                 },
                 get nearby() {
-                    // TODO: filter this against the subset list
-                    return U.cityRegionFooterList(this.pathSegment, this.sydney, this.nearbySuburbs);
+                    return U.cityRegionFooterList(
+                        this.pathSegment,
+                        this.sydney,
+                        this.nearbySuburbs
+                    );
+                },
+                get keywords() {
+                    return U.makeKeywords(
+                        R.merge(
+                            this.keywordLists,
+                            U.contextualKeywords({
+                                trade: this.Trade,
+                                industry: this.Industry,
+                                name: this.Name
+                            })
+                        )
+                    );
                 }
-            }
+            };
 
             const templateFile = U.fileToStr(
                 template + context.buySellFilename
@@ -512,7 +743,9 @@ const suburbs = (data, template, pageType, parentContext) => {
 
             // Outputs
             fs.writeFileSync(context.outputPath, output);
-            U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
+            U.sitemapStream.write(
+                U.sitemapItem(context.domainPath, U.universalDate)
+            );
             U.directoryStream.write(
                 U.directoryItem(
                     context.prettyPath,
