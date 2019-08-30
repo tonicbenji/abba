@@ -54,9 +54,6 @@ const home = (data, template, pageType) => {
             contexts.state({ state: dataPaths.state.data }),
             contexts.home()
         ]),
-        get pathSegment() {
-            return `${this.buySell}-${this.industry}`;
-        },
         get path() {
             return [settings.outputLocation, context.filename];
         },
@@ -76,10 +73,10 @@ const home = (data, template, pageType) => {
             return U.removeAllEmpty(U.fileToList(dataPaths.stateRegions.data));
         },
         get footerBuyNswRegions() {
-            return U.nswRegionFooterList(this.pathSegment, this.nswRegions);
+            return U.nswRegionFooterList(`buy-${this.industry}`, this.nswRegions);
         },
         get footerSellNswRegions() {
-            return U.nswRegionFooterList(this.pathSegment, this.nswRegions);
+            return U.nswRegionFooterList(`buy-${this.industry}`, this.nswRegions);
         }
     };
 
@@ -358,6 +355,12 @@ const city = (data, template, pageType) => {
             },
             get domainPath() {
                 return settings.domain + context.prettyPath;
+            },
+            get regionFooterUl() {
+                return U.cityRegionFooterList(this.pathSegment, this.cityRegionList);
+            },
+            get footerBreadcrumbs() {
+                return U.footerBreadcrumbs([["Home", ""], [this.Australia, `${this.pathSegment}/index.html`], [this.Name, ""]]);
             }
         };
 
@@ -394,6 +397,7 @@ const cityRegions = (data, template, pageType) => {
                     return [
                         settings.outputLocation,
                         this.pathSegment,
+                        this.sydney,
                         U.filenameFormat(cityRegion)
                     ];
                 },

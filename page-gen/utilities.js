@@ -173,6 +173,12 @@ const nswRegionFooterList = (pathSegment, regionsList) => {
     );
 }
 
+const cityRegionFooterList = (pathSegment, regionsList) => {
+    return ul(regionsList.map(x => li(link(`${x}&nbsp;»`, `${pathSegment}/${changeCase.paramCase(noThe(x))}.html`))).join(""));
+}
+
+const id = id => `id=${id}`
+
 module.exports = {
     pathToList,
     relPath,
@@ -203,5 +209,7 @@ module.exports = {
     schema,
     ul,
     li,
-    nswRegionFooterList
+    nswRegionFooterList,
+    cityRegionFooterList,
+    id
 };

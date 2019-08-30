@@ -44,7 +44,8 @@ const general = ({ name, pageType, footerType }) => {
         ...contextMaker("", name),
         nameNoThe: U.noThe(name.toLowerCase()),
         NameNoThe: U.noThe(changeCase.titleCase(name)),
-        NAMENOTHE: U.noThe(name.toUpperCase())
+        NAMENOTHE: U.noThe(name.toUpperCase()),
+        domain: settings.domain
     };
 };
 
@@ -100,7 +101,10 @@ const state = ({ state }) => {
     return {
         ...contextMaker("", state),
         ...contextMaker(state, state),
-        nswRegionList: U.removeAllEmpty(U.fileToList(dataPaths.stateRegions.data))
+        nswRegionList: U.removeAllEmpty(U.fileToList(dataPaths.stateRegions.data)),
+        get id() {
+            return U.id(this.name);
+        }
     }
 }
 
@@ -116,6 +120,10 @@ const city = ({ city }) => {
     return {
         ...contextMaker("", city),
         filename: "index.html",
+        cityRegionList: U.removeAllEmpty(U.fileToList(dataPaths.cityRegions.data)),
+        get id() {
+            return U.id(this.name);
+        }
     };
 };
 

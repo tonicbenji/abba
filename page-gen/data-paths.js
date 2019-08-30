@@ -87,7 +87,7 @@ module.exports = {
         footerHeadingSell: '<div class="home-footer-heading-sell">Sell:</div>',
         footerBuyNsw: '<ul class="home-footer-heading-nsw"><li><a href="/buy-childcare/nsw.html">NSW</a></li></ul>',
         footerSellNsw: '<ul class="home-footer-heading-nsw"><li><a href="/sell-childcare/nsw.html">NSW</a></li></ul>',
-        regionFooterHeading: `<div class="regionFooterHeading">{{Trade}} a Childcare Business in one of NSW’s Regions:</div>`
+        regionFooterHeading: `<div class="regionFooterHeading">{{Trade}} a Childcare Business in one of {{Name}}’s Regions:</div>`
     },
     footer: {
         template: {
