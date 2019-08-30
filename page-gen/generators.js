@@ -84,7 +84,7 @@ const home = (data, template, pageType) => {
         },
         get footerSellNswRegions() {
             return U.nswRegionFooterList(
-                `buy-${this.industry}`,
+                `sell-${this.industry}`,
                 this.nswRegions
             );
         },
@@ -582,7 +582,7 @@ const cityRegions = (data, template, pageType) => {
             const context = {
                 ...U.mergeDeepAll([
                     contexts.general({
-                        name: data,
+                        name: cityRegion,
                         pageType,
                         footerType: "city"
                     }),
@@ -596,6 +596,9 @@ const cityRegions = (data, template, pageType) => {
                     contexts.city({ city: dataPaths.city.data }),
                     contexts.cityRegion({ cityRegion: cityRegion })
                 ]),
+                get RegionNoThe() {
+                    return this.NameNoThe;
+                },
                 get pathSegment() {
                     return `${this.buySell}-${this.industry}`;
                 },
@@ -811,7 +814,6 @@ const suburbs = (data, template, pageType, parentContext) => {
                     ]);
                 }
             };
-            console.log(context);
 
             const templateFile = U.fileToStr(
                 template + context.buySellFilename

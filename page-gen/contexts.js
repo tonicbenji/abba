@@ -24,7 +24,13 @@ const contextMaker = (key, value) => {
         ...contextItem(changeCase.camelCase, key_, value),
         ...contextItem(changeCase.constantCase, "name", value),
         ...contextItem(U.filenameCase, `filename${key_}`, value),
-        filename: U.filenameFormat(value)
+        filename: U.filenameFormat(value),
+        get nameThe() {
+            return this.Name;
+        },
+        get NameThe() {
+            return this.Name;
+        }
     };
 };
 
