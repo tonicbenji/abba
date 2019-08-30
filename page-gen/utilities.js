@@ -168,13 +168,13 @@ const li = s => `<li>${s}</li>`;
 
 const nswRegionFooterList = (pathSegment, regionsList) => {
     return ul(
-        `<li><a href="${pathSegment}/sydney/index.html">Sydney&nbsp;»</a></li>` +
+        `<li><a href="/${pathSegment}/sydney/index.html">Sydney&nbsp;»</a></li>` +
         regionsList.map(x => li(link(`${x}&nbsp;»`, `${pathSegment}/${changeCase.paramCase(noThe(x))}.html`))).join("")
     );
 }
 
-const cityRegionFooterList = (pathSegment, regionsList) => {
-    return ul(regionsList.map(x => li(link(`${x}&nbsp;»`, `${pathSegment}/${changeCase.paramCase(noThe(x))}.html`))).join(""));
+const cityRegionFooterList = (pathSegment, city, regionsList) => {
+    return ul(regionsList.map(x => li(link(`${x}&nbsp;»`, `${pathSegment}/${city}/${changeCase.paramCase(noThe(x))}.html`))).join(""));
 }
 
 const id = id => `id=${id}`
