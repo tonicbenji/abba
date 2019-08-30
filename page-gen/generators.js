@@ -822,7 +822,7 @@ const directory = (data, template, pageType) => {
             contexts.general({
                 name: pageType,
                 pageType,
-                footerType: pageType
+                footerType: "page"
             }),
             contexts.home(),
             contexts.industry({
@@ -881,6 +881,12 @@ const directory = (data, template, pageType) => {
                             }).join(""));
                     }).join("");
             }).join("");
+        },
+        get footerBreadcrumbs() {
+            return U.footerBreadcrumbs([
+                ["Home", ""],
+                [this.Name, ""]
+            ]);
         }
     };
 
