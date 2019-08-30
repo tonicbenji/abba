@@ -10,7 +10,8 @@ module.exports = {
         "state",
         "state regions",
         "city",
-        "city regions"
+        "city regions",
+        "directory"
     ],
     buySell: {
         data: ["Buy", "Sell"]
@@ -64,10 +65,8 @@ module.exports = {
         }
     },
     directory: {
-        data: {
-            header: "src/templates/directory/header.html",
-            footer: "src/templates/directory/footer.html"
-        }
+        data: "",
+        template: "src/templates/directory/directory.html"
     },
     components: {
         tagline: "Business Sales, Acquisitions and Mergers",

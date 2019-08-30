@@ -183,6 +183,14 @@ const suburb = ({ suburb }) => {
     };
 };
 
+const directory = () => {
+    return {
+        ...contextMaker("", "directory"),
+        title: "Directory",
+        filename: "directory.html"
+    }
+}
+
 module.exports = {
     contextItem,
     contextMaker,
@@ -197,5 +205,6 @@ module.exports = {
     stateRegion,
     city,
     cityRegion,
-    suburb
+    suburb,
+    directory
 };

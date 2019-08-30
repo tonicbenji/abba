@@ -42,16 +42,10 @@ const settings = require("./gen-config");
 const performanceTimerStart = now();
 
 U.sitemapStream.write(U.relPath(dataPaths.sitemap.data.header));
-U.directoryStream.write(U.fileToStr(dataPaths.directory.data.header));
 
 generators.run(dataPaths.firstLevelPageTypes);
 
-if (!settings.genSuburbs) {
-    U.warning("Generating suburbs is turned off.");
-}
-
 U.sitemapStream.write(U.relPath(dataPaths.sitemap.data.footer));
-U.directoryStream.write(U.fileToStr(dataPaths.directory.data.footer));
 
 const performanceTimerEnd = now();
 
