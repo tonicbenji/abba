@@ -13,44 +13,33 @@ const run = (pageTypes, context) => {
         const { data, template } = dataPaths[changeCase.camelCase(pageType)];
         switch (pageType) {
             case "home":
-                // TODO: move these headerLogs into the output sections/functions of generators
-                U.headerLog(changeCase.titleCase(pageType));
                 home(data, template, pageType);
                 break;
             case "about":
-                U.headerLog(changeCase.titleCase(pageType));
                 about(data, template, pageType);
                 break;
             case "contact":
-                U.headerLog(changeCase.titleCase(pageType));
                 contact(data, template, pageType);
                 break;
             case "country":
-                U.headerLog(changeCase.titleCase(pageType));
                 country(data, template, pageType);
                 break;
             case "state":
-                U.headerLog(changeCase.titleCase(pageType));
                 state(data, template, pageType);
                 break;
             case "state regions":
-                U.headerLog(changeCase.titleCase(pageType));
                 stateRegions(data, template, pageType);
                 break;
             case "city":
-                U.headerLog(changeCase.titleCase(pageType));
                 city(data, template, pageType);
                 break;
             case "city regions":
-                U.headerLog(changeCase.titleCase(pageType));
                 cityRegions(data, template, pageType);
                 break;
             case "suburbs":
-                U.headerLog(changeCase.titleCase(`${context.name} ${pageType}`));
                 suburbs(context.cityRegionSuburbs, template, pageType, context);
                 break;
             case "directory":
-                U.headerLog(changeCase.titleCase(pageType));
                 directory(data, template, pageType);
                 break;
             default:
@@ -60,6 +49,7 @@ const run = (pageTypes, context) => {
 };
 
 const home = (data, template, pageType) => {
+    U.headerLog(changeCase.titleCase(pageType));
     const context = {
         ...U.mergeDeepAll([
             contexts.general({ name: data, pageType, footerType: "home" }),
@@ -71,17 +61,13 @@ const home = (data, template, pageType) => {
             contexts.state({ state: dataPaths.state.data }),
             contexts.home()
         ]),
-        get path() {
-            return [settings.outputLocation, context.filename];
-        },
-        get prettyPath() {
-            return U.prettyPath(this.path);
-        },
-        get outputPath() {
-            return U.relPathList(this.path);
-        },
-        get domainPath() {
-            return settings.domain + context.prettyPath;
+        get paths() {
+            const rel = [ this.filename ];
+            const path = R.prepend(settings.outputLocation, rel);
+            const pretty = U.prettyPath(rel)
+            const output = U.relPathList(path)
+            const domain = settings.domain + pretty
+            return { rel, path, pretty, output, domain };
         },
         get schema() {
             return U.schema([[this.home, ""]]);
@@ -110,6 +96,7 @@ const home = (data, template, pageType) => {
 };
 
 const about = (data, template, pageType) => {
+    U.headerLog(changeCase.titleCase(pageType));
     const context = {
         ...U.mergeDeepAll([
             contexts.general({ name: data, pageType, footerType: "page" }),
@@ -121,17 +108,13 @@ const about = (data, template, pageType) => {
             contexts.country({ country: dataPaths.country.data }),
             contexts.about({ about: data })
         ]),
-        get path() {
-            return [settings.outputLocation, context.filename];
-        },
-        get prettyPath() {
-            return U.prettyPath(this.path);
-        },
-        get outputPath() {
-            return U.relPathList(this.path);
-        },
-        get domainPath() {
-            return settings.domain + context.prettyPath;
+        get paths() {
+            const rel = [ this.filename ];
+            const path = R.prepend(settings.outputLocation, rel);
+            const pretty = U.prettyPath(rel)
+            const output = U.relPathList(path)
+            const domain = settings.domain + pretty
+            return { rel, path, pretty, output, domain };
         },
         get schema() {
             return U.schema([[this.home, ""], [this.title, this.filename]]);
@@ -151,6 +134,7 @@ const about = (data, template, pageType) => {
 };
 
 const contact = (data, template, pageType) => {
+    U.headerLog(changeCase.titleCase(pageType));
     const context = {
         ...U.mergeDeepAll([
             contexts.general({ name: data, pageType, footerType: "page" }),
@@ -162,17 +146,13 @@ const contact = (data, template, pageType) => {
             contexts.country({ country: dataPaths.country.data }),
             contexts.contact({ contact: data })
         ]),
-        get path() {
-            return [settings.outputLocation, context.filename];
-        },
-        get prettyPath() {
-            return U.prettyPath(this.path);
-        },
-        get outputPath() {
-            return U.relPathList(this.path);
-        },
-        get domainPath() {
-            return settings.domain + context.prettyPath;
+        get paths() {
+            const rel = [ this.filename ];
+            const path = R.prepend(settings.outputLocation, rel);
+            const pretty = U.prettyPath(rel)
+            const output = U.relPathList(path)
+            const domain = settings.domain + pretty
+            return { rel, path, pretty, output, domain };
         },
         get schema() {
             return U.schema([["Home", ""], [this.title, this.prettyPath]]);
@@ -186,6 +166,7 @@ const contact = (data, template, pageType) => {
 };
 
 const country = (data, template, pageType) => {
+    U.headerLog(changeCase.titleCase(pageType));
     dataPaths.buySell.data.map(buySell => {
         const context = {
             ...U.mergeDeepAll([
@@ -203,30 +184,20 @@ const country = (data, template, pageType) => {
                 contexts.state({ state: dataPaths.state.data }),
                 contexts.country({ country: dataPaths.country.data })
             ]),
-            get pathSegment() {
-                return `${this.buySell}-${this.industry}`;
-            },
-            get path() {
-                return [
-                    settings.outputLocation,
-                    this.pathSegment,
-                    this.filename
-                ];
-            },
-            get prettyPath() {
-                return U.prettyPath(this.path);
-            },
-            get outputPath() {
-                return U.relPathList(this.path);
-            },
-            get domainPath() {
-                return settings.domain + context.prettyPath;
+            get paths() {
+                const segment = `${this.buySell}-${this.industry}`;
+                const rel = [ segment, this.filename ];
+                const path = R.prepend(settings.outputLocation, rel);
+                const pretty = U.prettyPath(rel)
+                const output = U.relPathList(path)
+                const domain = settings.domain + pretty
+                return { segment, rel, path, pretty, output, domain };
             },
             get pageTitle() {
                 return `${this.Trade} ${this.Industry} in ${this.Name}`;
             },
             get schema() {
-                return U.schema([["Home", ""], [this.pageTitle, this.path]]);
+                return U.schema([["Home", ""], [this.pageTitle, this.paths.pretty]]);
             },
             get footer() {
                 return dataPaths.footer.template.country[this.trade]
@@ -262,12 +233,14 @@ const country = (data, template, pageType) => {
                 );
             }
         };
+        console.log(context.paths);
 
         U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data, context })
     });
 };
 
 const state = (data, template, pageType) => {
+    U.headerLog(changeCase.titleCase(pageType));
     dataPaths.buySell.data.map(buySell => {
         const context = {
             ...U.mergeDeepAll([
@@ -281,24 +254,14 @@ const state = (data, template, pageType) => {
                 contexts.country({ country: dataPaths.country.data }),
                 contexts.state({ state: data })
             ]),
-            get pathSegment() {
-                return `${this.buySell}-${this.industry}`;
-            },
-            get path() {
-                return [
-                    settings.outputLocation,
-                    this.pathSegment,
-                    this.filename
-                ];
-            },
-            get prettyPath() {
-                return U.prettyPath(this.path);
-            },
-            get outputPath() {
-                return U.relPathList(this.path);
-            },
-            get domainPath() {
-                return settings.domain + context.prettyPath;
+            get paths() {
+                const segment = `${this.buySell}-${this.industry}`;
+                const rel = [ segment, this.filename ];
+                const path = R.prepend(settings.outputLocation, rel);
+                const pretty = U.prettyPath(rel)
+                const output = U.relPathList(path)
+                const domain = settings.domain + pretty
+                return { segment, rel, path, pretty, output, domain };
             },
             get schema() {
                 return U.schema([["Home", ""], [this.pageTitle, this.path]]);
@@ -345,6 +308,7 @@ const state = (data, template, pageType) => {
 };
 
 const stateRegions = (data, template, pageType) => {
+    U.headerLog(changeCase.titleCase(pageType));
     const stateRegions = U.removeAllEmpty(U.fileToList(data));
     stateRegions.map(stateRegion => {
         dataPaths.buySell.data.map(buySell => {
@@ -364,24 +328,14 @@ const stateRegions = (data, template, pageType) => {
                     contexts.state({ state: dataPaths.state.data }),
                     contexts.stateRegion({ stateRegion })
                 ]),
-                get pathSegment() {
-                    return `${this.buySell}-${this.industry}`;
-                },
-                get path() {
-                    return [
-                        settings.outputLocation,
-                        this.pathSegment,
-                        this.filename
-                    ];
-                },
-                get prettyPath() {
-                    return U.prettyPath(this.path);
-                },
-                get outputPath() {
-                    return U.relPathList(this.path);
-                },
-                get domainPath() {
-                    return settings.domain + context.prettyPath;
+                get paths() {
+                    const segment = `${this.buySell}-${this.industry}`;
+                    const rel = [ segment, this.filename ];
+                    const path = R.prepend(settings.outputLocation, rel);
+                    const pretty = U.prettyPath(rel)
+                    const output = U.relPathList(path)
+                    const domain = settings.domain + pretty
+                    return { segment, rel, path, pretty, output, domain };
                 },
                 get schema() {
                     return U.schema([
@@ -431,6 +385,7 @@ const stateRegions = (data, template, pageType) => {
 };
 
 const city = (data, template, pageType) => {
+    U.headerLog(changeCase.titleCase(pageType));
     dataPaths.buySell.data.map(buySell => {
         const context = {
             ...U.mergeDeepAll([
@@ -444,25 +399,14 @@ const city = (data, template, pageType) => {
                 contexts.state({ state: dataPaths.state.data }),
                 contexts.city({ city: data })
             ]),
-            get pathSegment() {
-                return `${this.buySell}-${this.industry}`;
-            },
-            get path() {
-                return [
-                    settings.outputLocation,
-                    this.pathSegment,
-                    data,
-                    "index.html"
-                ];
-            },
-            get prettyPath() {
-                return U.prettyPath(this.path);
-            },
-            get outputPath() {
-                return U.relPathList(this.path);
-            },
-            get domainPath() {
-                return settings.domain + context.prettyPath;
+            get paths() {
+                const segment = `${this.buySell}-${this.industry}`;
+                const rel = [ segment, data, "index.html" ];
+                const path = R.prepend(settings.outputLocation, rel);
+                const pretty = U.prettyPath(rel)
+                const output = U.relPathList(path)
+                const domain = settings.domain + pretty
+                return { segment, rel, path, pretty, output, domain };
             },
             get schema() {
                 return U.schema([
@@ -515,6 +459,7 @@ const city = (data, template, pageType) => {
 };
 
 const cityRegions = (data, template, pageType) => {
+    U.headerLog(changeCase.titleCase(pageType));
     const cityRegions = U.removeAllEmpty(U.fileToList(data));
     cityRegions.map(cityRegion => {
         dataPaths.buySell.data.map(buySell => {
@@ -538,25 +483,14 @@ const cityRegions = (data, template, pageType) => {
                 get RegionNoThe() {
                     return this.NameNoThe;
                 },
-                get pathSegment() {
-                    return `${this.buySell}-${this.industry}`;
-                },
-                get path() {
-                    return [
-                        settings.outputLocation,
-                        this.pathSegment,
-                        this.sydney,
-                        U.filenameFormat(cityRegion)
-                    ];
-                },
-                get prettyPath() {
-                    return U.prettyPath(this.path);
-                },
-                get outputPath() {
-                    return U.relPathList(this.path);
-                },
-                get domainPath() {
-                    return settings.domain + context.prettyPath;
+                get paths() {
+                    const segment = `${this.buySell}-${this.industry}`;
+                    const rel = [ segment, this.sydney, U.filenameFormat(cityRegion) ];
+                    const path = R.prepend(settings.outputLocation, rel);
+                    const pretty = U.prettyPath(rel)
+                    const output = U.relPathList(path)
+                    const domain = settings.domain + pretty
+                    return { segment, rel, path, pretty, output, domain };
                 },
                 get schema() {
                     return U.schema([
@@ -639,6 +573,7 @@ const cityRegions = (data, template, pageType) => {
 };
 
 const suburbs = (data, template, pageType, parentContext) => {
+    U.headerLog(changeCase.titleCase(`${parentContext.name} ${pageType}`));
     data.map(suburb =>
         dataPaths.buySell.data.map(buySell => {
             const context = {
@@ -655,22 +590,14 @@ const suburbs = (data, template, pageType, parentContext) => {
                 get pathSegment() {
                     return `${this.buySell}-${this.industry}`;
                 },
-                get path() {
-                    return [
-                        settings.outputLocation,
-                        this.pathSegment,
-                        this.sydney,
-                        this.filename
-                    ];
-                },
-                get prettyPath() {
-                    return U.prettyPath(this.path);
-                },
-                get outputPath() {
-                    return U.relPathList(this.path);
-                },
-                get domainPath() {
-                    return settings.domain + context.prettyPath;
+                get paths() {
+                    const segment = `${this.buySell}-${this.industry}`;
+                    const rel = [ segment, this.sydney, this.filename ];
+                    const path = R.prepend(settings.outputLocation, rel);
+                    const pretty = U.prettyPath(rel)
+                    const output = U.relPathList(path)
+                    const domain = settings.domain + pretty
+                    return { segment, rel, path, pretty, output, domain };
                 },
                 get schema() {
                     return U.schema([
@@ -746,6 +673,7 @@ const suburbs = (data, template, pageType, parentContext) => {
 };
 
 const directory = (data, template, pageType) => {
+    U.headerLog(changeCase.titleCase(pageType));
     const context = {
         ...U.mergeDeepAll([
             contexts.general({
@@ -763,17 +691,14 @@ const directory = (data, template, pageType) => {
             contexts.city({ city: dataPaths.city.data }),
             contexts.directory(),
         ]),
-        get path() {
-            return [settings.outputLocation, context.filename];
-        },
-        get prettyPath() {
-            return U.prettyPath(this.path);
-        },
-        get outputPath() {
-            return U.relPathList(this.path);
-        },
-        get domainPath() {
-            return settings.domain + context.prettyPath;
+        get paths() {
+            const segment = `${this.buySell}-${this.industry}`;
+            const rel = [ segment, this.filename ];
+            const path = R.prepend(settings.outputLocation, rel);
+            const pretty = U.prettyPath(rel)
+            const output = U.relPathList(path)
+            const domain = settings.domain + pretty
+            return { segment, rel, path, pretty, output, domain };
         },
         get schema() {
             return U.schema([[this.home, ""], [this.title, this.filename]]);
