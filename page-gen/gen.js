@@ -59,7 +59,7 @@ const performanceTimerStart = now();
 
 U.sitemapStream.write(dataPaths.sitemap.data.header);
 
-generators.run(dataPaths.firstLevelPageTypes);
+generators.run({ pageTypes: dataPaths.firstLevelPageTypes });
 
 U.sitemapStream.write(dataPaths.sitemap.data.footer);
 
@@ -71,3 +71,7 @@ const performanceTimerDuration = (
 ).toFixed(3);
 
 U.performanceLog(performanceTimerDuration);
+
+module.exports = {
+    program
+}

@@ -5,6 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gen": "node ./page-gen/gen",
+    "gens": "node ./page-gen/gen --suburbs",
+    "genn": "node ./page-gen/gen --no-suburbs",
     "geocoder": "node ./location-gen/geocoder",
     "nearby-cacher": "node ./location-gen/nearby-cacher",
     "nearby": "node ./location-gen/nearby"
@@ -22,7 +24,7 @@
     "@google/maps": "^0.5.5",
     "chalk": "^2.4.2",
     "change-case": "^3.1.0",
-    "commander": "^3.0.0",
+    "commander": "^3.0.1",
     "dateformat": "^3.0.3",
     "geolib": "^3.0.4",
     "performance-now": "^2.1.0",

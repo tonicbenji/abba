@@ -7,8 +7,20 @@ const contexts = require("./contexts");
 const U = require("./utilities");
 const settings = require("./gen-config");
 const shuffleSeed = require("shuffle-seed");
+const program = require('commander');
 
-const run = (pageTypes, context) => {
+// Command line arguments
+
+program
+  .option('-s, --suburbs', 'Force generating the suburbs')
+  .option('-ns, --no-suburbs', 'Force not generating the suburbs')
+
+program.parse(process.argv);
+
+// Generators
+
+const run = ({ pageTypes, context }) => {
+    const ifSuburbs = settings.genSuburbs || program.suburbs;
     pageTypes.map(pageType => {
         const { data, template } = dataPaths[changeCase.camelCase(pageType)];
         switch (pageType) {
@@ -37,7 +49,7 @@ const run = (pageTypes, context) => {
                 cityRegions(data, template, pageType);
                 break;
             case "suburbs":
-                suburbs(context.cityRegionSuburbs, template, pageType, context);
+                ifSuburbs && suburbs(context.cityRegionSuburbs, template, pageType, context);
                 break;
             case "directory":
                 directory(data, template, pageType);
@@ -644,8 +656,8 @@ const cityRegions = (data, template, pageType) => {
             });
 
             // Child generator
-            if (settings.genSuburbs && buySell === "Buy") {
-                run(["suburbs"], context);
+            if (buySell === "Buy") {
+                run({ pageTypes: ["suburbs"], context });
             }
         });
     });
