@@ -1,4 +1,4 @@
-This website generator maps over lists of data to generate pages using different templates and data. It uses the Lodash-like Ramda library to process data.
+This website generator maps over lists of data to generate pages using different templates and data. It uses the Lodash-like Ramda library to process data. The imperative part of the program is contained in `gen.js`, whilst the rest of it is in functional style.
 
 The generator uses maps within maps (instead of loops) to generate all the pages. However, it tries to keep the nesting of maps as flat as possible. Firstly it maps over a list of page types, using a switcher to call a different generator function for each different pagetype. These generators each include their own maps to map over the pages within that pagetype. One generator - the city region generator - calls a nested generator. This is because each city region has its own suburbs that need to inherit data from their city region parent.
 
