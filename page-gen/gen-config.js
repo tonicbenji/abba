@@ -1,11 +1,4 @@
 module.exports = {
-    // Gen ----------
-    useDemos: false,
-    useBaseUrl: true,
-    suburbsFile: "wikipedia-suburbs",
-    logFiles: true,
-
-    // Gen2 ----------
     rootUrl: "",
     domain: "https://abbachildcaresales.com.au/",
     business: {
