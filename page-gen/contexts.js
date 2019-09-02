@@ -26,7 +26,7 @@ const contextMaker = (key, value) => {
         ...contextItem(U.filenameCase, `filename${key_}`, value),
         filename: U.filenameFormat(value),
         get nameThe() {
-            return this.Name;
+            return U.theToLower(this.Name);
         },
         get NameThe() {
             return this.Name;
@@ -47,7 +47,8 @@ const components = ({ footerType }) => {
 const general = ({ name, pageType, footerType }) => {
     return {
         ...components({ footerType }),
-        ...contextMaker("businessName", settings.business.name),
+        ...contextMaker("BusinessName", settings.business.name),
+        BusinessName: changeCase.titleCase(settings.business.name),
         ...contextMaker("", name),
         nameNoThe: U.noThe(name.toLowerCase()),
         NameNoThe: U.noThe(changeCase.titleCase(name)),
