@@ -58,3 +58,5 @@ The locations-gen folder is quite unmaintained. The locations-cache.json file th
 Also, most of the files in the locations-gen folder are not used anymore.
 
 Essentially, the locations-gen scripts use Google Maps API to sort the list of suburbs into order of geographic nearness for each suburb, then takes the first members of each list and serialises this into a JSON file.
+
+TODO: replace the object makers with reducers that take the context, merge it with their own data, then output a new context. Ripe the generators together in the generators. This will reduce the need for getters, but most importantly, will allow data to build up hierarchically which is the main limitation currently.
