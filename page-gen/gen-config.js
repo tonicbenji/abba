@@ -1,12 +1,12 @@
 module.exports = {
-    rootUrl: "",
     domain: "https://abbachildcaresales.com.au/",
-    business: {
-        name: "ABBA",
-        trade: "business broker"
-    },
+    rootUrl: "",
     outputLocation: "public",
     briefLogs: false,
     genSuburbs: true,
-    subset: 0.02
+    subset: 1,
+    business: {
+        name: "ABBA",
+        trade: "business broker"
+    }
 };
