@@ -129,9 +129,9 @@ const year = dateFormat(new Date(), "yyyy");
 const outputs = ({ logAction, templatePath, data, context }) => {
     const templateFile = fileToStr(templatePath);
     const templateOutput = replaceTokens(context, templateFile);
-    fs.writeFileSync(context.outputPath, templateOutput);
+    fs.writeFileSync(context.paths.output, templateOutput);
     sitemapStream.write(sitemapItem(context.domainPath, universalDate));
-    genLog(logAction, data, context.prettyPath);
+    genLog(logAction, data, context.paths.pretty);
 }
 
 // Components

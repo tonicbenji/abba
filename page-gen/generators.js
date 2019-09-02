@@ -155,7 +155,7 @@ const contact = (data, template, pageType) => {
             return { rel, path, pretty, output, domain };
         },
         get schema() {
-            return U.schema([["Home", ""], [this.title, this.prettyPath]]);
+            return U.schema([["Home", ""], [this.title, this.paths.pretty]]);
         },
         get keywords() {
             return U.makeKeywords(this.keywordLists);
@@ -264,7 +264,7 @@ const state = (data, template, pageType) => {
                 return { segment, rel, path, pretty, output, domain };
             },
             get schema() {
-                return U.schema([["Home", ""], [this.pageTitle, this.path]]);
+                return U.schema([["Home", ""], [this.pageTitle, this.paths.pretty]]);
             },
             get regionFooterHeading() {
                 return `<div class="regionFooterHeading">${this.Trade} a ${
@@ -273,20 +273,20 @@ const state = (data, template, pageType) => {
             },
             get regionFooterUl() {
                 return U.nswRegionFooterList(
-                    this.pathSegment,
+                    this.paths.segment,
                     this.nswRegionList
                 );
             },
             get mobileBreadcrumbs() {
                 return U.mobileBreadcrumbs([
-                    [this.Australia, `${this.pathSegment}/index.html`]
+                    [this.Australia, `${this.paths.segment}/index.html`]
                 ]);
             },
             get footerBreadcrumbs() {
                 return U.footerBreadcrumbs([
                     ["Home", ""],
-                    [this.Australia, `${this.pathSegment}/index.html`],
-                    [this.NSW, `${this.pathSegment}/${this.nsw}.html`]
+                    [this.Australia, `${this.paths.segment}/index.html`],
+                    [this.NSW, `${this.paths.segment}/${this.nsw}.html`]
                 ]);
             },
             get keywords() {
@@ -340,7 +340,7 @@ const stateRegions = (data, template, pageType) => {
                 get schema() {
                     return U.schema([
                         ["Home", ""],
-                        [this.pageTitle, this.path]
+                        [this.pageTitle, this.paths.pretty]
                     ]);
                 },
                 get regionFooterHeading() {
@@ -350,18 +350,18 @@ const stateRegions = (data, template, pageType) => {
                 },
                 get mobileBreadcrumbs() {
                     return U.mobileBreadcrumbs([
-                        [this.Australia, `${this.pathSegment}/index.html`],
-                        [this.NSW, `${this.pathSegment}/${this.nsw}.html`]
+                        [this.Australia, `${this.paths.segment}/index.html`],
+                        [this.NSW, `${this.paths.segment}/${this.nsw}.html`]
                     ]);
                 },
                 get footerBreadcrumbs() {
                     return U.footerBreadcrumbs([
                         ["Home", ""],
-                        [this.Australia, `${this.pathSegment}/index.html`],
-                        [this.NSW, `${this.pathSegment}/${this.nsw}.html`],
+                        [this.Australia, `${this.paths.segment}/index.html`],
+                        [this.NSW, `${this.paths.segment}/${this.nsw}.html`],
                         [
                             this.Name,
-                            `${this.pathSegment}/${this.namenothe}.html`
+                            `${this.paths.segment}/${this.namenothe}.html`
                         ]
                     ]);
                 },
@@ -411,8 +411,8 @@ const city = (data, template, pageType) => {
             get schema() {
                 return U.schema([
                     ["Home", ""],
-                    [this.Australia, `${this.pathSegment}/index.html`],
-                    [this.Name, this.prettyPath]
+                    [this.Australia, `${this.paths.segment}/index.html`],
+                    [this.Name, this.paths.pretty]
                 ]);
             },
             get regionFooterHeading() {
@@ -422,21 +422,21 @@ const city = (data, template, pageType) => {
             },
             get regionFooterUl() {
                 return U.cityRegionFooterList(
-                    this.pathSegment,
+                    this.paths.segment,
                     this.name,
                     this.cityRegionList
                 );
             },
             get mobileBreadcrumbs() {
                 return U.mobileBreadcrumbs([
-                    [this.Australia, `${this.pathSegment}/index.html`],
-                    [this.NSW, `${this.pathSegment}/${this.nsw}.html`]
+                    [this.Australia, `${this.paths.segment}/index.html`],
+                    [this.NSW, `${this.paths.segment}/${this.nsw}.html`]
                 ]);
             },
             get footerBreadcrumbs() {
                 return U.footerBreadcrumbs([
                     ["Home", ""],
-                    [this.Australia, `${this.pathSegment}/index.html`],
+                    [this.Australia, `${this.paths.segment}/index.html`],
                     [this.Name, ""]
                 ]);
             },
@@ -495,12 +495,12 @@ const cityRegions = (data, template, pageType) => {
                 get schema() {
                     return U.schema([
                         ["Home", ""],
-                        [this.Australia, `${this.pathSegment}/index.html`],
+                        [this.Australia, `${this.paths.segment}/index.html`],
                         [
                             this.Sydney,
-                            `${this.pathSegment}/${this.sydney}/index.html`
+                            `${this.paths.segment}/${this.sydney}/index.html`
                         ],
-                        [this.Name, this.prettyPath]
+                        [this.Name, this.paths.pretty]
                     ]);
                 },
                 get cityRegionSuburbs() {
@@ -525,25 +525,25 @@ const cityRegions = (data, template, pageType) => {
                 },
                 get regionFooterUl() {
                     return U.cityRegionFooterList(
-                        this.pathSegment,
+                        this.paths.segment,
                         this.sydney,
                         this.cityRegionSuburbs
                     );
                 },
                 get mobileBreadcrumbs() {
                     return U.mobileBreadcrumbs([
-                        [this.Australia, `${this.pathSegment}/index.html`],
-                        [this.NSW, `${this.pathSegment}/${this.nsw}.html`],
-                        [this.Sydney, `${this.pathSegment}/${this.sydney}/index.html`]
+                        [this.Australia, `${this.paths.segment}/index.html`],
+                        [this.NSW, `${this.paths.segment}/${this.nsw}.html`],
+                        [this.Sydney, `${this.paths.segment}/${this.sydney}/index.html`]
                     ]);
                 },
                 get footerBreadcrumbs() {
                     return U.footerBreadcrumbs([
                         ["Home", ""],
-                        [this.Australia, `${this.pathSegment}/index.html`],
+                        [this.Australia, `${this.paths.segment}/index.html`],
                         [
                             this.Sydney,
-                            `${this.pathSegment}/${this.sydney}/index.html`
+                            `${this.paths.segment}/${this.sydney}/index.html`
                         ],
                         [this.Name, ""]
                     ]);
@@ -587,9 +587,6 @@ const suburbs = (data, template, pageType, parentContext) => {
                     contexts.buySell({ buySell }),
                     contexts.suburb({ suburb })
                 ]),
-                get pathSegment() {
-                    return `${this.buySell}-${this.industry}`;
-                },
                 get paths() {
                     const segment = `${this.buySell}-${this.industry}`;
                     const rel = [ segment, this.sydney, this.filename ];
@@ -602,13 +599,13 @@ const suburbs = (data, template, pageType, parentContext) => {
                 get schema() {
                     return U.schema([
                         ["Home", ""],
-                        [this.Australia, `${this.pathSegment}/index.html`],
+                        [this.Australia, `${this.paths.segment}/index.html`],
                         [
                             this.Sydney,
-                            `${this.pathSegment}/${this.sydney}/index.html`
+                            `${this.paths.segment}/${this.sydney}/index.html`
                         ],
-                        [this.Region, `${this.pathSegment}/sydney/${this.filenameRegion}.html`],
-                        [this.Name, this.prettyPath]
+                        [this.Region, `${this.paths.segment}/sydney/${this.filenameRegion}.html`],
+                        [this.Name, this.paths.pretty]
                     ]);
                 },
                 get nearbySuburbs() {
@@ -628,7 +625,7 @@ const suburbs = (data, template, pageType, parentContext) => {
                 },
                 get nearby() {
                     return U.cityRegionFooterList(
-                        this.pathSegment,
+                        this.paths.segment,
                         this.sydney,
                         this.nearbySuburbs
                     );
@@ -647,21 +644,21 @@ const suburbs = (data, template, pageType, parentContext) => {
                 },
                 get mobileBreadcrumbs() {
                     return U.mobileBreadcrumbs([
-                        [this.Australia, `${this.pathSegment}/index.html`],
-                        [this.NSW, `${this.pathSegment}/${this.nsw}.html`],
-                        [this.Sydney, `${this.pathSegment}/${this.sydney}/index.html`],
-                        [this.Region, `${this.pathSegment}/sydney/${this.filenameregion}.html`]
+                        [this.Australia, `${this.paths.segment}/index.html`],
+                        [this.NSW, `${this.paths.segment}/${this.nsw}.html`],
+                        [this.Sydney, `${this.paths.segment}/${this.sydney}/index.html`],
+                        [this.Region, `${this.paths.segment}/sydney/${this.filenameregion}.html`]
                     ]);
                 },
                 get footerBreadcrumbs() {
                     return U.footerBreadcrumbs([
                         ["Home", ""],
-                        [this.Australia, `${this.pathSegment}/index.html`],
+                        [this.Australia, `${this.paths.segment}/index.html`],
                         [
                             this.Sydney,
-                            `${this.pathSegment}/${this.sydney}/index.html`
+                            `${this.paths.segment}/${this.sydney}/index.html`
                         ],
-                        [this.Region, `${this.pathSegment}/sydney/${this.filenameregion}.html`],
+                        [this.Region, `${this.paths.segment}/sydney/${this.filenameregion}.html`],
                         [this.Name, ""]
                     ]);
                 }
@@ -692,13 +689,12 @@ const directory = (data, template, pageType) => {
             contexts.directory(),
         ]),
         get paths() {
-            const segment = `${this.buySell}-${this.industry}`;
-            const rel = [ segment, this.filename ];
+            const rel = [ this.filename ];
             const path = R.prepend(settings.outputLocation, rel);
             const pretty = U.prettyPath(rel)
             const output = U.relPathList(path)
             const domain = settings.domain + pretty
-            return { segment, rel, path, pretty, output, domain };
+            return { rel, path, pretty, output, domain };
         },
         get schema() {
             return U.schema([[this.home, ""], [this.title, this.filename]]);
