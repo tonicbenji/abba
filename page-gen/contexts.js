@@ -146,7 +146,8 @@ const state = ({ state }) => {
         ),
         heroImg: "preschool-business-brokers-nsw-2.jpg",
         contentImg: "children-playing-nsw-childcare-businesses.jpg",
-        id: U.id("nsw")
+        id: U.id("nsw"),
+        filename: "nsw.html"
     };
 };
 
@@ -197,8 +198,8 @@ const directory = () => {
         ...contextMaker("", "directory"),
         title: "Directory",
         filename: "directory.html"
-    }
-}
+    };
+};
 
 module.exports = {
     contextItem,

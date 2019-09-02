@@ -86,7 +86,7 @@ const genLog = (action, name, path) => {
 const headerLog = s =>
     R.pipe(
         wrapInSpaces,
-        s => settings.briefLogs ? `\n${s}` : s,
+        s => (settings.briefLogs ? `\n${s}` : s),
         chalk.bgMagenta,
         wrapInLinebreaks,
         console.log
@@ -132,7 +132,7 @@ const outputs = ({ logAction, templatePath, data, context }) => {
     fs.writeFileSync(context.paths.output, templateOutput);
     sitemapStream.write(sitemapItem(context.paths.domain, universalDate));
     genLog(logAction, data, context.paths.pretty);
-}
+};
 
 // Components
 
@@ -154,9 +154,10 @@ const footerBreadcrumbs = namePathList => {
 };
 
 const mobileBreadcrumb = (name, path) =>
-    `<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a class="nowrap" href="/${path}">« ${name}</a></li>`
+    `<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a class="nowrap" href="/${path}">« ${name}</a></li>`;
 
-const mobileBreadcrumbs = namePathList => namePathList.map(([name, path]) => mobileBreadcrumb(name, path)).join("")
+const mobileBreadcrumbs = namePathList =>
+    namePathList.map(([name, path]) => mobileBreadcrumb(name, path)).join("");
 
 const scriptTag = s => `<script type="application/ld+json">${s}</script>`;
 

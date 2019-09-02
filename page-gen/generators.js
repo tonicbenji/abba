@@ -62,11 +62,11 @@ const home = (data, template, pageType) => {
             contexts.home()
         ]),
         get paths() {
-            const rel = [ this.filename ];
+            const rel = [this.filename];
             const path = R.prepend(settings.outputLocation, rel);
-            const pretty = U.prettyPath(rel)
-            const output = U.relPathList(path)
-            const domain = settings.domain + pretty
+            const pretty = U.prettyPath(rel);
+            const output = U.relPathList(path);
+            const domain = settings.domain + pretty;
             return { rel, path, pretty, output, domain };
         },
         get schema() {
@@ -92,7 +92,7 @@ const home = (data, template, pageType) => {
         }
     };
 
-    U.outputs({ logAction: "Single", templatePath: template, data, context })
+    U.outputs({ logAction: "Single", templatePath: template, data, context });
 };
 
 const about = (data, template, pageType) => {
@@ -109,11 +109,11 @@ const about = (data, template, pageType) => {
             contexts.about({ about: data })
         ]),
         get paths() {
-            const rel = [ this.filename ];
+            const rel = [this.filename];
             const path = R.prepend(settings.outputLocation, rel);
-            const pretty = U.prettyPath(rel)
-            const output = U.relPathList(path)
-            const domain = settings.domain + pretty
+            const pretty = U.prettyPath(rel);
+            const output = U.relPathList(path);
+            const domain = settings.domain + pretty;
             return { rel, path, pretty, output, domain };
         },
         get schema() {
@@ -130,7 +130,7 @@ const about = (data, template, pageType) => {
         }
     };
 
-    U.outputs({ logAction: "Single", templatePath: template, data, context })
+    U.outputs({ logAction: "Single", templatePath: template, data, context });
 };
 
 const contact = (data, template, pageType) => {
@@ -147,11 +147,11 @@ const contact = (data, template, pageType) => {
             contexts.contact({ contact: data })
         ]),
         get paths() {
-            const rel = [ this.filename ];
+            const rel = [this.filename];
             const path = R.prepend(settings.outputLocation, rel);
-            const pretty = U.prettyPath(rel)
-            const output = U.relPathList(path)
-            const domain = settings.domain + pretty
+            const pretty = U.prettyPath(rel);
+            const output = U.relPathList(path);
+            const domain = settings.domain + pretty;
             return { rel, path, pretty, output, domain };
         },
         get schema() {
@@ -162,7 +162,7 @@ const contact = (data, template, pageType) => {
         }
     };
 
-    U.outputs({ logAction: "Single", templatePath: template, data, context })
+    U.outputs({ logAction: "Single", templatePath: template, data, context });
 };
 
 const country = (data, template, pageType) => {
@@ -186,21 +186,24 @@ const country = (data, template, pageType) => {
             ]),
             get paths() {
                 const segment = `${this.buySell}-${this.industry}`;
-                const rel = [ segment, this.filename ];
+                const rel = [segment, this.filename];
                 const path = R.prepend(settings.outputLocation, rel);
-                const pretty = U.prettyPath(rel)
-                const output = U.relPathList(path)
-                const domain = settings.domain + pretty
+                const pretty = U.prettyPath(rel);
+                const output = U.relPathList(path);
+                const domain = settings.domain + pretty;
                 return { segment, rel, path, pretty, output, domain };
             },
             get pageTitle() {
-                return `${this.Trade} ${this.Industry} in ${this.Name}`;
+                return `${this.Trade}ing ${buySell === "Buy" ? "a" : "your"} ${this.Industry} Business`
             },
             get schema() {
-                return U.schema([["Home", ""], [this.pageTitle, this.paths.pretty]]);
+                return U.schema([
+                    ["Home", ""],
+                    [this.pageTitle, this.paths.pretty]
+                ]);
             },
             get footer() {
-                return dataPaths.footer.template.country[this.trade]
+                return dataPaths.footer.template.country[this.trade];
             },
             get footerBuyNswRegions() {
                 return U.nswRegionFooterList(
@@ -215,10 +218,7 @@ const country = (data, template, pageType) => {
                 );
             },
             get footerBreadcrumbs() {
-                return U.footerBreadcrumbs([
-                    ["Home", ""],
-                    [this.Name, ""]
-                ]);
+                return U.footerBreadcrumbs([["Home", ""], [this.Name, ""]]);
             },
             get keywords() {
                 return U.makeKeywords(
@@ -233,9 +233,13 @@ const country = (data, template, pageType) => {
                 );
             }
         };
-        console.log(context.paths);
 
-        U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data, context })
+        U.outputs({
+            logAction: buySell,
+            templatePath: template + context.buySellFilename,
+            data,
+            context
+        });
     });
 };
 
@@ -256,15 +260,21 @@ const state = (data, template, pageType) => {
             ]),
             get paths() {
                 const segment = `${this.buySell}-${this.industry}`;
-                const rel = [ segment, this.filename ];
+                const rel = [segment, this.filename];
                 const path = R.prepend(settings.outputLocation, rel);
-                const pretty = U.prettyPath(rel)
-                const output = U.relPathList(path)
-                const domain = settings.domain + pretty
+                const pretty = U.prettyPath(rel);
+                const output = U.relPathList(path);
+                const domain = settings.domain + pretty;
                 return { segment, rel, path, pretty, output, domain };
             },
+            get pageTitle() {
+                return `${this.Trade}ing a ${this.Industry} Business in ${this.nameThe}`
+            },
             get schema() {
-                return U.schema([["Home", ""], [this.pageTitle, this.paths.pretty]]);
+                return U.schema([
+                    ["Home", ""],
+                    [this.pageTitle, this.paths.pretty]
+                ]);
             },
             get regionFooterHeading() {
                 return `<div class="regionFooterHeading">${this.Trade} a ${
@@ -303,7 +313,12 @@ const state = (data, template, pageType) => {
             }
         };
 
-        U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data, context })
+        U.outputs({
+            logAction: buySell,
+            templatePath: template + context.buySellFilename,
+            data,
+            context
+        });
     });
 };
 
@@ -330,12 +345,15 @@ const stateRegions = (data, template, pageType) => {
                 ]),
                 get paths() {
                     const segment = `${this.buySell}-${this.industry}`;
-                    const rel = [ segment, this.filename ];
+                    const rel = [segment, this.filename];
                     const path = R.prepend(settings.outputLocation, rel);
-                    const pretty = U.prettyPath(rel)
-                    const output = U.relPathList(path)
-                    const domain = settings.domain + pretty
+                    const pretty = U.prettyPath(rel);
+                    const output = U.relPathList(path);
+                    const domain = settings.domain + pretty;
                     return { segment, rel, path, pretty, output, domain };
+                },
+                get pageTitle() {
+                    return `${this.Trade}ing a ${this.Industry} Business in ${this.nameThe}`
                 },
                 get schema() {
                     return U.schema([
@@ -379,7 +397,12 @@ const stateRegions = (data, template, pageType) => {
                 }
             };
 
-            U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data: stateRegion, context })
+            U.outputs({
+                logAction: buySell,
+                templatePath: template + context.buySellFilename,
+                data: stateRegion,
+                context
+            });
         });
     });
 };
@@ -401,18 +424,21 @@ const city = (data, template, pageType) => {
             ]),
             get paths() {
                 const segment = `${this.buySell}-${this.industry}`;
-                const rel = [ segment, data, "index.html" ];
+                const rel = [segment, data, "index.html"];
                 const path = R.prepend(settings.outputLocation, rel);
-                const pretty = U.prettyPath(rel)
-                const output = U.relPathList(path)
-                const domain = settings.domain + pretty
+                const pretty = U.prettyPath(rel);
+                const output = U.relPathList(path);
+                const domain = settings.domain + pretty;
                 return { segment, rel, path, pretty, output, domain };
+            },
+            get pageTitle() {
+                return `${this.Trade}ing a ${this.Industry} Business in ${this.nameThe}`
             },
             get schema() {
                 return U.schema([
                     ["Home", ""],
                     [this.Australia, `${this.paths.segment}/index.html`],
-                    [this.Name, this.paths.pretty]
+                    [this.pageTitle, this.paths.pretty]
                 ]);
             },
             get regionFooterHeading() {
@@ -454,7 +480,12 @@ const city = (data, template, pageType) => {
             }
         };
 
-        U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data, context })
+        U.outputs({
+            logAction: buySell,
+            templatePath: template + context.buySellFilename,
+            data,
+            context
+        });
     });
 };
 
@@ -485,12 +516,19 @@ const cityRegions = (data, template, pageType) => {
                 },
                 get paths() {
                     const segment = `${this.buySell}-${this.industry}`;
-                    const rel = [ segment, this.sydney, U.filenameFormat(cityRegion) ];
+                    const rel = [
+                        segment,
+                        this.sydney,
+                        U.filenameFormat(cityRegion)
+                    ];
                     const path = R.prepend(settings.outputLocation, rel);
-                    const pretty = U.prettyPath(rel)
-                    const output = U.relPathList(path)
-                    const domain = settings.domain + pretty
+                    const pretty = U.prettyPath(rel);
+                    const output = U.relPathList(path);
+                    const domain = settings.domain + pretty;
                     return { segment, rel, path, pretty, output, domain };
+                },
+                get pageTitle() {
+                    return `${this.Trade}ing a ${this.Industry} Business in ${this.nameThe}`
                 },
                 get schema() {
                     return U.schema([
@@ -500,7 +538,7 @@ const cityRegions = (data, template, pageType) => {
                             this.Sydney,
                             `${this.paths.segment}/${this.sydney}/index.html`
                         ],
-                        [this.Name, this.paths.pretty]
+                        [this.pageTitle, this.paths.pretty]
                     ]);
                 },
                 get cityRegionSuburbs() {
@@ -534,7 +572,10 @@ const cityRegions = (data, template, pageType) => {
                     return U.mobileBreadcrumbs([
                         [this.Australia, `${this.paths.segment}/index.html`],
                         [this.NSW, `${this.paths.segment}/${this.nsw}.html`],
-                        [this.Sydney, `${this.paths.segment}/${this.sydney}/index.html`]
+                        [
+                            this.Sydney,
+                            `${this.paths.segment}/${this.sydney}/index.html`
+                        ]
                     ]);
                 },
                 get footerBreadcrumbs() {
@@ -562,7 +603,12 @@ const cityRegions = (data, template, pageType) => {
                 }
             };
 
-            U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data: cityRegion, context })
+            U.outputs({
+                logAction: buySell,
+                templatePath: template + context.buySellFilename,
+                data: cityRegion,
+                context
+            });
 
             // Child generator
             if (settings.genSuburbs && buySell === "Buy") {
@@ -589,12 +635,15 @@ const suburbs = (data, template, pageType, parentContext) => {
                 ]),
                 get paths() {
                     const segment = `${this.buySell}-${this.industry}`;
-                    const rel = [ segment, this.sydney, this.filename ];
+                    const rel = [segment, this.sydney, this.filename];
                     const path = R.prepend(settings.outputLocation, rel);
-                    const pretty = U.prettyPath(rel)
-                    const output = U.relPathList(path)
-                    const domain = settings.domain + pretty
+                    const pretty = U.prettyPath(rel);
+                    const output = U.relPathList(path);
+                    const domain = settings.domain + pretty;
                     return { segment, rel, path, pretty, output, domain };
+                },
+                get pageTitle() {
+                    return `${this.Trade}ing a ${this.Industry} Business in ${this.Name}, ${parentContext.NameNoThe}`
                 },
                 get schema() {
                     return U.schema([
@@ -604,8 +653,13 @@ const suburbs = (data, template, pageType, parentContext) => {
                             this.Sydney,
                             `${this.paths.segment}/${this.sydney}/index.html`
                         ],
-                        [this.Region, `${this.paths.segment}/sydney/${this.filenameRegion}.html`],
-                        [this.Name, this.paths.pretty]
+                        [
+                            this.Region,
+                            `${this.paths.segment}/sydney/${
+                                this.filenameRegion
+                            }.html`
+                        ],
+                        [this.pageTitle, this.paths.pretty]
                     ]);
                 },
                 get nearbySuburbs() {
@@ -646,8 +700,16 @@ const suburbs = (data, template, pageType, parentContext) => {
                     return U.mobileBreadcrumbs([
                         [this.Australia, `${this.paths.segment}/index.html`],
                         [this.NSW, `${this.paths.segment}/${this.nsw}.html`],
-                        [this.Sydney, `${this.paths.segment}/${this.sydney}/index.html`],
-                        [this.Region, `${this.paths.segment}/sydney/${this.filenameregion}.html`]
+                        [
+                            this.Sydney,
+                            `${this.paths.segment}/${this.sydney}/index.html`
+                        ],
+                        [
+                            this.Region,
+                            `${this.paths.segment}/sydney/${
+                                this.filenameregion
+                            }.html`
+                        ]
                     ]);
                 },
                 get footerBreadcrumbs() {
@@ -658,13 +720,23 @@ const suburbs = (data, template, pageType, parentContext) => {
                             this.Sydney,
                             `${this.paths.segment}/${this.sydney}/index.html`
                         ],
-                        [this.Region, `${this.paths.segment}/sydney/${this.filenameregion}.html`],
+                        [
+                            this.Region,
+                            `${this.paths.segment}/sydney/${
+                                this.filenameregion
+                            }.html`
+                        ],
                         [this.Name, ""]
                     ]);
                 }
             };
 
-            U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data: suburb, context })
+            U.outputs({
+                logAction: buySell,
+                templatePath: template + context.buySellFilename,
+                data: suburb,
+                context
+            });
         })
     );
 };
@@ -686,61 +758,126 @@ const directory = (data, template, pageType) => {
             contexts.country({ country: dataPaths.country.data }),
             contexts.state({ state: dataPaths.state.data }),
             contexts.city({ city: dataPaths.city.data }),
-            contexts.directory(),
+            contexts.directory()
         ]),
         get paths() {
-            const rel = [ this.filename ];
+            const rel = [this.filename];
             const path = R.prepend(settings.outputLocation, rel);
-            const pretty = U.prettyPath(rel)
-            const output = U.relPathList(path)
-            const domain = settings.domain + pretty
+            const pretty = U.prettyPath(rel);
+            const output = U.relPathList(path);
+            const domain = settings.domain + pretty;
             return { rel, path, pretty, output, domain };
         },
+        get pageTitle() {
+            return `Buy or Sell a ${this.Industry} Business in Australian Suburbs and Regions`
+        },
         get schema() {
-            return U.schema([[this.home, ""], [this.title, this.filename]]);
+            return U.schema([[this.home, ""], [this.pageTitle, this.filename]]);
         },
         get keywords() {
             return U.makeKeywords(this.keywordLists);
         },
         get directoryList() {
-            return dataPaths.buySell.data.map(buySell => {
-                const directoryUl = s => `<ul id="directoryUl">${s}</ul>`
-                return `<a href="${this.industry}-${buySell.toLowerCase()}/index.html"><h4>${buySell} ${this.Industry} in ${this.Australia}&nbsp;»</h4></a>`
-                    + `<a href="${this.industry}-${buySell.toLowerCase()}/${this.nsw}.html"><h5>${buySell} ${this.Industry} in ${this.NSW}&nbsp;»</h5></a>`
-                    + directoryUl(this.nswRegionList.map(stateRegion => {
-                        return `<li><a href="/${buySell.toLowerCase()}-${this.industry}/${U.filenameFormat(stateRegion)}">${buySell} a ${this.Industry} Business in <strong>${stateRegion}</strong>&nbsp;»</a></li>`
-                    }).join(""))
-                    + `<a href="${this.industry}-${buySell.toLowerCase()}/${this.sydney}/index.html"><h6>${buySell} ${this.Industry} in ${this.Sydney}&nbsp;»</h6></a>`
-                    + U.removeAllEmpty(U.fileToList(dataPaths.cityRegions.data)).map(cityRegion => {
-                        const cityRegionSuburbs = () => {
-                            const list = U.removeAllEmpty(
-                                U.fileToList(
-                                    dataPaths.cityRegions.suburbs +
-                                        `${U.filenameCase(cityRegion)}.txt`
-                                )
-                            );
-                            const subset = R.take(
-                                Math.ceil(list.length * settings.subset),
-                                shuffleSeed.shuffle(list, cityRegion)
-                            );
-                            return subset;
-                        }
-                        return `<a href="/${buySell.toLowerCase()}-${this.industry}/${U.filenameFormat(cityRegion)}"><h6 class="h7">${buySell} a ${this.Industry} Business in ${changeCase.titleCase(cityRegion)}&nbsp;»</h6></a>`
-                            + directoryUl(cityRegionSuburbs().map(suburb => {
-                                return `<li><a href="/${buySell.toLowerCase()}-${this.industry}/${this.sydney}/${U.filenameFormat(suburb)}">${buySell} a ${this.Industry} Business in <strong>${changeCase.titleCase(suburb)},<br>${changeCase.titleCase(cityRegion)}</strong></a></li>`;
-                            }).join(""));
-                    }).join("");
-            }).join("");
+            return dataPaths.buySell.data
+                .map(buySell => {
+                    const directoryUl = s => `<ul id="directoryUl">${s}</ul>`;
+                    return (
+                        `<a href="${
+                            this.industry
+                        }-${buySell.toLowerCase()}/index.html"><h4>${buySell} ${
+                            this.Industry
+                        } in ${this.Australia}&nbsp;»</h4></a>` +
+                        `<a href="${this.industry}-${buySell.toLowerCase()}/${
+                            this.nsw
+                        }.html"><h5>${buySell} ${this.Industry} in ${
+                            this.NSW
+                        }&nbsp;»</h5></a>` +
+                        directoryUl(
+                            this.nswRegionList
+                                .map(stateRegion => {
+                                    return `<li><a href="/${buySell.toLowerCase()}-${
+                                        this.industry
+                                    }/${U.filenameFormat(
+                                        stateRegion
+                                    )}">${buySell} a ${
+                                        this.Industry
+                                    } Business in <strong>${stateRegion}</strong>&nbsp;»</a></li>`;
+                                })
+                                .join("")
+                        ) +
+                        `<a href="${this.industry}-${buySell.toLowerCase()}/${
+                            this.sydney
+                        }/index.html"><h6>${buySell} ${this.Industry} in ${
+                            this.Sydney
+                        }&nbsp;»</h6></a>` +
+                        U.removeAllEmpty(
+                            U.fileToList(dataPaths.cityRegions.data)
+                        )
+                            .map(cityRegion => {
+                                const cityRegionSuburbs = () => {
+                                    const list = U.removeAllEmpty(
+                                        U.fileToList(
+                                            dataPaths.cityRegions.suburbs +
+                                                `${U.filenameCase(
+                                                    cityRegion
+                                                )}.txt`
+                                        )
+                                    );
+                                    const subset = R.take(
+                                        Math.ceil(
+                                            list.length * settings.subset
+                                        ),
+                                        shuffleSeed.shuffle(list, cityRegion)
+                                    );
+                                    return subset;
+                                };
+                                return (
+                                    `<a href="/${buySell.toLowerCase()}-${
+                                        this.industry
+                                    }/${U.filenameFormat(
+                                        cityRegion
+                                    )}"><h6 class="h7">${buySell} a ${
+                                        this.Industry
+                                    } Business in ${changeCase.titleCase(
+                                        cityRegion
+                                    )}&nbsp;»</h6></a>` +
+                                    directoryUl(
+                                        cityRegionSuburbs()
+                                            .map(suburb => {
+                                                return `<li><a href="/${buySell.toLowerCase()}-${
+                                                    this.industry
+                                                }/${
+                                                    this.sydney
+                                                }/${U.filenameFormat(
+                                                    suburb
+                                                )}">${buySell} a ${
+                                                    this.Industry
+                                                } Business in <strong>${changeCase.titleCase(
+                                                    suburb
+                                                )},<br>${changeCase.titleCase(
+                                                    cityRegion
+                                                )}</strong></a></li>`;
+                                            })
+                                            .join("")
+                                    )
+                                );
+                            })
+                            .join("")
+                    );
+                })
+                .join("");
         },
         get footerBreadcrumbs() {
-            return U.footerBreadcrumbs([
-                ["Home", ""],
-                [this.Name, ""]
-            ]);
+            return U.footerBreadcrumbs([["Home", ""], [this.Name, ""]]);
         }
     };
 
-    U.outputs({ logAction: "Single", templatePath: template, data: context.Name, context })
+    U.outputs({
+        logAction: "Single",
+        templatePath: template,
+        data: context.Name,
+        context
+    });
 };
 
 module.exports = {
