@@ -69,8 +69,11 @@ const home = (data, template, pageType) => {
             const domain = settings.domain + pretty;
             return { rel, path, pretty, output, domain };
         },
+        get pageTitle() {
+            return `Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`
+        },
         get schema() {
-            return U.schema([[this.home, ""]]);
+            return U.schema([[this.pageTitle, ""]]);
         },
         get nswRegions() {
             return U.removeAllEmpty(U.fileToList(dataPaths.stateRegions.data));
@@ -116,8 +119,11 @@ const about = (data, template, pageType) => {
             const domain = settings.domain + pretty;
             return { rel, path, pretty, output, domain };
         },
+        get pageTitle() {
+            return "About Us"
+        },
         get schema() {
-            return U.schema([[this.home, ""], [this.title, this.filename]]);
+            return U.schema([[`Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`, ""], [this.pageTitle, this.filename]]);
         },
         get footerBreadcrumbs() {
             return U.footerBreadcrumbs([
@@ -154,8 +160,11 @@ const contact = (data, template, pageType) => {
             const domain = settings.domain + pretty;
             return { rel, path, pretty, output, domain };
         },
+        get pageTitle() {
+            return "Contact Us"
+        },
         get schema() {
-            return U.schema([["Home", ""], [this.title, this.paths.pretty]]);
+            return U.schema([[`Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`, ""], [this.pageTitle, this.paths.pretty]]);
         },
         get keywords() {
             return U.makeKeywords(this.keywordLists);
@@ -198,7 +207,7 @@ const country = (data, template, pageType) => {
             },
             get schema() {
                 return U.schema([
-                    ["Home", ""],
+                    [`Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`, ""],
                     [this.pageTitle, this.paths.pretty]
                 ]);
             },
@@ -272,7 +281,7 @@ const state = (data, template, pageType) => {
             },
             get schema() {
                 return U.schema([
-                    ["Home", ""],
+                    [`Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`, ""],
                     [this.pageTitle, this.paths.pretty]
                 ]);
             },
@@ -357,7 +366,7 @@ const stateRegions = (data, template, pageType) => {
                 },
                 get schema() {
                     return U.schema([
-                        ["Home", ""],
+                        [`Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`, ""],
                         [this.pageTitle, this.paths.pretty]
                     ]);
                 },
@@ -436,8 +445,8 @@ const city = (data, template, pageType) => {
             },
             get schema() {
                 return U.schema([
-                    ["Home", ""],
-                    [this.Australia, `${this.paths.segment}/index.html`],
+                    [`Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`, ""],
+                    [`${this.Trade}ing ${buySell === "Buy" ? "a" : "your"} ${this.Industry} Business`, `${this.paths.segment}/index.html`],
                     [this.pageTitle, this.paths.pretty]
                 ]);
             },
@@ -461,7 +470,7 @@ const city = (data, template, pageType) => {
             },
             get footerBreadcrumbs() {
                 return U.footerBreadcrumbs([
-                    ["Home", ""],
+                    [`Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`, ""],
                     [this.Australia, `${this.paths.segment}/index.html`],
                     [this.Name, ""]
                 ]);
@@ -532,11 +541,11 @@ const cityRegions = (data, template, pageType) => {
                 },
                 get schema() {
                     return U.schema([
-                        ["Home", ""],
-                        [this.Australia, `${this.paths.segment}/index.html`],
+                        [`Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`, ""],
+                        [`${this.Trade}ing ${buySell === "Buy" ? "a" : "your"} ${this.Industry} Business`, `${this.paths.segment}/index.html`],
                         [
-                            this.Sydney,
-                            `${this.paths.segment}/${this.sydney}/index.html`
+                            `${this.Trade}ing a ${this.Industry} Business in ${this.Sydney}`,
+                            `${this.paths.segment}/${this.sydney.toLowerCase()}/index.html`
                         ],
                         [this.pageTitle, this.paths.pretty]
                     ]);
@@ -584,7 +593,7 @@ const cityRegions = (data, template, pageType) => {
                         [this.Australia, `${this.paths.segment}/index.html`],
                         [
                             this.Sydney,
-                            `${this.paths.segment}/${this.sydney}/index.html`
+                            `${this.paths.segment}/${this.sydney.toLowerCase()}/index.html`
                         ],
                         [this.Name, ""]
                     ]);
@@ -647,17 +656,17 @@ const suburbs = (data, template, pageType, parentContext) => {
                 },
                 get schema() {
                     return U.schema([
-                        ["Home", ""],
-                        [this.Australia, `${this.paths.segment}/index.html`],
+                        [`Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`, ""],
+                        [`${this.Trade}ing ${buySell === "Buy" ? "a" : "your"} ${this.Industry} Business`, `${this.paths.segment}/index.html`],
                         [
-                            this.Sydney,
-                            `${this.paths.segment}/${this.sydney}/index.html`
+                            `${this.Trade}ing a ${this.Industry} Business in ${this.Sydney}`,
+                            `${this.paths.segment}/${this.sydney.toLowerCase()}/index.html`
                         ],
                         [
-                            this.Region,
+                            `${this.Trade}ing a ${this.Industry} Business in ${parentContext.nameThe}`,
                             `${this.paths.segment}/sydney/${
-                                this.filenameRegion
-                            }.html`
+                                parentContext.filename
+                            }`
                         ],
                         [this.pageTitle, this.paths.pretty]
                     ]);
@@ -772,7 +781,7 @@ const directory = (data, template, pageType) => {
             return `Buy or Sell a ${this.Industry} Business in Australian Suburbs and Regions`
         },
         get schema() {
-            return U.schema([[this.home, ""], [this.pageTitle, this.filename]]);
+            return U.schema([[`Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`, ""], [this.pageTitle, this.filename]]);
         },
         get keywords() {
             return U.makeKeywords(this.keywordLists);
