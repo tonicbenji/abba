@@ -1,1 +1,0 @@
-src/templates/pages/home.html
