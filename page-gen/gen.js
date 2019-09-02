@@ -48,6 +48,7 @@ const settings = require("./gen-config");
 //     ...
 // ]
 // Also, most of the files in the locations-gen folder are not used anymore.
+// Essentially, the locations-gen scripts use Google Maps API to sort the list of suburbs into order of geographic nearness for each suburb, then takes the first members of each list and serialises this into a JSON file.
 
 // Run ----------
 
