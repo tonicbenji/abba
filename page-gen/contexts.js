@@ -133,6 +133,14 @@ const state = ({ state }) => {
     return {
         ...contextMaker("", state),
         ...contextMaker(state, state),
+        nsw: state.toUpperCase(),
+        Nsw: state.toUpperCase(),
+        name: state.toUpperCase(),
+        Name: state.toUpperCase(),
+        nameThe: state.toUpperCase(),
+        NameThe: state.toUpperCase(),
+        nameNoThe: state.toUpperCase(),
+        NameNoThe: state.toUpperCase(),
         nswRegionList: U.removeAllEmpty(
             U.fileToList(dataPaths.stateRegions.data)
         ),
