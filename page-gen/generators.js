@@ -239,7 +239,7 @@ const country = (data, template, pageType) => {
             },
             get footerSellNswRegions() {
                 return U.nswRegionFooterList(
-                    `buy-${this.industry}`,
+                    `sell-${this.industry}`,
                     this.nswRegionList
                 );
             },
