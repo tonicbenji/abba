@@ -6,36 +6,27 @@ const settings = require("./gen-config");
 
 // Guide ----------
 
-// This website generator maps over lists of data to generate pages using different templates and data. It uses the Ramda library to process data.
-// The generator maps over a list of page types. For each page type, it calls a function that will map over the pages within that type. Hence there are two essential levels of mapping, but more levels can be added. If you need a page to use data from a parent page, then you will need to nest map functions. See the cityRegion => suburb generator for an example of this.
-// However, the main way that data is passed to pages is by merging a series of object maker functions. These object makers accept data that they use to add context to their data. Then the merging causes object makers later in the sequence to be able to override the data of object makers higher up.
-// The maps output only side effects. They chuck out the list that they are mapping over rather than modifying it due to performance considerations.
-// Map structure:
+// This website generator maps over lists of data to generate pages using different templates and data. It uses the Lodash-like Ramda library to process data.
+// The generator uses maps within maps (instead of loops) to generate all the pages. However, it tries to keep the nesting of maps as flat as possible. Firstly it maps over a list of page types, using a switcher to call a different generator function for each different pagetype. These generators each include their own maps to map over the pages within that pagetype. One generator - the city region generator - calls a nested generator. This is because each city region has its own suburbs that need to inherit data from their city region parent.
+// The generators each collate a large object of data for each page. This data is is contextually specific to the page being generated. They then pass this object to a function that turns it into a series of regular expressions. These regexes are then applied to the particular template of this page type, and the output is the finished page.
+// The data is called a 'context', and it is created by merging together multiple objects in a cascading manner in which one overrides the next. Hence these objects are arranged in order of general to specific. Each of these objects is an object maker function that can take parameters that tailor it to the individual page further. Additionally, several getter functions are then merged into the object, because these have the ability to manipulate data from the object itself.
+// For performance reasons, these map functions output only side-effects, and they discard the list that they operate over. The generator's 'outputs' function combines all of the side-effects of these generators: the outputted page, writing to the sitemap, and the console log.
+// Here is an overview of the hierarchy of mapping in this program:
 // 1. Map pageTypes
 // 1.1. Home
 // 1.2. About
 // 1.3. Contact
 // 1.4. Country
+// 1.4.1 Map Buy/Sell
 // 1.5. State
+// 1.5.1 Map Buy/Sell
 // 1.6. Map state regions
+// 1.6.1 Map Buy/Sell
 // 1.7. City page
+// 1.7.1 Map Buy/Sell
 // 1.8. Map city regions
-// 1.8.1. Map suburbs
-// (And some maps occur twice - over buy then sell)
-
-// TODO: make the subset feature use list truncation based on a fraction instead of the global counter method
-
-// Context Tokens ----------
-
-// TODO: grep replace rename the following tokens:
-// id => pageType
-// businessName => BUSINESSNAME
-// all nsw => state
-// all australia => country
-// all name => its respective token
-// all sydney => city
-// title (new for home, about)
-// all region => city region
+// 1.8.1 Map Buy/Sell
+// 1.8.1.1 Map city region suburbs
 
 // Run ----------
 
