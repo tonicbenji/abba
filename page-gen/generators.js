@@ -69,6 +69,9 @@ const home = (data, template, pageType) => {
             const domain = settings.domain + pretty;
             return { rel, path, pretty, output, domain };
         },
+        get absolutePath() {
+            return this.paths.domain;
+        },
         get pageTitle() {
             return `Buy and Sell ${this.Industry} Businesses Across ${this.Australia}`
         },
@@ -119,6 +122,9 @@ const about = (data, template, pageType) => {
             const domain = settings.domain + pretty;
             return { rel, path, pretty, output, domain };
         },
+        get absolutePath() {
+            return this.paths.domain;
+        },
         get pageTitle() {
             return "About Us"
         },
@@ -159,6 +165,9 @@ const contact = (data, template, pageType) => {
             const output = U.relPathList(path);
             const domain = settings.domain + pretty;
             return { rel, path, pretty, output, domain };
+        },
+        get absolutePath() {
+            return this.paths.domain;
         },
         get pageTitle() {
             return "Contact Us"
@@ -201,6 +210,9 @@ const country = (data, template, pageType) => {
                 const output = U.relPathList(path);
                 const domain = settings.domain + pretty;
                 return { segment, rel, path, pretty, output, domain };
+            },
+            get absolutePath() {
+                return this.paths.domain;
             },
             get pageTitle() {
                 return `${this.Trade}ing ${buySell === "Buy" ? "a" : "your"} ${this.Industry} Business`
@@ -275,6 +287,9 @@ const state = (data, template, pageType) => {
                 const output = U.relPathList(path);
                 const domain = settings.domain + pretty;
                 return { segment, rel, path, pretty, output, domain };
+            },
+            get absolutePath() {
+                return this.paths.domain;
             },
             get pageTitle() {
                 return `${this.Trade}ing a ${this.Industry} Business in ${this.nameThe}`
@@ -361,6 +376,9 @@ const stateRegions = (data, template, pageType) => {
                     const domain = settings.domain + pretty;
                     return { segment, rel, path, pretty, output, domain };
                 },
+                get absolutePath() {
+                    return this.paths.domain;
+                },
                 get pageTitle() {
                     return `${this.Trade}ing a ${this.Industry} Business in ${this.nameThe}`
                 },
@@ -439,6 +457,9 @@ const city = (data, template, pageType) => {
                 const output = U.relPathList(path);
                 const domain = settings.domain + pretty;
                 return { segment, rel, path, pretty, output, domain };
+            },
+            get absolutePath() {
+                return this.paths.domain;
             },
             get pageTitle() {
                 return `${this.Trade}ing a ${this.Industry} Business in ${this.nameThe}`
@@ -535,6 +556,9 @@ const cityRegions = (data, template, pageType) => {
                     const output = U.relPathList(path);
                     const domain = settings.domain + pretty;
                     return { segment, rel, path, pretty, output, domain };
+                },
+                get absolutePath() {
+                    return this.paths.domain;
                 },
                 get pageTitle() {
                     return `${this.Trade}ing a ${this.Industry} Business in ${this.nameThe}`
@@ -650,6 +674,9 @@ const suburbs = (data, template, pageType, parentContext) => {
                     const output = U.relPathList(path);
                     const domain = settings.domain + pretty;
                     return { segment, rel, path, pretty, output, domain };
+                },
+                get absolutePath() {
+                    return this.paths.domain;
                 },
                 get pageTitle() {
                     return `${this.Trade}ing a ${this.Industry} Business in ${this.Name}, ${parentContext.NameNoThe}`
@@ -776,6 +803,9 @@ const directory = (data, template, pageType) => {
             const output = U.relPathList(path);
             const domain = settings.domain + pretty;
             return { rel, path, pretty, output, domain };
+        },
+        get absolutePath() {
+            return this.paths.domain;
         },
         get pageTitle() {
             return `Buy or Sell a ${this.Industry} Business in Australian Suburbs and Regions`
