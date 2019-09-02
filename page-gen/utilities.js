@@ -124,6 +124,16 @@ const universalDate = dateFormat(new Date(), "yyyy-mm-dd");
 
 const year = dateFormat(new Date(), "yyyy");
 
+// Side effects
+
+const outputs = ({ logAction, templatePath, data, context }) => {
+    const templateFile = fileToStr(templatePath);
+    const templateOutput = replaceTokens(context, templateFile);
+    fs.writeFileSync(context.outputPath, templateOutput);
+    sitemapStream.write(sitemapItem(context.domainPath, universalDate));
+    genLog(logAction, data, context.prettyPath);
+}
+
 // Components
 
 const link = (name, path) => `<a href="/${path}">${name}</a>`;
@@ -270,5 +280,6 @@ module.exports = {
     stringList,
     makeKeywords,
     contextualKeywords,
-    mobileBreadcrumbs
+    mobileBreadcrumbs,
+    outputs
 };

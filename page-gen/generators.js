@@ -13,6 +13,7 @@ const run = (pageTypes, context) => {
         const { data, template } = dataPaths[changeCase.camelCase(pageType)];
         switch (pageType) {
             case "home":
+                // TODO: move these headerLogs into the output sections/functions of generators
                 U.headerLog(changeCase.titleCase(pageType));
                 home(data, template, pageType);
                 break;
@@ -105,14 +106,7 @@ const home = (data, template, pageType) => {
         }
     };
 
-    const templateFile = U.fileToStr(template);
-
-    const output = U.replaceTokens(context, templateFile);
-
-    // Outputs
-    fs.writeFileSync(context.outputPath, output);
-    U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
-    U.genLog("Single", data, context.prettyPath);
+    U.outputs({ logAction: "Single", templatePath: template, data, context })
 };
 
 const about = (data, template, pageType) => {
@@ -153,14 +147,7 @@ const about = (data, template, pageType) => {
         }
     };
 
-    const templateFile = U.fileToStr(template);
-
-    const output = U.replaceTokens(context, templateFile);
-
-    // Outputs
-    fs.writeFileSync(context.outputPath, output);
-    U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
-    U.genLog("Single", data, context.prettyPath);
+    U.outputs({ logAction: "Single", templatePath: template, data, context })
 };
 
 const contact = (data, template, pageType) => {
@@ -195,14 +182,7 @@ const contact = (data, template, pageType) => {
         }
     };
 
-    const templateFile = U.fileToStr(template);
-
-    const output = U.replaceTokens(context, templateFile);
-
-    // Outputs
-    fs.writeFileSync(context.outputPath, output);
-    U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
-    U.genLog("Single", data, context.prettyPath);
+    U.outputs({ logAction: "Single", templatePath: template, data, context })
 };
 
 const country = (data, template, pageType) => {
@@ -283,16 +263,7 @@ const country = (data, template, pageType) => {
             }
         };
 
-        const templateFile = U.fileToStr(template + context.buySellFilename);
-
-        const output = U.replaceTokens(context, templateFile);
-
-        // Outputs
-        fs.writeFileSync(context.outputPath, output);
-        U.sitemapStream.write(
-            U.sitemapItem(context.domainPath, U.universalDate)
-        );
-        U.genLog(buySell, data, context.prettyPath);
+        U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data, context })
     });
 };
 
@@ -369,16 +340,7 @@ const state = (data, template, pageType) => {
             }
         };
 
-        const templateFile = U.fileToStr(template + context.buySellFilename);
-
-        const output = U.replaceTokens(context, templateFile);
-
-        // Outputs
-        fs.writeFileSync(context.outputPath, output);
-        U.sitemapStream.write(
-            U.sitemapItem(context.domainPath, U.universalDate)
-        );
-        U.genLog(buySell, data, context.prettyPath);
+        U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data, context })
     });
 };
 
@@ -463,18 +425,7 @@ const stateRegions = (data, template, pageType) => {
                 }
             };
 
-            const templateFile = U.fileToStr(
-                template + context.buySellFilename
-            );
-
-            const output = U.replaceTokens(context, templateFile);
-
-            // Outputs
-            fs.writeFileSync(context.outputPath, output);
-            U.sitemapStream.write(
-                U.sitemapItem(context.domainPath, U.universalDate)
-            );
-            U.genLog(buySell, stateRegion, context.prettyPath);
+            U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data: stateRegion, context })
         });
     });
 };
@@ -559,16 +510,7 @@ const city = (data, template, pageType) => {
             }
         };
 
-        const templateFile = U.fileToStr(template + context.buySellFilename);
-
-        const output = U.replaceTokens(context, templateFile);
-
-        // Outputs
-        fs.writeFileSync(context.outputPath, output);
-        U.sitemapStream.write(
-            U.sitemapItem(context.domainPath, U.universalDate)
-        );
-        U.genLog(buySell, data, context.prettyPath);
+        U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data, context })
     });
 };
 
@@ -686,18 +628,7 @@ const cityRegions = (data, template, pageType) => {
                 }
             };
 
-            const templateFile = U.fileToStr(
-                template + context.buySellFilename
-            );
-
-            const output = U.replaceTokens(context, templateFile);
-
-            // Outputs
-            fs.writeFileSync(context.outputPath, output);
-            U.sitemapStream.write(
-                U.sitemapItem(context.domainPath, U.universalDate)
-            );
-            U.genLog(buySell, cityRegion, context.prettyPath);
+            U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data: cityRegion, context })
 
             // Child generator
             if (settings.genSuburbs && buySell === "Buy") {
@@ -809,18 +740,7 @@ const suburbs = (data, template, pageType, parentContext) => {
                 }
             };
 
-            const templateFile = U.fileToStr(
-                template + context.buySellFilename
-            );
-
-            const output = U.replaceTokens(context, templateFile);
-
-            // Outputs
-            fs.writeFileSync(context.outputPath, output);
-            U.sitemapStream.write(
-                U.sitemapItem(context.domainPath, U.universalDate)
-            );
-            U.genLog(buySell, suburb, context.prettyPath);
+            U.outputs({ logAction: buySell, templatePath: template + context.buySellFilename, data: suburb, context })
         })
     );
 };
@@ -899,14 +819,7 @@ const directory = (data, template, pageType) => {
         }
     };
 
-    const templateFile = U.fileToStr(template);
-
-    const output = U.replaceTokens(context, templateFile);
-
-    // Outputs
-    fs.writeFileSync(context.outputPath, output);
-    U.sitemapStream.write(U.sitemapItem(context.domainPath, U.universalDate));
-    U.genLog("Single", context.Name, context.prettyPath);
+    U.outputs({ logAction: "Single", templatePath: template, data: context.Name, context })
 };
 
 module.exports = {

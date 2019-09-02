@@ -13,7 +13,7 @@ module.exports = {
         trade: "business broker"
     },
     outputLocation: "output2",
-    briefLogs: true,
+    briefLogs: false,
     genSuburbs: true,
     subset: 0.02
 };
