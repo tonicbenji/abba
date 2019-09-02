@@ -57,11 +57,11 @@ const settings = require("./gen-config");
 
 const performanceTimerStart = now();
 
-U.sitemapStream.write(U.relPath(dataPaths.sitemap.data.header));
+U.sitemapStream.write(dataPaths.sitemap.data.header);
 
 generators.run(dataPaths.firstLevelPageTypes);
 
-U.sitemapStream.write(U.relPath(dataPaths.sitemap.data.footer));
+U.sitemapStream.write(dataPaths.sitemap.data.footer);
 
 const performanceTimerEnd = now();
 

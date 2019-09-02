@@ -130,7 +130,7 @@ const outputs = ({ logAction, templatePath, data, context }) => {
     const templateFile = fileToStr(templatePath);
     const templateOutput = replaceTokens(context, templateFile);
     fs.writeFileSync(context.paths.output, templateOutput);
-    sitemapStream.write(sitemapItem(context.domainPath, universalDate));
+    sitemapStream.write(sitemapItem(context.paths.domain, universalDate));
     genLog(logAction, data, context.paths.pretty);
 }
 
