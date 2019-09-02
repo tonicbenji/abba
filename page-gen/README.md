@@ -60,4 +60,22 @@ Also, most of the files in the locations-gen folder are not used anymore.
 Essentially, the locations-gen scripts use Google Maps API to sort the list of suburbs into order of geographic nearness for each suburb, then takes the first members of each list and serialises this into a JSON file.
 
 TODO: replace the object makers with reducers that take the context, merge it with their own data, then output a new context. Ripe the generators together in the generators. This will reduce the need for getters, but most importantly, will allow data to build up hierarchically which is the main limitation currently.
+
 TODO: make the piping functions reside in the contexts file so that they act as collections that can themselves be used if needed
+
+TODO: Anatomy of a context reducer:
+
+```
+const country = context => {
+    const { buySell, path, etc } = context; // These are its dependencies essentially
+    const path = R.append(context.something, context.path); // Compute some values using the existing context
+    const relPath = context.path etc.
+    return R.mergeDeep(
+         context,
+        {
+            name: etc,
+            path,
+            relPath
+        })
+}
+```
