@@ -135,12 +135,23 @@ const home = context => {
         });
 };
 
-const about = ({ about }) => {
-    return {
-        title: about,
-        filename: U.filenameFormat(about),
-        id: U.id("about")
-    };
+const about = context => {
+    const { name } = context.input;
+    const title = name;
+    const filename = U.filenameFormat(name);
+    const id = U.id(name);
+    const rel = [filename];
+    const path = R.prepend(settings.outputLocation, rel);
+    const pretty = U.prettyPath(rel);
+    const output = U.relPathList(path);
+    const domain = settings.domain + pretty;
+    const paths = { rel, path, pretty, output, domain };
+    const absolutePath = domain;
+    return R.mergeDeepRight(context, {
+        title,
+        filename,
+        id
+    });
 };
 
 const contact = ({ contact }) => {
