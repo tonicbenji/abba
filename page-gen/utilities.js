@@ -126,11 +126,11 @@ const year = dateFormat(new Date(), "yyyy");
 
 // Side effects
 
-const outputs = ({ logAction, templatePath, data, context }) => {
+const outputs = ({ logAction, templatePath, data, isGenSuburbs, context }) => {
     const templateFile = fileToStr(templatePath);
     const templateOutput = replaceTokens(context, templateFile);
     fs.writeFileSync(context.paths.output, templateOutput);
-    sitemapStream.write(sitemapItem(context.paths.domain, universalDate));
+    isGenSuburbs && sitemapStream.write(sitemapItem(context.paths.domain, universalDate));
     genLog(logAction, data, context.paths.pretty);
 };
 

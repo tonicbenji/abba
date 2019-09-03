@@ -7,20 +7,11 @@ const contexts = require("./contexts");
 const U = require("./utilities");
 const settings = require("./gen-config");
 const shuffleSeed = require("shuffle-seed");
-const program = require("commander");
-
-// Command line arguments
-
-program
-    .option("-s, --suburbs", "Force generating the suburbs")
-    .option("-ns, --no-suburbs", "Force not generating the suburbs");
-
-program.parse(process.argv);
+const { isGenSuburbs } = require("./gen.js");
 
 // Generators
 
 const run = ({ pageTypes, context }) => {
-    const ifSuburbs = program.suburbs && settings.genSuburbs;
     pageTypes.map(pageType => {
         const { data, template } = dataPaths[changeCase.camelCase(pageType)];
         switch (pageType) {
@@ -49,7 +40,7 @@ const run = ({ pageTypes, context }) => {
                 cityRegions(data, template, pageType);
                 break;
             case "suburbs":
-                ifSuburbs &&
+                isGenSuburbs &&
                     suburbs(
                         context.cityRegionSuburbs,
                         template,
@@ -58,7 +49,7 @@ const run = ({ pageTypes, context }) => {
                     );
                 break;
             case "directory":
-                directory(data, template, pageType);
+                isGenSuburbs && directory(data, template, pageType);
                 break;
             default:
                 U.warning("No valid pageTypes specified in config");
@@ -118,7 +109,7 @@ const home = (data, template, pageType) => {
         }
     };
 
-    U.outputs({ logAction: "Single", templatePath: template, data, context });
+    U.outputs({ logAction: "Single", templatePath: template, data, isGenSuburbs, context });
 };
 
 const about = (data, template, pageType) => {
@@ -170,7 +161,7 @@ const about = (data, template, pageType) => {
         }
     };
 
-    U.outputs({ logAction: "Single", templatePath: template, data, context });
+    U.outputs({ logAction: "Single", templatePath: template, data, isGenSuburbs, context });
 };
 
 const contact = (data, template, pageType) => {
@@ -216,7 +207,7 @@ const contact = (data, template, pageType) => {
         }
     };
 
-    U.outputs({ logAction: "Single", templatePath: template, data, context });
+    U.outputs({ logAction: "Single", templatePath: template, data, isGenSuburbs, context });
 };
 
 const country = (data, template, pageType) => {
@@ -302,6 +293,7 @@ const country = (data, template, pageType) => {
             logAction: buySell,
             templatePath: template + context.buySellFilename,
             data,
+            isGenSuburbs,
             context
         });
     });
@@ -387,6 +379,7 @@ const state = (data, template, pageType) => {
             logAction: buySell,
             templatePath: template + context.buySellFilename,
             data,
+            isGenSuburbs,
             context
         });
     });
@@ -480,6 +473,7 @@ const stateRegions = (data, template, pageType) => {
                 logAction: buySell,
                 templatePath: template + context.buySellFilename,
                 data: stateRegion,
+                isGenSuburbs,
                 context
             });
         });
@@ -579,6 +573,7 @@ const city = (data, template, pageType) => {
             logAction: buySell,
             templatePath: template + context.buySellFilename,
             data,
+            isGenSuburbs,
             context
         });
     });
@@ -722,6 +717,7 @@ const cityRegions = (data, template, pageType) => {
                 logAction: buySell,
                 templatePath: template + context.buySellFilename,
                 data: cityRegion,
+                isGenSuburbs,
                 context
             });
 
@@ -867,6 +863,7 @@ const suburbs = (data, template, pageType, parentContext) => {
                 logAction: buySell,
                 templatePath: template + context.buySellFilename,
                 data: suburb,
+                isGenSuburbs,
                 context
             });
         })
@@ -1021,6 +1018,7 @@ const directory = (data, template, pageType) => {
         logAction: "Single",
         templatePath: template,
         data: context.Name,
+        isGenSuburbs,
         context
     });
 };

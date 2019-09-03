@@ -3,14 +3,25 @@ const dataPaths = require("./data-paths");
 const generators = require("./generators");
 const U = require("./utilities");
 const settings = require("./gen-config");
+const program = require("commander");
+
+program
+    .option("-s, --suburbs", "Force generating the suburbs")
+    .option("-ns, --no-suburbs", "Force not generating the suburbs");
+
+program.parse(process.argv);
+
+const isGenSuburbs = program.suburbs && settings.genSuburbs;
+
+console.log(isGenSuburbs);
 
 const performanceTimerStart = now();
 
-U.sitemapStream.write(dataPaths.sitemap.data.header);
+isGenSuburbs && U.sitemapStream.write(dataPaths.sitemap.data.header);
 
 generators.run({ pageTypes: dataPaths.firstLevelPageTypes });
 
-U.sitemapStream.write(dataPaths.sitemap.data.footer);
+isGenSuburbs && U.sitemapStream.write(dataPaths.sitemap.data.footer);
 
 const performanceTimerEnd = now();
 
@@ -20,3 +31,7 @@ const performanceTimerDuration = (
 ).toFixed(3);
 
 U.performanceLog(performanceTimerDuration);
+
+module.exports = {
+    isGenSuburbs
+}
