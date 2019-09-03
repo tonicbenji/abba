@@ -73,7 +73,7 @@ const home = (data, template, pageType) => {
             contexts.general({ name: data, pageType, footerType: "home" }),
             contexts.industry({
                 industry: dataPaths.industry.data,
-                buySell: "Trade"
+                buySell: ""
             }),
             contexts.country({ country: dataPaths.country.data, buySell: "" }),
             contexts.state({ state: dataPaths.state.data, buySell: "" }),
@@ -114,7 +114,7 @@ const home = (data, template, pageType) => {
             );
         },
         get keywords() {
-            return U.makeKeywords({ keywords: this.keywordLists, trade: "", industry: "", name: "" });
+            return U.makeKeywords({ keywords: this.keywordLists.country, trade: "", industry: "", name: "" });
         }
     };
 
@@ -166,7 +166,7 @@ const about = (data, template, pageType) => {
             ]);
         },
         get keywords() {
-            return U.makeKeywords({ keywords: this.keywordLists, trade: "", industry: "", name: "" });
+            return U.makeKeywords({ keywords: this.keywordLists.country, trade: "", industry: "", name: "" });
         }
     };
 
@@ -212,7 +212,7 @@ const contact = (data, template, pageType) => {
             ]);
         },
         get keywords() {
-            return U.makeKeywords({ keywords: this.keywordLists, trade: "", industry: "", name: "" });
+            return U.makeKeywords({ keywords: this.keywordLists.country, trade: "", industry: "", name: "" });
         }
     };
 
@@ -920,7 +920,7 @@ const directory = (data, template, pageType) => {
             ]);
         },
         get keywords() {
-            return U.makeKeywords({ keywords: this.keywordLists, trade: "", industry: "", name: "" });
+            return U.makeKeywords({ keywords: this.keywordLists.country, trade: "", industry: "", name: "" });
         },
         get directoryList() {
             return dataPaths.buySell.data

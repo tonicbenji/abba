@@ -128,7 +128,7 @@ const country = ({ country, buySell }) => {
         id: U.id("aus"),
         keywordLists: {
             country: [
-                `${country} ${settings.business.trade}`,
+                `Australian Childcare ${settings.business.trade}`,
                 `${settings.business.name} ${
                     settings.business.trade
                 } ${country}`

@@ -224,16 +224,28 @@ const cityRegionFooterList = (pathSegment, city, regionsList) => {
 const id = id => `id=${id}`;
 
 const makeKeywords = ({ keywords, trade, industry, name }) => {
-    const specificKeywords = R.pipe(
+    const tailoredKeywords = R.pipe(
         contextualKeywords,
         l => shuffleSeed.shuffle(l, name),
         R.take(4)
     )({ trade, industry, name });
+    const fillerKeywords = l => l.length < 8 ? R.pipe(
+        R.concat([
+            "Buy a childcare business NSW",
+            "Sell a childcare business NSW",
+            "How to buy a childcare business NSW",
+            "How to sell a childcare business NSW",
+            "Childcare business acquisition NSW",
+            "Childcare business merger NSW",
+        ]),
+        l => shuffleSeed.shuffle(l, name)
+    )(l) : l;
     return R.pipe(
         R.values,
         R.unnest,
         l => shuffleSeed.shuffle(l, name),
-        R.concat(specificKeywords),
+        R.concat(tailoredKeywords),
+        fillerKeywords,
         R.take(8),
         stringList,
         s => `"${s}"`
