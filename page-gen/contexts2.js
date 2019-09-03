@@ -46,30 +46,25 @@ const components = ({ footerType }) => {
 
 
 const general = context => {
-    const { name, pageType, footerType } = context;
+    const { name, pageType, footerType } = context.input;
     return R.mergeDeepRight(context,
         {
-                general: {
-                    name,
-                    pageType,
-                    footerType
-                },
-                ...components({ footerType }),
-                ...contextMaker("BusinessName", settings.business.name),
-                BusinessName: changeCase.titleCase(settings.business.name),
-                ...contextMaker("", name),
-                nameNoThe: U.noThe(name.toLowerCase()),
-                NameNoThe: U.noThe(changeCase.titleCase(name)),
-                NAMENOTHE: U.noThe(name.toUpperCase()),
-                domain: settings.domain,
-                Domain: U.escForwardSlashes(settings.domain),
-                mobileBreadcrumbs: ""
-            }
+            ...components({ footerType }),
+            ...contextMaker("BusinessName", settings.business.name),
+            BusinessName: changeCase.titleCase(settings.business.name),
+            ...contextMaker("", name),
+            nameNoThe: U.noThe(name.toLowerCase()),
+            NameNoThe: U.noThe(changeCase.titleCase(name)),
+            NAMENOTHE: U.noThe(name.toUpperCase()),
+            domain: settings.domain,
+            Domain: U.escForwardSlashes(settings.domain),
+            mobileBreadcrumbs: ""
+        }
     );
 };
 
 const buySell = context => {
-    const { buySell } = context;
+    const { buySell } = context.input;
     return R.mergeDeepRight(context,
 {
         ...contextMaker("buySell", buySell),
@@ -79,33 +74,56 @@ const buySell = context => {
 };
 
 const industry = context => {
-    const { buySell, industry } = context;
-    return R.mergeDeepRight(context,
-{
-        ...contextMaker("industry", industry),
-        keywordLists: {
-            industry: [
-                `${buySell} ${industry}`,
-                `${buySell} ${industry} Business`,
-                `${buySell} preschool`,
-                `${buySell} mergers`,
-                `${buySell} acquisitions`,
-                `${buySell} ${settings.business.trade}`
-            ]
-        }
-    });
+    const { industry } = context.input;
+    return R.mergeDeepRight(context, contextMaker("industry", industry));
 };
 
 const home = context => {
+    const { industry, Industry, nswRegionList, Australia } = context;
     const title = "Buy and Sell Childcare Businesses across Australia"
+    const filename = "index.html"
+    const rel = [filename];
+    const path = R.prepend(settings.outputLocation, rel);
+    const pretty = U.prettyPath(rel);
+    const output = U.relPathList(path);
+    const domain = settings.domain + pretty;
+    const paths = { rel, path, pretty, output, domain };
+    const absolutePath = domain;
+    const pageTitle = `Buy and Sell ${Industry} Businesses Across ${
+        Australia
+    }`;
+    const schema = U.schema([[pageTitle, ""]]);
+    const footerBuyNswRegions = U.nswRegionFooterList(
+        `buy-${industry}`,
+        nswRegionList
+    );
+    const footerSellNswRegions = U.nswRegionFooterList(
+        `sell-${industry}`,
+        nswRegionList
+    );
+    const keywords = [];
+    const description = U.description(
+        "The Abba Group are Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity."
+    );
+    const id = U.id("home");
+    const footerBreadcrumbs = "";
+    const home = title;
     return R.mergeDeepRight(context,
-{
-    title,
-    home,
-        filename: "index.html",
-        footerBreadcrumbs: "",
-        id: U.id("home")
-    });
+        {
+            title,
+            home,
+            filename,
+            footerBreadcrumbs,
+            id,
+            paths,
+            absolutePath,
+            pageTitle,
+            schema,
+            footerBuyNswRegions,
+            footerSellNswRegions,
+            keywords,
+            description
+        });
 };
 
 const about = ({ about }) => {
@@ -124,8 +142,9 @@ const contact = ({ contact }) => {
     };
 };
 
-const country = ({ country }) => {
-    return {
+const country = context => {
+    const { country } = context.input;
+    return R.mergeDeepRight(context, {
         ...contextMaker("", country),
         filename: "index.html",
         heroImg: "",
@@ -139,11 +158,12 @@ const country = ({ country }) => {
                 } ${country}`
             ]
         }
-    };
+    });
 };
 
-const state = ({ state }) => {
-    return {
+const state = context => {
+    const { state } = context.input;
+    return R.mergeDeepRight(context, {
         ...contextMaker("", state),
         ...contextMaker(state, state),
         nsw: state.toUpperCase(),
@@ -161,7 +181,7 @@ const state = ({ state }) => {
         contentImg: "children-playing-nsw-childcare-businesses.jpg",
         id: U.id("nsw"),
         filename: "nsw.html"
-    };
+    });
 };
 
 const stateRegion = ({ stateRegion }) => {

@@ -4,6 +4,7 @@ const dateFormat = require("dateformat");
 const changeCase = require("change-case");
 const dataPaths = require("./data-paths");
 const contexts = require("./contexts");
+const contexts2 = require("./contexts2");
 const U = require("./utilities");
 const settings = require("./gen-config");
 const shuffleSeed = require("shuffle-seed");
@@ -69,57 +70,30 @@ const run = ({ pageTypes, context }) => {
 
 const home = (data, template, pageType) => {
     U.headerLog(changeCase.titleCase(pageType));
-    const context = {
-        ...U.mergeDeepAll([
-            contexts.general({ name: data, pageType, footerType: "home" }),
-            contexts.industry({
-                industry: dataPaths.industry.data,
-                buySell: ""
-            }),
-            contexts.country({ country: dataPaths.country.data, buySell: "" }),
-            contexts.state({ state: dataPaths.state.data, buySell: "" }),
-            contexts.home()
-        ]),
-        get paths() {
-            const rel = [this.filename];
-            const path = R.prepend(settings.outputLocation, rel);
-            const pretty = U.prettyPath(rel);
-            const output = U.relPathList(path);
-            const domain = settings.domain + pretty;
-            return { rel, path, pretty, output, domain };
-        },
-        get absolutePath() {
-            return this.paths.domain;
-        },
-        get pageTitle() {
-            return `Buy and Sell ${this.Industry} Businesses Across ${
-                this.Australia
-            }`;
-        },
-        get schema() {
-            return U.schema([[this.pageTitle, ""]]);
-        },
-        get nswRegions() {
-            return U.removeAllEmpty(U.fileToList(dataPaths.stateRegions.data));
-        },
-        get footerBuyNswRegions() {
-            return U.nswRegionFooterList(
-                `buy-${this.industry}`,
-                this.nswRegions
-            );
-        },
-        get footerSellNswRegions() {
-            return U.nswRegionFooterList(
-                `sell-${this.industry}`,
-                this.nswRegions
-            );
-        },
-        get keywords() {
-            return U.makeKeywords({ keywords: this.keywordLists.country, trade: "", industry: "", name: "" });
-        }
-    };
-
-    U.outputs({ logAction: "Single", templatePath: template, data, isGenSuburbs, context });
+    const context = R.pipe(
+        contexts2.general,
+        contexts2.industry,
+        contexts2.country,
+        contexts2.state,
+        contexts2.home
+    )(
+        U.input({
+            name: data,
+            pageType,
+            footerType: "home",
+            industry: "Childcare",
+            country: "Australia",
+            state: "NSW"
+        })
+    );
+    console.log(context);
+    U.outputs({
+        logAction: "Single",
+        templatePath: template,
+        data,
+        isGenSuburbs,
+        context
+    });
 };
 
 const about = (data, template, pageType) => {
@@ -167,11 +141,22 @@ const about = (data, template, pageType) => {
             ]);
         },
         get keywords() {
-            return U.makeKeywords({ keywords: this.keywordLists.country, trade: "", industry: "", name: "" });
+            return U.makeKeywords({
+                keywords: this.keywordLists.country,
+                trade: "",
+                industry: "",
+                name: ""
+            });
         }
     };
 
-    U.outputs({ logAction: "Single", templatePath: template, data, isGenSuburbs, context });
+    U.outputs({
+        logAction: "Single",
+        templatePath: template,
+        data,
+        isGenSuburbs,
+        context
+    });
 };
 
 const contact = (data, template, pageType) => {
@@ -213,11 +198,22 @@ const contact = (data, template, pageType) => {
             ]);
         },
         get keywords() {
-            return U.makeKeywords({ keywords: this.keywordLists.country, trade: "", industry: "", name: "" });
+            return U.makeKeywords({
+                keywords: this.keywordLists.country,
+                trade: "",
+                industry: "",
+                name: ""
+            });
         }
     };
 
-    U.outputs({ logAction: "Single", templatePath: template, data, isGenSuburbs, context });
+    U.outputs({
+        logAction: "Single",
+        templatePath: template,
+        data,
+        isGenSuburbs,
+        context
+    });
 };
 
 const country = (data, template, pageType) => {
@@ -927,7 +923,12 @@ const directory = (data, template, pageType) => {
             ]);
         },
         get keywords() {
-            return U.makeKeywords({ keywords: this.keywordLists.country, trade: "", industry: "", name: "" });
+            return U.makeKeywords({
+                keywords: this.keywordLists.country,
+                trade: "",
+                industry: "",
+                name: ""
+            });
         },
         get directoryList() {
             return dataPaths.buySell.data
