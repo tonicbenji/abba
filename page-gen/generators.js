@@ -7,7 +7,17 @@ const contexts = require("./contexts");
 const U = require("./utilities");
 const settings = require("./gen-config");
 const shuffleSeed = require("shuffle-seed");
-const { isGenSuburbs } = require("./gen.js");
+
+// Note: importing isGenSuburbs didnt work, so I had to double-up all of the following
+const program = require("commander");
+
+program
+    .option("-s, --suburbs", "Force generating the suburbs")
+    .option("-ns, --no-suburbs", "Force not generating the suburbs");
+
+program.parse(process.argv);
+
+const isGenSuburbs = program.suburbs && settings.genSuburbs;
 
 // Generators
 
@@ -49,7 +59,7 @@ const run = ({ pageTypes, context }) => {
                     );
                 break;
             case "directory":
-                isGenSuburbs && directory(data, template, pageType);
+                directory(data, template, pageType);
                 break;
             default:
                 U.warning("No valid pageTypes specified in config");

@@ -13,8 +13,6 @@ program.parse(process.argv);
 
 const isGenSuburbs = program.suburbs && settings.genSuburbs;
 
-console.log(isGenSuburbs);
-
 const performanceTimerStart = now();
 
 isGenSuburbs && U.sitemapStream.write(dataPaths.sitemap.data.header);
@@ -31,7 +29,3 @@ const performanceTimerDuration = (
 ).toFixed(3);
 
 U.performanceLog(performanceTimerDuration);
-
-module.exports = {
-    isGenSuburbs
-}
