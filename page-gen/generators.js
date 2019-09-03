@@ -140,53 +140,6 @@ const contact = (data, template, pageType) => {
             state: "NSW"
         })
     );
-
-    // const context = {
-    //     ...U.mergeDeepAll([
-    //         contexts.general({ name: data, pageType, footerType: "page" }),
-    //         contexts.home(),
-    //         contexts.industry({
-    //             industry: dataPaths.industry.data,
-    //             buySell: "Trade"
-    //         }),
-    //         contexts.country({ country: dataPaths.country.data, buySell: "" }),
-    //         contexts.contact({ contact: data })
-    //     ]),
-    //     get paths() {
-    //         const rel = [this.filename];
-    //         const path = R.prepend(settings.outputLocation, rel);
-    //         const pretty = U.prettyPath(rel);
-    //         const output = U.relPathList(path);
-    //         const domain = settings.domain + pretty;
-    //         return { rel, path, pretty, output, domain };
-    //     },
-    //     get absolutePath() {
-    //         return this.paths.domain;
-    //     },
-    //     get pageTitle() {
-    //         return "Contact Us";
-    //     },
-    //     get schema() {
-    //         return U.schema([
-    //             [
-    //                 `Buy and Sell ${this.Industry} Businesses Across ${
-    //                     this.Australia
-    //                 }`,
-    //                 ""
-    //             ],
-    //             [this.pageTitle, this.paths.pretty]
-    //         ]);
-    //     },
-    //     get keywords() {
-    //         return U.makeKeywords({
-    //             keywords: this.keywordLists.country,
-    //             trade: "",
-    //             industry: "",
-    //             name: ""
-    //         });
-    //     }
-    // };
-
     U.outputs({
         logAction: "Single",
         templatePath: template,
@@ -199,82 +152,25 @@ const contact = (data, template, pageType) => {
 const country = (data, template, pageType) => {
     U.headerLog(changeCase.titleCase(pageType));
     dataPaths.buySell.data.map(buySell => {
-        const context = {
-            ...U.mergeDeepAll([
-                contexts.general({
-                    name: data,
-                    pageType,
-                    footerType: "country"
-                }),
-                contexts.home(),
-                contexts.buySell({ buySell }),
-                contexts.industry({
-                    industry: dataPaths.industry.data,
-                    buySell
-                }),
-                contexts.state({
-                    state: dataPaths.state.data,
-                    buySell,
-                    buySell
-                }),
-                contexts.country({ country: dataPaths.country.data, buySell })
-            ]),
-            get paths() {
-                const segment = `${this.buySell}-${this.industry}`;
-                const rel = [segment, this.filename];
-                const path = R.prepend(settings.outputLocation, rel);
-                const pretty = U.prettyPath(rel);
-                const output = U.relPathList(path);
-                const domain = settings.domain + pretty;
-                return { segment, rel, path, pretty, output, domain };
-            },
-            get absolutePath() {
-                return this.paths.domain;
-            },
-            get pageTitle() {
-                return `${this.Trade}ing ${buySell === "Buy" ? "a" : "your"} ${
-                    this.Industry
-                } Business`;
-            },
-            get schema() {
-                return U.schema([
-                    [
-                        `Buy and Sell ${this.Industry} Businesses Across ${
-                            this.Australia
-                        }`,
-                        ""
-                    ],
-                    [this.pageTitle, this.paths.pretty]
-                ]);
-            },
-            get footer() {
-                return dataPaths.footer.template.country[this.trade];
-            },
-            get footerBuyNswRegions() {
-                return U.nswRegionFooterList(
-                    `buy-${this.industry}`,
-                    this.nswRegionList
-                );
-            },
-            get footerSellNswRegions() {
-                return U.nswRegionFooterList(
-                    `sell-${this.industry}`,
-                    this.nswRegionList
-                );
-            },
-            get footerBreadcrumbs() {
-                return U.footerBreadcrumbs([["Home", ""], [this.Name, ""]]);
-            },
-            get keywords() {
-                return U.makeKeywords({
-                    keywords: this.keywordLists,
-                    trade: this.Trade,
-                    industry: this.Industry,
-                    name: this.Name
-                });
-            }
-        };
-
+        const context = R.pipe(
+            contexts2.general,
+            contexts2.home,
+            contexts2.buySell,
+            contexts2.industry,
+            contexts2.state,
+            contexts2.country
+        )(
+            U.input({
+                name: data,
+                pageType,
+                footerType: "country",
+                industry: "Childcare",
+                country: "Australia",
+                state: "NSW",
+                buySell
+            })
+        );
+        console.log(context);
         U.outputs({
             logAction: buySell,
             templatePath: template + context.buySellFilename,

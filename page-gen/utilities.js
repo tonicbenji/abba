@@ -61,16 +61,9 @@ const removeAllEmpty = ss => R.reject(R.isEmpty, ss);
 
 const mergeDeepAll = l => R.reduce(R.mergeDeepRight, {}, l);
 
-const input = ({ name, pageType, footerType, industry, country, state }) => {
+const input = x => {
     return {
-        input: {
-            name,
-            pageType,
-            footerType,
-            industry,
-            country,
-            state
-        }
+        input: x
     };
 };
 

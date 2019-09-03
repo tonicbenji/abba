@@ -216,19 +216,67 @@ const contact = context => {
 };
 
 const country = context => {
-    const { country } = context.input;
+    const { input: { country }, trade, Trade, industry, Industry, Australia, nswRegionList } = context;
+    const title = country;
+    const Title = changeCase.titleCase(country);
+    const pageTitle = `${Trade}ing ${buySell === "Buy" ? "a" : "your"} ${
+        Industry
+    } Business`;
+    const filename = "index.html";
+    const rel = [filename];
+    const path = R.prepend(settings.outputLocation, rel);
+    const pretty = U.prettyPath(rel);
+    const output = U.relPathList(path);
+    const domain = settings.domain + pretty;
+    const paths = { rel, path, pretty, output, domain };
+    const absolutePath = domain;
+    const heroImg = "";
+    const contentImg = "childcare-businesses-sydney.jpg";
+    const id = U.id("aus");
+    const keywordsList = U.keywords2(country, [], [
+        `${country} ${settings.business.trade}`,
+        `${settings.business.name} ${
+            settings.business.trade
+        } ${country}`
+    ]);
+    const schema = U.schema([
+        [
+            `Buy and Sell ${Industry} Businesses Across ${
+                Australia
+            }`,
+            ""
+        ],
+        [pageTitle, paths.pretty]
+    ]);
+    const footer = dataPaths.footer.template.country[trade];
+    const footerBuyNswRegions = nswRegionList ? U.nswRegionFooterList(
+        `buy-${industry}`,
+        nswRegionList
+    ) : [];
+    const footerSellNswRegions = nswRegionList ? U.nswRegionFooterList(
+        `sell-${industry}`,
+        nswRegionList
+    ) : [];
+    const footerBreadcrumbs = U.footerBreadcrumbs([["Home", ""], [Title, ""]]);
+    const keywords = keywordsList;
     return R.mergeDeepRight(context, {
         ...contextMaker("", country),
-        filename: "index.html",
-        heroImg: "",
-        contentImg: "childcare-businesses-sydney.jpg",
-        id: U.id("aus"),
-        keywordsList: U.keywords2(country, [], [
-            `${country} ${settings.business.trade}`,
-            `${settings.business.name} ${
-                settings.business.trade
-            } ${country}`
-        ])
+        title,
+        Title,
+        pageTitle,
+        filename,
+        paths,
+        absolutePath,
+        heroImg,
+        contentImg,
+        id,
+        keywordsList,
+        schema,
+        footer,
+        footerBuyNswRegions,
+        footerSellNswRegions,
+        footerBreadcrumbs,
+        keywords
     });
 };
 
@@ -255,15 +303,16 @@ const state = context => {
     });
 };
 
-const stateRegion = ({ stateRegion }) => {
-    return {
+const stateRegion = context => {
+    const { stateRegion } = context.input;
+    return R.mergeDeepRight(context, {
         ...contextMaker("", stateRegion),
         ...contextMaker("region", stateRegion),
         filename: U.filenameFormat(stateRegion),
         heroImg: "childcare-business-nsw.jpg",
         contentImg: "preschool-business-nsw.jpg",
         id: U.id("nswRegion")
-    };
+    });
 };
 
 const city = ({ city }) => {
