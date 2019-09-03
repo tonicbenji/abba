@@ -121,57 +121,6 @@ const about = (data, template, pageType) => {
         isGenSuburbs,
         context
     });
-    // const context = {
-    //     ...U.mergeDeepAll([
-    //         contexts.general({ name: data, pageType, footerType: "page" }),
-    //         contexts.home(),
-    //         contexts.industry({
-    //             industry: dataPaths.industry.data,
-    //             buySell: "Trade"
-    //         }),
-    //         contexts.country({ country: dataPaths.country.data, buySell: "" }),
-    //         contexts.about({ about: data })
-    //     ]),
-    //     get paths() {
-    //         const rel = [this.filename];
-    //         const path = R.prepend(settings.outputLocation, rel);
-    //         const pretty = U.prettyPath(rel);
-    //         const output = U.relPathList(path);
-    //         const domain = settings.domain + pretty;
-    //         return { rel, path, pretty, output, domain };
-    //     },
-    //     get absolutePath() {
-    //         return this.paths.domain;
-    //     },
-    //     get pageTitle() {
-    //         return "About Us";
-    //     },
-    //     get schema() {
-    //         return U.schema([
-    //             [
-    //                 `Buy and Sell ${this.Industry} Businesses Across ${
-    //                     this.Australia
-    //                 }`,
-    //                 ""
-    //             ],
-    //             [this.pageTitle, this.filename]
-    //         ]);
-    //     },
-    //     get footerBreadcrumbs() {
-    //         return U.footerBreadcrumbs([
-    //             ["Home", ""],
-    //             [this.title, this.filename]
-    //         ]);
-    //     },
-    //     get keywords() {
-    //         return U.makeKeywords({
-    //             keywords: this.keywordLists.country,
-    //             trade: "",
-    //             industry: "",
-    //             name: ""
-    //         });
-    //     }
-    // };
 };
 
 const contact = (data, template, pageType) => {

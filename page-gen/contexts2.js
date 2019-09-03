@@ -79,7 +79,7 @@ const industry = context => {
 };
 
 const home = context => {
-    const { industry, Industry, nswRegionList, Australia, keywordsList } = context;
+    const { industry, Industry, nswRegionList, Australia, keywordsList: keywordsList_ } = context;
     const title = "Buy and Sell Childcare Businesses across Australia"
     const filename = "index.html"
     const rel = [filename];
@@ -93,29 +93,29 @@ const home = context => {
         Australia
     }`;
     const schema = U.schema([[pageTitle, ""]]);
-    const footerBuyNswRegions = U.nswRegionFooterList(
+    const footerBuyNswRegions = nswRegionList ? U.nswRegionFooterList(
         `buy-${industry}`,
         nswRegionList
-    );
-    const footerSellNswRegions = U.nswRegionFooterList(
+    ) : "";
+    const footerSellNswRegions = nswRegionList ? U.nswRegionFooterList(
         `sell-${industry}`,
         nswRegionList
-    );
+    ) : "";
     const description = U.description(
         "The Abba Group are Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity."
     );
     const id = U.id("home");
     const footerBreadcrumbs = "";
     const home = title;
-    const keywordsList_ = U.keywords2(title, keywordsList, [
+    const keywordsList = keywordsList_ ? U.keywords2(title, keywordsList_, [
         "Buy a childcare business NSW",
         "Sell a childcare business NSW",
         "How to buy a childcare business NSW",
         "How to sell a childcare business NSW",
         "Childcare business acquisition NSW",
         "Childcare business merger NSW"
-    ]);
-    const keywords = U.keywordsFormat(keywordsList_);
+    ]) : [];
+    const keywords = U.keywordsFormat(keywordsList);
     return R.mergeDeepRight(context,
         {
             title,
@@ -129,14 +129,14 @@ const home = context => {
             schema,
             footerBuyNswRegions,
             footerSellNswRegions,
-            keywordsList: keywordsList_,
+            keywordsList,
             keywords,
             description
         });
 };
 
 const about = context => {
-    const { name } = context.input;
+    const { input: { name }, Industry, Australia, keywords: keywords_ } = context;
     const title = name;
     const filename = U.filenameFormat(name);
     const id = U.id(name);
@@ -147,10 +147,31 @@ const about = context => {
     const domain = settings.domain + pretty;
     const paths = { rel, path, pretty, output, domain };
     const absolutePath = domain;
+    const pageTitle = "About Us";
+    const schema = U.schema([
+        [
+            `Buy and Sell ${Industry} Businesses Across ${
+                Australia
+            }`,
+            ""
+        ],
+        [pageTitle, filename]
+    ]);
+    const footerBreadcrumbs = U.footerBreadcrumbs([
+        ["Home", ""],
+        [title, filename]
+    ]);
+    const keywords = keywords_;
     return R.mergeDeepRight(context, {
         title,
         filename,
-        id
+        id,
+        paths,
+        absolutePath,
+        pageTitle,
+        schema,
+        footerBreadcrumbs,
+        keywords
     });
 };
 
