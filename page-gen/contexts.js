@@ -91,7 +91,8 @@ const home = () => {
         },
         filename: "index.html",
         footerBreadcrumbs: "",
-        id: U.id("home")
+        id: U.id("home"),
+        description: U.description("The Abba Group are Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity.")
     };
 };
 
@@ -99,7 +100,8 @@ const about = ({ about }) => {
     return {
         title: about,
         filename: U.filenameFormat(about),
-        id: U.id("about")
+        id: U.id("about"),
+        description: U.description("About Abba Group - Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity.")
     };
 };
 
@@ -107,11 +109,12 @@ const contact = ({ contact }) => {
     return {
         title: contact,
         filename: U.filenameFormat(contact),
-        id: U.id("contact")
+        id: U.id("contact"),
+        description: U.description("Contact Abba Group - Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity.")
     };
 };
 
-const country = ({ country }) => {
+const country = ({ country, buySell }) => {
     return {
         ...contextMaker("", country),
         filename: "index.html",
@@ -125,11 +128,12 @@ const country = ({ country }) => {
                     settings.business.trade
                 } ${country}`
             ]
-        }
+        },
+        description: U.description(buySell === "Buy" ? "In addition to analysing the accounts of a business you are considering for purchase and to ensure that it is making a steady profit, you should also ensure that it has a high occupancy rate – 80% or higher." : "In large cities like Sydney, Brisbane and Melbourne there is currently an oversupply of childcare placements. In some suburbs within these cities and in less metropolitan areas there is however, actually an undersupply.")
     };
 };
 
-const state = ({ state }) => {
+const state = ({ state, buySell }) => {
     return {
         ...contextMaker("", state),
         ...contextMaker(state, state),
@@ -147,7 +151,8 @@ const state = ({ state }) => {
         heroImg: "preschool-business-brokers-nsw-2.jpg",
         contentImg: "children-playing-nsw-childcare-businesses.jpg",
         id: U.id("nsw"),
-        filename: "nsw.html"
+        filename: "nsw.html",
+        description: U.description(buySell === "Buy" ? "Reports published by the Australian government indicate that the supply of childcare is constrained by several factors in NSW, and this means that many buyers are fighting over a limited number of childcare businesses." : "There are many opportunities at present within the NSW childcare business market. In June 2018, the Australian Government announced that it is extending the childcare subsidy to children as young as three years.")
     };
 };
 
@@ -162,7 +167,7 @@ const stateRegion = ({ stateRegion }) => {
     };
 };
 
-const city = ({ city }) => {
+const city = ({ city, buySell }) => {
     return {
         ...contextMaker("", city),
         filename: "index.html",
@@ -171,7 +176,8 @@ const city = ({ city }) => {
         ),
         heroImg: "childcare-business-sydney.jpg",
         contentImg: "sydney-childcare-business-little-kid.jpg",
-        id: U.id("sydney")
+        id: U.id("sydney"),
+        description: U.description(buySell === "Buy" ? "When buying an independent centre in Sydney, you have more freedom and potentially higher profit margins, whereas with a franchise you have more guidance and potentially lower risk." : "As you are probably well aware, Sydney does have an oversupply of childcare businesses. This oversupply is worse in some areas than others.")
     };
 };
 
@@ -184,12 +190,13 @@ const cityRegion = ({ cityRegion }) => {
     };
 };
 
-const suburb = ({ suburb }) => {
+const suburb = ({ suburb, buySell }) => {
     return {
         ...contextMaker("", suburb),
         heroImg: "",
         contentImg: "daycare-business-sydney.jpg",
-        id: U.id("suburb")
+        id: U.id("suburb"),
+        description: U.description(buySell === "Buy" ? `While there is a strong demand for childcare in ${U.theToLower(changeCase.titleCase(suburb))}, you should be aware of some local conditions and broader regulations that will affect your purchase.` : `There is strong variation within the ${U.theToLower(changeCase.titleCase(suburb))} area, and this is one of the largest factors in the selling price of your childcare business.`)
     };
 };
 
@@ -197,7 +204,8 @@ const directory = () => {
     return {
         ...contextMaker("", "directory"),
         title: "Directory",
-        filename: "directory.html"
+        filename: "directory.html",
+        description: U.description("A list of the areas - national, state and local - that we service with childcare business sales and acquisitions.")
     };
 };
 

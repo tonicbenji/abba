@@ -70,8 +70,6 @@ module.exports = {
     },
     components: {
         tagline: "Business Sales, Acquisitions and Mergers",
-        description:
-            '<meta name="description" content="The Abba Group are Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity">',
         formSubmittedMobile:
             '<div id="formSubmittedMobile">✓&nbsp;&nbsp; Thank you, we will be in touch shortly</div>',
         rootUrl: settings.rootUrl,

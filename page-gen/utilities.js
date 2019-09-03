@@ -243,6 +243,8 @@ const contextualKeywords = ({ trade, industry, name }) => {
     };
 };
 
+const description = s => `<meta name="description" content="${s}">`
+
 module.exports = {
     pathToList,
     relPath,
@@ -282,5 +284,6 @@ module.exports = {
     makeKeywords,
     contextualKeywords,
     mobileBreadcrumbs,
-    outputs
+    outputs,
+    description
 };

@@ -67,10 +67,13 @@ TODO: Anatomy of a context reducer:
 
 ```
 const country = context => {
-    const { buySell, path, etc } = context; // These are its dependencies essentially
-    const path = R.append(context.something, context.path); // Compute some values using the existing context
+    // These are its dependencies essentially:
+    const { buySell, path, etc } = context;
+    // Compute some values using the existing context:
+    const path = R.append(context.something, context.path);
     const relPath = context.path etc.
-    return R.mergeDeep(
+    // Merge new values with context:
+    return R.mergeDeepRight(
          context,
         {
             name: etc,

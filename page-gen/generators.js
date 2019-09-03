@@ -20,7 +20,7 @@ program.parse(process.argv);
 // Generators
 
 const run = ({ pageTypes, context }) => {
-    const ifSuburbs = settings.genSuburbs || program.suburbs;
+    const ifSuburbs = program.suburbs && settings.genSuburbs;
     pageTypes.map(pageType => {
         const { data, template } = dataPaths[changeCase.camelCase(pageType)];
         switch (pageType) {
@@ -69,8 +69,8 @@ const home = (data, template, pageType) => {
                 industry: dataPaths.industry.data,
                 buySell: "Trade"
             }),
-            contexts.country({ country: dataPaths.country.data }),
-            contexts.state({ state: dataPaths.state.data }),
+            contexts.country({ country: dataPaths.country.data, buySell: "" }),
+            contexts.state({ state: dataPaths.state.data, buySell: "" }),
             contexts.home()
         ]),
         get paths() {
@@ -123,7 +123,7 @@ const about = (data, template, pageType) => {
                 industry: dataPaths.industry.data,
                 buySell: "Trade"
             }),
-            contexts.country({ country: dataPaths.country.data }),
+            contexts.country({ country: dataPaths.country.data, buySell: "" }),
             contexts.about({ about: data })
         ]),
         get paths() {
@@ -167,7 +167,7 @@ const contact = (data, template, pageType) => {
                 industry: dataPaths.industry.data,
                 buySell: "Trade"
             }),
-            contexts.country({ country: dataPaths.country.data }),
+            contexts.country({ country: dataPaths.country.data, buySell: "" }),
             contexts.contact({ contact: data })
         ]),
         get paths() {
@@ -211,8 +211,8 @@ const country = (data, template, pageType) => {
                     industry: dataPaths.industry.data,
                     buySell
                 }),
-                contexts.state({ state: dataPaths.state.data }),
-                contexts.country({ country: dataPaths.country.data })
+                contexts.state({ state: dataPaths.state.data, buySell, buySell }),
+                contexts.country({ country: dataPaths.country.data, buySell })
             ]),
             get paths() {
                 const segment = `${this.buySell}-${this.industry}`;
@@ -288,8 +288,8 @@ const state = (data, template, pageType) => {
                     industry: dataPaths.industry.data,
                     buySell
                 }),
-                contexts.country({ country: dataPaths.country.data }),
-                contexts.state({ state: data })
+                contexts.country({ country: dataPaths.country.data, buySell }),
+                contexts.state({ state: data, buySell, buySell })
             ]),
             get paths() {
                 const segment = `${this.buySell}-${this.industry}`;
@@ -375,8 +375,8 @@ const stateRegions = (data, template, pageType) => {
                         industry: dataPaths.industry.data,
                         buySell
                     }),
-                    contexts.country({ country: dataPaths.country.data }),
-                    contexts.state({ state: dataPaths.state.data }),
+                    contexts.country({ country: dataPaths.country.data, buySell }),
+                    contexts.state({ state: dataPaths.state.data, buySell }),
                     contexts.stateRegion({ stateRegion })
                 ]),
                 get paths() {
@@ -457,9 +457,9 @@ const city = (data, template, pageType) => {
                     industry: dataPaths.industry.data,
                     buySell
                 }),
-                contexts.country({ country: dataPaths.country.data }),
-                contexts.state({ state: dataPaths.state.data }),
-                contexts.city({ city: data })
+                contexts.country({ country: dataPaths.country.data, buySell }),
+                contexts.state({ state: dataPaths.state.data, buySell }),
+                contexts.city({ city: data, buySell })
             ]),
             get paths() {
                 const segment = `${this.buySell}-${this.industry}`;
@@ -548,9 +548,9 @@ const cityRegions = (data, template, pageType) => {
                         industry: dataPaths.industry.data,
                         buySell
                     }),
-                    contexts.country({ country: dataPaths.country.data }),
-                    contexts.state({ state: dataPaths.state.data }),
-                    contexts.city({ city: dataPaths.city.data }),
+                    contexts.country({ country: dataPaths.country.data, buySell }),
+                    contexts.state({ state: dataPaths.state.data, buySell }),
+                    contexts.city({ city: dataPaths.city.data, buySell }),
                     contexts.cityRegion({ cityRegion })
                 ]),
                 get RegionNoThe() {
@@ -676,7 +676,7 @@ const suburbs = (data, template, pageType, parentContext) => {
                         footerType: "suburb"
                     }),
                     contexts.buySell({ buySell }),
-                    contexts.suburb({ suburb })
+                    contexts.suburb({ suburb, buySell })
                 ]),
                 get paths() {
                     const segment = `${this.buySell}-${this.industry}`;
@@ -803,9 +803,9 @@ const directory = (data, template, pageType) => {
                 industry: dataPaths.industry.data,
                 buySell: "Trade"
             }),
-            contexts.country({ country: dataPaths.country.data }),
-            contexts.state({ state: dataPaths.state.data }),
-            contexts.city({ city: dataPaths.city.data }),
+            contexts.country({ country: dataPaths.country.data, buySell: "" }),
+            contexts.state({ state: dataPaths.state.data, buySell: "" }),
+            contexts.city({ city: dataPaths.city.data, buySell: "" }),
             contexts.directory()
         ]),
         get paths() {

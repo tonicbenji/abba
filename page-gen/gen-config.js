@@ -3,7 +3,7 @@ module.exports = {
     rootUrl: "",
     outputLocation: "public",
     briefLogs: false,
-    genSuburbs: false,
+    genSuburbs: true,
     subset: 1,
     business: {
         name: "ABBA",

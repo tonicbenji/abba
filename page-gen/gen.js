@@ -20,7 +20,3 @@ const performanceTimerDuration = (
 ).toFixed(3);
 
 U.performanceLog(performanceTimerDuration);
-
-module.exports = {
-    program
-}
