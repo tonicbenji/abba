@@ -223,27 +223,33 @@ const cityRegionFooterList = (pathSegment, city, regionsList) => {
 
 const id = id => `id=${id}`;
 
-const makeKeywords = obj => {
+const makeKeywords = ({ keywords, trade, industry, name }) => {
+    const shuffleWithName= l => shuffleSeed.shuffle(l, name);
     return R.pipe(
         R.values,
         R.unnest,
-        l => shuffleSeed.shuffle(l, this.name),
+        shuffleWithName,
+        R.concat(shuffleWithName(contextualKeywords({ trade, industry, name }))),
         R.take(8),
         stringList,
         s => `"${s}"`
-    )(obj);
+    )(keywords);
 };
 
 const contextualKeywords = ({ trade, industry, name }) => {
-    return {
-        contextual: [
-            `${trade} a ${industry} Business ${name}`,
-            `${trade} ${settings.business.trade} ${name}`
-        ]
-    };
+    return R.none(R.empty, [
+        trade,
+        industry,
+        name
+    ])
+        ? [
+              `${trade} a ${industry} Business ${name}`,
+              `${industry} ${settings.business.trade} ${name}`
+          ]
+        : [];
 };
 
-const description = s => `<meta name="description" content="${s}">`
+const description = s => `<meta name="description" content="${s}">`;
 
 module.exports = {
     pathToList,
