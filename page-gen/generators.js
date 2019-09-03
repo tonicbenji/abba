@@ -377,7 +377,7 @@ const stateRegions = (data, template, pageType) => {
                     }),
                     contexts.country({ country: dataPaths.country.data, buySell }),
                     contexts.state({ state: dataPaths.state.data, buySell }),
-                    contexts.stateRegion({ stateRegion })
+                    contexts.stateRegion({ stateRegion, buySell })
                 ]),
                 get paths() {
                     const segment = `${this.buySell}-${this.industry}`;
@@ -551,7 +551,7 @@ const cityRegions = (data, template, pageType) => {
                     contexts.country({ country: dataPaths.country.data, buySell }),
                     contexts.state({ state: dataPaths.state.data, buySell }),
                     contexts.city({ city: dataPaths.city.data, buySell }),
-                    contexts.cityRegion({ cityRegion })
+                    contexts.cityRegion({ cityRegion, buySell })
                 ]),
                 get RegionNoThe() {
                     return this.NameNoThe;

@@ -163,7 +163,8 @@ const stateRegion = ({ stateRegion }) => {
         filename: U.filenameFormat(stateRegion),
         heroImg: "childcare-business-nsw.jpg",
         contentImg: "preschool-business-nsw.jpg",
-        id: U.id("nswRegion")
+        id: U.id("nswRegion"),
+        description: U.description(buySell === "Buy" ? `Reports published by the Australian government indicate that the supply of childcare is constrained by several factors in ${U.theToLower(changeCase.titleCase(stateRegion))}, and this means that many buyers are fighting over a limited number of childcare businesses.` : `Among the broader regulatory factors affecting the childcare business market in ${U.theToLower(changeCase.titleCase(stateRegion))} is the Australian Government’s announcement that it is extending the childcare subsidy.`)
     };
 };
 
@@ -181,12 +182,13 @@ const city = ({ city, buySell }) => {
     };
 };
 
-const cityRegion = ({ cityRegion }) => {
+const cityRegion = ({ cityRegion, buySell }) => {
     return {
         ...contextMaker("", cityRegion),
         ...contextMaker("region", cityRegion),
         cityRegionSuburbs: dataPaths.suburbs.nearby[cityRegion],
-        id: U.id("sydney")
+        id: U.id("sydney"),
+        description: U.description(buySell === "Buy" ? `When buying an independent centre in ${U.theToLower(changeCase.titleCase(cityRegion))}, you have more freedom and potentially higher profit margins, whereas with a franchise you have more guidance and potentially lower risk.` : `As you are probably well aware, ${U.theToLower(changeCase.titleCase(cityRegion))} does have an oversupply of childcare businesses. This oversupply is worse in some areas than others.`)
     };
 };
 
