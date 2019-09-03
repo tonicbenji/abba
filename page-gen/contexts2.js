@@ -281,25 +281,83 @@ const country = context => {
 };
 
 const state = context => {
-    const { state } = context.input;
+    const { input: { state }, Trade, Industry, Australia, keywordsList } = context;
+    const nsw = state.toUpperCase();
+    const Nsw = state.toUpperCase();
+    const NSW = state.toUpperCase();
+    const name = state.toUpperCase();
+    const Name = state.toUpperCase();
+    const nameThe = state.toUpperCase();
+    const NameThe = state.toUpperCase();
+    const nameNoThe = state.toUpperCase();
+    const NameNoThe = state.toUpperCase();
+    const nswRegionList = U.removeAllEmpty(
+        U.fileToList(dataPaths.stateRegions.data)
+    );
+    const filename = "nsw.html";
+    const rel = [filename];
+    const path = R.prepend(settings.outputLocation, rel);
+    const pretty = U.prettyPath(rel);
+    const output = U.relPathList(path);
+    const domain = settings.domain + pretty;
+    const paths = { rel, path, pretty, output, domain };
+    const absolutePath = domain;
+    const heroImg = "preschool-business-brokers-nsw-2.jpg";
+    const contentImg = "children-playing-nsw-childcare-businesses.jpg";
+    const id = U.id("nsw");
+    const pageTitle = `${Trade}ing a ${Industry} Business in ${
+        nameThe
+    }`
+    const schema = U.schema([
+        [
+            `Buy and Sell ${Industry} Businesses Across ${
+                Australia
+            }`,
+            ""
+        ],
+        [pageTitle, paths.pretty]
+    ]);
+    const regionFooterHeading = `<div class="regionFooterHeading">${Trade} a ${
+        Industry
+    } Business in one of ${NSW}’s Regions:</div>`;
+    const regionFooterUl = nswRegionList ? U.nswRegionFooterList(
+        paths.segment,
+        nswRegionList
+    ) : [];
+    const mobileBreadcrumbs = U.mobileBreadcrumbs([
+        [Australia, `${paths.segment}/index.html`]
+    ]);
+    const footerBreadcrumbs = U.footerBreadcrumbs([
+        ["Home", ""],
+        [Australia, `${paths.segment}/index.html`],
+        [NSW, `${paths.segment}/${nsw}.html`]
+    ]);
+    const keywords = keywordsList;
     return R.mergeDeepRight(context, {
         ...contextMaker("", state),
         ...contextMaker(state, state),
-        nsw: state.toUpperCase(),
-        Nsw: state.toUpperCase(),
-        name: state.toUpperCase(),
-        Name: state.toUpperCase(),
-        nameThe: state.toUpperCase(),
-        NameThe: state.toUpperCase(),
-        nameNoThe: state.toUpperCase(),
-        NameNoThe: state.toUpperCase(),
-        nswRegionList: U.removeAllEmpty(
-            U.fileToList(dataPaths.stateRegions.data)
-        ),
-        heroImg: "preschool-business-brokers-nsw-2.jpg",
-        contentImg: "children-playing-nsw-childcare-businesses.jpg",
-        id: U.id("nsw"),
-        filename: "nsw.html"
+        nsw,
+        Nsw,
+        name,
+        Name,
+        nameThe,
+        NameThe,
+        nameNoThe,
+        NameNoThe,
+        nswRegionList,
+        paths,
+        absolutePath,
+        heroImg,
+        contentImg,
+        id,
+        filename,
+        pageTitle,
+        schema,
+        regionFooterHeading,
+        regionFooterUl,
+        mobileBreadcrumbs,
+        footerBreadcrumbs,
+        keywords
     });
 };
 
