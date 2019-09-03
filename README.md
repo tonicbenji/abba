@@ -63,6 +63,8 @@ TODO: replace the object makers with reducers that take the context, merge it wi
 
 TODO: make the piping functions reside in the contexts file so that they act as collections that can themselves be used if needed
 
+TODO: make the keywords function a mini reducer
+
 TODO: Anatomy of a context reducer:
 
 ```
@@ -82,3 +84,5 @@ const country = context => {
         })
 }
 ```
+
+NOTE: the reducers rewrite has been started on the ‘reducers’ branch
