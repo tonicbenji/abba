@@ -45,36 +45,43 @@ const components = ({ footerType }) => {
 };
 
 
-const general = ({ name, pageType, footerType }) => {
-    return {
-        general: {
-            name,
-            pageType,
-            footerType
-        },
-        ...components({ footerType }),
-        ...contextMaker("BusinessName", settings.business.name),
-        BusinessName: changeCase.titleCase(settings.business.name),
-        ...contextMaker("", name),
-        nameNoThe: U.noThe(name.toLowerCase()),
-        NameNoThe: U.noThe(changeCase.titleCase(name)),
-        NAMENOTHE: U.noThe(name.toUpperCase()),
-        domain: settings.domain,
-        Domain: U.escForwardSlashes(settings.domain),
-        mobileBreadcrumbs: ""
-    };
+const general = context => {
+    const { name, pageType, footerType } = context;
+    return R.mergeDeepRight(context,
+        {
+                general: {
+                    name,
+                    pageType,
+                    footerType
+                },
+                ...components({ footerType }),
+                ...contextMaker("BusinessName", settings.business.name),
+                BusinessName: changeCase.titleCase(settings.business.name),
+                ...contextMaker("", name),
+                nameNoThe: U.noThe(name.toLowerCase()),
+                NameNoThe: U.noThe(changeCase.titleCase(name)),
+                NAMENOTHE: U.noThe(name.toUpperCase()),
+                domain: settings.domain,
+                Domain: U.escForwardSlashes(settings.domain),
+                mobileBreadcrumbs: ""
+            }
+    );
 };
 
-const buySell = ({ buySell }) => {
-    return {
+const buySell = context => {
+    const { buySell } = context;
+    return R.mergeDeepRight(context,
+{
         ...contextMaker("buySell", buySell),
         ...contextMaker("trade", buySell),
         buySellFilename: U.filenameFormat(buySell)
-    };
+    });
 };
 
-const industry = ({ buySell, industry }) => {
-    return {
+const industry = context => {
+    const { buySell, industry } = context;
+    return R.mergeDeepRight(context,
+{
         ...contextMaker("industry", industry),
         keywordLists: {
             industry: [
@@ -86,19 +93,19 @@ const industry = ({ buySell, industry }) => {
                 `${buySell} ${settings.business.trade}`
             ]
         }
-    };
+    });
 };
 
-const home = () => {
-    return {
-        title: "Buy and Sell Childcare Businesses across Australia",
-        get home() {
-            return this.title;
-        },
+const home = context => {
+    const title = "Buy and Sell Childcare Businesses across Australia"
+    return R.mergeDeepRight(context,
+{
+    title,
+    home,
         filename: "index.html",
         footerBreadcrumbs: "",
         id: U.id("home")
-    };
+    });
 };
 
 const about = ({ about }) => {
