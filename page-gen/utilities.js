@@ -281,6 +281,16 @@ const contextualKeywords = ({ trade, industry, name }) => {
         : [];
 };
 
+const keywords2 = (seed, la, lb) => {
+    return R.pipe(
+        R.concat(la),
+        l => shuffleSeed.shuffle(l, seed),
+        R.take(8)
+    )(lb)
+}
+
+const keywordsFormat = l => `"${stringList(l)}"`;
+
 const description = s => `<meta name="description" content="${s}">`;
 
 module.exports = {
@@ -324,5 +334,7 @@ module.exports = {
     mobileBreadcrumbs,
     outputs,
     description,
-    input
+    input,
+    keywords2,
+    keywordsFormat
 };

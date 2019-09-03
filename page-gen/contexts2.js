@@ -79,7 +79,7 @@ const industry = context => {
 };
 
 const home = context => {
-    const { industry, Industry, nswRegionList, Australia } = context;
+    const { industry, Industry, nswRegionList, Australia, keywordsList } = context;
     const title = "Buy and Sell Childcare Businesses across Australia"
     const filename = "index.html"
     const rel = [filename];
@@ -101,13 +101,21 @@ const home = context => {
         `sell-${industry}`,
         nswRegionList
     );
-    const keywords = [];
     const description = U.description(
         "The Abba Group are Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity."
     );
     const id = U.id("home");
     const footerBreadcrumbs = "";
     const home = title;
+    const keywordsList_ = U.keywords2(title, keywordsList, [
+        "Buy a childcare business NSW",
+        "Sell a childcare business NSW",
+        "How to buy a childcare business NSW",
+        "How to sell a childcare business NSW",
+        "Childcare business acquisition NSW",
+        "Childcare business merger NSW"
+    ]);
+    const keywords = U.keywordsFormat(keywordsList_);
     return R.mergeDeepRight(context,
         {
             title,
@@ -121,6 +129,7 @@ const home = context => {
             schema,
             footerBuyNswRegions,
             footerSellNswRegions,
+            keywordsList: keywordsList_,
             keywords,
             description
         });
@@ -150,14 +159,12 @@ const country = context => {
         heroImg: "",
         contentImg: "childcare-businesses-sydney.jpg",
         id: U.id("aus"),
-        keywordLists: {
-            country: [
-                `${country} ${settings.business.trade}`,
-                `${settings.business.name} ${
-                    settings.business.trade
-                } ${country}`
-            ]
-        }
+        keywordsList: U.keywords2(country, [], [
+            `${country} ${settings.business.trade}`,
+            `${settings.business.name} ${
+                settings.business.trade
+            } ${country}`
+        ])
     });
 };
 
