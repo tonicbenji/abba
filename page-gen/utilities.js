@@ -224,12 +224,16 @@ const cityRegionFooterList = (pathSegment, city, regionsList) => {
 const id = id => `id=${id}`;
 
 const makeKeywords = ({ keywords, trade, industry, name }) => {
-    const shuffleWithName= l => shuffleSeed.shuffle(l, name);
+    const specificKeywords = R.pipe(
+        contextualKeywords,
+        l => shuffleSeed.shuffle(l, name),
+        R.take(4)
+    )({ trade, industry, name });
     return R.pipe(
         R.values,
         R.unnest,
-        shuffleWithName,
-        R.concat(shuffleWithName(contextualKeywords({ trade, industry, name }))),
+        l => shuffleSeed.shuffle(l, name),
+        R.concat(specificKeywords),
         R.take(8),
         stringList,
         s => `"${s}"`
@@ -244,6 +248,9 @@ const contextualKeywords = ({ trade, industry, name }) => {
     ])
         ? [
               `${trade} a ${industry} Business ${name}`,
+              `${trade} a Daycare Business ${name}`,
+              `${trade} a Preschool Business ${name}`,
+              `How to ${trade} a ${industry} Business in ${name}`,
               `${industry} ${settings.business.trade} ${name}`
           ]
         : [];
