@@ -113,7 +113,6 @@ const about = (data, template, pageType) => {
             state: "NSW"
         })
     );
-    console.log(context);
     U.outputs({
         logAction: "Single",
         templatePath: template,
@@ -125,51 +124,68 @@ const about = (data, template, pageType) => {
 
 const contact = (data, template, pageType) => {
     U.headerLog(changeCase.titleCase(pageType));
-    const context = {
-        ...U.mergeDeepAll([
-            contexts.general({ name: data, pageType, footerType: "page" }),
-            contexts.home(),
-            contexts.industry({
-                industry: dataPaths.industry.data,
-                buySell: "Trade"
-            }),
-            contexts.country({ country: dataPaths.country.data, buySell: "" }),
-            contexts.contact({ contact: data })
-        ]),
-        get paths() {
-            const rel = [this.filename];
-            const path = R.prepend(settings.outputLocation, rel);
-            const pretty = U.prettyPath(rel);
-            const output = U.relPathList(path);
-            const domain = settings.domain + pretty;
-            return { rel, path, pretty, output, domain };
-        },
-        get absolutePath() {
-            return this.paths.domain;
-        },
-        get pageTitle() {
-            return "Contact Us";
-        },
-        get schema() {
-            return U.schema([
-                [
-                    `Buy and Sell ${this.Industry} Businesses Across ${
-                        this.Australia
-                    }`,
-                    ""
-                ],
-                [this.pageTitle, this.paths.pretty]
-            ]);
-        },
-        get keywords() {
-            return U.makeKeywords({
-                keywords: this.keywordLists.country,
-                trade: "",
-                industry: "",
-                name: ""
-            });
-        }
-    };
+    const context = R.pipe(
+        contexts2.general,
+        contexts2.home,
+        contexts2.industry,
+        contexts2.country,
+        contexts2.contact
+    )(
+        U.input({
+            name: data,
+            pageType,
+            footerType: "page",
+            industry: "Childcare",
+            country: "Australia",
+            state: "NSW"
+        })
+    );
+
+    // const context = {
+    //     ...U.mergeDeepAll([
+    //         contexts.general({ name: data, pageType, footerType: "page" }),
+    //         contexts.home(),
+    //         contexts.industry({
+    //             industry: dataPaths.industry.data,
+    //             buySell: "Trade"
+    //         }),
+    //         contexts.country({ country: dataPaths.country.data, buySell: "" }),
+    //         contexts.contact({ contact: data })
+    //     ]),
+    //     get paths() {
+    //         const rel = [this.filename];
+    //         const path = R.prepend(settings.outputLocation, rel);
+    //         const pretty = U.prettyPath(rel);
+    //         const output = U.relPathList(path);
+    //         const domain = settings.domain + pretty;
+    //         return { rel, path, pretty, output, domain };
+    //     },
+    //     get absolutePath() {
+    //         return this.paths.domain;
+    //     },
+    //     get pageTitle() {
+    //         return "Contact Us";
+    //     },
+    //     get schema() {
+    //         return U.schema([
+    //             [
+    //                 `Buy and Sell ${this.Industry} Businesses Across ${
+    //                     this.Australia
+    //                 }`,
+    //                 ""
+    //             ],
+    //             [this.pageTitle, this.paths.pretty]
+    //         ]);
+    //     },
+    //     get keywords() {
+    //         return U.makeKeywords({
+    //             keywords: this.keywordLists.country,
+    //             trade: "",
+    //             industry: "",
+    //             name: ""
+    //         });
+    //     }
+    // };
 
     U.outputs({
         logAction: "Single",

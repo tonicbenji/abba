@@ -175,12 +175,44 @@ const about = context => {
     });
 };
 
-const contact = ({ contact }) => {
-    return {
-        title: contact,
-        filename: U.filenameFormat(contact),
-        id: U.id("contact")
-    };
+const contact = context => {
+    const { input: { name }, Industry, Australia, keywords: keywords_ } = context;
+    const title = name;
+    const filename = U.filenameFormat(name);
+    const id = U.id(name);
+    const rel = [filename];
+    const path = R.prepend(settings.outputLocation, rel);
+    const pretty = U.prettyPath(rel);
+    const output = U.relPathList(path);
+    const domain = settings.domain + pretty;
+    const paths = { rel, path, pretty, output, domain };
+    const absolutePath = domain;
+    const pageTitle = "Contact Us";
+    const schema = U.schema([
+        [
+            `Buy and Sell ${Industry} Businesses Across ${
+                Australia
+            }`,
+            ""
+        ],
+        [pageTitle, filename]
+    ]);
+    const footerBreadcrumbs = U.footerBreadcrumbs([
+        ["Home", ""],
+        [title, filename]
+    ]);
+    const keywords = keywords_;
+    return R.mergeDeepRight(context, {
+        title,
+        filename,
+        id,
+        paths,
+        absolutePath,
+        pageTitle,
+        schema,
+        footerBreadcrumbs,
+        keywords
+    });
 };
 
 const country = context => {
