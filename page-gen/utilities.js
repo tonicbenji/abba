@@ -241,7 +241,7 @@ const makeKeywords = ({ keywords, trade, industry, name }) => {
 };
 
 const contextualKeywords = ({ trade, industry, name }) => {
-    return R.none(R.empty, [
+    return R.none(R.isEmpty, [
         trade,
         industry,
         name
