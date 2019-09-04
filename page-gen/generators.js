@@ -296,7 +296,7 @@ const cityRegions = (data, template, pageType) => {
             )(
                 U.input({
                     name: cityRegion,
-                    city: cityRegion,
+                    city: "Sydney",
                     cityRegion,
                     pageType,
                     footerType: "city",

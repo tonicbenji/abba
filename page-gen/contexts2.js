@@ -519,6 +519,7 @@ const cityRegion = context => {
     const cityRegionMaker = contextMaker("region", cityRegion);
     const id = U.id("sydney");
     const RegionNoThe = nameMaker.NameNoThe;
+    const filename = U.filenameFormat(cityRegion);
     const rel = [filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
@@ -560,7 +561,7 @@ const cityRegion = context => {
     );
     const cityRegionSuburbsSubset = R.take(
         Math.ceil(cityRegionSuburbsList.length * settings.subset),
-        shuffleSeed.shuffle(cityRegionSuburbsList, cityRegion)
+        U.shuffleSeed.shuffle(cityRegionSuburbsList, cityRegion)
     );
     const cityRegionSuburbs = cityRegionSuburbsSubset;
     const regionFooterHeading = R.isEmpty(this.cityRegionSuburbs)
