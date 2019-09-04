@@ -325,132 +325,31 @@ const suburbs = (data, template, pageType, parentContext) => {
     U.headerLog(changeCase.titleCase(`${parentContext.name} ${pageType}`));
     data.map(suburb =>
         dataPaths.buySell.data.map(buySell => {
-            const context = {
-                ...U.mergeDeepAll([
-                    parentContext,
-                    contexts.general({
-                        name: suburb,
-                        pageType,
-                        footerType: "suburb"
-                    }),
-                    contexts.buySell({ buySell }),
-                    contexts.suburb({ suburb, buySell })
-                ]),
-                get paths() {
-                    const segment = `${this.buySell}-${this.industry}`;
-                    const rel = [segment, this.sydney, this.filename];
-                    const path = R.prepend(settings.outputLocation, rel);
-                    const pretty = U.prettyPath(rel);
-                    const output = U.relPathList(path);
-                    const domain = settings.domain + pretty;
-                    return { segment, rel, path, pretty, output, domain };
-                },
-                get absolutePath() {
-                    return this.paths.domain;
-                },
-                get pageTitle() {
-                    return `${this.Trade}ing a ${this.Industry} Business in ${
-                        this.Name
-                    }, ${parentContext.NameNoThe}`;
-                },
-                get schema() {
-                    return U.schema([
-                        [
-                            `Buy and Sell ${this.Industry} Businesses Across ${
-                                this.Australia
-                            }`,
-                            ""
-                        ],
-                        [
-                            `${this.Trade}ing ${
-                                buySell === "Buy" ? "a" : "your"
-                            } ${this.Industry} Business`,
-                            `${this.paths.segment}/index.html`
-                        ],
-                        [
-                            `${this.Trade}ing a ${this.Industry} Business in ${
-                                this.Sydney
-                            }`,
-                            `${
-                                this.paths.segment
-                            }/${this.sydney.toLowerCase()}/index.html`
-                        ],
-                        [
-                            `${this.Trade}ing a ${this.Industry} Business in ${
-                                parentContext.nameThe
-                            }`,
-                            `${this.paths.segment}/sydney/${
-                                parentContext.filename
-                            }`
-                        ],
-                        [this.pageTitle, this.paths.pretty]
-                    ]);
-                },
-                get nearbySuburbs() {
-                    return R.intersection(
-                        dataPaths.suburbs.nearby[suburb],
-                        this.cityRegionSuburbs
-                    );
-                },
-                get nearbySuburbsHeading() {
-                    return R.isEmpty(this.nearbySuburbs)
-                        ? ""
-                        : `<div class="regionFooterHeading">${
-                              this.Trade
-                          }ing a ${
-                              this.Industry
-                          } Business in Nearby Suburbs:</div>`;
-                },
-                get nearby() {
-                    return U.cityRegionFooterList(
-                        this.paths.segment,
-                        this.sydney,
-                        this.nearbySuburbs
-                    );
-                },
-                get keywords() {
-                    return U.makeKeywords({
-                        keywords: this.keywordLists,
-                        trade: this.Trade,
-                        industry: this.Industry,
-                        name: this.Name
-                    });
-                },
-                get mobileBreadcrumbs() {
-                    return U.mobileBreadcrumbs([
-                        [this.Australia, `${this.paths.segment}/index.html`],
-                        [this.NSW, `${this.paths.segment}/${this.nsw}.html`],
-                        [
-                            this.Sydney,
-                            `${this.paths.segment}/${this.sydney}/index.html`
-                        ],
-                        [
-                            this.Region,
-                            `${this.paths.segment}/sydney/${
-                                this.filenameregion
-                            }.html`
-                        ]
-                    ]);
-                },
-                get footerBreadcrumbs() {
-                    return U.footerBreadcrumbs([
-                        ["Home", ""],
-                        [this.Australia, `${this.paths.segment}/index.html`],
-                        [
-                            this.Sydney,
-                            `${this.paths.segment}/${this.sydney}/index.html`
-                        ],
-                        [
-                            this.Region,
-                            `${this.paths.segment}/sydney/${
-                                this.filenameregion
-                            }.html`
-                        ],
-                        [this.Name, ""]
-                    ]);
-                }
-            };
-
+            const context = R.pipe(
+                parentContext,
+                contexts2.general,
+                contexts2.buySell,
+                contexts2.suburb
+            )(
+                U.input({
+                    name: suburb,
+                    city: "Sydney",
+                    cityRegion: "Sydney",
+                    pageType,
+                    footerType: "suburb",
+                    industry: "Childcare",
+                    country: "Australia",
+                    state: "NSW",
+                    buySell
+                })
+            );
+            U.outputs({
+                logAction: buySell,
+                templatePath: template + context.buySellFilename,
+                data: cityRegion,
+                isGenSuburbs,
+                context
+            });
             U.outputs({
                 logAction: buySell,
                 templatePath: template + context.buySellFilename,
