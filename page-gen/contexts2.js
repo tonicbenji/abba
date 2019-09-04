@@ -375,7 +375,6 @@ const stateRegion = context => {
     } = context;
     const nameMaker = contextMaker("", stateRegion);
     const regionMaker = contextMaker("region", stateRegion);
-    console.log(nameMaker, regionMaker);
     const filename = U.filenameFormat(stateRegion);
     const heroImg = "childcare-business-nsw.jpg";
     const contentImg = "preschool-business-nsw.jpg";
@@ -422,7 +421,15 @@ const stateRegion = context => {
         filename,
         heroImg,
         contentImg,
-        id
+        id,
+        paths,
+        absolutePath,
+        pageTitle,
+        schema,
+        regionFooterHeading,
+        mobileBreadcrumbs,
+        footerBreadcrumbs,
+        keywords
     });
 };
 

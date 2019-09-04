@@ -228,6 +228,7 @@ const stateRegions = (data, template, pageType) => {
             )(
                 U.input({
                     name: stateRegion,
+                    stateRegion,
                     pageType,
                     footerType: "stateRegion",
                     industry: "Childcare",
