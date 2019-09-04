@@ -46,11 +46,13 @@ const contextMaker = (key, value) => {
 
 const components = ({ footerType }) => {
     const path = "src/templates/components/";
-    const files = ["bottomScripts", "contactForm", "header", "meta"];
+    const files = R.fromPairs(R.map(x => [x, U.fileToStr(path + `${x}.html`)], ["bottomScripts", "contactForm", "header", "meta"]));
+    const footer = dataPaths.footer.template[footerType];
+    const dataPathsComponents = dataPaths.components;
     return {
-        ...R.fromPairs(R.map(x => [x, U.fileToStr(path + `${x}.html`)], files)),
-        footer: dataPaths.footer.template[footerType],
-        ...dataPaths.components
+        ...files,
+        footer,
+        ...dataPathsComponents
     };
 };
 
@@ -300,6 +302,8 @@ const state = context => {
         Australia,
         keywordsList
     } = context;
+    const nameMaker = contextMaker("", state);
+    const stateMaker = contextMaker(state, state);
     const nsw = state.toUpperCase();
     const Nsw = state.toUpperCase();
     const NSW = state.toUpperCase();
@@ -342,8 +346,8 @@ const state = context => {
     ]);
     const keywords = keywordsList;
     return R.mergeDeepRight(context, {
-        ...contextMaker("", state),
-        ...contextMaker(state, state),
+        ...nameMaker,
+        ...stateMaker,
         nsw,
         Nsw,
         name,
