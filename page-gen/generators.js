@@ -313,7 +313,6 @@ const cityRegions = (data, template, pageType) => {
                 isGenSuburbs,
                 context
             });
-            // Child generator
             if (buySell === "Buy") {
                 run({ pageTypes: ["suburbs"], context });
             }
@@ -344,7 +343,6 @@ const suburbs = (data, template, pageType, parentContext) => {
                     buySell
                 })
             );
-            console.log(context);
             U.outputs({
                 logAction: buySell,
                 templatePath: template + context.buySellFilename,
@@ -358,153 +356,26 @@ const suburbs = (data, template, pageType, parentContext) => {
 
 const directory = (data, template, pageType) => {
     U.headerLog(changeCase.titleCase(pageType));
-    const context = {
-        ...U.mergeDeepAll([
-            contexts.general({
-                name: pageType,
-                pageType,
-                footerType: "page"
-            }),
-            contexts.home(),
-            contexts.industry({
-                industry: dataPaths.industry.data,
-                buySell: "Trade"
-            }),
-            contexts.country({ country: dataPaths.country.data, buySell: "" }),
-            contexts.state({ state: dataPaths.state.data, buySell: "" }),
-            contexts.city({ city: dataPaths.city.data, buySell: "" }),
-            contexts.directory()
-        ]),
-        get paths() {
-            const rel = [this.filename];
-            const path = R.prepend(settings.outputLocation, rel);
-            const pretty = U.prettyPath(rel);
-            const output = U.relPathList(path);
-            const domain = settings.domain + pretty;
-            return { rel, path, pretty, output, domain };
-        },
-        get absolutePath() {
-            return this.paths.domain;
-        },
-        get pageTitle() {
-            return `Buy or Sell a ${
-                this.Industry
-            } Business in Australian Suburbs and Regions`;
-        },
-        get schema() {
-            return U.schema([
-                [
-                    `Buy and Sell ${this.Industry} Businesses Across ${
-                        this.Australia
-                    }`,
-                    ""
-                ],
-                [this.pageTitle, this.filename]
-            ]);
-        },
-        get keywords() {
-            return U.makeKeywords({
-                keywords: this.keywordLists.country,
-                trade: "",
-                industry: "",
-                name: ""
-            });
-        },
-        get directoryList() {
-            return dataPaths.buySell.data
-                .map(buySell => {
-                    const directoryUl = s => `<ul id="directoryUl">${s}</ul>`;
-                    return (
-                        `<a href="${
-                            this.industry
-                        }-${buySell.toLowerCase()}/index.html"><h4>${buySell} ${
-                            this.Industry
-                        } in ${this.Australia}&nbsp;»</h4></a>` +
-                        `<a href="${this.industry}-${buySell.toLowerCase()}/${
-                            this.nsw
-                        }.html"><h5>${buySell} ${this.Industry} in ${
-                            this.NSW
-                        }&nbsp;»</h5></a>` +
-                        directoryUl(
-                            this.nswRegionList
-                                .map(stateRegion => {
-                                    return `<li><a href="/${buySell.toLowerCase()}-${
-                                        this.industry
-                                    }/${U.filenameFormat(
-                                        stateRegion
-                                    )}">${buySell} a ${
-                                        this.Industry
-                                    } Business in <strong>${stateRegion}</strong>&nbsp;»</a></li>`;
-                                })
-                                .join("")
-                        ) +
-                        `<a href="${this.industry}-${buySell.toLowerCase()}/${
-                            this.sydney
-                        }/index.html"><h6>${buySell} ${this.Industry} in ${
-                            this.Sydney
-                        }&nbsp;»</h6></a>` +
-                        U.removeAllEmpty(
-                            U.fileToList(dataPaths.cityRegions.data)
-                        )
-                            .map(cityRegion => {
-                                const cityRegionSuburbs = () => {
-                                    const list = U.removeAllEmpty(
-                                        U.fileToList(
-                                            dataPaths.cityRegions.suburbs +
-                                                `${U.filenameCase(
-                                                    cityRegion
-                                                )}.txt`
-                                        )
-                                    );
-                                    const subset = R.take(
-                                        Math.ceil(
-                                            list.length * settings.subset
-                                        ),
-                                        shuffleSeed.shuffle(list, cityRegion)
-                                    );
-                                    return subset;
-                                };
-                                return (
-                                    `<a href="/${buySell.toLowerCase()}-${
-                                        this.industry
-                                    }/${U.filenameFormat(
-                                        cityRegion
-                                    )}"><h6 class="h7">${buySell} a ${
-                                        this.Industry
-                                    } Business in ${changeCase.titleCase(
-                                        cityRegion
-                                    )}&nbsp;»</h6></a>` +
-                                    directoryUl(
-                                        cityRegionSuburbs()
-                                            .map(suburb => {
-                                                return `<li><a href="/${buySell.toLowerCase()}-${
-                                                    this.industry
-                                                }/${
-                                                    this.sydney
-                                                }/${U.filenameFormat(
-                                                    suburb
-                                                )}">${buySell} a ${
-                                                    this.Industry
-                                                } Business in <strong>${changeCase.titleCase(
-                                                    suburb
-                                                )},<br>${changeCase.titleCase(
-                                                    cityRegion
-                                                )}</strong></a></li>`;
-                                            })
-                                            .join("")
-                                    )
-                                );
-                            })
-                            .join("")
-                    );
-                })
-                .join("");
-        },
-        get footerBreadcrumbs() {
-            return U.footerBreadcrumbs([["Home", ""], [this.Name, ""]]);
-        }
-    };
-
+    const context = R.pipe(
+        contexts2.general,
+        contexts2.home,
+        contexts2.industry,
+        contexts2.country,
+        contexts2.state,
+        contexts2.city,
+        contexts2.directory
+    )(
+        U.input({
+            name: pageType,
+            pageType,
+            footerType: "page",
+            industry: "Childcare",
+            country: "Australia",
+            state: "NSW",
+            city: "Sydney",
+            buySell: "Trade"
+        })
+    );
     U.outputs({
         logAction: "Single",
         templatePath: template,

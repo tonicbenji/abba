@@ -22,7 +22,11 @@ const contextMaker = (key, value) => {
     const nameToUpper = contextItem(R.toUpper, "name", value);
     const nameTitleCase = contextItem(changeCase.titleCase, "name", value);
     const nameCamelCase = contextItem(changeCase.camelCase, key_, value);
-    const nameConstantCase = contextItem(changeCase.constantCase, "name", value);
+    const nameConstantCase = contextItem(
+        changeCase.constantCase,
+        "name",
+        value
+    );
     const nameFilename = contextItem(U.filenameCase, `filename${key_}`, value);
     const filename = U.filenameFormat(value);
     const nameThe = U.theToLower(R.toLower(value));
@@ -47,7 +51,14 @@ const contextMaker = (key, value) => {
 
 const components = ({ footerType }) => {
     const path = "src/templates/components/";
-    const files = R.fromPairs(R.map(x => [x, U.fileToStr(path + `${x}.html`)], ["bottomScripts", "contactForm", "header", "meta"]));
+    const files = R.fromPairs(
+        R.map(x => [x, U.fileToStr(path + `${x}.html`)], [
+            "bottomScripts",
+            "contactForm",
+            "header",
+            "meta"
+        ])
+    );
     const footer = dataPaths.footer.template[footerType];
     const dataPathsComponents = dataPaths.components;
     return {
@@ -235,7 +246,7 @@ const country = context => {
         industry,
         Industry,
         Australia,
-        nswRegionList,
+        nswRegionList
     } = context;
     const title = country;
     const Title = changeCase.titleCase(country);
@@ -243,7 +254,7 @@ const country = context => {
         buySell === "Buy" ? "a" : "your"
     } ${Industry} Business`;
     const filename = "index.html";
-    const segment = `${trade}-${industry}`
+    const segment = `${trade}-${industry}`;
     const rel = [segment, filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
@@ -321,7 +332,7 @@ const state = context => {
         U.fileToList(dataPaths.stateRegions.data)
     );
     const filename = "nsw.html";
-    const segment = `${trade}-${industry}`
+    const segment = `${trade}-${industry}`;
     const rel = [segment, filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
@@ -380,7 +391,15 @@ const state = context => {
 
 const stateRegion = context => {
     const {
-        input: { stateRegion }, trade, Trade, Australia, industry, Industry, NSW, nsw, keywordLists
+        input: { stateRegion },
+        trade,
+        Trade,
+        Australia,
+        industry,
+        Industry,
+        NSW,
+        nsw,
+        keywordLists
     } = context;
     const nameMaker = contextMaker("", stateRegion);
     const regionMaker = contextMaker("region", stateRegion);
@@ -388,7 +407,7 @@ const stateRegion = context => {
     const heroImg = "childcare-business-nsw.jpg";
     const contentImg = "preschool-business-nsw.jpg";
     const id = U.id("nswRegion");
-    const segment = `${trade}-${industry}`
+    const segment = `${trade}-${industry}`;
     const rel = [segment, filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
@@ -400,17 +419,12 @@ const stateRegion = context => {
         nameMaker.nameThe
     }`;
     const schema = U.schema([
-        [
-            `Buy and Sell ${Industry} Businesses Across ${
-                Australia
-            }`,
-            ""
-        ],
+        [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, paths.pretty]
     ]);
-    const regionFooterHeading = `<div class="regionFooterHeading">${Trade} a ${
-        Industry
-    } Business in one of ${nameMaker.NameNoThe}’s Regions:</div>`;
+    const regionFooterHeading = `<div class="regionFooterHeading">${Trade} a ${Industry} Business in one of ${
+        nameMaker.NameNoThe
+    }’s Regions:</div>`;
     const mobileBreadcrumbs = U.mobileBreadcrumbs([
         [Australia, `${paths.segment}/index.html`],
         [NSW, `${paths.segment}/${nsw}.html`]
@@ -419,10 +433,7 @@ const stateRegion = context => {
         ["Home", ""],
         [Australia, `${paths.segment}/index.html`],
         [NSW, `${paths.segment}/${nsw}.html`],
-        [
-            nameMaker.Name,
-            `${paths.segment}/${nameMaker.namenothe}.html`
-        ]
+        [nameMaker.Name, `${paths.segment}/${nameMaker.namenothe}.html`]
     ]);
     const keywords = keywordLists;
     return R.mergeDeepRight(context, {
@@ -444,7 +455,18 @@ const stateRegion = context => {
 };
 
 const city = context => {
-    const { input: { buySell, city }, filename, trade, Trade, industry, Industry, Australia, NSW, nsw, keywordLists } = context;
+    const {
+        input: { buySell, city },
+        filename,
+        trade,
+        Trade,
+        industry,
+        Industry,
+        Australia,
+        NSW,
+        nsw,
+        keywordLists
+    } = context;
     const cityMaker = contextMaker("", city);
     const cityRegionList = U.removeAllEmpty(
         U.fileToList(dataPaths.cityRegions.data)
@@ -452,7 +474,7 @@ const city = context => {
     const heroImg = "childcare-business-sydney.jpg";
     const contentImg = "sydney-childcare-business-little-kid.jpg";
     const id = U.id("sydney");
-    const segment = `${trade}-${industry}`
+    const segment = `${trade}-${industry}`;
     const rel = [segment, filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
@@ -464,23 +486,18 @@ const city = context => {
         cityMaker.nameThe
     }`;
     const schema = U.schema([
+        [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [
-            `Buy and Sell ${Industry} Businesses Across ${
-                Australia
-            }`,
-            ""
-        ],
-        [
-            `${Trade}ing ${buySell === "Buy" ? "a" : "your"} ${
-                Industry
-            } Business`,
+            `${Trade}ing ${
+                buySell === "Buy" ? "a" : "your"
+            } ${Industry} Business`,
             `${paths.segment}/index.html`
         ],
         [pageTitle, paths.pretty]
     ]);
-    const regionFooterHeading = `<div class="regionFooterHeading">${Trade} a ${
-        Industry
-    } Business in one of ${cityMaker.Name}’s Regions:</div>`;
+    const regionFooterHeading = `<div class="regionFooterHeading">${Trade} a ${Industry} Business in one of ${
+        cityMaker.Name
+    }’s Regions:</div>`;
     const regionFooterUl = U.cityRegionFooterList(
         paths.segment,
         cityMaker.name,
@@ -491,12 +508,7 @@ const city = context => {
         [NSW, `${paths.segment}/${nsw}.html`]
     ]);
     const footerBreadcrumbs = U.footerBreadcrumbs([
-        [
-            `Buy and Sell ${Industry} Businesses Across ${
-                Australia
-            }`,
-            ""
-        ],
+        [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [Australia, `${paths.segment}/index.html`],
         [cityMaker.Name, ""]
     ]);
@@ -521,13 +533,25 @@ const city = context => {
 };
 
 const cityRegion = context => {
-    const { input: { cityRegion }, trade, Trade, industry, Industry, Australia, Sydney, sydney, NSW, nsw, keywordsList } = context;
+    const {
+        input: { cityRegion },
+        trade,
+        Trade,
+        industry,
+        Industry,
+        Australia,
+        Sydney,
+        sydney,
+        NSW,
+        nsw,
+        keywordsList
+    } = context;
     const nameMaker = contextMaker("", cityRegion);
     const cityRegionMaker = contextMaker("region", cityRegion);
     const id = U.id("sydney");
     const RegionNoThe = nameMaker.NameNoThe;
     const filename = U.filenameFormat(cityRegion);
-    const segment = `${trade}-${industry}`
+    const segment = `${trade}-${industry}`;
     const rel = [segment, sydney, U.filenameFormat(cityRegion)];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
@@ -539,12 +563,7 @@ const cityRegion = context => {
         nameMaker.nameThe
     }`;
     const schema = U.schema([
-        [
-            `Buy and Sell ${Industry} Businesses Across ${
-                Australia
-            }`,
-            ""
-        ],
+        [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [
             `${Trade}ing ${
                 buySell === "Buy" ? "a" : "your"
@@ -552,19 +571,14 @@ const cityRegion = context => {
             `${paths.segment}/index.html`
         ],
         [
-            `${Trade}ing a ${Industry} Business in ${
-                Sydney
-            }`,
-            `${
-                paths.segment
-            }/${sydney.toLowerCase()}/index.html`
+            `${Trade}ing a ${Industry} Business in ${Sydney}`,
+            `${paths.segment}/${sydney.toLowerCase()}/index.html`
         ],
         [pageTitle, paths.pretty]
     ]);
     const cityRegionSuburbsList = U.removeAllEmpty(
         U.fileToList(
-            dataPaths.cityRegions.suburbs +
-                `${U.filenameCase(cityRegion)}.txt`
+            dataPaths.cityRegions.suburbs + `${U.filenameCase(cityRegion)}.txt`
         )
     );
     const cityRegionSuburbsSubset = R.take(
@@ -575,8 +589,8 @@ const cityRegion = context => {
     const regionFooterHeading = R.isEmpty(this.cityRegionSuburbs)
         ? ""
         : `<div class="regionFooterHeading">${this.Trade} a ${
-            this.Industry
-        } Business in one of ${this.Name}’s Suburbs:</div>`;
+              this.Industry
+          } Business in one of ${this.Name}’s Suburbs:</div>`;
     const regionFooterUl = U.cityRegionFooterList(
         paths.segment,
         sydney,
@@ -585,20 +599,12 @@ const cityRegion = context => {
     const mobileBreadcrumbs = U.mobileBreadcrumbs([
         [Australia, `${paths.segment}/index.html`],
         [NSW, `${paths.segment}/${nsw}.html`],
-        [
-            Sydney,
-            `${paths.segment}/${sydney}/index.html`
-        ]
+        [Sydney, `${paths.segment}/${sydney}/index.html`]
     ]);
     const footerBreadcrumbs = U.footerBreadcrumbs([
         ["Home", ""],
         [Australia, `${paths.segment}/index.html`],
-        [
-            Sydney,
-            `${
-                paths.segment
-            }/${sydney.toLowerCase()}/index.html`
-        ],
+        [Sydney, `${paths.segment}/${sydney.toLowerCase()}/index.html`],
         [changeCase.titleCase(cityRegion), ""]
     ]);
     const keywords = keywordsList;
@@ -622,7 +628,23 @@ const cityRegion = context => {
 };
 
 const suburb = context => {
-    const { input: { name, suburb, buySell }, parentContext, sydney, Sydney, trade, Trade, Industry, Australia, cityRegionSuburbs, keywordsList, NSW, nsw, filenameregion, Region, industry } = context;
+    const {
+        input: { name, suburb, buySell },
+        parentContext,
+        sydney,
+        Sydney,
+        trade,
+        Trade,
+        Industry,
+        Australia,
+        cityRegionSuburbs,
+        keywordsList,
+        NSW,
+        nsw,
+        filenameregion,
+        Region,
+        industry
+    } = context;
     const nameMaker = contextMaker("", suburb);
     const heroImg = "";
     const contentImg = "daycare-business-sydney.jpg";
@@ -636,16 +658,11 @@ const suburb = context => {
     const domain = settings.domain + pretty;
     const paths = { segment, rel, path, pretty, output, domain };
     const absolutePath = domain;
-    const pageTitle = `${Trade}ing a ${Industry} Business in ${
-        changeCase.titleCase(name)
-    }, ${parentContext.NameNoThe}`;
+    const pageTitle = `${Trade}ing a ${Industry} Business in ${changeCase.titleCase(
+        name
+    )}, ${parentContext.NameNoThe}`;
     const schema = U.schema([
-        [
-            `Buy and Sell ${Industry} Businesses Across ${
-                Australia
-            }`,
-            ""
-        ],
+        [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [
             `${Trade}ing ${
                 buySell === "Buy" ? "a" : "your"
@@ -653,20 +670,12 @@ const suburb = context => {
             `${paths.segment}/index.html`
         ],
         [
-            `${Trade}ing a ${Industry} Business in ${
-                Sydney
-            }`,
-            `${
-                paths.segment
-            }/${sydney.toLowerCase()}/index.html`
+            `${Trade}ing a ${Industry} Business in ${Sydney}`,
+            `${paths.segment}/${sydney.toLowerCase()}/index.html`
         ],
         [
-            `${Trade}ing a ${Industry} Business in ${
-                parentContext.nameThe
-            }`,
-            `${paths.segment}/sydney/${
-                parentContext.filename
-            }`
+            `${Trade}ing a ${Industry} Business in ${parentContext.nameThe}`,
+            `${paths.segment}/sydney/${parentContext.filename}`
         ],
         [pageTitle, paths.pretty]
     ]);
@@ -676,44 +685,20 @@ const suburb = context => {
     );
     const nearbySuburbsHeading = R.isEmpty(this.nearbySuburbs)
         ? ""
-        : `<div class="regionFooterHeading">${
-            Trade
-        }ing a ${
-            Industry
-        } Business in Nearby Suburbs:</div>`;
-    const nearby = U.cityRegionFooterList(
-        paths.segment,
-        sydney,
-        nearbySuburbs
-    );
+        : `<div class="regionFooterHeading">${Trade}ing a ${Industry} Business in Nearby Suburbs:</div>`;
+    const nearby = U.cityRegionFooterList(paths.segment, sydney, nearbySuburbs);
     const keywords = keywordsList;
     const mobileBreadcrumbs = U.mobileBreadcrumbs([
         [Australia, `${paths.segment}/index.html`],
         [NSW, `${paths.segment}/${nsw}.html`],
-        [
-            Sydney,
-            `${paths.segment}/${sydney}/index.html`
-        ],
-        [
-            Region,
-            `${paths.segment}/sydney/${
-                filenameregion
-            }.html`
-        ]
+        [Sydney, `${paths.segment}/${sydney}/index.html`],
+        [Region, `${paths.segment}/sydney/${filenameregion}.html`]
     ]);
     const footerBreadcrumbs = U.footerBreadcrumbs([
         ["Home", ""],
         [Australia, `${paths.segment}/index.html`],
-        [
-            Sydney,
-            `${paths.segment}/${sydney}/index.html`
-        ],
-        [
-            Region,
-            `${paths.segment}/sydney/${
-                filenameregion
-            }.html`
-        ],
+        [Sydney, `${paths.segment}/${sydney}/index.html`],
+        [Region, `${paths.segment}/sydney/${filenameregion}.html`],
         [changeCase.titleCase(name), ""]
     ]);
     return R.mergeDeepRight(context, {
@@ -734,19 +719,107 @@ const suburb = context => {
     });
 };
 
-const directory = () => {
+const directory = context => {
+    const {
+        input: { buySell },
+        industry,
+        Industry,
+        Australia,
+        nsw,
+        NSW,
+        nswRegionList,
+        keywordsList,
+        sydney,
+        Sydney
+    } = context;
+    const nameMaker = contextMaker("", "directory");
+    const title = "Directory";
+    const filename = "directory.html";
     const rel = [filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
     const output = U.relPathList(path);
     const domain = settings.domain + pretty;
     const paths = { rel, path, pretty, output, domain };
-    return {
-        ...contextMaker("", "directory"),
-        title: "Directory",
-        filename: "directory.html",
-        paths
-    };
+    const absolutePath = paths.domain;
+    const pageTitle = `Buy or Sell a ${Industry} Business in Australian Suburbs and Regions`;
+    const schema = U.schema([
+        [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
+        [pageTitle, filename]
+    ]);
+    const keywords = keywordsList;
+    const directoryList = dataPaths.buySell.data
+        .map(buySell => {
+            const directoryUl = s => `<ul id="directoryUl">${s}</ul>`;
+            return (
+                `<a href="${industry}-${buySell.toLowerCase()}/index.html"><h4>${buySell} ${Industry} in ${Australia}&nbsp;»</h4></a>` +
+                `<a href="${industry}-${buySell.toLowerCase()}/${nsw}.html"><h5>${buySell} ${Industry} in ${NSW}&nbsp;»</h5></a>` +
+                directoryUl(
+                    nswRegionList
+                        .map(stateRegion => {
+                            return `<li><a href="/${buySell.toLowerCase()}-${industry}/${U.filenameFormat(
+                                stateRegion
+                            )}">${buySell} a ${Industry} Business in <strong>${stateRegion}</strong>&nbsp;»</a></li>`;
+                        })
+                        .join("")
+                ) +
+                `<a href="${industry}-${buySell.toLowerCase()}/${sydney}/index.html"><h6>${buySell} ${Industry} in ${Sydney}&nbsp;»</h6></a>` +
+                U.removeAllEmpty(U.fileToList(dataPaths.cityRegions.data))
+                    .map(cityRegion => {
+                        const cityRegionSuburbs = () => {
+                            const list = U.removeAllEmpty(
+                                U.fileToList(
+                                    dataPaths.cityRegions.suburbs +
+                                        `${U.filenameCase(cityRegion)}.txt`
+                                )
+                            );
+                            const subset = R.take(
+                                Math.ceil(list.length * settings.subset),
+                                shuffleSeed.shuffle(list, cityRegion)
+                            );
+                            return subset;
+                        };
+                        return (
+                            `<a href="/${buySell.toLowerCase()}-${industry}/${U.filenameFormat(
+                                cityRegion
+                            )}"><h6 class="h7">${buySell} a ${Industry} Business in ${changeCase.titleCase(
+                                cityRegion
+                            )}&nbsp;»</h6></a>` +
+                            directoryUl(
+                                cityRegionSuburbs()
+                                    .map(suburb => {
+                                        return `<li><a href="/${buySell.toLowerCase()}-${industry}/${sydney}/${U.filenameFormat(
+                                            suburb
+                                        )}">${buySell} a ${Industry} Business in <strong>${changeCase.titleCase(
+                                            suburb
+                                        )},<br>${changeCase.titleCase(
+                                            cityRegion
+                                        )}</strong></a></li>`;
+                                    })
+                                    .join("")
+                            )
+                        );
+                    })
+                    .join("")
+            );
+        })
+        .join("");
+    const footerBreadcrumbs = U.footerBreadcrumbs([
+        ["Home", ""],
+        [changeCase.titleCase(nameMaker.name), ""]
+    ]);
+    return R.mergeDeepRight(context, {
+        ...nameMaker,
+        title,
+        filename,
+        paths,
+        absolutePath,
+        pageTitle,
+        schema,
+        keywords,
+        directoryList,
+        footerBreadcrumbs
+    });
 };
 
 module.exports = {
