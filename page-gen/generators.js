@@ -218,85 +218,24 @@ const stateRegions = (data, template, pageType) => {
     const stateRegions = U.removeAllEmpty(U.fileToList(data));
     stateRegions.map(stateRegion => {
         dataPaths.buySell.data.map(buySell => {
-            const context = {
-                ...U.mergeDeepAll([
-                    contexts.general({
-                        name: stateRegion,
-                        pageType,
-                        footerType: "stateRegion"
-                    }),
-                    contexts.buySell({ buySell }),
-                    contexts.industry({
-                        industry: dataPaths.industry.data,
-                        buySell
-                    }),
-                    contexts.country({
-                        country: dataPaths.country.data,
-                        buySell
-                    }),
-                    contexts.state({ state: dataPaths.state.data, buySell }),
-                    contexts.stateRegion({ stateRegion, buySell })
-                ]),
-                get paths() {
-                    const segment = `${this.buySell}-${this.industry}`;
-                    const rel = [segment, this.filename];
-                    const path = R.prepend(settings.outputLocation, rel);
-                    const pretty = U.prettyPath(rel);
-                    const output = U.relPathList(path);
-                    const domain = settings.domain + pretty;
-                    return { segment, rel, path, pretty, output, domain };
-                },
-                get absolutePath() {
-                    return this.paths.domain;
-                },
-                get pageTitle() {
-                    return `${this.Trade}ing a ${this.Industry} Business in ${
-                        this.nameThe
-                    }`;
-                },
-                get schema() {
-                    return U.schema([
-                        [
-                            `Buy and Sell ${this.Industry} Businesses Across ${
-                                this.Australia
-                            }`,
-                            ""
-                        ],
-                        [this.pageTitle, this.paths.pretty]
-                    ]);
-                },
-                get regionFooterHeading() {
-                    return `<div class="regionFooterHeading">${this.Trade} a ${
-                        this.Industry
-                    } Business in one of ${this.NameNoThe}’s Regions:</div>`;
-                },
-                get mobileBreadcrumbs() {
-                    return U.mobileBreadcrumbs([
-                        [this.Australia, `${this.paths.segment}/index.html`],
-                        [this.NSW, `${this.paths.segment}/${this.nsw}.html`]
-                    ]);
-                },
-                get footerBreadcrumbs() {
-                    return U.footerBreadcrumbs([
-                        ["Home", ""],
-                        [this.Australia, `${this.paths.segment}/index.html`],
-                        [this.NSW, `${this.paths.segment}/${this.nsw}.html`],
-                        [
-                            this.Name,
-                            `${this.paths.segment}/${this.namenothe}.html`
-                        ]
-                    ]);
-                },
-                get keywords() {
-                    return U.makeKeywords({
-                        keywords: this.keywordLists,
-                        trade: this.Trade,
-                        industry: this.Industry,
-                        name: this.Name
-                    });
-                }
-            };
-
+            const context = R.pipe(
+                contexts2.general,
+                contexts2.buySell,
+                contexts2.industry,
+                contexts2.country,
+                contexts2.state,
+                contexts2.stateRegion
+            )(
+                U.input({
+                    name: stateRegion,
+                    pageType,
+                    footerType: "stateRegion",
+                    industry: "Childcare",
+                    country: "Australia",
+                    state: "NSW",
+                    buySell
+                })
+            );
             U.outputs({
                 logAction: buySell,
                 templatePath: template + context.buySellFilename,

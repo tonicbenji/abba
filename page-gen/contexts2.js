@@ -12,25 +12,35 @@ const contextItem = (f, key, value) => {
 
 const contextMaker = (key, value) => {
     const key_ = !R.isEmpty(key) ? key : value;
+    const toLower = contextItem(R.toLower, key_, value);
+    const toUpper = contextItem(R.toLower, key_, value);
+    const titleCase = contextItem(changeCase.titleCase, key_, value);
+    const camelCase = contextItem(changeCase.camelCase, key_, value);
+    const constantCase = contextItem(changeCase.constantCase, key_, value);
+    const nameToLower = contextItem(R.toLower, "name", value);
+    const nameToUpper = contextItem(R.toUpper, "name", value);
+    const nameTitleCase = contextItem(changeCase.titleCase, "name", value);
+    const nameCamelCase = contextItem(changeCase.camelCase, key_, value);
+    const nameConstantCase = contextItem(changeCase.constantCase, "name", value);
+    const nameFilename = contextItem(U.filenameCase, `filename${key_}`, value);
+    const filename = U.filenameFormat(value);
+    const nameThe = U.theToLower(nameToLower);
+    const nameThe = U.theToLower(nameTitleCase);
     return {
-        ...contextItem(R.toLower, key_, value),
-        ...contextItem(R.toUpper, key_, value),
-        ...contextItem(changeCase.titleCase, key_, value),
-        ...contextItem(changeCase.camelCase, key_, value),
-        ...contextItem(changeCase.constantCase, key_, value),
-        ...contextItem(R.toLower, "name", value),
-        ...contextItem(R.toUpper, "name", value),
-        ...contextItem(changeCase.titleCase, "name", value),
-        ...contextItem(changeCase.camelCase, key_, value),
-        ...contextItem(changeCase.constantCase, "name", value),
-        ...contextItem(U.filenameCase, `filename${key_}`, value),
-        filename: U.filenameFormat(value),
-        get nameThe() {
-            return U.theToLower(this.Name);
-        },
-        get NameThe() {
-            return this.Name;
-        }
+        ...toLower,
+        ...toUpper,
+        ...titleCase,
+        ...camelCase,
+        ...constantCase,
+        ...nameToLower,
+        ...nameToUpper,
+        ...nameTitleCase,
+        ...nameCamelCase,
+        ...nameConstantCase,
+        ...nameFilename,
+        filename,
+        nameThe,
+        NameThe
     };
 };
 
@@ -44,29 +54,25 @@ const components = ({ footerType }) => {
     };
 };
 
-
 const general = context => {
     const { name, pageType, footerType } = context.input;
-    return R.mergeDeepRight(context,
-        {
-            ...components({ footerType }),
-            ...contextMaker("BusinessName", settings.business.name),
-            BusinessName: changeCase.titleCase(settings.business.name),
-            ...contextMaker("", name),
-            nameNoThe: U.noThe(name.toLowerCase()),
-            NameNoThe: U.noThe(changeCase.titleCase(name)),
-            NAMENOTHE: U.noThe(name.toUpperCase()),
-            domain: settings.domain,
-            Domain: U.escForwardSlashes(settings.domain),
-            mobileBreadcrumbs: ""
-        }
-    );
+    return R.mergeDeepRight(context, {
+        ...components({ footerType }),
+        ...contextMaker("BusinessName", settings.business.name),
+        BusinessName: changeCase.titleCase(settings.business.name),
+        ...contextMaker("", name),
+        nameNoThe: U.noThe(name.toLowerCase()),
+        NameNoThe: U.noThe(changeCase.titleCase(name)),
+        NAMENOTHE: U.noThe(name.toUpperCase()),
+        domain: settings.domain,
+        Domain: U.escForwardSlashes(settings.domain),
+        mobileBreadcrumbs: ""
+    });
 };
 
 const buySell = context => {
     const { buySell } = context.input;
-    return R.mergeDeepRight(context,
-{
+    return R.mergeDeepRight(context, {
         ...contextMaker("buySell", buySell),
         ...contextMaker("trade", buySell),
         buySellFilename: U.filenameFormat(buySell)
@@ -79,9 +85,15 @@ const industry = context => {
 };
 
 const home = context => {
-    const { industry, Industry, nswRegionList, Australia, keywordsList: keywordsList_ } = context;
-    const title = "Buy and Sell Childcare Businesses across Australia"
-    const filename = "index.html"
+    const {
+        industry,
+        Industry,
+        nswRegionList,
+        Australia,
+        keywordsList: keywordsList_
+    } = context;
+    const title = "Buy and Sell Childcare Businesses across Australia";
+    const filename = "index.html";
     const rel = [filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
@@ -89,54 +101,56 @@ const home = context => {
     const domain = settings.domain + pretty;
     const paths = { rel, path, pretty, output, domain };
     const absolutePath = domain;
-    const pageTitle = `Buy and Sell ${Industry} Businesses Across ${
-        Australia
-    }`;
+    const pageTitle = `Buy and Sell ${Industry} Businesses Across ${Australia}`;
     const schema = U.schema([[pageTitle, ""]]);
-    const footerBuyNswRegions = nswRegionList ? U.nswRegionFooterList(
-        `buy-${industry}`,
-        nswRegionList
-    ) : "";
-    const footerSellNswRegions = nswRegionList ? U.nswRegionFooterList(
-        `sell-${industry}`,
-        nswRegionList
-    ) : "";
+    const footerBuyNswRegions = nswRegionList
+        ? U.nswRegionFooterList(`buy-${industry}`, nswRegionList)
+        : "";
+    const footerSellNswRegions = nswRegionList
+        ? U.nswRegionFooterList(`sell-${industry}`, nswRegionList)
+        : "";
     const description = U.description(
         "The Abba Group are Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity."
     );
     const id = U.id("home");
     const footerBreadcrumbs = "";
     const home = title;
-    const keywordsList = keywordsList_ ? U.keywords2(title, keywordsList_, [
-        "Buy a childcare business NSW",
-        "Sell a childcare business NSW",
-        "How to buy a childcare business NSW",
-        "How to sell a childcare business NSW",
-        "Childcare business acquisition NSW",
-        "Childcare business merger NSW"
-    ]) : [];
+    const keywordsList = keywordsList_
+        ? U.keywords2(title, keywordsList_, [
+              "Buy a childcare business NSW",
+              "Sell a childcare business NSW",
+              "How to buy a childcare business NSW",
+              "How to sell a childcare business NSW",
+              "Childcare business acquisition NSW",
+              "Childcare business merger NSW"
+          ])
+        : [];
     const keywords = U.keywordsFormat(keywordsList);
-    return R.mergeDeepRight(context,
-        {
-            title,
-            home,
-            filename,
-            footerBreadcrumbs,
-            id,
-            paths,
-            absolutePath,
-            pageTitle,
-            schema,
-            footerBuyNswRegions,
-            footerSellNswRegions,
-            keywordsList,
-            keywords,
-            description
-        });
+    return R.mergeDeepRight(context, {
+        title,
+        home,
+        filename,
+        footerBreadcrumbs,
+        id,
+        paths,
+        absolutePath,
+        pageTitle,
+        schema,
+        footerBuyNswRegions,
+        footerSellNswRegions,
+        keywordsList,
+        keywords,
+        description
+    });
 };
 
 const about = context => {
-    const { input: { name }, Industry, Australia, keywords: keywords_ } = context;
+    const {
+        input: { name },
+        Industry,
+        Australia,
+        keywords: keywords_
+    } = context;
     const title = name;
     const filename = U.filenameFormat(name);
     const id = U.id(name);
@@ -149,12 +163,7 @@ const about = context => {
     const absolutePath = domain;
     const pageTitle = "About Us";
     const schema = U.schema([
-        [
-            `Buy and Sell ${Industry} Businesses Across ${
-                Australia
-            }`,
-            ""
-        ],
+        [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, filename]
     ]);
     const footerBreadcrumbs = U.footerBreadcrumbs([
@@ -176,7 +185,12 @@ const about = context => {
 };
 
 const contact = context => {
-    const { input: { name }, Industry, Australia, keywords: keywords_ } = context;
+    const {
+        input: { name },
+        Industry,
+        Australia,
+        keywords: keywords_
+    } = context;
     const title = name;
     const filename = U.filenameFormat(name);
     const id = U.id(name);
@@ -189,12 +203,7 @@ const contact = context => {
     const absolutePath = domain;
     const pageTitle = "Contact Us";
     const schema = U.schema([
-        [
-            `Buy and Sell ${Industry} Businesses Across ${
-                Australia
-            }`,
-            ""
-        ],
+        [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, filename]
     ]);
     const footerBreadcrumbs = U.footerBreadcrumbs([
@@ -216,12 +225,20 @@ const contact = context => {
 };
 
 const country = context => {
-    const { input: { country }, trade, Trade, industry, Industry, Australia, nswRegionList } = context;
+    const {
+        input: { country },
+        trade,
+        Trade,
+        industry,
+        Industry,
+        Australia,
+        nswRegionList
+    } = context;
     const title = country;
     const Title = changeCase.titleCase(country);
-    const pageTitle = `${Trade}ing ${buySell === "Buy" ? "a" : "your"} ${
-        Industry
-    } Business`;
+    const pageTitle = `${Trade}ing ${
+        buySell === "Buy" ? "a" : "your"
+    } ${Industry} Business`;
     const filename = "index.html";
     const rel = [filename];
     const path = R.prepend(settings.outputLocation, rel);
@@ -233,30 +250,25 @@ const country = context => {
     const heroImg = "";
     const contentImg = "childcare-businesses-sydney.jpg";
     const id = U.id("aus");
-    const keywordsList = U.keywords2(country, [], [
-        `${country} ${settings.business.trade}`,
-        `${settings.business.name} ${
-            settings.business.trade
-        } ${country}`
-    ]);
-    const schema = U.schema([
+    const keywordsList = U.keywords2(
+        country,
+        [],
         [
-            `Buy and Sell ${Industry} Businesses Across ${
-                Australia
-            }`,
-            ""
-        ],
+            `${country} ${settings.business.trade}`,
+            `${settings.business.name} ${settings.business.trade} ${country}`
+        ]
+    );
+    const schema = U.schema([
+        [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, paths.pretty]
     ]);
     const footer = dataPaths.footer.template.country[trade];
-    const footerBuyNswRegions = nswRegionList ? U.nswRegionFooterList(
-        `buy-${industry}`,
-        nswRegionList
-    ) : [];
-    const footerSellNswRegions = nswRegionList ? U.nswRegionFooterList(
-        `sell-${industry}`,
-        nswRegionList
-    ) : [];
+    const footerBuyNswRegions = nswRegionList
+        ? U.nswRegionFooterList(`buy-${industry}`, nswRegionList)
+        : [];
+    const footerSellNswRegions = nswRegionList
+        ? U.nswRegionFooterList(`sell-${industry}`, nswRegionList)
+        : [];
     const footerBreadcrumbs = U.footerBreadcrumbs([["Home", ""], [Title, ""]]);
     const keywords = keywordsList;
     return R.mergeDeepRight(context, {
@@ -281,7 +293,13 @@ const country = context => {
 };
 
 const state = context => {
-    const { input: { state }, Trade, Industry, Australia, keywordsList } = context;
+    const {
+        input: { state },
+        Trade,
+        Industry,
+        Australia,
+        keywordsList
+    } = context;
     const nsw = state.toUpperCase();
     const Nsw = state.toUpperCase();
     const NSW = state.toUpperCase();
@@ -305,25 +323,15 @@ const state = context => {
     const heroImg = "preschool-business-brokers-nsw-2.jpg";
     const contentImg = "children-playing-nsw-childcare-businesses.jpg";
     const id = U.id("nsw");
-    const pageTitle = `${Trade}ing a ${Industry} Business in ${
-        nameThe
-    }`
+    const pageTitle = `${Trade}ing a ${Industry} Business in ${nameThe}`;
     const schema = U.schema([
-        [
-            `Buy and Sell ${Industry} Businesses Across ${
-                Australia
-            }`,
-            ""
-        ],
+        [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, paths.pretty]
     ]);
-    const regionFooterHeading = `<div class="regionFooterHeading">${Trade} a ${
-        Industry
-    } Business in one of ${NSW}’s Regions:</div>`;
-    const regionFooterUl = nswRegionList ? U.nswRegionFooterList(
-        paths.segment,
-        nswRegionList
-    ) : [];
+    const regionFooterHeading = `<div class="regionFooterHeading">${Trade} a ${Industry} Business in one of ${NSW}’s Regions:</div>`;
+    const regionFooterUl = nswRegionList
+        ? U.nswRegionFooterList(paths.segment, nswRegionList)
+        : [];
     const mobileBreadcrumbs = U.mobileBreadcrumbs([
         [Australia, `${paths.segment}/index.html`]
     ]);
@@ -362,21 +370,66 @@ const state = context => {
 };
 
 const stateRegion = context => {
-    const { stateRegion } = context.input;
+    const {
+        input: { stateRegion }, Trade, Australia, Industry, NSW, nsw, keywordLists
+    } = context;
+    const nameMaker = contextMaker("", stateRegion);
+    const regionMaker = contextMaker("region", stateRegion);
+    console.log(nameMaker, regionMaker);
+    const filename = U.filenameFormat(stateRegion);
+    const heroImg = "childcare-business-nsw.jpg";
+    const contentImg = "preschool-business-nsw.jpg";
+    const id = U.id("nswRegion");
+    const rel = [filename];
+    const path = R.prepend(settings.outputLocation, rel);
+    const pretty = U.prettyPath(rel);
+    const output = U.relPathList(path);
+    const domain = settings.domain + pretty;
+    const paths = { rel, path, pretty, output, domain };
+    const absolutePath = domain;
+    const pageTitle = `${Trade}ing a ${Industry} Business in ${
+        nameMaker.nameThe
+    }`;
+    const schema = U.schema([
+        [
+            `Buy and Sell ${Industry} Businesses Across ${
+                Australia
+            }`,
+            ""
+        ],
+        [pageTitle, paths.pretty]
+    ]);
+    const regionFooterHeading = `<div class="regionFooterHeading">${Trade} a ${
+        Industry
+    } Business in one of ${nameMaker.NameNoThe}’s Regions:</div>`;
+    const mobileBreadcrumbs = U.mobileBreadcrumbs([
+        [Australia, `${paths.segment}/index.html`],
+        [NSW, `${paths.segment}/${nsw}.html`]
+    ]);
+    const footerBreadcrumbs = U.footerBreadcrumbs([
+        ["Home", ""],
+        [Australia, `${paths.segment}/index.html`],
+        [NSW, `${paths.segment}/${nsw}.html`],
+        [
+            nameMaker.Name,
+            `${paths.segment}/${nameMaker.namenothe}.html`
+        ]
+    ]);
+    const keywords = keywordLists;
     return R.mergeDeepRight(context, {
-        ...contextMaker("", stateRegion),
-        ...contextMaker("region", stateRegion),
-        filename: U.filenameFormat(stateRegion),
-        heroImg: "childcare-business-nsw.jpg",
-        contentImg: "preschool-business-nsw.jpg",
-        id: U.id("nswRegion")
+        ...nameMaker,
+        ...regionMaker,
+        filename,
+        heroImg,
+        contentImg,
+        id
     });
 };
 
 const city = ({ city }) => {
     return {
         ...contextMaker("", city),
-        filename: "index.html",
+        filename,
         cityRegionList: U.removeAllEmpty(
             U.fileToList(dataPaths.cityRegions.data)
         ),

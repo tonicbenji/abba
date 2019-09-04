@@ -279,8 +279,8 @@ const keywords2 = (seed, la, lb) => {
         R.concat(la),
         l => shuffleSeed.shuffle(l, seed),
         R.take(8)
-    )(lb)
-}
+    )(lb);
+};
 
 const keywordsFormat = l => `"${stringList(l)}"`;
 
