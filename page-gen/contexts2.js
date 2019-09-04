@@ -437,17 +437,80 @@ const stateRegion = context => {
     });
 };
 
-const city = ({ city }) => {
-    return {
-        ...contextMaker("", city),
+const city = context => {
+    const { input: { buySell, city }, filename, Trade, Industry, Australia, NSW, nsw, keywordLists } = context;
+    const cityMaker = contextMaker("", city);
+    const cityRegionList = U.removeAllEmpty(
+        U.fileToList(dataPaths.cityRegions.data)
+    );
+    const heroImg = "childcare-business-sydney.jpg";
+    const contentImg = "sydney-childcare-business-little-kid.jpg";
+    const id = U.id("sydney");
+    const rel = [filename];
+    const path = R.prepend(settings.outputLocation, rel);
+    const pretty = U.prettyPath(rel);
+    const output = U.relPathList(path);
+    const domain = settings.domain + pretty;
+    const paths = { rel, path, pretty, output, domain };
+    const absolutePath = domain;
+    const pageTitle = `${Trade}ing a ${Industry} Business in ${
+        cityMaker.nameThe
+    }`;
+    const schema = U.schema([
+        [
+            `Buy and Sell ${Industry} Businesses Across ${
+                Australia
+            }`,
+            ""
+        ],
+        [
+            `${Trade}ing ${buySell === "Buy" ? "a" : "your"} ${
+                Industry
+            } Business`,
+            `${paths.segment}/index.html`
+        ],
+        [pageTitle, paths.pretty]
+    ]);
+    const regionFooterHeading = `<div class="regionFooterHeading">${Trade} a ${
+        Industry
+    } Business in one of ${cityMaker.Name}’s Regions:</div>`;
+    const regionFooterUl = U.cityRegionFooterList(
+        paths.segment,
+        cityMaker.name,
+        cityRegionList
+    );
+    const mobileBreadcrumbs = U.mobileBreadcrumbs([
+        [Australia, `${paths.segment}/index.html`],
+        [NSW, `${paths.segment}/${nsw}.html`]
+    ]);
+    const footerBreadcrumbs = U.footerBreadcrumbs([
+        [
+            `Buy and Sell ${Industry} Businesses Across ${
+                Australia
+            }`,
+            ""
+        ],
+        [Australia, `${paths.segment}/index.html`],
+        [cityMaker.Name, ""]
+    ]);
+    const keywords = keywordLists;
+    return R.mergeDeepRight(context, {
+        ...cityMaker,
+        heroImg,
+        contentImg,
+        id,
+        paths,
+        absolutePath,
+        pageTitle,
         filename,
-        cityRegionList: U.removeAllEmpty(
-            U.fileToList(dataPaths.cityRegions.data)
-        ),
-        heroImg: "childcare-business-sydney.jpg",
-        contentImg: "sydney-childcare-business-little-kid.jpg",
-        id: U.id("sydney")
-    };
+        cityRegionList,
+        schema,
+        regionFooterHeading,
+        regionFooterUl,
+        mobileBreadcrumbs,
+        footerBreadcrumbs,
+        keywords
+    });
 };
 
 const cityRegion = ({ cityRegion }) => {
