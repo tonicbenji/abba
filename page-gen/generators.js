@@ -86,7 +86,6 @@ const home = (data, template, pageType) => {
             state: "NSW"
         })
     );
-    console.log(context);
     U.outputs({
         logAction: "Single",
         templatePath: template,

@@ -314,7 +314,7 @@ const country = context => {
 
 const state = context => {
     const {
-        input: { state },
+        input: { state, buySell, footerType },
         trade,
         Trade,
         industry,
@@ -353,6 +353,7 @@ const state = context => {
         [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, paths.pretty]
     ]);
+    const footer = dataPaths.footer.template[footerType];
     const regionFooterHeading = `<div class="regionFooterHeading">${Trade} a ${Industry} Business in one of ${NSW}’s Regions:</div>`;
     const regionFooterUl = nswRegionList
         ? U.nswRegionFooterList(paths.segment, nswRegionList)
@@ -366,6 +367,11 @@ const state = context => {
         [NSW, `${paths.segment}/${nsw}.html`]
     ]);
     const keywords = keywordsList;
+    const description = U.description(
+        buySell === "Buy"
+        ? "Reports published by the Australian government indicate that the supply of childcare is constrained by several factors in NSW, and this means that many buyers are fighting over a limited number of childcare businesses."
+        : "There are many opportunities at present within the NSW childcare business market. In June 2018, the Australian Government announced that it is extending the childcare subsidy to children as young as three years."
+    );
     return R.mergeDeepRight(context, {
         ...nameMaker,
         ...stateMaker,
@@ -385,7 +391,9 @@ const state = context => {
         id,
         filename,
         pageTitle,
+        description,
         schema,
+        footer,
         regionFooterHeading,
         regionFooterUl,
         mobileBreadcrumbs,
@@ -396,7 +404,7 @@ const state = context => {
 
 const stateRegion = context => {
     const {
-        input: { stateRegion },
+        input: { stateRegion, footerType },
         trade,
         Trade,
         Australia,
@@ -427,9 +435,16 @@ const stateRegion = context => {
         [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, paths.pretty]
     ]);
+    const footer = dataPaths.footer.template[footerType];
     const regionFooterHeading = `<div class="regionFooterHeading">${Trade} a ${Industry} Business in one of ${
         nameMaker.NameNoThe
     }’s Regions:</div>`;
+    const footerBuyNswRegions = "";
+    const footerSellNswRegions = "";
+    const footerBuyNsw = "";
+    const footerSellNsw = "";
+    const footerHeadingBuy = "";
+    const footerHeadingSell = "";
     const mobileBreadcrumbs = U.mobileBreadcrumbs([
         [Australia, `${paths.segment}/index.html`],
         [NSW, `${paths.segment}/${nsw}.html`]
@@ -441,6 +456,15 @@ const stateRegion = context => {
         [nameMaker.Name, `${paths.segment}/${nameMaker.namenothe}.html`]
     ]);
     const keywords = keywordLists;
+    const description = U.description(
+        buySell === "Buy"
+        ? `Reports published by the Australian government indicate that the supply of childcare is constrained by several factors in ${U.theToLower(
+            changeCase.titleCase(stateRegion)
+        )}, and this means that many buyers are fighting over a limited number of childcare businesses.`
+        : `Among the broader regulatory factors affecting the childcare business market in ${U.theToLower(
+            changeCase.titleCase(stateRegion)
+        )} is the Australian Government’s announcement that it is extending the childcare subsidy.`
+    );
     return R.mergeDeepRight(context, {
         ...nameMaker,
         ...regionMaker,
@@ -448,10 +472,12 @@ const stateRegion = context => {
         heroImg,
         contentImg,
         id,
+        description,
         paths,
         absolutePath,
         pageTitle,
         schema,
+        footer,
         regionFooterHeading,
         mobileBreadcrumbs,
         footerBreadcrumbs,
