@@ -343,13 +343,7 @@ const suburbs = (data, template, pageType, parentContext) => {
                     buySell
                 })
             );
-            U.outputs({
-                logAction: buySell,
-                templatePath: template + context.buySellFilename,
-                data: cityRegion,
-                isGenSuburbs,
-                context
-            });
+            console.log(context);
             U.outputs({
                 logAction: buySell,
                 templatePath: template + context.buySellFilename,
