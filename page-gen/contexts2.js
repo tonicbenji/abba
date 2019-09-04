@@ -235,7 +235,7 @@ const country = context => {
         industry,
         Industry,
         Australia,
-        nswRegionList
+        nswRegionList,
     } = context;
     const title = country;
     const Title = changeCase.titleCase(country);
@@ -243,12 +243,13 @@ const country = context => {
         buySell === "Buy" ? "a" : "your"
     } ${Industry} Business`;
     const filename = "index.html";
-    const rel = [filename];
+    const segment = `${trade}-${industry}`
+    const rel = [segment, filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
     const output = U.relPathList(path);
     const domain = settings.domain + pretty;
-    const paths = { rel, path, pretty, output, domain };
+    const paths = { segment, rel, path, pretty, output, domain };
     const absolutePath = domain;
     const heroImg = "";
     const contentImg = "childcare-businesses-sydney.jpg";
@@ -318,12 +319,13 @@ const state = context => {
         U.fileToList(dataPaths.stateRegions.data)
     );
     const filename = "nsw.html";
-    const rel = [filename];
+    const segment = `${trade}-${industry}`
+    const rel = [segment, filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
     const output = U.relPathList(path);
     const domain = settings.domain + pretty;
-    const paths = { rel, path, pretty, output, domain };
+    const paths = { segment, rel, path, pretty, output, domain };
     const absolutePath = domain;
     const heroImg = "preschool-business-brokers-nsw-2.jpg";
     const contentImg = "children-playing-nsw-childcare-businesses.jpg";
@@ -384,12 +386,13 @@ const stateRegion = context => {
     const heroImg = "childcare-business-nsw.jpg";
     const contentImg = "preschool-business-nsw.jpg";
     const id = U.id("nswRegion");
-    const rel = [filename];
+    const segment = `${trade}-${industry}`
+    const rel = [segment, filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
     const output = U.relPathList(path);
     const domain = settings.domain + pretty;
-    const paths = { rel, path, pretty, output, domain };
+    const paths = { segment, rel, path, pretty, output, domain };
     const absolutePath = domain;
     const pageTitle = `${Trade}ing a ${Industry} Business in ${
         nameMaker.nameThe
@@ -447,12 +450,13 @@ const city = context => {
     const heroImg = "childcare-business-sydney.jpg";
     const contentImg = "sydney-childcare-business-little-kid.jpg";
     const id = U.id("sydney");
-    const rel = [filename];
+    const segment = `${trade}-${industry}`
+    const rel = [segment, filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
     const output = U.relPathList(path);
     const domain = settings.domain + pretty;
-    const paths = { rel, path, pretty, output, domain };
+    const paths = { segment, rel, path, pretty, output, domain };
     const absolutePath = domain;
     const pageTitle = `${Trade}ing a ${Industry} Business in ${
         cityMaker.nameThe
@@ -521,12 +525,13 @@ const cityRegion = context => {
     const id = U.id("sydney");
     const RegionNoThe = nameMaker.NameNoThe;
     const filename = U.filenameFormat(cityRegion);
-    const rel = [filename];
+    const segment = `${trade}-${industry}`
+    const rel = [segment, sydney, U.filenameFormat(cityRegion)];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
     const output = U.relPathList(path);
     const domain = settings.domain + pretty;
-    const paths = { rel, path, pretty, output, domain };
+    const paths = { segment, rel, path, pretty, output, domain };
     const absolutePath = domain;
     const pageTitle = `${Trade}ing a ${Industry} Business in ${
         nameMaker.nameThe
@@ -615,16 +620,18 @@ const cityRegion = context => {
 };
 
 const suburb = context => {
+    const { sydney } = context;
     const nameMaker = contextMaker("", suburb);
     const heroImg = "";
     const contentImg = "daycare-business-sydney.jpg";
     const id = U.id("suburb");
-    const rel = [filename];
+    const segment = `${trade}-${industry}`
+    const rel = [segment, sydney, filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
     const output = U.relPathList(path);
     const domain = settings.domain + pretty;
-    const paths = { rel, path, pretty, output, domain };
+    const paths = { segment, rel, path, pretty, output, domain };
     const absolutePath = domain;
 
 
@@ -754,15 +761,23 @@ const suburb = context => {
         ...nameMaker,
         heroImg,
         contentImg,
-        id
+        id,
+        paths
     });
 };
 
 const directory = () => {
+    const rel = [filename];
+    const path = R.prepend(settings.outputLocation, rel);
+    const pretty = U.prettyPath(rel);
+    const output = U.relPathList(path);
+    const domain = settings.domain + pretty;
+    const paths = { rel, path, pretty, output, domain };
     return {
         ...contextMaker("", "directory"),
         title: "Directory",
-        filename: "directory.html"
+        filename: "directory.html",
+        paths
     };
 };
 
