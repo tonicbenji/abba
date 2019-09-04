@@ -100,6 +100,9 @@ const industry = context => {
 
 const home = context => {
     const {
+        input: {
+            footerType
+        },
         industry,
         Industry,
         nswRegionList,
@@ -117,6 +120,7 @@ const home = context => {
     const absolutePath = domain;
     const pageTitle = `Buy and Sell ${Industry} Businesses Across ${Australia}`;
     const schema = U.schema([[pageTitle, ""]]);
+    const footer = dataPaths.footer.template[footerType];
     const footerBuyNswRegions = nswRegionList
         ? U.nswRegionFooterList(`buy-${industry}`, nswRegionList)
         : "";
@@ -150,6 +154,7 @@ const home = context => {
         absolutePath,
         pageTitle,
         schema,
+        footer,
         footerBuyNswRegions,
         footerSellNswRegions,
         keywordsList,
