@@ -622,12 +622,13 @@ const cityRegion = context => {
 };
 
 const suburb = context => {
-    const { input: { suburb, buySell }, sydney, Sydney, Trade, Industry, Australia, cityRegionSuburbs, keywordsList, NSW, nsw, filenameregion, Region } = context;
+    const { input: { name, suburb, buySell }, parentContext, sydney, Sydney, trade, Trade, Industry, Australia, cityRegionSuburbs, keywordsList, NSW, nsw, filenameregion, Region } = context;
     const nameMaker = contextMaker("", suburb);
     const heroImg = "";
     const contentImg = "daycare-business-sydney.jpg";
     const id = U.id("suburb");
     const segment = `${trade}-${industry}`
+    const filename = U.filenameFormat(suburb);
     const rel = [segment, sydney, filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);

@@ -326,13 +326,14 @@ const suburbs = (data, template, pageType, parentContext) => {
     data.map(suburb =>
         dataPaths.buySell.data.map(buySell => {
             const context = R.pipe(
-                parentContext,
+                x => R.mergeDeepRight({ parentContext, ...parentContext }, x),
                 contexts2.general,
                 contexts2.buySell,
                 contexts2.suburb
             )(
                 U.input({
                     name: suburb,
+                    suburb,
                     city: "Sydney",
                     cityRegion: "Sydney",
                     pageType,

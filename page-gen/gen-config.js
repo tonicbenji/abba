@@ -4,7 +4,7 @@ module.exports = {
     outputLocation: "public",
     briefLogs: false,
     genSuburbs: true,
-    subset: 1,
+    subset: 0.01,
     business: {
         name: "ABBA",
         trade: "business broker"
