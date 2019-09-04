@@ -24,8 +24,8 @@ const contextMaker = (key, value) => {
     const nameConstantCase = contextItem(changeCase.constantCase, "name", value);
     const nameFilename = contextItem(U.filenameCase, `filename${key_}`, value);
     const filename = U.filenameFormat(value);
-    const nameThe = U.theToLower(nameToLower);
-    const nameThe = U.theToLower(nameTitleCase);
+    const nameThe = U.theToLower(R.toLower(value));
+    const NameThe = U.theToLower(changeCase.titleCase(value));
     return {
         ...toLower,
         ...toUpper,
@@ -38,9 +38,9 @@ const contextMaker = (key, value) => {
         ...nameCamelCase,
         ...nameConstantCase,
         ...nameFilename,
-        filename,
         nameThe,
-        NameThe
+        NameThe,
+        filename
     };
 };
 
