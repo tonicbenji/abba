@@ -245,7 +245,7 @@ const contact = context => {
 
 const country = context => {
     const {
-        input: { country },
+        input: { country, buySell },
         trade,
         Trade,
         industry,
@@ -253,6 +253,7 @@ const country = context => {
         Australia,
         nswRegionList
     } = context;
+    const nameMaker = contextMaker("", country);
     const title = country;
     const Title = changeCase.titleCase(country);
     const pageTitle = `${Trade}ing ${
@@ -292,7 +293,7 @@ const country = context => {
     const footerBreadcrumbs = U.footerBreadcrumbs([["Home", ""], [Title, ""]]);
     const keywords = keywordsList;
     return R.mergeDeepRight(context, {
-        ...contextMaker("", country),
+        ...nameMaker,
         title,
         Title,
         pageTitle,
@@ -329,10 +330,10 @@ const state = context => {
     const NSW = state.toUpperCase();
     const name = state.toUpperCase();
     const Name = state.toUpperCase();
-    const nameThe = state.toUpperCase();
-    const NameThe = state.toUpperCase();
-    const nameNoThe = state.toUpperCase();
-    const NameNoThe = state.toUpperCase();
+    // const nameThe = state.toUpperCase();
+    // const NameThe = state.toUpperCase();
+    // const nameNoThe = state.toUpperCase();
+    // const NameNoThe = state.toUpperCase();
     const nswRegionList = U.removeAllEmpty(
         U.fileToList(dataPaths.stateRegions.data)
     );
@@ -348,7 +349,7 @@ const state = context => {
     const heroImg = "preschool-business-brokers-nsw-2.jpg";
     const contentImg = "children-playing-nsw-childcare-businesses.jpg";
     const id = U.id("nsw");
-    const pageTitle = `${Trade}ing a ${Industry} Business in ${nameThe}`;
+    const pageTitle = `${Trade}ing a ${Industry} Business in ${NSW}`;
     const schema = U.schema([
         [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, paths.pretty]
@@ -379,10 +380,10 @@ const state = context => {
         Nsw,
         name,
         Name,
-        nameThe,
-        NameThe,
-        nameNoThe,
-        NameNoThe,
+        // nameThe,
+        // NameThe,
+        // nameNoThe,
+        // NameNoThe,
         nswRegionList,
         paths,
         absolutePath,
