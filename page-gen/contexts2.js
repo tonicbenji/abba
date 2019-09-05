@@ -188,7 +188,7 @@ const about = context => {
         ["Home", ""],
         [title, filename]
     ]);
-    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [] });
+    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [ "About ABBA Group" ] });
     const keywords = U.keywordsFormat(keywordsList);
     return R.mergeDeepRight(context, {
         title,
@@ -230,7 +230,7 @@ const contact = context => {
         ["Home", ""],
         [title, filename]
     ]);
-    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [] });
+    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [ "Contact ABBA Group" ] });
     const keywords = U.keywordsFormat(keywordsList);
     return R.mergeDeepRight(context, {
         title,
@@ -367,7 +367,10 @@ const state = context => {
         [Australia, `${paths.segment}/index.html`],
         [NSW, `${paths.segment}/${nsw}.html`]
     ]);
-    const keywordsList = U.keywordsReducer({ seed: state, prev: keywordsList_, next: []});
+    const keywordsList = U.keywordsReducer({ seed: state, prev: keywordsList_, next: [
+        `${state} ${settings.business.trade}`,
+        `${settings.business.name} ${settings.business.trade} ${state}`
+    ]});
     const keywords = U.keywordsFormat(keywordsList);
     const description = U.description(
         buySell === "Buy"
@@ -458,7 +461,10 @@ const stateRegion = context => {
         [NSW, `${paths.segment}/${nsw}.html`],
         [nameMaker.Name, `${paths.segment}/${nameMaker.namenothe}.html`]
     ]);
-    const keywordsList = U.keywordsReducer({ seed: stateRegion, prev: keywordsList_, next: []});
+    const keywordsList = U.keywordsReducer({ seed: stateRegion, prev: keywordsList_, next: [
+        `${stateRegion} ${settings.business.trade}`,
+        `${settings.business.name} ${settings.business.trade} ${stateRegion}`
+    ]});
     const keywords = U.keywordsFormat(keywordsList);
     const description = U.description(
         buySell === "Buy"
@@ -548,7 +554,10 @@ const city = context => {
         [Australia, `${paths.segment}/index.html`],
         [cityMaker.Name, ""]
     ]);
-    const keywordsList = U.keywordsReducer({ seed: city, prev: keywordsList_, next: []});
+    const keywordsList = U.keywordsReducer({ seed: city, prev: keywordsList_, next: [
+        `${city} ${settings.business.trade}`,
+        `${settings.business.name} ${settings.business.trade} ${city}`
+    ]});
     const keywords = U.keywordsFormat(keywordsList);
     return R.mergeDeepRight(context, {
         ...cityMaker,
@@ -645,7 +654,10 @@ const cityRegion = context => {
         [Sydney, `${paths.segment}/${sydney.toLowerCase()}/index.html`],
         [changeCase.titleCase(cityRegion), ""]
     ]);
-    const keywordsList = U.keywordsReducer({ seed: cityRegion, prev: keywordsList_, next: []});
+    const keywordsList = U.keywordsReducer({ seed: cityRegion, prev: keywordsList_, next: [
+        `${cityRegion} ${settings.business.trade}`,
+        `${settings.business.name} ${settings.business.trade} ${cityRegion}`
+    ]});
     const keywords = U.keywordsFormat(keywordsList);
     return R.mergeDeepRight(context, {
         ...nameMaker,
@@ -727,7 +739,10 @@ const suburb = context => {
         ? ""
         : `<div class="regionFooterHeading">${Trade}ing a ${Industry} Business in Nearby Suburbs:</div>`;
     const nearby = U.cityRegionFooterList(paths.segment, sydney, nearbySuburbs);
-    const keywordsList = U.keywordsReducer({ seed: suburb, prev: keywordsList_, next: []});
+    const keywordsList = U.keywordsReducer({ seed: suburb, prev: keywordsList_, next: [
+        `${suburb} ${settings.business.trade}`,
+        `${settings.business.name} ${settings.business.trade} ${suburb}`
+    ]});
     const keywords = U.keywordsFormat(keywordsList);
     const mobileBreadcrumbs = U.mobileBreadcrumbs([
         [Australia, `${paths.segment}/index.html`],
