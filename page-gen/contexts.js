@@ -108,9 +108,7 @@ const industry = context => {
 
 const home = context => {
     const {
-        input: {
-            footerType
-        },
+        input: { footerType },
         industry,
         Industry,
         nswRegionList,
@@ -141,7 +139,11 @@ const home = context => {
     const id = U.id("home");
     const footerBreadcrumbs = "";
     const home = title;
-    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [] });
+    const keywordsList = U.keywordsReducer({
+        seed: title,
+        prev: keywordsList_,
+        next: []
+    });
     const keywords = U.keywordsFormat(keywordsList);
     const mobileBreadcrumbs = "";
     return R.mergeDeepRight(context, {
@@ -191,7 +193,11 @@ const about = context => {
         ["Home", ""],
         [title, filename]
     ]);
-    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [ "About ABBA Group" ] });
+    const keywordsList = U.keywordsReducer({
+        seed: title,
+        prev: keywordsList_,
+        next: ["About ABBA Group"]
+    });
     const keywords = U.keywordsFormat(keywordsList);
     const description = U.description(
         "About ABBA Group, Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity."
@@ -239,7 +245,11 @@ const contact = context => {
         [title, filename]
     ]);
     const footer = dataPaths.footer.template[footerType];
-    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [ "Contact ABBA Group" ] });
+    const keywordsList = U.keywordsReducer({
+        seed: title,
+        prev: keywordsList_,
+        next: ["Contact ABBA Group"]
+    });
     const keywords = U.keywordsFormat(keywordsList);
     const description = U.description(
         "Contact ABBA Group, Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity."
@@ -301,16 +311,20 @@ const country = context => {
         ? U.nswRegionFooterList(`sell-${industry}`, nswRegionList)
         : [];
     const footerBreadcrumbs = U.footerBreadcrumbs([["Home", ""], [Title, ""]]);
-    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [
-        `${country} ${settings.business.trade}`,
-        `${settings.business.name} ${settings.business.trade} ${country}`
-    ]});
+    const keywordsList = U.keywordsReducer({
+        seed: title,
+        prev: keywordsList_,
+        next: [
+            `${country} ${settings.business.trade}`,
+            `${settings.business.name} ${settings.business.trade} ${country}`
+        ]
+    });
     const keywords = U.keywordsFormat(keywordsList);
     const description = U.description(
         buySell === "Buy"
             ? "In addition to analysing the accounts of a business you are considering for purchase and to ensure that it is making a steady profit, you should also ensure that it has a high occupancy rate – 80% or higher."
             : "In large cities like Sydney, Brisbane and Melbourne there is currently an oversupply of childcare placements. In some suburbs within these cities and in less metropolitan areas there is however, actually an undersupply."
-    )
+    );
     return R.mergeDeepRight(context, {
         ...nameMaker,
         title,
@@ -387,15 +401,19 @@ const state = context => {
         [Australia, `${paths.segment}/index.html`],
         [NSW, `${paths.segment}/${nsw}.html`]
     ]);
-    const keywordsList = U.keywordsReducer({ seed: state, prev: keywordsList_, next: [
-        `${state} ${settings.business.trade}`,
-        `${settings.business.name} ${settings.business.trade} ${state}`
-    ]});
+    const keywordsList = U.keywordsReducer({
+        seed: state,
+        prev: keywordsList_,
+        next: [
+            `${state} ${settings.business.trade}`,
+            `${settings.business.name} ${settings.business.trade} ${state}`
+        ]
+    });
     const keywords = U.keywordsFormat(keywordsList);
     const description = U.description(
         buySell === "Buy"
-        ? "Reports published by the Australian government indicate that the supply of childcare is constrained by several factors in NSW, and this means that many buyers are fighting over a limited number of childcare businesses."
-        : "There are many opportunities at present within the NSW childcare business market. In June 2018, the Australian Government announced that it is extending the childcare subsidy to children as young as three years."
+            ? "Reports published by the Australian government indicate that the supply of childcare is constrained by several factors in NSW, and this means that many buyers are fighting over a limited number of childcare businesses."
+            : "There are many opportunities at present within the NSW childcare business market. In June 2018, the Australian Government announced that it is extending the childcare subsidy to children as young as three years."
     );
     return R.mergeDeepRight(context, {
         ...nameMaker,
@@ -482,19 +500,25 @@ const stateRegion = context => {
         [NSW, `${paths.segment}/${nsw}.html`],
         [nameMaker.Name, `${paths.segment}/${nameMaker.namenothe}.html`]
     ]);
-    const keywordsList = U.keywordsReducer({ seed: stateRegion, prev: keywordsList_, next: [
-        `${stateRegion} ${settings.business.trade}`,
-        `${settings.business.name} ${settings.business.trade} ${stateRegion}`
-    ]});
+    const keywordsList = U.keywordsReducer({
+        seed: stateRegion,
+        prev: keywordsList_,
+        next: [
+            `${stateRegion} ${settings.business.trade}`,
+            `${settings.business.name} ${
+                settings.business.trade
+            } ${stateRegion}`
+        ]
+    });
     const keywords = U.keywordsFormat(keywordsList);
     const description = U.description(
         buySell === "Buy"
-        ? `Reports published by the Australian government indicate that the supply of childcare is constrained by several factors in ${U.theToLower(
-            changeCase.titleCase(stateRegion)
-        )}, and this means that many buyers are fighting over a limited number of childcare businesses.`
-        : `Among the broader regulatory factors affecting the childcare business market in ${U.theToLower(
-            changeCase.titleCase(stateRegion)
-        )} is the Australian Government’s announcement that it is extending the childcare subsidy.`
+            ? `Reports published by the Australian government indicate that the supply of childcare is constrained by several factors in ${U.theToLower(
+                  changeCase.titleCase(stateRegion)
+              )}, and this means that many buyers are fighting over a limited number of childcare businesses.`
+            : `Among the broader regulatory factors affecting the childcare business market in ${U.theToLower(
+                  changeCase.titleCase(stateRegion)
+              )} is the Australian Government’s announcement that it is extending the childcare subsidy.`
     );
     return R.mergeDeepRight(context, {
         ...nameMaker,
@@ -576,10 +600,14 @@ const city = context => {
         [Australia, `${paths.segment}/index.html`],
         [cityMaker.Name, ""]
     ]);
-    const keywordsList = U.keywordsReducer({ seed: city, prev: keywordsList_, next: [
-        `${city} ${settings.business.trade}`,
-        `${settings.business.name} ${settings.business.trade} ${city}`
-    ]});
+    const keywordsList = U.keywordsReducer({
+        seed: city,
+        prev: keywordsList_,
+        next: [
+            `${city} ${settings.business.trade}`,
+            `${settings.business.name} ${settings.business.trade} ${city}`
+        ]
+    });
     const keywords = U.keywordsFormat(keywordsList);
     const description = U.description(
         buySell === "Buy"
@@ -589,7 +617,7 @@ const city = context => {
             : `As you are probably well aware, ${U.theToLower(
                   changeCase.titleCase(cityRegion)
               )} does have an oversupply of childcare businesses. This oversupply is worse in some areas than others.`
-    )
+    );
     return R.mergeDeepRight(context, {
         ...cityMaker,
         heroImg,
@@ -667,9 +695,9 @@ const cityRegion = context => {
     const cityRegionSuburbs = cityRegionSuburbsSubset;
     const regionFooterHeading = R.isEmpty(cityRegionSuburbs)
         ? ""
-        : `<div class="regionFooterHeading">${Trade} a ${
-              Industry
-          } Business in one of ${nameMaker.NameThe}’s Suburbs:</div>`;
+        : `<div class="regionFooterHeading">${Trade} a ${Industry} Business in one of ${
+              nameMaker.NameThe
+          }’s Suburbs:</div>`;
     const regionFooterUl = U.cityRegionFooterList(
         paths.segment,
         sydney,
@@ -686,20 +714,24 @@ const cityRegion = context => {
         [Sydney, `${paths.segment}/${sydney.toLowerCase()}/index.html`],
         [changeCase.titleCase(cityRegion), ""]
     ]);
-    const keywordsList = U.keywordsReducer({ seed: cityRegion, prev: keywordsList_, next: [
-        `${cityRegion} ${settings.business.trade}`,
-        `${settings.business.name} ${settings.business.trade} ${cityRegion}`
-    ]});
+    const keywordsList = U.keywordsReducer({
+        seed: cityRegion,
+        prev: keywordsList_,
+        next: [
+            `${cityRegion} ${settings.business.trade}`,
+            `${settings.business.name} ${settings.business.trade} ${cityRegion}`
+        ]
+    });
     const keywords = U.keywordsFormat(keywordsList);
     const description = U.description(
-            buySell === "Buy"
-                ? `When buying an independent centre in ${U.theToLower(
-                      changeCase.titleCase(cityRegion)
-                  )}, you have more freedom and potentially higher profit margins, whereas with a franchise you have more guidance and potentially lower risk.`
-                : `As you are probably well aware, ${U.theToLower(
-                      changeCase.titleCase(cityRegion)
-                  )} does have an oversupply of childcare businesses. This oversupply is worse in some areas than others.`
-        );
+        buySell === "Buy"
+            ? `When buying an independent centre in ${U.theToLower(
+                  changeCase.titleCase(cityRegion)
+              )}, you have more freedom and potentially higher profit margins, whereas with a franchise you have more guidance and potentially lower risk.`
+            : `As you are probably well aware, ${U.theToLower(
+                  changeCase.titleCase(cityRegion)
+              )} does have an oversupply of childcare businesses. This oversupply is worse in some areas than others.`
+    );
     return R.mergeDeepRight(context, {
         ...nameMaker,
         ...cityRegionMaker,
@@ -781,10 +813,14 @@ const suburb = context => {
         ? ""
         : `<div class="regionFooterHeading">${Trade}ing a ${Industry} Business in Nearby Suburbs:</div>`;
     const nearby = U.cityRegionFooterList(paths.segment, sydney, nearbySuburbs);
-    const keywordsList = U.keywordsReducer({ seed: suburb, prev: keywordsList_, next: [
-        `${suburb} ${settings.business.trade}`,
-        `${settings.business.name} ${settings.business.trade} ${suburb}`
-    ]});
+    const keywordsList = U.keywordsReducer({
+        seed: suburb,
+        prev: keywordsList_,
+        next: [
+            `${suburb} ${settings.business.trade}`,
+            `${settings.business.name} ${settings.business.trade} ${suburb}`
+        ]
+    });
     const keywords = U.keywordsFormat(keywordsList);
     const mobileBreadcrumbs = U.mobileBreadcrumbs([
         [Australia, `${paths.segment}/index.html`],
@@ -801,12 +837,12 @@ const suburb = context => {
     ]);
     const description = U.description(
         buySell === "Buy"
-        ? `While there is a strong demand for childcare in ${U.theToLower(
-            changeCase.titleCase(suburb)
-        )}, you should be aware of some local conditions and broader regulations that will affect your purchase.`
-        : `There is strong variation within the ${U.theToLower(
-            changeCase.titleCase(suburb)
-        )} area, and this is one of the largest factors in the selling price of your childcare business.`
+            ? `While there is a strong demand for childcare in ${U.theToLower(
+                  changeCase.titleCase(suburb)
+              )}, you should be aware of some local conditions and broader regulations that will affect your purchase.`
+            : `There is strong variation within the ${U.theToLower(
+                  changeCase.titleCase(suburb)
+              )} area, and this is one of the largest factors in the selling price of your childcare business.`
     );
     return R.mergeDeepRight(context, {
         ...nameMaker,
@@ -857,7 +893,11 @@ const directory = context => {
         [pageTitle, filename]
     ]);
     const footer = dataPaths.footer.template[footerType];
-    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: []});
+    const keywordsList = U.keywordsReducer({
+        seed: title,
+        prev: keywordsList_,
+        next: []
+    });
     const keywords = U.keywordsFormat(keywordsList);
     const directoryList = dataPaths.buySell.data
         .map(buySell => {
@@ -919,7 +959,9 @@ const directory = context => {
         ["Home", ""],
         [changeCase.titleCase(nameMaker.name), ""]
     ]);
-    const description = U.description("A list of the areas - national, state and local - that we service with childcare business sales and acquisitions.");
+    const description = U.description(
+        "A list of the areas - national, state and local - that we service with childcare business sales and acquisitions."
+    );
     const mobileBreadcrumbs = "";
     return R.mergeDeepRight(context, {
         ...nameMaker,
