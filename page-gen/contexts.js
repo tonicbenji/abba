@@ -143,6 +143,7 @@ const home = context => {
     const home = title;
     const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [] });
     const keywords = U.keywordsFormat(keywordsList);
+    const mobileBreadcrumbs = "";
     return R.mergeDeepRight(context, {
         title,
         home,
@@ -158,7 +159,8 @@ const home = context => {
         footerSellNswRegions,
         keywordsList,
         keywords,
-        description
+        description,
+        mobileBreadcrumbs
     });
 };
 
