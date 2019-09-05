@@ -4,7 +4,6 @@ const dateFormat = require("dateformat");
 const changeCase = require("change-case");
 const dataPaths = require("./data-paths");
 const contexts = require("./contexts");
-const contexts2 = require("./contexts2");
 const U = require("./utilities");
 const settings = require("./gen-config");
 const shuffleSeed = require("shuffle-seed");
@@ -71,11 +70,11 @@ const run = ({ pageTypes, context }) => {
 const home = (data, template, pageType) => {
     U.headerLog(changeCase.titleCase(pageType));
     const context = R.pipe(
-        contexts2.general,
-        contexts2.industry,
-        contexts2.country,
-        contexts2.state,
-        contexts2.home
+        contexts.general,
+        contexts.industry,
+        contexts.country,
+        contexts.state,
+        contexts.home
     )(
         U.input({
             name: data,
@@ -98,11 +97,11 @@ const home = (data, template, pageType) => {
 const about = (data, template, pageType) => {
     U.headerLog(changeCase.titleCase(pageType));
     const context = R.pipe(
-        contexts2.general,
-        contexts2.home,
-        contexts2.industry,
-        contexts2.country,
-        contexts2.about
+        contexts.general,
+        contexts.home,
+        contexts.industry,
+        contexts.country,
+        contexts.about
     )(
         U.input({
             name: data,
@@ -125,11 +124,11 @@ const about = (data, template, pageType) => {
 const contact = (data, template, pageType) => {
     U.headerLog(changeCase.titleCase(pageType));
     const context = R.pipe(
-        contexts2.general,
-        contexts2.home,
-        contexts2.industry,
-        contexts2.country,
-        contexts2.contact
+        contexts.general,
+        contexts.home,
+        contexts.industry,
+        contexts.country,
+        contexts.contact
     )(
         U.input({
             name: data,
@@ -153,12 +152,12 @@ const country = (data, template, pageType) => {
     U.headerLog(changeCase.titleCase(pageType));
     dataPaths.buySell.data.map(buySell => {
         const context = R.pipe(
-            contexts2.general,
-            contexts2.home,
-            contexts2.buySell,
-            contexts2.industry,
-            contexts2.state,
-            contexts2.country
+            contexts.general,
+            contexts.home,
+            contexts.buySell,
+            contexts.industry,
+            contexts.state,
+            contexts.country
         )(
             U.input({
                 name: data,
@@ -185,12 +184,12 @@ const state = (data, template, pageType) => {
     dataPaths.buySell.data.map(buySell => {
         dataPaths.buySell.data.map(buySell => {
             const context = R.pipe(
-                contexts2.general,
-                contexts2.home,
-                contexts2.buySell,
-                contexts2.industry,
-                contexts2.country,
-                contexts2.state
+                contexts.general,
+                contexts.home,
+                contexts.buySell,
+                contexts.industry,
+                contexts.country,
+                contexts.state
             )(
                 U.input({
                     name: data,
@@ -219,12 +218,12 @@ const stateRegions = (data, template, pageType) => {
     stateRegions.map(stateRegion => {
         dataPaths.buySell.data.map(buySell => {
             const context = R.pipe(
-                contexts2.general,
-                contexts2.buySell,
-                contexts2.industry,
-                contexts2.country,
-                contexts2.state,
-                contexts2.stateRegion
+                contexts.general,
+                contexts.buySell,
+                contexts.industry,
+                contexts.country,
+                contexts.state,
+                contexts.stateRegion
             )(
                 U.input({
                     name: stateRegion,
@@ -252,12 +251,12 @@ const city = (data, template, pageType) => {
     U.headerLog(changeCase.titleCase(pageType));
     dataPaths.buySell.data.map(buySell => {
         const context = R.pipe(
-            contexts2.general,
-            contexts2.buySell,
-            contexts2.industry,
-            contexts2.country,
-            contexts2.state,
-            contexts2.city
+            contexts.general,
+            contexts.buySell,
+            contexts.industry,
+            contexts.country,
+            contexts.state,
+            contexts.city
         )(
             U.input({
                 name: data,
@@ -286,13 +285,13 @@ const cityRegions = (data, template, pageType) => {
     cityRegions.map(cityRegion => {
         dataPaths.buySell.data.map(buySell => {
             const context = R.pipe(
-                contexts2.general,
-                contexts2.buySell,
-                contexts2.industry,
-                contexts2.country,
-                contexts2.state,
-                contexts2.city,
-                contexts2.cityRegion
+                contexts.general,
+                contexts.buySell,
+                contexts.industry,
+                contexts.country,
+                contexts.state,
+                contexts.city,
+                contexts.cityRegion
             )(
                 U.input({
                     name: cityRegion,
@@ -326,9 +325,9 @@ const suburbs = (data, template, pageType, parentContext) => {
         dataPaths.buySell.data.map(buySell => {
             const context = R.pipe(
                 x => R.mergeDeepRight({ parentContext, ...parentContext }, x),
-                contexts2.general,
-                contexts2.buySell,
-                contexts2.suburb
+                contexts.general,
+                contexts.buySell,
+                contexts.suburb
             )(
                 U.input({
                     name: suburb,
@@ -357,13 +356,13 @@ const suburbs = (data, template, pageType, parentContext) => {
 const directory = (data, template, pageType) => {
     U.headerLog(changeCase.titleCase(pageType));
     const context = R.pipe(
-        contexts2.general,
-        contexts2.home,
-        contexts2.industry,
-        contexts2.country,
-        contexts2.state,
-        contexts2.city,
-        contexts2.directory
+        contexts.general,
+        contexts.home,
+        contexts.industry,
+        contexts.country,
+        contexts.state,
+        contexts.city,
+        contexts.directory
     )(
         U.input({
             name: pageType,
