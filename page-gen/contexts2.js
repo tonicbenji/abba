@@ -489,7 +489,6 @@ const stateRegion = context => {
 const city = context => {
     const {
         input: { buySell, city },
-        filename,
         trade,
         Trade,
         industry,
@@ -506,6 +505,7 @@ const city = context => {
     const heroImg = "childcare-business-sydney.jpg";
     const contentImg = "sydney-childcare-business-little-kid.jpg";
     const id = U.id("sydney");
+    const filename = "index.html";
     const segment = `${trade}-${industry}`;
     const rel = [segment, filename];
     const path = R.prepend(settings.outputLocation, rel);
@@ -515,7 +515,7 @@ const city = context => {
     const paths = { segment, rel, path, pretty, output, domain };
     const absolutePath = domain;
     const pageTitle = `${Trade}ing a ${Industry} Business in ${
-        cityMaker.nameThe
+        cityMaker.NameThe
     }`;
     const schema = U.schema([
         [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
@@ -540,7 +540,7 @@ const city = context => {
         [NSW, `${paths.segment}/${nsw}.html`]
     ]);
     const footerBreadcrumbs = U.footerBreadcrumbs([
-        [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
+        ["Home", ""],
         [Australia, `${paths.segment}/index.html`],
         [cityMaker.Name, ""]
     ]);
