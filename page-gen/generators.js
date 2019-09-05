@@ -195,7 +195,7 @@ const state = (data, template, pageType) => {
                 U.input({
                     name: data,
                     pageType,
-                    footerType: "country",
+                    footerType: "state",
                     industry: "Childcare",
                     country: "Australia",
                     state: "NSW",

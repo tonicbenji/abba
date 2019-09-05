@@ -330,10 +330,10 @@ const state = context => {
     const NSW = state.toUpperCase();
     const name = state.toUpperCase();
     const Name = state.toUpperCase();
-    // const nameThe = state.toUpperCase();
-    // const NameThe = state.toUpperCase();
-    // const nameNoThe = state.toUpperCase();
-    // const NameNoThe = state.toUpperCase();
+    const nameThe = state.toUpperCase();
+    const NameThe = state.toUpperCase();
+    const nameNoThe = state.toUpperCase();
+    const NameNoThe = state.toUpperCase();
     const nswRegionList = U.removeAllEmpty(
         U.fileToList(dataPaths.stateRegions.data)
     );
@@ -380,10 +380,10 @@ const state = context => {
         Nsw,
         name,
         Name,
-        // nameThe,
-        // NameThe,
-        // nameNoThe,
-        // NameNoThe,
+        nameThe,
+        NameThe,
+        nameNoThe,
+        NameNoThe,
         nswRegionList,
         paths,
         absolutePath,
@@ -430,7 +430,7 @@ const stateRegion = context => {
     const paths = { segment, rel, path, pretty, output, domain };
     const absolutePath = domain;
     const pageTitle = `${Trade}ing a ${Industry} Business in ${
-        nameMaker.nameThe
+        nameMaker.NameThe
     }`;
     const schema = U.schema([
         [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
@@ -594,7 +594,6 @@ const cityRegion = context => {
     const pageTitle = `${Trade}ing a ${Industry} Business in ${
         nameMaker.NameThe
     }`;
-    console.log(nameMaker);
     const schema = U.schema([
         [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [
