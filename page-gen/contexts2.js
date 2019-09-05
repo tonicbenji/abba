@@ -209,7 +209,7 @@ const contact = context => {
         input: { name },
         Industry,
         Australia,
-        keywords: keywords_
+        keywordsList: keywordsList_
     } = context;
     const title = name;
     const filename = U.filenameFormat(name);
@@ -230,7 +230,8 @@ const contact = context => {
         ["Home", ""],
         [title, filename]
     ]);
-    const keywords = "";
+    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [] });
+    const keywords = U.keywordsFormat(keywordsList);
     return R.mergeDeepRight(context, {
         title,
         filename,
@@ -240,6 +241,7 @@ const contact = context => {
         pageTitle,
         schema,
         footerBreadcrumbs,
+        keywordsList,
         keywords
     });
 };
