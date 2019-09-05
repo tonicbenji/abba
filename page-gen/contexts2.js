@@ -505,9 +505,9 @@ const city = context => {
     const heroImg = "childcare-business-sydney.jpg";
     const contentImg = "sydney-childcare-business-little-kid.jpg";
     const id = U.id("sydney");
-    const filename = "index.html";
+    const filename = `index.html`;
     const segment = `${trade}-${industry}`;
-    const rel = [segment, filename];
+    const rel = [segment, city, filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
     const output = U.relPathList(path);
