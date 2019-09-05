@@ -316,7 +316,7 @@ const country = context => {
         prev: keywordsList_,
         next: [
             `${country} ${settings.business.trade}`,
-            `${settings.business.name} ${settings.business.trade} ${country}`
+            `${settings.business.trade} ${country}`
         ]
     });
     const keywords = U.keywordsFormat(keywordsList);
@@ -406,7 +406,7 @@ const state = context => {
         prev: keywordsList_,
         next: [
             `${state} ${settings.business.trade}`,
-            `${settings.business.name} ${settings.business.trade} ${state}`
+            `${settings.business.trade} ${state}`
         ]
     });
     const keywords = U.keywordsFormat(keywordsList);
@@ -505,7 +505,7 @@ const stateRegion = context => {
         prev: keywordsList_,
         next: [
             `${stateRegion} ${settings.business.trade}`,
-            `${settings.business.name} ${
+            `${
                 settings.business.trade
             } ${stateRegion}`
         ]
@@ -605,7 +605,7 @@ const city = context => {
         prev: keywordsList_,
         next: [
             `${city} ${settings.business.trade}`,
-            `${settings.business.name} ${settings.business.trade} ${city}`
+            `${settings.business.trade} ${city}`
         ]
     });
     const keywords = U.keywordsFormat(keywordsList);
@@ -719,7 +719,7 @@ const cityRegion = context => {
         prev: keywordsList_,
         next: [
             `${cityRegion} ${settings.business.trade}`,
-            `${settings.business.name} ${settings.business.trade} ${cityRegion}`
+            `${settings.business.trade} ${cityRegion}`
         ]
     });
     const keywords = U.keywordsFormat(keywordsList);
@@ -818,7 +818,7 @@ const suburb = context => {
         prev: keywordsList_,
         next: [
             `${suburb} ${settings.business.trade}`,
-            `${settings.business.name} ${settings.business.trade} ${suburb}`
+            `${settings.business.trade} ${suburb}`
         ]
     });
     const keywords = U.keywordsFormat(keywordsList);
