@@ -171,7 +171,7 @@ const about = context => {
     } = context;
     const title = name;
     const filename = U.filenameFormat(name);
-    const id = U.id(name);
+    const id = U.id("about");
     const rel = [filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
@@ -219,7 +219,7 @@ const contact = context => {
     } = context;
     const title = name;
     const filename = U.filenameFormat(name);
-    const id = U.id(name);
+    const id = U.id("contact");
     const rel = [filename];
     const path = R.prepend(settings.outputLocation, rel);
     const pretty = U.prettyPath(rel);
@@ -304,6 +304,11 @@ const country = context => {
         `${settings.business.name} ${settings.business.trade} ${country}`
     ]});
     const keywords = U.keywordsFormat(keywordsList);
+    const description = U.description(
+        buySell === "Buy"
+            ? "In addition to analysing the accounts of a business you are considering for purchase and to ensure that it is making a steady profit, you should also ensure that it has a high occupancy rate – 80% or higher."
+            : "In large cities like Sydney, Brisbane and Melbourne there is currently an oversupply of childcare placements. In some suburbs within these cities and in less metropolitan areas there is however, actually an undersupply."
+    )
     return R.mergeDeepRight(context, {
         ...nameMaker,
         title,
@@ -321,7 +326,8 @@ const country = context => {
         footerBuyNswRegions,
         footerSellNswRegions,
         footerBreadcrumbs,
-        keywords
+        keywords,
+        description
     });
 };
 
@@ -416,7 +422,8 @@ const state = context => {
         mobileBreadcrumbs,
         footerBreadcrumbs,
         keywordsList,
-        keywords
+        keywords,
+        description
     });
 };
 
@@ -504,7 +511,8 @@ const stateRegion = context => {
         mobileBreadcrumbs,
         footerBreadcrumbs,
         keywordsList,
-        keywords
+        keywords,
+        description
     });
 };
 
@@ -571,6 +579,15 @@ const city = context => {
         `${settings.business.name} ${settings.business.trade} ${city}`
     ]});
     const keywords = U.keywordsFormat(keywordsList);
+    const description = U.description(
+        buySell === "Buy"
+            ? `When buying an independent centre in ${U.theToLower(
+                  changeCase.titleCase(cityRegion)
+              )}, you have more freedom and potentially higher profit margins, whereas with a franchise you have more guidance and potentially lower risk.`
+            : `As you are probably well aware, ${U.theToLower(
+                  changeCase.titleCase(cityRegion)
+              )} does have an oversupply of childcare businesses. This oversupply is worse in some areas than others.`
+    )
     return R.mergeDeepRight(context, {
         ...cityMaker,
         heroImg,
@@ -587,7 +604,8 @@ const city = context => {
         mobileBreadcrumbs,
         footerBreadcrumbs,
         keywords,
-        keywordsList
+        keywordsList,
+        description
     });
 };
 
@@ -671,6 +689,15 @@ const cityRegion = context => {
         `${settings.business.name} ${settings.business.trade} ${cityRegion}`
     ]});
     const keywords = U.keywordsFormat(keywordsList);
+    const description = U.description(
+            buySell === "Buy"
+                ? `When buying an independent centre in ${U.theToLower(
+                      changeCase.titleCase(cityRegion)
+                  )}, you have more freedom and potentially higher profit margins, whereas with a franchise you have more guidance and potentially lower risk.`
+                : `As you are probably well aware, ${U.theToLower(
+                      changeCase.titleCase(cityRegion)
+                  )} does have an oversupply of childcare businesses. This oversupply is worse in some areas than others.`
+        );
     return R.mergeDeepRight(context, {
         ...nameMaker,
         ...cityRegionMaker,
@@ -687,7 +714,8 @@ const cityRegion = context => {
         mobileBreadcrumbs,
         footerBreadcrumbs,
         keywordsList,
-        keywords
+        keywords,
+        description
     });
 };
 
@@ -769,6 +797,15 @@ const suburb = context => {
         [Region, `${paths.segment}/sydney/${filenameregion}.html`],
         [changeCase.titleCase(name), ""]
     ]);
+    const description = U.description(
+        buySell === "Buy"
+        ? `While there is a strong demand for childcare in ${U.theToLower(
+            changeCase.titleCase(suburb)
+        )}, you should be aware of some local conditions and broader regulations that will affect your purchase.`
+        : `There is strong variation within the ${U.theToLower(
+            changeCase.titleCase(suburb)
+        )} area, and this is one of the largest factors in the selling price of your childcare business.`
+    );
     return R.mergeDeepRight(context, {
         ...nameMaker,
         heroImg,
@@ -784,7 +821,8 @@ const suburb = context => {
         keywords,
         keywordsList,
         mobileBreadcrumbs,
-        footerBreadcrumbs
+        footerBreadcrumbs,
+        description
     });
 };
 
@@ -880,6 +918,7 @@ const directory = context => {
         [changeCase.titleCase(nameMaker.name), ""]
     ]);
     const description = U.description("A list of the areas - national, state and local - that we service with childcare business sales and acquisitions.");
+    const mobileBreadcrumbs = "";
     return R.mergeDeepRight(context, {
         ...nameMaker,
         title,
@@ -893,7 +932,8 @@ const directory = context => {
         keywordsList,
         directoryList,
         footerBreadcrumbs,
-        description
+        description,
+        mobileBreadcrumbs
     });
 };
 
