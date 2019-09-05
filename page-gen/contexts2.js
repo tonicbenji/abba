@@ -415,7 +415,7 @@ const stateRegion = context => {
         Industry,
         NSW,
         nsw,
-        keywordLists
+        keywordsList: keywordsList_
     } = context;
     const nameMaker = contextMaker("", stateRegion);
     const regionMaker = contextMaker("region", stateRegion);
@@ -458,7 +458,8 @@ const stateRegion = context => {
         [NSW, `${paths.segment}/${nsw}.html`],
         [nameMaker.Name, `${paths.segment}/${nameMaker.namenothe}.html`]
     ]);
-    const keywords = "";
+    const keywordsList = U.keywordsReducer({ seed: stateRegion, prev: keywordsList_, next: []});
+    const keywords = U.keywordsFormat(keywordsList);
     const description = U.description(
         buySell === "Buy"
         ? `Reports published by the Australian government indicate that the supply of childcare is constrained by several factors in ${U.theToLower(
@@ -484,6 +485,7 @@ const stateRegion = context => {
         regionFooterHeading,
         mobileBreadcrumbs,
         footerBreadcrumbs,
+        keywordsList,
         keywords
     });
 };
@@ -498,7 +500,7 @@ const city = context => {
         Australia,
         NSW,
         nsw,
-        keywordLists
+        keywordsList: keywordsList_
     } = context;
     const cityMaker = contextMaker("", city);
     const cityRegionList = U.removeAllEmpty(
@@ -546,7 +548,8 @@ const city = context => {
         [Australia, `${paths.segment}/index.html`],
         [cityMaker.Name, ""]
     ]);
-    const keywords = "";
+    const keywordsList = U.keywordsReducer({ seed: city, prev: keywordsList_, next: []});
+    const keywords = U.keywordsFormat(keywordsList);
     return R.mergeDeepRight(context, {
         ...cityMaker,
         heroImg,
@@ -562,7 +565,8 @@ const city = context => {
         regionFooterUl,
         mobileBreadcrumbs,
         footerBreadcrumbs,
-        keywords
+        keywords,
+        keywordsList
     });
 };
 
@@ -578,7 +582,7 @@ const cityRegion = context => {
         sydney,
         NSW,
         nsw,
-        // keywordsList
+        keywordsList: keywordsList_
     } = context;
     const nameMaker = contextMaker("", cityRegion);
     const cityRegionMaker = contextMaker("region", cityRegion);
@@ -641,7 +645,8 @@ const cityRegion = context => {
         [Sydney, `${paths.segment}/${sydney.toLowerCase()}/index.html`],
         [changeCase.titleCase(cityRegion), ""]
     ]);
-    const keywords = "";
+    const keywordsList = U.keywordsReducer({ seed: cityRegion, prev: keywordsList_, next: []});
+    const keywords = U.keywordsFormat(keywordsList);
     return R.mergeDeepRight(context, {
         ...nameMaker,
         ...cityRegionMaker,
@@ -657,6 +662,7 @@ const cityRegion = context => {
         regionFooterUl,
         mobileBreadcrumbs,
         footerBreadcrumbs,
+        keywordsList,
         keywords
     });
 };
@@ -672,7 +678,7 @@ const suburb = context => {
         Industry,
         Australia,
         cityRegionSuburbs,
-        // keywordsList,
+        keywordsList: keywordsList_,
         NSW,
         nsw,
         filenameregion,
@@ -721,7 +727,8 @@ const suburb = context => {
         ? ""
         : `<div class="regionFooterHeading">${Trade}ing a ${Industry} Business in Nearby Suburbs:</div>`;
     const nearby = U.cityRegionFooterList(paths.segment, sydney, nearbySuburbs);
-    // const keywords = keywordsList;
+    const keywordsList = U.keywordsReducer({ seed: suburb, prev: keywordsList_, next: []});
+    const keywords = U.keywordsFormat(keywordsList);
     const mobileBreadcrumbs = U.mobileBreadcrumbs([
         [Australia, `${paths.segment}/index.html`],
         [NSW, `${paths.segment}/${nsw}.html`],
@@ -748,6 +755,7 @@ const suburb = context => {
         nearbySuburbsHeading,
         nearby,
         keywords,
+        keywordsList,
         mobileBreadcrumbs,
         footerBreadcrumbs
     });
@@ -762,7 +770,7 @@ const directory = context => {
         nsw,
         NSW,
         nswRegionList,
-        // keywordsList,
+        keywordsList: keywordsList_,
         sydney,
         Sydney
     } = context;
@@ -781,7 +789,8 @@ const directory = context => {
         [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, filename]
     ]);
-    const keywords = "";
+    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: []});
+    const keywords = U.keywordsFormat(keywordsList);
     const directoryList = dataPaths.buySell.data
         .map(buySell => {
             const directoryUl = s => `<ul id="directoryUl">${s}</ul>`;
@@ -851,6 +860,7 @@ const directory = context => {
         pageTitle,
         schema,
         keywords,
+        keywordsList,
         directoryList,
         footerBreadcrumbs
     });
