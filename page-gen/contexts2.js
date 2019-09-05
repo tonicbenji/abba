@@ -164,7 +164,7 @@ const home = context => {
 
 const about = context => {
     const {
-        input: { name },
+        input: { name, footerType },
         Industry,
         Australia,
         keywordsList: keywordsList_
@@ -184,6 +184,7 @@ const about = context => {
         [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, filename]
     ]);
+    const footer = dataPaths.footer.template[footerType];
     const footerBreadcrumbs = U.footerBreadcrumbs([
         ["Home", ""],
         [title, filename]
@@ -198,6 +199,7 @@ const about = context => {
         absolutePath,
         pageTitle,
         schema,
+        footer,
         footerBreadcrumbs,
         keywordsList,
         keywords
@@ -206,7 +208,7 @@ const about = context => {
 
 const contact = context => {
     const {
-        input: { name },
+        input: { name, footerType },
         Industry,
         Australia,
         keywordsList: keywordsList_
@@ -230,6 +232,7 @@ const contact = context => {
         ["Home", ""],
         [title, filename]
     ]);
+    const footer = dataPaths.footer.template[footerType];
     const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [ "Contact ABBA Group" ] });
     const keywords = U.keywordsFormat(keywordsList);
     return R.mergeDeepRight(context, {
@@ -240,6 +243,7 @@ const contact = context => {
         absolutePath,
         pageTitle,
         schema,
+        footer,
         footerBreadcrumbs,
         keywordsList,
         keywords
@@ -778,7 +782,7 @@ const suburb = context => {
 
 const directory = context => {
     const {
-        input: { buySell },
+        input: { buySell, footerType },
         industry,
         Industry,
         Australia,
@@ -804,6 +808,7 @@ const directory = context => {
         [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, filename]
     ]);
+    const footer = dataPaths.footer.template[footerType];
     const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: []});
     const keywords = U.keywordsFormat(keywordsList);
     const directoryList = dataPaths.buySell.data
@@ -874,6 +879,7 @@ const directory = context => {
         absolutePath,
         pageTitle,
         schema,
+        footer,
         keywords,
         keywordsList,
         directoryList,
