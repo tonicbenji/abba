@@ -143,7 +143,6 @@ const home = context => {
     const home = title;
     const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [] });
     const keywords = U.keywordsFormat(keywordsList);
-    console.log(keywords);
     return R.mergeDeepRight(context, {
         title,
         home,
@@ -168,7 +167,7 @@ const about = context => {
         input: { name },
         Industry,
         Australia,
-        // keywordsList: keywordsList_
+        keywordsList: keywordsList_
     } = context;
     const title = name;
     const filename = U.filenameFormat(name);
@@ -189,8 +188,8 @@ const about = context => {
         ["Home", ""],
         [title, filename]
     ]);
-    // const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [] });
-    const keywords = "";
+    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [] });
+    const keywords = U.keywordsFormat(keywordsList);
     return R.mergeDeepRight(context, {
         title,
         filename,
@@ -200,6 +199,7 @@ const about = context => {
         pageTitle,
         schema,
         footerBreadcrumbs,
+        keywordsList,
         keywords
     });
 };
