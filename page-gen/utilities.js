@@ -274,12 +274,12 @@ const contextualKeywords = ({ trade, industry, name }) => {
         : [];
 };
 
-const keywords2 = (seed, la, lb) => {
+const keywordsReducer = ({ seed, prev, next }) => {
     return R.pipe(
-        R.concat(la),
+        R.concat(prev),
         l => shuffleSeed.shuffle(l, seed),
         R.take(8)
-    )(lb);
+    )(next);
 };
 
 const keywordsFormat = l => `"${stringList(l)}"`;
@@ -328,6 +328,6 @@ module.exports = {
     outputs,
     description,
     input,
-    keywords2,
+    keywordsReducer,
     keywordsFormat
 };
