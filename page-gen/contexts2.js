@@ -592,8 +592,9 @@ const cityRegion = context => {
     const paths = { segment, rel, path, pretty, output, domain };
     const absolutePath = domain;
     const pageTitle = `${Trade}ing a ${Industry} Business in ${
-        nameMaker.nameThe
+        nameMaker.NameThe
     }`;
+    console.log(nameMaker);
     const schema = U.schema([
         [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [
@@ -618,11 +619,11 @@ const cityRegion = context => {
         shuffleSeed.shuffle(cityRegionSuburbsList, cityRegion)
     );
     const cityRegionSuburbs = cityRegionSuburbsSubset;
-    const regionFooterHeading = R.isEmpty(this.cityRegionSuburbs)
+    const regionFooterHeading = R.isEmpty(cityRegionSuburbs)
         ? ""
-        : `<div class="regionFooterHeading">${this.Trade} a ${
-              this.Industry
-          } Business in one of ${this.Name}’s Suburbs:</div>`;
+        : `<div class="regionFooterHeading">${Trade} a ${
+              Industry
+          } Business in one of ${nameMaker.NameThe}’s Suburbs:</div>`;
     const regionFooterUl = U.cityRegionFooterList(
         paths.segment,
         sydney,
@@ -715,7 +716,7 @@ const suburb = context => {
         dataPaths.suburbs.nearby[suburb],
         cityRegionSuburbs
     );
-    const nearbySuburbsHeading = R.isEmpty(this.nearbySuburbs)
+    const nearbySuburbsHeading = R.isEmpty(nearbySuburbs)
         ? ""
         : `<div class="regionFooterHeading">${Trade}ing a ${Industry} Business in Nearby Suburbs:</div>`;
     const nearby = U.cityRegionFooterList(paths.segment, sydney, nearbySuburbs);
