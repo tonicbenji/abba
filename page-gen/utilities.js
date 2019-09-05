@@ -61,6 +61,12 @@ const removeAllEmpty = ss => R.reject(R.isEmpty, ss);
 
 const mergeDeepAll = l => R.reduce(R.mergeDeepRight, {}, l);
 
+const input = x => {
+    return {
+        input: x
+    };
+};
+
 // Logging
 
 const warning = s => console.log(chalk.red(s));
@@ -130,7 +136,8 @@ const outputs = ({ logAction, templatePath, data, isGenSuburbs, context }) => {
     const templateFile = fileToStr(templatePath);
     const templateOutput = replaceTokens(context, templateFile);
     fs.writeFileSync(context.paths.output, templateOutput);
-    isGenSuburbs && sitemapStream.write(sitemapItem(context.paths.domain, universalDate));
+    isGenSuburbs &&
+        sitemapStream.write(sitemapItem(context.paths.domain, universalDate));
     genLog(logAction, data, context.paths.pretty);
 };
 
@@ -229,17 +236,20 @@ const makeKeywords = ({ keywords, trade, industry, name }) => {
         l => shuffleSeed.shuffle(l, name),
         R.take(4)
     )({ trade, industry, name });
-    const fillerKeywords = l => l.length < 8 ? R.pipe(
-        R.concat([
-            "Buy a childcare business NSW",
-            "Sell a childcare business NSW",
-            "How to buy a childcare business NSW",
-            "How to sell a childcare business NSW",
-            "Childcare business acquisition NSW",
-            "Childcare business merger NSW",
-        ]),
-        l => shuffleSeed.shuffle(l, name)
-    )(l) : l;
+    const fillerKeywords = l =>
+        l.length < 8
+            ? R.pipe(
+                  R.concat([
+                      "Buy a childcare business NSW",
+                      "Sell a childcare business NSW",
+                      "How to buy a childcare business NSW",
+                      "How to sell a childcare business NSW",
+                      "Childcare business acquisition NSW",
+                      "Childcare business merger NSW"
+                  ]),
+                  l => shuffleSeed.shuffle(l, name)
+              )(l)
+            : l;
     return R.pipe(
         R.values,
         R.unnest,
@@ -253,11 +263,7 @@ const makeKeywords = ({ keywords, trade, industry, name }) => {
 };
 
 const contextualKeywords = ({ trade, industry, name }) => {
-    return R.none(R.isEmpty, [
-        trade,
-        industry,
-        name
-    ])
+    return R.none(R.isEmpty, [trade, industry, name])
         ? [
               `${trade} a ${industry} Business ${name}`,
               `${trade} a Daycare Business ${name}`,
@@ -267,6 +273,13 @@ const contextualKeywords = ({ trade, industry, name }) => {
           ]
         : [];
 };
+
+const keywordsReducer = ({ seed, prev, next }) => {
+    const [prev_, next_] = [prev, next].map(x => shuffleSeed.shuffle(x, seed));
+    return R.take(8, R.concat(next, prev));
+};
+
+const keywordsFormat = l => `"${stringList(l)}"`;
 
 const description = s => `<meta name="description" content="${s}">`;
 
@@ -310,5 +323,8 @@ module.exports = {
     contextualKeywords,
     mobileBreadcrumbs,
     outputs,
-    description
+    description,
+    input,
+    keywordsReducer,
+    keywordsFormat
 };
