@@ -784,8 +784,8 @@ const directory = context => {
         .map(buySell => {
             const directoryUl = s => `<ul id="directoryUl">${s}</ul>`;
             return (
-                `<a href="${industry}-${buySell.toLowerCase()}/index.html"><h4>${buySell} ${Industry} in ${Australia}&nbsp;»</h4></a>` +
-                `<a href="${industry}-${buySell.toLowerCase()}/${nsw}.html"><h5>${buySell} ${Industry} in ${NSW}&nbsp;»</h5></a>` +
+                `<a href="${buySell.toLowerCase()}-${industry}/index.html"><h4>${buySell} ${Industry} in ${Australia}&nbsp;»</h4></a>` +
+                `<a href="${buySell.toLowerCase()}-${industry}/${nsw.toLowerCase()}.html"><h5>${buySell} ${Industry} in ${NSW}&nbsp;»</h5></a>` +
                 directoryUl(
                     nswRegionList
                         .map(stateRegion => {
@@ -795,7 +795,7 @@ const directory = context => {
                         })
                         .join("")
                 ) +
-                `<a href="${industry}-${buySell.toLowerCase()}/${sydney}/index.html"><h6>${buySell} ${Industry} in ${Sydney}&nbsp;»</h6></a>` +
+                `<a href="${buySell.toLowerCase()}-${industry}/${sydney}/index.html"><h6>${buySell} ${Industry} in ${Sydney}&nbsp;»</h6></a>` +
                 U.removeAllEmpty(U.fileToList(dataPaths.cityRegions.data))
                     .map(cityRegion => {
                         const cityRegionSuburbs = () => {
@@ -812,7 +812,7 @@ const directory = context => {
                             return subset;
                         };
                         return (
-                            `<a href="/${buySell.toLowerCase()}-${industry}/${U.filenameFormat(
+                            `<a href="/${buySell.toLowerCase()}-${industry}/${sydney}/${U.filenameFormat(
                                 cityRegion
                             )}"><h6 class="h7">${buySell} a ${Industry} Business in ${changeCase.titleCase(
                                 cityRegion
