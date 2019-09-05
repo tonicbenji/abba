@@ -191,6 +191,9 @@ const about = context => {
     ]);
     const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [ "About ABBA Group" ] });
     const keywords = U.keywordsFormat(keywordsList);
+    const description = U.description(
+        "About ABBA Group, Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity."
+    );
     return R.mergeDeepRight(context, {
         title,
         filename,
@@ -202,7 +205,8 @@ const about = context => {
         footer,
         footerBreadcrumbs,
         keywordsList,
-        keywords
+        keywords,
+        description
     });
 };
 
@@ -235,6 +239,9 @@ const contact = context => {
     const footer = dataPaths.footer.template[footerType];
     const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [ "Contact ABBA Group" ] });
     const keywords = U.keywordsFormat(keywordsList);
+    const description = U.description(
+        "Contact ABBA Group, Australia’s fastest growing business brokerage. Our greatest prides are in our trailblazing track record, and our integrity."
+    );
     return R.mergeDeepRight(context, {
         title,
         filename,
@@ -246,7 +253,8 @@ const contact = context => {
         footer,
         footerBreadcrumbs,
         keywordsList,
-        keywords
+        keywords,
+        description
     });
 };
 
@@ -871,6 +879,7 @@ const directory = context => {
         ["Home", ""],
         [changeCase.titleCase(nameMaker.name), ""]
     ]);
+    const description = U.description("A list of the areas - national, state and local - that we service with childcare business sales and acquisitions.");
     return R.mergeDeepRight(context, {
         ...nameMaker,
         title,
@@ -883,7 +892,8 @@ const directory = context => {
         keywords,
         keywordsList,
         directoryList,
-        footerBreadcrumbs
+        footerBreadcrumbs,
+        description
     });
 };
 
