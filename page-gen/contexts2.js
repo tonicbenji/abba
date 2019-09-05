@@ -254,7 +254,8 @@ const country = context => {
         industry,
         Industry,
         Australia,
-        nswRegionList
+        nswRegionList,
+        keywordsList: keywordsList_
     } = context;
     const nameMaker = contextMaker("", country);
     const title = country;
@@ -274,16 +275,6 @@ const country = context => {
     const heroImg = "";
     const contentImg = "childcare-businesses-sydney.jpg";
     const id = U.id("aus");
-    // const keywordsList = U.keywordsReducer(
-    //     {
-    //         seed: country,
-    //         prev: [],
-    //         next: [
-    //             `${country} ${settings.business.trade}`,
-    //             `${settings.business.name} ${settings.business.trade} ${country}`
-    //         ]
-    //     }
-    // );
     const schema = U.schema([
         [`Buy and Sell ${Industry} Businesses Across ${Australia}`, ""],
         [pageTitle, paths.pretty]
@@ -296,7 +287,11 @@ const country = context => {
         ? U.nswRegionFooterList(`sell-${industry}`, nswRegionList)
         : [];
     const footerBreadcrumbs = U.footerBreadcrumbs([["Home", ""], [Title, ""]]);
-    const keywords = "";
+    const keywordsList = U.keywordsReducer({ seed: title, prev: keywordsList_, next: [
+        `${country} ${settings.business.trade}`,
+        `${settings.business.name} ${settings.business.trade} ${country}`
+    ]});
+    const keywords = U.keywordsFormat(keywordsList);
     return R.mergeDeepRight(context, {
         ...nameMaker,
         title,

@@ -275,11 +275,8 @@ const contextualKeywords = ({ trade, industry, name }) => {
 };
 
 const keywordsReducer = ({ seed, prev, next }) => {
-    return R.pipe(
-        R.concat(prev),
-        l => shuffleSeed.shuffle(l, seed),
-        R.take(8)
-    )(next);
+    const [prev_, next_] = [prev, next].map(x => shuffleSeed.shuffle(x, seed));
+    return R.take(8, R.concat(next, prev));
 };
 
 const keywordsFormat = l => `"${stringList(l)}"`;
