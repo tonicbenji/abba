@@ -303,7 +303,7 @@ const country = context => {
         heroImg,
         contentImg,
         id,
-        // keywordsList,
+        keywordsList,
         schema,
         footer,
         footerBuyNswRegions,
@@ -321,7 +321,7 @@ const state = context => {
         industry,
         Industry,
         Australia,
-        // keywordsList
+        keywordsList: keywordsList_
     } = context;
     const nameMaker = contextMaker("", state);
     const stateMaker = contextMaker(state, state);
@@ -367,7 +367,8 @@ const state = context => {
         [Australia, `${paths.segment}/index.html`],
         [NSW, `${paths.segment}/${nsw}.html`]
     ]);
-    const keywords = "";
+    const keywordsList = U.keywordsReducer({ seed: state, prev: keywordsList_, next: []});
+    const keywords = U.keywordsFormat(keywordsList);
     const description = U.description(
         buySell === "Buy"
         ? "Reports published by the Australian government indicate that the supply of childcare is constrained by several factors in NSW, and this means that many buyers are fighting over a limited number of childcare businesses."
@@ -399,6 +400,7 @@ const state = context => {
         regionFooterUl,
         mobileBreadcrumbs,
         footerBreadcrumbs,
+        keywordsList,
         keywords
     });
 };
