@@ -74,8 +74,8 @@ module.exports = {
             '<div id="formSubmittedMobile">✓&nbsp;&nbsp; Thank you, we will be in touch shortly</div>',
         rootUrl: settings.rootUrl,
         menuItems: `
-        <li class="menu-item menu-item-type-post_type menu-item-object-page financity-normal-menu"><a href="/buy-childcare/nsw.html">Buy Childcare NSW</a></li>
-        <li class="menu-item menu-item-type-post_type menu-item-object-page financity-normal-menu"><a href="/sell-childcare/nsw.html">Sell Childcare NSW</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page financity-normal-menu"><a class="header-menu-quick-link" href="/buy-childcare/nsw.html">Buy Childcare NSW</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page financity-normal-menu"><a class="header-menu-quick-link" href="/sell-childcare/nsw.html">Sell Childcare NSW</a></li>
         `,
         // menuItems: `<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home financity-normal-menu"><a href="/buy-childcare/nsw.html">Buy</a> or <a href="/sell-childcare/nsw.html">Sell</a> a Childcare Business in NSW</a></li>`,
         buttonBuy:
